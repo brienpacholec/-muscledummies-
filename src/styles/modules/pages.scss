@@ -1,0 +1,15 @@
+.__body_wrapper {
+    background-color: $background-color;
+    color: white;
+}
+
+#bgImageHero{
+    background-image: url($bgImageHeroSrc);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 100vh;
+    padding-bottom: 13rem;
+    border-bottom: 4px solid black;
+}

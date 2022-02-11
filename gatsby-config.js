@@ -6,18 +6,12 @@ module.exports = {
     description: "Let's hit the gym!",
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-material-ui`,
     `gatsby-theme-material-ui`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
