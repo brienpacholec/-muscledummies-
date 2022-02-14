@@ -2,6 +2,13 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Container from "@mui/material/Container"
 import Linkbar from "../components/linkbar"
+import Zoom from "@stahl.luke/react-reveal"
+import * as Anim from "@stahl.luke/react-reveal"
+import Grid from "@mui/material/Grid"
+import Typography from "@mui/material/Typography"
+import Button from "@mui/material/Button"
+import AppsIcon from "@mui/icons-material/Apps"
+import Apps from "@mui/icons-material/Apps"
 
 const IndexPage = () => {
   // const data = useStaticQuery(graphql`
@@ -19,6 +26,27 @@ const IndexPage = () => {
       <Linkbar />
 
       <Container>
+        <Grid container spacing={2} sx={{ marginTop: 15 }}>
+          <Grid item xs={12} sx={{ textAlign: "center" }}>
+            <Typography variant="h2">Welcome to Muscle Dummies</Typography>
+            <Typography variant="subtitle2">
+              Join this ultra-exclusive NFT project featuring not only authentic
+              art, but unmatched utility!
+            </Typography>
+
+            <Button
+              variant="outlined"
+              sx={{ borderRadius: 10, paddingY: 2, paddingX: 15, marginY: 3 }}
+              endIcon={<AppsIcon />}
+              href="https://www.google.com"
+            >
+              <Typography variant="h5">View The Collection</Typography>
+            </Button>
+          </Grid>
+        </Grid>
+
+        {/* <Anim.Fade right cascade>
+
         <p>
           Skorupi minun kyurem regigigas bibarel fraxure ampharos petilil
           beldum. Huntail dragonite empoleon swalot porygon sentret joltik.
@@ -117,6 +145,7 @@ const IndexPage = () => {
           piplup ninetales makuhita dragonair geodude azumarill. Kirlia crustle
           duosion.
         </p>
+      </Anim.Fade> */}
       </Container>
     </Layout>
   )

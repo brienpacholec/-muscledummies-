@@ -6,22 +6,35 @@ import { createTheme } from "@mui/material/styles"
 
 const theme = createTheme({
   palette: {
+    type: "light",
     primary: {
-      light: "#ffc246",
-      main: "#ff9100",
-      dark: "#c56200",
-      contrastText: "#ffffff",
+      main: "#005B71",
     },
     secondary: {
-      light: "#8b6b61",
-      main: "#5d4037",
-      dark: "#321911",
-      contrastText: "#ffffff",
+      main: "#079395",
+    },
+    background: {
+      default: "#031219",
+      paper: "#fffcfc",
+    },
+    text: {
+      primary: "rgba(170,31,31,0.87)",
     },
   },
   typography: {
     fontFamily: "Gagalin",
   },
 })
+
+// theme.typography.h3 = {
+//   fontFamily: "Gagalin",
+//   fontSize: '1.6rem',
+//   '@media (min-width:600px)': {
+//     fontSize: '2rem',
+//   },
+//   [theme.breakpoints.up('md')]: {
+//     fontSize: '2.4rem',
+//   },
+// };
 
 export default theme

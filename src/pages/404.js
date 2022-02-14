@@ -26,8 +26,7 @@ const message404 = [
   },
 ]
 
-const displayMessage = message404[Math.floor(Math.random()*message404.length)];
-
+const displayMessage = message404[Math.floor(Math.random() * message404.length)]
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -42,28 +41,26 @@ const NotFoundPage = () => {
       <Container sx={{ marginTop: 3, marginBottom: 45 }}>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={8} sx={{ textAlign: {xs: 'left', md:'center'} }}>
+            <Grid
+              item
+              xs={12}
+              md={8}
+              sx={{ textAlign: { xs: "left", md: "center" } }}
+            >
               <Item sx={{ paddingY: 10 }}>
-                <Typography
-                  variant="h2"
-                >
-                  404 Page Not Found
-                </Typography>
-                <Typography
-                  variant="h4"
-                >
-                  { displayMessage.title }
-                </Typography>
-                <Typography
-                  variant="h5"
-                >
-                  { displayMessage.subtitle }
-                </Typography>
+                <Typography variant="h2">404 Page Not Found</Typography>
+                <Typography variant="h4">{displayMessage.title}</Typography>
+                <Typography variant="h5">{displayMessage.subtitle}</Typography>
               </Item>
             </Grid>
             <Grid item xs={12} md={4}>
               <Item sx={{ paddingY: 10 }}>
-                <StaticImage src="../images/404_2.png" alt="A dinosaur" aspectRatio={4/5} transfromOptions={{fit: "fill", scaleX: -1}} />
+                <StaticImage
+                  src="../images/404_2.png"
+                  alt="A dinosaur"
+                  aspectRatio={4 / 5}
+                  transfromOptions={{ fit: "fill", scaleX: -1 }}
+                />
               </Item>
             </Grid>
           </Grid>
