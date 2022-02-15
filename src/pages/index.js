@@ -1,21 +1,26 @@
-import * as React from "react"
+import React, { useEffect } from "react";
 import Layout from "../components/layout"
 import Container from "@mui/material/Container"
 import Linkbar from "../components/linkbar"
-import Zoom from "@stahl.luke/react-reveal"
-import * as Anim from "@stahl.luke/react-reveal"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import AppsIcon from "@mui/icons-material/Apps"
 import Box from "@mui/material/Box"
 import DummieHero from "../components/dummie_hero"
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const IndexPage = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <Layout>
-      <Container >
-        <Grid container spacing={0} sx={{ display: "flex", marginTop: 10 }}>
+      <Container data-aos="fade-up">
+        <Grid container spacing={0} sx={{ display: "flex", marginTop: 10 }} >
           <Grid
             item
             xs={12}

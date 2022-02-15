@@ -46,6 +46,7 @@ const Navbar = () => {
   }
   return (
     <AppBar
+      data-aos="fade-down"
       sx={{
         backgroundColor: "#000",
         paddingTop: {xs: 0, md: 4},
