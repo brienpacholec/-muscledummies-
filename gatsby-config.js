@@ -26,5 +26,14 @@ module.exports = {
         path: `${__dirname}/src/mock`,
       },
     },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Gagalin"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
   ],
 }

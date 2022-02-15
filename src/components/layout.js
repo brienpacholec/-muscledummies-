@@ -9,9 +9,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
-
       <main>{children}</main>
-
       <Footer />
     </ThemeProvider>
   )
