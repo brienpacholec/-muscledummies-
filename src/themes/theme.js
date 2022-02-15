@@ -1,24 +1,19 @@
 import { createTheme } from "@mui/material/styles"
-// import Gagalin from '../fonts/TTF/gagalin.ttf';
-
-// const defaultTheme = createTheme({})
-// const { breakpoints, typography: { pxToRem } } = defaultTheme
 
 const theme = createTheme({
   palette: {
     type: "light",
     primary: {
-      main: "#005B71",
+      main: "#86FC4D",
     },
     secondary: {
-      main: "#079395",
+      main: "#C34DFC",
     },
     background: {
       default: "#031219",
-      paper: "#fffcfc",
     },
     text: {
-      primary: "rgba(170,31,31,0.87)",
+      primary: "#000",
     },
   },
   typography: {
@@ -26,15 +21,21 @@ const theme = createTheme({
   },
 })
 
-// theme.typography.h3 = {
-//   fontFamily: "Gagalin",
-//   fontSize: '1.6rem',
-//   '@media (min-width:600px)': {
-//     fontSize: '2rem',
-//   },
-//   [theme.breakpoints.up('md')]: {
-//     fontSize: '2.4rem',
-//   },
-// };
+theme.typography.h1 = {
+  fontFamily: "Gagalin",
+  "@media (max-width:900px)": {
+    fontSize: "2.5rem",
+  },
+  "@media (max-width:600px)": {
+    fontSize: "2rem",
+  },
+  "@media (max-width:400px)": {
+    fontSize: "1.5rem",
+  },
+
+  // [theme.breakpoints.up('md')]: {
+  //   fontSize: '2.4rem',
+  // },
+}
 
 export default theme

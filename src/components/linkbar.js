@@ -21,7 +21,15 @@ const Linkbar = () => {
   }, [])
 
   return (
-    <AppBar position="static" sx={{ borderBottom: 5, borderColor: "#000" }}>
+    <AppBar
+      position="static"
+      sx={{
+        borderBottom: 5,
+        borderColor: "#000",
+        background:
+          "linear-gradient(0deg, rgba(3,18,25,1) 0%, rgba(0,91,113,1) 100%)",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
@@ -30,6 +38,7 @@ const Linkbar = () => {
               aria-controls="Link to Instagram"
               aria-haspopup="false"
               color="inherit"
+              href="https://www.instagram.com/muscledummiesnft/"
             >
               <Icon
                 className=" fab fa-instagram"
@@ -46,6 +55,7 @@ const Linkbar = () => {
               aria-controls="Link to Twitter"
               aria-haspopup="false"
               color="inherit"
+              href="https://twitter.com/muscledummynft"
             >
               <Icon
                 className=" fab fa-twitter"
@@ -62,6 +72,7 @@ const Linkbar = () => {
               aria-controls="Link to Discord"
               aria-haspopup="false"
               color="inherit"
+              href="https://discord.gg/CCyjkz8S6m"
             >
               <Icon
                 className=" fab fa-discord"

@@ -8,24 +8,85 @@ import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import AppsIcon from "@mui/icons-material/Apps"
-import Apps from "@mui/icons-material/Apps"
+import Box from "@mui/material/Box"
+import DummieHero from "../components/dummie_hero"
 
 const IndexPage = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
   return (
     <Layout>
-      <div id="bgImageHero"></div>
+      <Container >
+        <Grid container spacing={0} sx={{ display: "flex", marginTop: 10 }}>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              textAlign: "center",
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                color: "#FFF",
+              }}
+            >
+              Ready to take over the Fitness Industry
+            </Typography>
+          </Grid>
+
+          <Grid
+            item
+            xs={12}
+            sx={{
+              textAlign: "center",
+            }}
+          >
+            <Typography
+              variant="h3"
+              display="inline"
+              sx={{
+                color: "#FFF",
+              }}
+            >
+              Join&nbsp;
+            </Typography>
+
+            <Typography
+              variant="h3"
+              display="inline"
+              sx={{
+                color: "primary.main",
+              }}
+            >
+              Muscle Dummies
+            </Typography>
+          </Grid>
+
+          <Grid
+            item
+            xs={12}
+            sx={{
+              textAlign: "center",
+            }}
+          >
+            <Typography
+              sx={{
+                color: "#FFF",
+              }}
+            >
+              Muscle Dummies is your chance to be a part of the greatest takeover in the Health and Fitness Industry
+            </Typography>
+          </Grid>
+
+
+        </Grid>
+
+        <DummieHero />
+      </Container>
+
+      {/* <div id="bgImageHero"></div>
       <Linkbar />
 
-      <Container>
+      <Container id="Home">
         <Grid container spacing={2} sx={{ marginTop: 15 }}>
           <Grid item xs={12} sx={{ textAlign: "center" }}>
             <Typography variant="h2">Welcome to Muscle Dummies</Typography>
@@ -36,7 +97,7 @@ const IndexPage = () => {
 
             <Button
               variant="outlined"
-              sx={{ borderRadius: 10, paddingY: 2, paddingX: 15, marginY: 3 }}
+              sx={{ borderRadius: 10, paddingY: {sm: 1, md: 1}, paddingX: {sm: 5, md: 5}, marginY: {sm: 1, md: 1}, backgroundColor: '#FFF' }}
               endIcon={<AppsIcon />}
               href="https://www.google.com"
             >
@@ -45,7 +106,6 @@ const IndexPage = () => {
           </Grid>
         </Grid>
 
-        {/* <Anim.Fade right cascade>
 
         <p>
           Skorupi minun kyurem regigigas bibarel fraxure ampharos petilil
@@ -145,8 +205,11 @@ const IndexPage = () => {
           piplup ninetales makuhita dragonair geodude azumarill. Kirlia crustle
           duosion.
         </p>
-      </Anim.Fade> */}
-      </Container>
+
+      <hr/>
+      
+      <div id ="About">ABOUT LOL</div>
+      </Container> */}
     </Layout>
   )
 }
