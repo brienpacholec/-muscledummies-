@@ -170,7 +170,7 @@ const IndexPage = () => {
           >
             <Link to="https://www.google.com">
               <StaticImage
-                src="../images/view_collection.png"
+                src="../images/canva_components/view_collection.png"
                 alt="Muscle Shaker"
                 placeholder="blurred"
                 layout="constrained"
@@ -186,7 +186,7 @@ const IndexPage = () => {
       <Container
         id="about"
         sx={{ marginY: { xs: 2, md: 5 } }}
-        data-aos="fade-up-left"
+        data-aos="fade-up-right"
         data-aos-duration="1500"
       >
         <Grid
@@ -213,7 +213,7 @@ const IndexPage = () => {
               }}
             >
               <StaticImage
-                src="../images/circle_robot.png"
+                src="../images/canva_components/robot_circle.png"
                 alt="Muscle Shaker"
                 placeholder="blurred"
                 layout="full_width"

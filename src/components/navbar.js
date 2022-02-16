@@ -63,7 +63,7 @@ const Navbar = () => {
                   sx={{
                     height: 2,
                     backgroundColor: "#FFF",
-                    marginX: 8,
+                    marginX: 10,
                   }}
                 ></Box>
               </Grid>
@@ -73,7 +73,7 @@ const Navbar = () => {
                   sx={{
                     height: 2,
                     backgroundColor: "#FFF",
-                    marginX: 8,
+                    marginX: 10,
                   }}
                 ></Box>
               </Grid>
@@ -87,6 +87,7 @@ const Navbar = () => {
                   textAlign: "center",
                   color: "#FFF",
                   alignItems: "center",
+                  maxHeight: 75,
                 }}
               >
                 <AnchorLink to="#home" title="Home" className="anchor-link">
@@ -101,23 +102,25 @@ const Navbar = () => {
                   <Typography>Instant Utility</Typography>
                 </AnchorLink>
               </Grid>
+
               <Grid
                 item
                 md={0.5}
                 sx={{
                   display: "flex",
                   justifyContent: "center",
+                  maxHeight: 75,
                 }}
               >
                 <StaticImage
-                  src="../images/shakerLogo.png"
+                  id="md_nft_shaker"
+                  src="../images/logos/md_nft_shaker.png"
                   alt="Muscle Shaker"
                   placeholder="blurred"
-                  layout="fixed"
-                  width={75}
-                  height={75}
+                  layout="constrained"
                 />
               </Grid>
+
               <Grid
                 item
                 md={5.75}
@@ -143,6 +146,7 @@ const Navbar = () => {
                 </AnchorLink>
 
                 <Button
+                  id="mint-btn"
                   variant="contained"
                   sx={{
                     borderRadius: 10,
@@ -152,8 +156,6 @@ const Navbar = () => {
                     flex: "right",
                     border: 4,
                     borderColor: "#FFF",
-                    background:
-                      "linear-gradient(0deg, rgba(134, 252, 77, 1) 0%, rgba(78, 162, 38, 1) 8%, rgba(140, 235, 94, 1) 100%)",
                   }}
                   href="https://www.google.com"
                 >
@@ -192,7 +194,7 @@ const Navbar = () => {
             }}
           >
             <StaticImage
-              src="../images/sand.png"
+              src="../images/dummies/sandbag.png"
               alt="Muscle Shaker"
               placeholder="blurred"
               layout="fixed"
@@ -202,17 +204,16 @@ const Navbar = () => {
 
             <div>
               <Button
+                id="mint-btn"
                 variant="contained"
                 sx={{
-                  borderRadius: { xs: 5, sm: 10 },
+                  borderRadius: 10,
                   paddingX: 2,
-                  marginY: { xs: 0, sm: 3 },
+                  marginY: 3,
                   color: "text",
                   flex: "right",
-                  border: 1,
+                  border: 3,
                   borderColor: "#FFF",
-                  background:
-                    "linear-gradient(0deg, rgba(134, 252, 77, 1) 0%, rgba(78, 162, 38, 1) 8%, rgba(140, 235, 94, 1) 100%)",
                 }}
                 href="https://www.google.com"
                 endIcon={<ShoppingCartIcon />}
