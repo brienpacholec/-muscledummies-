@@ -14,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem"
 import { StaticImage } from "gatsby-plugin-image"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import Grid from "@mui/material/Grid"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const pages = [
   "Home",
@@ -48,15 +49,13 @@ const Navbar = () => {
     <AppBar
       data-aos="fade-down"
       sx={{
-        backgroundColor: "#000",
-        paddingTop: {xs: 0, md: 4},
-        position: { xs: "sticky", md: "sticky" },
-        border: {xs: "1px solid white", md: "none"}
+        backgroundColor: "rgba(0,0,0,0.85)",
+        paddingY: { xs: 1, md: 4 },
+        position: { xs: "static", md: "sticky" },
       }}
     >
       <Container>
         <Toolbar disableGutters>
-          
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Grid container spacing={0}>
               <Grid item md={6}>
@@ -90,11 +89,17 @@ const Navbar = () => {
                   alignItems: "center",
                 }}
               >
-                <Typography>HOME</Typography>
+                <AnchorLink to="#home" title="Home" className="anchor-link">
+                  <Typography>Home</Typography>
+                </AnchorLink>
+                
+                <AnchorLink to="#about" title="What is it?" className="anchor-link">
+                  <Typography>What is it?</Typography>
+                </AnchorLink>
 
-                <Typography>What is it?</Typography>
-
-                <Typography>Instant Utility</Typography>
+                <AnchorLink to="#utility" title="Instant Utility" className="anchor-link">
+                  <Typography>Instant Utility</Typography>
+                </AnchorLink>
               </Grid>
               <Grid
                 item
@@ -125,11 +130,17 @@ const Navbar = () => {
                   maxHeight: 75,
                 }}
               >
+                <AnchorLink to="#roadmap" title="Roadmap" className="anchor-link">
                 <Typography>Roadmap</Typography>
+                </AnchorLink>
 
+                <AnchorLink to="#team" title="The Team" className="anchor-link">
                 <Typography>The Team</Typography>
+                </AnchorLink>
 
+                <AnchorLink to="#faqs" title="Faqs" className="anchor-link">
                 <Typography>Faqs</Typography>
+                </AnchorLink>
 
                 <Button
                   variant="contained"
@@ -146,7 +157,7 @@ const Navbar = () => {
                   }}
                   href="https://www.google.com"
                 >
-                  <Typography variantMapping="">Click here to mint</Typography>
+                  <Typography>Click here to mint</Typography>
                 </Button>
               </Grid>
 
@@ -172,32 +183,42 @@ const Navbar = () => {
             </Grid>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: "space-between", alignItems: 'center'}}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
             <StaticImage
-              src="../images/keeper.png"
+              src="../images/sand.png"
               alt="Muscle Shaker"
               placeholder="blurred"
               layout="fixed"
-              width={100}
-              height={100}
+              width={75}
+              height={75}
             />
 
             <div>
               <Button
-                variant="outlined"
+                variant="contained"
                 sx={{
-                  borderRadius: {xs: 5, sm: 10},
-                  paddingX: {xs: 2, sm: 2},
-                  marginY: {xs: 0, sm: 3},
-                  backgroundColor: "",
+                  borderRadius: { xs: 5, sm: 10 },
+                  paddingX: 2,
+                  marginY: { xs: 0, sm: 3 },
+                  color: "text",
                   flex: "right",
+                  border: 1,
+                  borderColor: "#FFF",
+                  background:
+                    "linear-gradient(0deg, rgba(134, 252, 77, 1) 0%, rgba(78, 162, 38, 1) 8%, rgba(140, 235, 94, 1) 100%)",
                 }}
                 href="https://www.google.com"
+                endIcon={<ShoppingCartIcon />}
               >
-                <Typography sx={{display: {xs: 'none', sm: 'inherit'}}}>Buy on OpenSea</Typography>
-                <ShoppingCartIcon/>
+                <Typography>Buy on OpenSea</Typography>
               </Button>
-             
             </div>
           </Box>
 

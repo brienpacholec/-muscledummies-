@@ -8,6 +8,7 @@ import Footer from "./footer"
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
+      <div id="home"></div>
       <Navbar />
       <main>{children}</main>
       {/* <Footer /> */}

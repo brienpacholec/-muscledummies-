@@ -13,6 +13,21 @@ module.exports = {
     `gatsby-plugin-material-ui`,
     `gatsby-theme-material-ui`,
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100,
+      }
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Gagalin"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -24,15 +39,6 @@ module.exports = {
       options: {
         name: `mock`,
         path: `${__dirname}/src/mock`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        custom: {
-          families: ["Gagalin"],
-          urls: ["/fonts/fonts.css"],
-        },
       },
     },
   ],
