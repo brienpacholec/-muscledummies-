@@ -22,7 +22,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
-          families: ["Gagalin"],
+          families: ["Gagalin", "Cooper Hewitt"],
           urls: ["/fonts/fonts.css"],
         },
       },

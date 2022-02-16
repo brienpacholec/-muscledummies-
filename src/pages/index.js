@@ -4,8 +4,6 @@ import Container from "@mui/material/Container"
 import Linkbar from "../components/linkbar"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-import Button from "@mui/material/Button"
-import AppsIcon from "@mui/icons-material/Apps"
 import Box from "@mui/material/Box"
 import DummieHero from "../components/dummie_hero"
 import AOS from "aos"
@@ -42,9 +40,10 @@ const IndexPage = () => {
               variant="h4"
               sx={{
                 color: "#FFF",
+                fontFamily: "Cooper Hewitt",
               }}
             >
-              Ready to take over the Fitness Industry
+              READY TO TAKE OVER THE FITNESS INDUSTRY
             </Typography>
           </Grid>
 
@@ -60,6 +59,7 @@ const IndexPage = () => {
               display="inline"
               sx={{
                 color: "#FFF",
+                fontFamily: "Gagalin"
               }}
             >
               Join&nbsp;
@@ -70,6 +70,7 @@ const IndexPage = () => {
               display="inline"
               sx={{
                 color: "primary.main",
+                fontFamily: "Gagalin"
               }}
             >
               Muscle Dummies
@@ -81,11 +82,13 @@ const IndexPage = () => {
             xs={12}
             sx={{
               textAlign: "center",
+              marginY: {xs: 0, md: 2}
             }}
           >
             <Typography
               sx={{
                 color: "#FFF",
+                fontFamily: "Cooper Hewitt",
               }}
             >
               Muscle Dummies is your chance to be a part of the greatest
@@ -122,9 +125,10 @@ const IndexPage = () => {
               sx={{
                 color: "primary.main",
                 fontSize: { xs: "2rem", sm: "3rem" },
+                fontFamily: "Cooper Hewitt",
               }}
             >
-              Welcome to Muscle Dummies
+              WELCOME TO MUSCLE DUMMIES
             </Typography>
           </Grid>
         </Grid>
@@ -145,6 +149,7 @@ const IndexPage = () => {
               sx={{
                 color: "#FFF",
                 fontSize: { xs: 16, md: "inherit" },
+                fontFamily: "Cooper Hewitt",
               }}
             >
               Join this exclusive NFT project that offers instant utility valued
@@ -234,6 +239,7 @@ const IndexPage = () => {
               variant="h3"
               sx={{
                 color: "#FFF",
+                fontFamily: "Gagalin",
               }}
             >
               What are
@@ -244,6 +250,7 @@ const IndexPage = () => {
               display="inline"
               sx={{
                 color: "primary.main",
+                fontFamily: "Gagalin",
               }}
             >
               Muscle Dummies
@@ -254,6 +261,7 @@ const IndexPage = () => {
               display="inline"
               sx={{
                 color: "#FFF",
+                fontFamily: "Gagalin",
               }}
             >
               ?
@@ -267,6 +275,7 @@ const IndexPage = () => {
               sx={{
                 color: "#FFF",
                 fontSize: { sm: "1rem", md: "1.2rem" },
+                fontFamily: "Cooper Hewitt",
               }}
             >
               <FitnessCenterIcon
@@ -284,6 +293,7 @@ const IndexPage = () => {
               sx={{
                 color: "#edc443",
                 fontSize: { sm: "1rem", md: "1.2rem" },
+                fontFamily: "Cooper Hewitt",
               }}
             >
               blank{" "}
@@ -294,6 +304,7 @@ const IndexPage = () => {
               sx={{
                 color: "#FFF",
                 fontSize: { sm: "1rem", md: "1.2rem" },
+                fontFamily: "Cooper Hewitt",
               }}
             >
               blockchain
@@ -307,6 +318,7 @@ const IndexPage = () => {
               sx={{
                 color: "#FFF",
                 fontSize: { sm: "1rem", md: "1.2rem" },
+                fontFamily: "Cooper Hewitt",
               }}
             >
               <FitnessCenterIcon

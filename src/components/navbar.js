@@ -2,49 +2,15 @@ import * as React from "react"
 import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
 import Toolbar from "@mui/material/Toolbar"
-import IconButton from "@mui/material/IconButton"
 import Typography from "@mui/material/Typography"
-import Menu from "@mui/material/Menu"
-import MenuIcon from "@mui/icons-material/Menu"
 import Container from "@mui/material/Container"
-import Avatar from "@mui/material/Avatar"
 import Button from "@mui/material/Button"
-import Tooltip from "@mui/material/Tooltip"
-import MenuItem from "@mui/material/MenuItem"
 import { StaticImage } from "gatsby-plugin-image"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import Grid from "@mui/material/Grid"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
-const pages = [
-  "Home",
-  "What is Muscle Dummies",
-  "Instant Utility",
-  "Roadmap",
-  "The Team",
-  "Faqs",
-]
-
-const settings = ["Profile", "Account", "Dashboard", "Logout"]
-
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null)
-  const [anchorElUser, setAnchorElUser] = React.useState(null)
-
-  const handleOpenNavMenu = event => {
-    setAnchorElNav(event.currentTarget)
-  }
-  const handleOpenUserMenu = event => {
-    setAnchorElUser(event.currentTarget)
-  }
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null)
-  }
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null)
-  }
   return (
     <AppBar
       data-aos="fade-down"
@@ -91,15 +57,15 @@ const Navbar = () => {
                 }}
               >
                 <AnchorLink to="#home" title="Home" className="anchor-link">
-                  <Typography>Home</Typography>
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>Home</Typography>
                 </AnchorLink>
                 
                 <AnchorLink to="#about" title="What is it?" className="anchor-link">
-                  <Typography>What is it?</Typography>
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>What is it?</Typography>
                 </AnchorLink>
 
                 <AnchorLink to="#utility" title="Instant Utility" className="anchor-link">
-                  <Typography>Instant Utility</Typography>
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>Instant Utility</Typography>
                 </AnchorLink>
               </Grid>
 
@@ -134,15 +100,15 @@ const Navbar = () => {
                 }}
               >
                 <AnchorLink to="#roadmap" title="Roadmap" className="anchor-link">
-                <Typography>Roadmap</Typography>
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>Roadmap</Typography>
                 </AnchorLink>
 
                 <AnchorLink to="#team" title="The Team" className="anchor-link">
-                <Typography>The Team</Typography>
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>The Team</Typography>
                 </AnchorLink>
 
                 <AnchorLink to="#faqs" title="Faqs" className="anchor-link">
-                <Typography>Faqs</Typography>
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>Faqs</Typography>
                 </AnchorLink>
 
                 <Button
@@ -159,7 +125,7 @@ const Navbar = () => {
                   }}
                   href="https://www.google.com"
                 >
-                  <Typography>Click here to mint</Typography>
+                  <Typography sx={{ fontFamily: "Cooper Hewitt", lineHeight: 1.2}}>Click here to mint</Typography>
                 </Button>
               </Grid>
 
@@ -218,7 +184,7 @@ const Navbar = () => {
                 href="https://www.google.com"
                 endIcon={<ShoppingCartIcon />}
               >
-                <Typography>Buy on OpenSea</Typography>
+                <Typography sx={{ fontFamily: "Cooper Hewitt", lineHeight: 1.2}}>Buy on OpenSea</Typography>
               </Button>
             </div>
           </Box>

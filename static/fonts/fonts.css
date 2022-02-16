@@ -2,3 +2,8 @@
     font-family: "Gagalin";
     src: url("./WOFF/gagalin.woff");
 }
+
+@font-face {
+    font-family: "Cooper Hewitt";
+    src: url("./WOFF/cooperhewitt.woff");
+}
