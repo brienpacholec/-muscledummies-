@@ -213,7 +213,7 @@ const IndexPage = () => {
             item
             xs={12}
             sm={12}
-            md={4}
+            md={5}
             sx={{
               textAlign: "center",
             }}
@@ -228,6 +228,9 @@ const IndexPage = () => {
                 src="../images/canva_components/robot_circle.png"
                 alt="Muscle Dummie"
                 placeholder="blurred"
+                layout="constrained"
+                width={400}
+                height={400}
               />
             </Box>
           </Grid>
@@ -236,7 +239,7 @@ const IndexPage = () => {
             item
             xs={12}
             sm={12}
-            md={6}
+            md={7}
             sx={{
               textAlign: "left",
             }}
@@ -277,7 +280,6 @@ const IndexPage = () => {
 
             <Typography
               variant="h5"
-              display="inline"
               sx={{
                 color: "#FFF",
                 fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
@@ -290,35 +292,11 @@ const IndexPage = () => {
                 }}
               />{" "}
               Muscle Dummies are a unique collection of 3,333 one-ofone NFTs on
-              the{" "}
-            </Typography>
-
-            <Typography
-              variant="h5"
-              display="inline"
-              sx={{
-                color: "#edc443",
-                fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
-                fontFamily: "Cooper Hewitt",
-              }}
-            >
-              ETH{" "}
-            </Typography>
-            <Typography
-              variant="h5"
-              display="inline"
-              sx={{
-                color: "#FFF",
-                fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
-                fontFamily: "Cooper Hewitt",
-              }}
-            >
-              blockchain
+              the ETH blockchain
             </Typography>
 
             <br />
-            <br />
-
+            
             <Typography
               variant="h5"
               sx={{
@@ -348,7 +326,6 @@ const IndexPage = () => {
         disableGutters
       >
         <Grid
-        
           container
           sx={{
             display: "flex",
@@ -483,8 +460,6 @@ const IndexPage = () => {
       <Container
         id="community"
         sx={{ marginY: { xs: 2, md: 5 } }}
-        data-aos="fade-up-right"
-        data-aos-duration="1500"        
       >
 
         <Grid
@@ -499,9 +474,15 @@ const IndexPage = () => {
           }}
         >
           <Grid 
-            item xs={12} sm={12} md={8}
-            data-aos="fade-up"
-            data-aos-duration="1500"
+            item 
+            xs={12} 
+            sm={12} 
+            md={8}
+            sx={{
+              paddingRight: {xs: 0, md: 5}
+            }}
+            data-aos="fade-up-right"
+            data-aos-duration="1500"   
           >
             <Typography
               variant="h5"
@@ -519,7 +500,13 @@ const IndexPage = () => {
               guide others through their process.
             </Typography>
             
-            <Box sx={{display:"flex", placeItems: "center", justifyContent: "center"}}>
+            <Box 
+              sx={{
+                display:"flex", 
+                placeItems: "center", 
+                justifyContent: "space-evenly"
+              }}
+            >
 
               <Link to="https://discord.gg/CCyjkz8S6m">
                 <StaticImage
@@ -536,9 +523,17 @@ const IndexPage = () => {
               <Button 
                 variant="outlined"
                 href="https://discord.gg/CCyjkz8S6m"
+                sx={{
+                  textAlign: "center",
+                  padding: {xs: 0.5, sm: 1}
+                }}
               >
                 <Typography
-                  sx={{ fontFamily: "Gagalin" }}
+                  variant="h4"
+                  sx={{ 
+                    fontFamily: "Gagalin",
+                    fontSize: {xs: "1rem", sm: "2rem", md: "3rem"}
+                  }}
                 >
                   JOIN OUR DISCORD
                 </Typography>
@@ -549,19 +544,75 @@ const IndexPage = () => {
 
           <Grid 
             item md={4}
-            data-aos="fade-left"
+            data-aos="fade-up-left"
             data-aos-duration="1500"
-            sx={{textAlign: "center", display: {xs: "none", md: "flex"}, justifyContent: "center"}}
+            sx={{
+              textAlign: "center", 
+              display: {xs: "none", md: "flex"}, 
+              justifyContent: "center"
+            }}
           >
-            <StaticImage
-              className="tiltRight"
-              src="../images/logos/community_shaker.png"
-              alt="Muscle Shaker"
-              placeholder="blurred"
-              layout="constrained"
-              height={190}
-              width={200}
-            />
+
+            <Box
+              sx={{
+                backgroundColor: "primary.main",
+                padding: 0.5
+              }}
+            >
+              <Box
+                sx={{
+                  backgroundColor: "#000",
+                }}
+              >
+
+              <Grid
+                container
+                sx={{
+                  display: "flex",
+                }}
+              >
+                <Grid 
+                  item md={12}
+                  sx={{
+                    paddingTop: 2
+                  }}
+                >
+                  <StaticImage
+                    className="instant_shake"
+                    src="../images/logos/md_nft_shaker.png"
+                    alt="Muscle Shaker"
+                    placeholder="blurred"
+                    layout="constrained"
+                    height={200}
+                    width={132}
+                  />
+
+                </Grid>
+
+                <Grid 
+                  item md={12}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: "Gagalin",
+                      letterSpacing: 5,
+                      color: "#FFF",
+                      fontSize: {md: "2rem"}
+                    }}
+                  >
+                    COMMUNITY
+                  </Typography>
+
+                </Grid>
+                    
+                  
+
+              </Grid>
+
+              </Box>
+
+            </Box>
+            
 
           </Grid>
 

@@ -20,80 +20,105 @@ const Navbar = () => {
         position: { xs: "static", md: "sticky" },
       }}
     >
-      <Container>
+      <Container >
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+
+          {/* DESKTOP NAV */}
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }  }}>
             <Grid container spacing={0}>
-              <Grid item md={6}>
-                <Box
-                  sx={{
-                    height: 2,
-                    backgroundColor: "#FFF",
-                    marginX: 10,
-                  }}
-                ></Box>
-              </Grid>
-
-              <Grid item md={6}>
-                <Box
-                  sx={{
-                    height: 2,
-                    backgroundColor: "#FFF",
-                    marginX: 10,
-                  }}
-                ></Box>
-              </Grid>
-
               <Grid
                 item
-                md={5.75}
+                md={5.5}
                 sx={{
                   display: "flex",
                   justifyContent: "space-evenly",
                   textAlign: "center",
                   color: "#FFF",
-                  alignItems: "center",
-                  maxHeight: 75,
+                  alignSelf: "center",
                 }}
               >
-                <AnchorLink 
-                  to="#home" 
-                  title="Home" 
-                  className="anchor-link" 
-                >
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
-                    Home
-                  </Typography>
-                </AnchorLink>
 
-                <AnchorLink
-                  to="#about"
-                  title="What is it?"
-                  className="anchor-link"
-                >
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
-                    About
-                  </Typography>
-                </AnchorLink>
+                <Grid container spacing={0}>
+                  <Grid item md={12}>
+                    <Box
+                      sx={{
+                        height: 2,
+                        backgroundColor: "#FFF",
+                        marginX: 10,
+                        marginBottom: 1
+                      }}
+                    ></Box>
+                  </Grid>
 
-                <AnchorLink
-                  to="#utility"
-                  title="Instant Utility"
-                  className="anchor-link"
-                >
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
-                    Instant Utility
-                  </Typography>
-                </AnchorLink>
+                  <Grid item md={12}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-around",
+                      textAlign: "center",
+                      color: "#FFF",
+                      alignSelf: "center",
+                    }}
+                  >
+                    <AnchorLink 
+                      to="#home" 
+                      title="Home" 
+                      className="anchor-link" 
+                    >
+                      <Typography sx={{ 
+                        fontFamily: "Cooper Hewitt" ,
+                        fontSize: { md: "1.2rem" ,lg: "1.5rem"},
+                      }}>
+                        HOME
+                      </Typography>
+                    </AnchorLink>
+
+                    <AnchorLink
+                      to="#about"
+                      title="What is it?"
+                      className="anchor-link"
+                    >
+                      <Typography sx={{ 
+                        fontFamily: "Cooper Hewitt" ,
+                        fontSize: { md: "1.2rem" ,lg: "1.5rem"}
+                      }}>
+                        ABOUT
+                      </Typography>
+                    </AnchorLink>
+
+                    <AnchorLink
+                      to="#utility"
+                      title="Instant Utility"
+                      className="anchor-link"
+                    >
+                      <Typography sx={{ 
+                        fontFamily: "Cooper Hewitt" ,
+                        fontSize: { md: "1.2rem" ,lg: "1.5rem"}
+                      }}>
+                        INSTANT UTILITY
+                      </Typography>
+                    </AnchorLink>
+                  </Grid>
+
+                  {/* BOTTOM LEFT BORDER */}
+                  <Grid item md={12}>
+                    <Box
+                      sx={{
+                        height: 2,
+                        backgroundColor: "#FFF",
+                        marginX: 5,
+                        marginTop: 1
+                      }}
+                    ></Box>
+                  </Grid>
+                </Grid>
               </Grid>
 
               <Grid
                 item
-                md={0.5}
+                md={1}
                 sx={{
                   display: "flex",
                   justifyContent: "center",
-                  maxHeight: 75,
                 }}
               >
                 <StaticImage
@@ -102,30 +127,55 @@ const Navbar = () => {
                   alt="Muscle Shaker"
                   placeholder="blurred"
                   layout="constrained"
-                  height={75}
-                  width={50}
+                  height={100}
+                  width={66}
                 />
               </Grid>
 
               <Grid
                 item
-                md={5.75}
+                md={5.5}
                 sx={{
                   display: "flex",
                   justifyContent: "space-evenly",
                   textAlign: "center",
                   color: "#FFF",
+                  alignSelf: "center",
                   alignItems: "center",
-                  maxHeight: 75,
                 }}
               >
+                <Grid container spacing={0}>
+                  {/* TOP RIGHT border */}
+                  <Grid item md={12}>
+                    <Box
+                      sx={{
+                        height: 2,
+                        backgroundColor: "#FFF",
+                        marginX: 10,
+                        marginBottom: 1
+                      }}
+                    ></Box>
+                  </Grid>
+
+                  <Grid item md={12}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-around",
+                      textAlign: "center",
+                      color: "#FFF",
+                      alignItems: "center",
+                    }}
+                  >
                 <AnchorLink
                   to="#roadmap"
                   title="Roadmap"
                   className="anchor-link"
                 >
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
-                    Roadmap
+                  <Typography sx={{ 
+                    fontFamily: "Cooper Hewitt" ,
+                    fontSize: { md: "1.2rem" ,lg: "1.5rem"}
+                  }}>
+                    ROADMAP
                   </Typography>
                 </AnchorLink>
 
@@ -134,8 +184,11 @@ const Navbar = () => {
                   title="The Team" 
                   className="anchor-link"
                 >
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
-                    The Team
+                  <Typography sx={{ 
+                    fontFamily: "Cooper Hewitt" ,
+                    fontSize: { md: "1.2rem" ,lg: "1.5rem"}
+                  }}>
+                    THE TEAM
                   </Typography>
                 </AnchorLink>
 
@@ -144,8 +197,11 @@ const Navbar = () => {
                   title="Faqs" 
                   className="anchor-link"
                 >
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
-                    FAQs
+                  <Typography sx={{ 
+                    fontFamily: "Cooper Hewitt" ,
+                    fontSize: { md: "1.2rem" ,lg: "1.5rem"}
+                  }}>
+                    FAQS
                   </Typography>
                 </AnchorLink>
 
@@ -154,8 +210,6 @@ const Navbar = () => {
                   variant="contained"
                   sx={{
                     borderRadius: 10,
-                    paddingX: 2,
-                    marginY: 3,
                     color: "text.primary",
                     flex: "right",
                     border: 4,
@@ -164,41 +218,42 @@ const Navbar = () => {
                   href="https://www.google.com"
                 >
                   <Typography
-                    sx={{ fontFamily: "Cooper Hewitt", lineHeight: 1.2 }}
+                    sx={{ 
+                      fontFamily: "Cooper Hewitt", 
+                      lineHeight: 1.2 
+                    }}
                   >
-                    Click here to mint
+                    CLICK TO MINT
                   </Typography>
                 </Button>
-              </Grid>
+                  </Grid>
 
-              <Grid item md={6}>
-                <Box
-                  sx={{
-                    height: 2,
-                    backgroundColor: "#FFF",
-                    marginX: 5,
-                  }}
-                ></Box>
+                  {/* BOTTOM RIGHT BORDER */}
+                  <Grid item md={12}>
+                    <Box
+                      sx={{
+                        height: 2,
+                        backgroundColor: "#FFF",
+                        marginX: 5,
+                        marginTop: 1
+                      }}
+                    ></Box>
+                  </Grid>
+                </Grid>
+                
               </Grid>
-
-              <Grid item md={6}>
-                <Box
-                  sx={{
-                    height: 2,
-                    backgroundColor: "#FFF",
-                    marginX: 5,
-                  }}
-                ></Box>
-              </Grid>
+              
             </Grid>
           </Box>
-
+          
+          {/* MOBILE NAV */}
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
               justifyContent: "space-between",
               alignItems: "center",
+              paddingX: {xs: 2, sm: 5}
             }}
           >
             <StaticImage
@@ -234,49 +289,6 @@ const Navbar = () => {
               </Button>
             </div>
           </Box>
-
-          {/* 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map(page => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map(setting => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

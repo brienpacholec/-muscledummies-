@@ -51,6 +51,8 @@ const DummieHero = () => {
             alt="Muscle Shaker"
             placeholder="blurred"
             layout="constrained"
+            height={300}
+            width={281}
           />
         </div>
       </Box>
