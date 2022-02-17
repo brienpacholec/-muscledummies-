@@ -56,7 +56,11 @@ const Navbar = () => {
                   maxHeight: 75,
                 }}
               >
-                <AnchorLink to="#home" title="Home" className="anchor-link">
+                <AnchorLink 
+                  to="#home" 
+                  title="Home" 
+                  className="anchor-link" 
+                >
                   <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
                     Home
                   </Typography>
@@ -125,15 +129,23 @@ const Navbar = () => {
                   </Typography>
                 </AnchorLink>
 
-                <AnchorLink to="#team" title="The Team" className="anchor-link">
+                <AnchorLink 
+                  to="#team" 
+                  title="The Team" 
+                  className="anchor-link"
+                >
                   <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
                     The Team
                   </Typography>
                 </AnchorLink>
 
-                <AnchorLink to="#faqs" title="Faqs" className="anchor-link">
+                <AnchorLink 
+                  to="#faq" 
+                  title="Faqs" 
+                  className="anchor-link"
+                >
                   <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
-                    Faqs
+                    FAQs
                   </Typography>
                 </AnchorLink>
 

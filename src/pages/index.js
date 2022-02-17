@@ -12,6 +12,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter"
 import Button from "@mui/material/Button"
+import DummieAccordion from "../components/dummie_accordion";
 
 const IndexPage = () => {
   useEffect(() => {
@@ -64,7 +65,7 @@ const IndexPage = () => {
                 fontFamily: "Gagalin",
               }}
             >
-              Join&nbsp;
+              Join{" "}
             </Typography>
 
             <Typography
@@ -341,6 +342,143 @@ const IndexPage = () => {
         </Grid>
       </Container>
 
+      {/* Parallax Dummies */}
+      <Container
+        maxWidth={false}
+        disableGutters
+      >
+        <Grid
+        
+          container
+          sx={{
+            display: "flex",
+            placeItems: "center",
+          }}
+        >
+          {/* IMAGE 1 */}
+          <Grid 
+            item 
+            xs={6}
+            sm={4}
+            md={3}
+            sx={{
+              display: "flex", 
+              textAlign: "center", 
+              justifyContent: "center",
+              backgroundColor: "#69bfee",
+              padding: 3
+            }}
+          >
+            <StaticImage
+              src="../images/dummies/sandbag.png"
+              alt="Muscle Dummie Sandbag"
+              placeholder="blurred"
+              layout="constrained"
+              height={300}
+              width-={264}
+            />
+          </Grid>
+
+          {/* IMAGE 2 */}
+          <Grid 
+            item 
+            xs={6}
+            sm={4}
+            md={3}
+            sx={{
+              display: "flex", 
+              textAlign: "center", 
+              justifyContent: "center",
+              backgroundColor: "#55AE96",
+              padding: 3,
+              
+            }}
+          >
+            <StaticImage
+              src="../images/dummies/sandbag.png"
+              alt="Muscle Dummie Robot"
+              placeholder="blurred"
+              layout="constrained"
+              height={300}
+              width-={264}
+            />
+          </Grid>
+
+          {/* IMAGE 3 */}
+          <Grid 
+            item 
+            sm={4}
+            md={3}
+            sx={{
+              display: {xs: "none", sm: "flex"}, 
+              textAlign: "center", 
+              justifyContent: "center",
+              backgroundColor: "#D7C56E",
+              padding: 3
+            }}
+          >
+            <StaticImage
+              src="../images/dummies/sandbag.png"
+              alt="Muscle Dummie Sandbag"
+              placeholder="blurred"
+              layout="constrained"
+              height={300}
+              width-={264}
+            />
+          </Grid>
+
+          {/* IMAGE 4 */}
+          <Grid 
+            item 
+            md={3}
+            sx={{
+              display: {xs: "none", sm: "none", md: "flex"}, 
+              textAlign: "center", 
+              justifyContent: "center",
+              backgroundColor: "#BF2F40",
+              padding: 3
+            }}
+          >
+            <StaticImage
+              src="../images/dummies/sandbag.png"
+              alt="Muscle Dummie Robot"
+              placeholder="blurred"
+              layout="constrained"
+              height={300}
+              width-={264}
+            />
+          </Grid>
+
+          {/* TEXT */}
+          <Grid 
+            item 
+            lg={12}
+            sx={{
+              display: "flex", 
+              position: "absolute",
+              width: "-webkit-fill-available",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="h1"
+              sx={{
+                fontFamily: "Gagalin",
+                letterSpacing: 5,
+                fontSize: {xs: "2.5rem", sm: "4rem", md: "6rem"},
+                color: "#FFF",
+                textShadow: "0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 4px 5px 3px rgba(0,0,0,0.48)"
+              }}
+            >
+              MUSCLE DUMMIES
+            </Typography>
+          </Grid>
+
+        </Grid>
+        
+    
+      </Container>
+
       {/* Community */}
       <Container
         id="community"
@@ -382,18 +520,22 @@ const IndexPage = () => {
             </Typography>
             
             <Box sx={{display:"flex", placeItems: "center", justifyContent: "center"}}>
-              <StaticImage
-                src="../images/canva_components/discord.png"
-                alt="Muscle Shaker"
-                placeholder="blurred"
-                layout="constrained"
-                height={88}
-                width={100}
-              />
+
+              <Link to="https://discord.gg/CCyjkz8S6m">
+                <StaticImage
+                  src="../images/canva_components/discord.png"
+                  alt="Muscle Shaker"
+                  placeholder="blurred"
+                  layout="constrained"
+                  height={88}
+                  width={100}
+                />
+              </Link>
 
 
               <Button 
                 variant="outlined"
+                href="https://discord.gg/CCyjkz8S6m"
               >
                 <Typography
                   sx={{ fontFamily: "Gagalin" }}
@@ -428,103 +570,35 @@ const IndexPage = () => {
 
       </Container>
 
-      {/* Parallax Dummies */}
-
+      {/* FAQ */}
       <Container
-        id="parralax-dummie"
-        maxWidth={false}
-        disableGutters
+        id="faq"
+        sx={{ 
+          marginY: { xs: 2, md: 5 },
+        }}
+        data-aos="fade-up-right"
+        data-aos-duration="1500"
       >
-        <Grid
-        
-          container
+        <Typography
+          variant="h1"
           sx={{
-            display: "flex",
+            textAlign: "center",
+            fontFamily: "Gagalin",
+            letterSpacing: 10,
+            color: "primary.main",
+            textShadow: "0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 4px 5px 3px rgba(0,0,0,0.48)"
           }}
         >
-          <Grid 
-            item xs={3}
-            sx={{
-              display: "flex", 
-              textAlign: "center", 
-              justifyContent: "center",
-              backgroundColor: "#69bfee",
-              padding: 2
-            }}
-          >
-            <StaticImage
-              src="../images/dummies/sandbag.png"
-              alt="Muscle Dummie Sandbag"
-              placeholder="blurred"
-              layout="constrained"
-              height={300}
-              width-={264}
-            />
-          </Grid>
+          FAQ
+        </Typography>
 
-          <Grid 
-            item xs={3}
-            sx={{
-              display: "flex", 
-              textAlign: "center", 
-              justifyContent: "center",
-              backgroundColor: "#55AE96",
-              padding: 2
-            }}
-          >
-            <StaticImage
-              src="../images/dummies/robot.png"
-              alt="Muscle Dummie Robot"
-              placeholder="blurred"
-              layout="constrained"
-              height={282}
-              width-={264}
-            />
-          </Grid>
-
-          <Grid 
-            item xs={3}
-            sx={{
-              display: "flex", 
-              textAlign: "center", 
-              justifyContent: "center",
-              backgroundColor: "#D7C56E",
-              padding: 2
-            }}
-          >
-            <StaticImage
-              src="../images/dummies/sandbag.png"
-              alt="Muscle Dummie Sandbag"
-              placeholder="blurred"
-              layout="constrained"
-              height={300}
-              width-={264}
-            />
-          </Grid>
-
-          <Grid 
-            item xs={3}
-            sx={{
-              display: "flex", 
-              textAlign: "center", 
-              justifyContent: "center",
-              backgroundColor: "#BF2F40",
-              padding: 2
-            }}
-          >
-            <StaticImage
-              src="../images/dummies/robot.png"
-              alt="Muscle Dummie Robot"
-              placeholder="blurred"
-              layout="constrained"
-              height={282}
-              width-={264}
-            />
-          </Grid>
-
-        </Grid>
-
+        <hr/>
+        <DummieAccordion/>
+        <hr/>
       </Container>
+
+
+      
 
 
       <Linkbar />
