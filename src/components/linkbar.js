@@ -27,7 +27,7 @@ const Linkbar = () => {
         borderBottom: 5,
         borderColor: "#000",
         background:
-          "linear-gradient(0deg, rgba(3,18,25,1) 0%, rgba(0,91,113,1) 100%)",
+          "linear-gradient(0deg, rgba(3,18,25,1) 0%, rgba(88,204,32,1) 100%)",
       }}
     >
       <Container maxWidth="xl">
@@ -46,6 +46,7 @@ const Linkbar = () => {
                   fontSize: { xs: 30, md: 45 },
                   width: "fit-content",
                   marginX: 2,
+                  color: "#FFF"
                 }}
               />
             </IconButton>
@@ -63,6 +64,7 @@ const Linkbar = () => {
                   fontSize: { xs: 30, md: 45 },
                   width: "fit-content",
                   marginX: 2,
+                  color: "#FFF"
                 }}
               />
             </IconButton>
@@ -80,6 +82,7 @@ const Linkbar = () => {
                   fontSize: { xs: 30, md: 45 },
                   width: "fit-content",
                   marginX: 2,
+                  color: "#FFF"
                 }}
               />
             </IconButton>

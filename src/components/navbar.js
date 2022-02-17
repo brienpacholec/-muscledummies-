@@ -8,7 +8,7 @@ import Button from "@mui/material/Button"
 import { StaticImage } from "gatsby-plugin-image"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import Grid from "@mui/material/Grid"
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Navbar = () => {
   return (
@@ -57,15 +57,29 @@ const Navbar = () => {
                 }}
               >
                 <AnchorLink to="#home" title="Home" className="anchor-link">
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>Home</Typography>
-                </AnchorLink>
-                
-                <AnchorLink to="#about" title="What is it?" className="anchor-link">
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>What is it?</Typography>
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
+                    Home
+                  </Typography>
                 </AnchorLink>
 
-                <AnchorLink to="#utility" title="Instant Utility" className="anchor-link">
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>Instant Utility</Typography>
+                <AnchorLink
+                  to="#about"
+                  title="What is it?"
+                  className="anchor-link"
+                >
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
+                    About
+                  </Typography>
+                </AnchorLink>
+
+                <AnchorLink
+                  to="#utility"
+                  title="Instant Utility"
+                  className="anchor-link"
+                >
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
+                    Instant Utility
+                  </Typography>
                 </AnchorLink>
               </Grid>
 
@@ -79,11 +93,13 @@ const Navbar = () => {
                 }}
               >
                 <StaticImage
-                  id="md_nft_shaker"
+                  className="shake"
                   src="../images/logos/md_nft_shaker.png"
                   alt="Muscle Shaker"
                   placeholder="blurred"
                   layout="constrained"
+                  height={75}
+                  width={50}
                 />
               </Grid>
 
@@ -99,16 +115,26 @@ const Navbar = () => {
                   maxHeight: 75,
                 }}
               >
-                <AnchorLink to="#roadmap" title="Roadmap" className="anchor-link">
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>Roadmap</Typography>
+                <AnchorLink
+                  to="#roadmap"
+                  title="Roadmap"
+                  className="anchor-link"
+                >
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
+                    Roadmap
+                  </Typography>
                 </AnchorLink>
 
                 <AnchorLink to="#team" title="The Team" className="anchor-link">
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>The Team</Typography>
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
+                    The Team
+                  </Typography>
                 </AnchorLink>
 
                 <AnchorLink to="#faqs" title="Faqs" className="anchor-link">
-                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>Faqs</Typography>
+                  <Typography sx={{ fontFamily: "Cooper Hewitt" }}>
+                    Faqs
+                  </Typography>
                 </AnchorLink>
 
                 <Button
@@ -125,7 +151,11 @@ const Navbar = () => {
                   }}
                   href="https://www.google.com"
                 >
-                  <Typography sx={{ fontFamily: "Cooper Hewitt", lineHeight: 1.2}}>Click here to mint</Typography>
+                  <Typography
+                    sx={{ fontFamily: "Cooper Hewitt", lineHeight: 1.2 }}
+                  >
+                    Click here to mint
+                  </Typography>
                 </Button>
               </Grid>
 
@@ -184,7 +214,11 @@ const Navbar = () => {
                 href="https://www.google.com"
                 endIcon={<ShoppingCartIcon />}
               >
-                <Typography sx={{ fontFamily: "Cooper Hewitt", lineHeight: 1.2}}>Buy on OpenSea</Typography>
+                <Typography
+                  sx={{ fontFamily: "Cooper Hewitt", lineHeight: 1.2 }}
+                >
+                  Buy on OpenSea
+                </Typography>
               </Button>
             </div>
           </Box>

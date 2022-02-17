@@ -11,6 +11,7 @@ import "aos/dist/aos.css"
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter"
+import Button from "@mui/material/Button"
 
 const IndexPage = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      {/* HEADER and Dummie Hero */}
       <Container>
         <Grid
           container
@@ -59,7 +61,7 @@ const IndexPage = () => {
               display="inline"
               sx={{
                 color: "#FFF",
-                fontFamily: "Gagalin"
+                fontFamily: "Gagalin",
               }}
             >
               Join&nbsp;
@@ -70,7 +72,7 @@ const IndexPage = () => {
               display="inline"
               sx={{
                 color: "primary.main",
-                fontFamily: "Gagalin"
+                fontFamily: "Gagalin",
               }}
             >
               Muscle Dummies
@@ -82,7 +84,7 @@ const IndexPage = () => {
             xs={12}
             sx={{
               textAlign: "center",
-              marginY: {xs: 0, md: 2}
+              marginY: { xs: 0, md: 2 },
             }}
           >
             <Typography
@@ -100,6 +102,7 @@ const IndexPage = () => {
         <DummieHero />
       </Container>
 
+      {/* Welcome */}
       <Container
         sx={{ marginY: { xs: 2, md: 5 } }}
         data-aos="fade-up-left"
@@ -121,6 +124,7 @@ const IndexPage = () => {
             }}
           >
             <Typography
+              className="neon"
               variant="h3"
               sx={{
                 color: "primary.main",
@@ -148,7 +152,7 @@ const IndexPage = () => {
               variant="h5"
               sx={{
                 color: "#FFF",
-                fontSize: { xs: 16, md: "inherit" },
+                fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
                 fontFamily: "Cooper Hewitt",
               }}
             >
@@ -188,6 +192,7 @@ const IndexPage = () => {
         </Grid>
       </Container>
 
+      {/* About */}
       <Container
         id="about"
         sx={{ marginY: { xs: 2, md: 5 } }}
@@ -214,14 +219,14 @@ const IndexPage = () => {
           >
             <Box
               sx={{
-                display: {xs: "none", md: "initial"}
+                display: { xs: "none", md: "initial" },
               }}
             >
               <StaticImage
+                className="spin"
                 src="../images/canva_components/robot_circle.png"
-                alt="Muscle Shaker"
+                alt="Muscle Dummie"
                 placeholder="blurred"
-                layout="full_width"
               />
             </Box>
           </Grid>
@@ -274,13 +279,13 @@ const IndexPage = () => {
               display="inline"
               sx={{
                 color: "#FFF",
-                fontSize: { sm: "1rem", md: "1.2rem" },
+                fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
                 fontFamily: "Cooper Hewitt",
               }}
             >
               <FitnessCenterIcon
                 sx={{
-                  fontSize: { sm: "1rem", md: "1.2rem" },
+                  fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
                 }}
               />{" "}
               Muscle Dummies are a unique collection of 3,333 one-ofone NFTs on
@@ -292,18 +297,18 @@ const IndexPage = () => {
               display="inline"
               sx={{
                 color: "#edc443",
-                fontSize: { sm: "1rem", md: "1.2rem" },
+                fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
                 fontFamily: "Cooper Hewitt",
               }}
             >
-              blank{" "}
+              ETH{" "}
             </Typography>
             <Typography
               variant="h5"
               display="inline"
               sx={{
                 color: "#FFF",
-                fontSize: { sm: "1rem", md: "1.2rem" },
+                fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
                 fontFamily: "Cooper Hewitt",
               }}
             >
@@ -317,22 +322,210 @@ const IndexPage = () => {
               variant="h5"
               sx={{
                 color: "#FFF",
-                fontSize: { sm: "1rem", md: "1.2rem" },
+                fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
                 fontFamily: "Cooper Hewitt",
               }}
             >
               <FitnessCenterIcon
                 sx={{
-                  fontSize: { sm: "1rem", md: "1.2rem" },
+                  fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
                 }}
               />{" "}
               Muscle Dummies' mission is to build the best Health and Fitness
               community on the planet. we want to give back to the industry that
               has given so much to us
             </Typography>
+
+            <hr />
           </Grid>
         </Grid>
       </Container>
+
+      {/* Community */}
+      <Container
+        id="community"
+        sx={{ marginY: { xs: 2, md: 5 } }}
+        data-aos="fade-up-right"
+        data-aos-duration="1500"        
+      >
+
+        <Grid
+          container
+          sx={{
+            display: "flex",
+            marginTop: { xs: 0, md: 3 },
+            paddingX: 5,
+            borderLeft: "4mm ridge rgb(77, 255, 0, .6)",
+            borderRight: {xs: "4mm ridge rgb(77, 255, 0, .6)", md: "none"},
+            placeItems: "center",
+          }}
+        >
+          <Grid 
+            item xs={12} sm={12} md={8}
+            data-aos="fade-up"
+            data-aos-duration="1500"
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                color: "#FFF",
+                fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
+                fontFamily: "Cooper Hewitt",
+              }}
+            >
+              Joining the Muscle Dummies community means joining a family of
+              like-minded individuals who are passionate about their health
+              and fitness. This can be an individual who is new to the field
+              looking to transform their body, or a vet looking for an
+              opportunity to share their experiences, give advice, and help
+              guide others through their process.
+            </Typography>
+            
+            <Box sx={{display:"flex", placeItems: "center", justifyContent: "center"}}>
+              <StaticImage
+                src="../images/canva_components/discord.png"
+                alt="Muscle Shaker"
+                placeholder="blurred"
+                layout="constrained"
+                height={88}
+                width={100}
+              />
+
+
+              <Button 
+                variant="outlined"
+              >
+                <Typography
+                  sx={{ fontFamily: "Gagalin" }}
+                >
+                  JOIN OUR DISCORD
+                </Typography>
+              </Button>
+            </Box>
+            
+          </Grid>
+
+          <Grid 
+            item md={4}
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            sx={{textAlign: "center", display: {xs: "none", md: "flex"}, justifyContent: "center"}}
+          >
+            <StaticImage
+              className="tiltRight"
+              src="../images/logos/community_shaker.png"
+              alt="Muscle Shaker"
+              placeholder="blurred"
+              layout="constrained"
+              height={190}
+              width={200}
+            />
+
+          </Grid>
+
+
+        </Grid>
+
+      </Container>
+
+      {/* Parallax Dummies */}
+
+      <Container
+        id="parralax-dummie"
+        maxWidth={false}
+        disableGutters
+      >
+        <Grid
+        
+          container
+          sx={{
+            display: "flex",
+          }}
+        >
+          <Grid 
+            item xs={3}
+            sx={{
+              display: "flex", 
+              textAlign: "center", 
+              justifyContent: "center",
+              backgroundColor: "#69bfee",
+              padding: 2
+            }}
+          >
+            <StaticImage
+              src="../images/dummies/sandbag.png"
+              alt="Muscle Dummie Sandbag"
+              placeholder="blurred"
+              layout="constrained"
+              height={300}
+              width-={264}
+            />
+          </Grid>
+
+          <Grid 
+            item xs={3}
+            sx={{
+              display: "flex", 
+              textAlign: "center", 
+              justifyContent: "center",
+              backgroundColor: "#55AE96",
+              padding: 2
+            }}
+          >
+            <StaticImage
+              src="../images/dummies/robot.png"
+              alt="Muscle Dummie Robot"
+              placeholder="blurred"
+              layout="constrained"
+              height={282}
+              width-={264}
+            />
+          </Grid>
+
+          <Grid 
+            item xs={3}
+            sx={{
+              display: "flex", 
+              textAlign: "center", 
+              justifyContent: "center",
+              backgroundColor: "#D7C56E",
+              padding: 2
+            }}
+          >
+            <StaticImage
+              src="../images/dummies/sandbag.png"
+              alt="Muscle Dummie Sandbag"
+              placeholder="blurred"
+              layout="constrained"
+              height={300}
+              width-={264}
+            />
+          </Grid>
+
+          <Grid 
+            item xs={3}
+            sx={{
+              display: "flex", 
+              textAlign: "center", 
+              justifyContent: "center",
+              backgroundColor: "#BF2F40",
+              padding: 2
+            }}
+          >
+            <StaticImage
+              src="../images/dummies/robot.png"
+              alt="Muscle Dummie Robot"
+              placeholder="blurred"
+              layout="constrained"
+              height={282}
+              width-={264}
+            />
+          </Grid>
+
+        </Grid>
+
+      </Container>
+
 
       <Linkbar />
     </Layout>

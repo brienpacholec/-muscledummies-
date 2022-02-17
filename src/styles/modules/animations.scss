@@ -46,9 +46,9 @@
     }
 }
 
-#md_nft_shaker {
+.shake {
     &:hover, &:focus {
-        animation: shake 0.5s ease-in-out infinite;
+        animation: shake 1.5s ease-in-out infinite;
     }
 
     @keyframes shake {
@@ -64,4 +64,57 @@
         90% { transform: translate(1px, 2px) rotate(0deg); }
         100% { transform: translate(1px, -2px) rotate(-1deg); }
     }
+}
+
+.spin {
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @keyframes rotate{
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+// TODO - maybe keep maybe remove who know
+.anim_container {
+    background: transparent;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+}
+.anim_box {
+    width: inherit;
+    height: inherit;
+    animation: anime 3s ease;
+    /* animation-fill-mode: forwards; */
+}
+
+@keyframes anime {
+    0% {
+      width: 0%;
+      height: 0%;
+    }
+    25% {
+      width: 50%;
+      height: 50%;
+    }
+    50% {
+      width: 75%;
+      width: 75%;
+    }
+    100% {
+      width: 100%;
+      width: 100%;
+    }
+
 }

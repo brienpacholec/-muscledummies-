@@ -7,3 +7,16 @@ html,body
     scroll-behavior: smooth;
     // overflow-x: hidden; 
 }
+
+.neon {
+    color: rgb(77, 255, 0);
+    text-shadow: rgb(0 255 255) -1.31px 0px 0px, rgb(255 0 255) 1.31px 0px 0px;
+}
+
+.leftBorder{
+    border-left: 4mm ridge rgb(77, 255, 0, .6);
+}
+
+.tiltRight{
+    transform: rotate(15deg)
+}
