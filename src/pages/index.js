@@ -64,7 +64,7 @@ const IndexPage = () => {
                   fontFamily: "Cooper Hewitt",
                 }}
               >
-                READY TO TAKE OVER THE FITNESS INDUSTRY
+                READY TO CONQUER THE HEALTH AND FITNESS INDUSTRY
               </Typography>
             </Grid>
 
@@ -682,6 +682,260 @@ const IndexPage = () => {
       </Container>
 
       <br/>
+      
+      {/* INSTANT UTILITY */}
+      <Container
+        id="utility"
+        sx={{
+          marginY: { xs: 2, md: 5 },
+        }}
+
+      >
+        <Grid
+          container
+          sx={{
+            display: {sm: "flex", md: "none"},
+            marginTop: { xs: 0, md: 3 },
+            justifyContent: "center",
+          }}
+        >
+          <Grid
+            item
+            xs={12}
+            sx={{
+              textAlign: "center",
+            }}
+            data-aos="fade-right"
+            data-aos-duration="1500"
+          >
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "Gagalin",
+                color: "#FFF",
+                fontSize: { xs: "2rem", sm: "3.5rem" },
+              }}
+            >
+              BENEFITS AND UTILITY
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <Grid
+          container
+          sx={{
+            marginTop: { xs: 0, md: 3 },
+          }}
+          data-aos="fade-right"
+          data-aos-duration="1500"
+        >
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={4}
+            sx={{
+              textAlign: {sm: "left", md: "center"},
+              marginY: {sm: 2, md: 0}
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                color: "primary.main",
+              }}
+            >
+              IMMEDIATE ACCES TO OUR WORKOUT & MEAL PLAN VAULT
+            </Typography>
+
+            <Typography
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                color: "#FFF",
+              }}
+            >
+            Mint one of our Dummies, verify your wallet, and gain acces to our various workout and meal plans for individuals with a variety of goals - valued at more than the price to mint a Dummy. Only the first 3,333 minters will have immediete access!
+            </Typography>
+          </Grid>
+
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            sx={{
+              textAlign: "center",
+              display: {xs: "none", md: "unset"},
+            }}
+          >
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "Gagalin",
+                color: "#FFF",
+                fontSize: { xs: "2rem", sm: "3.5rem" },
+              }}
+            >
+              BENEFITS
+            </Typography>
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "Gagalin",
+                color: "primary.main",
+                fontSize: { xs: "2rem", sm: "3.5rem" },
+              }}
+            >
+              AND
+            </Typography>
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "Gagalin",
+                color: "#FFF",
+                fontSize: { xs: "2rem", sm: "3.5rem" },
+              }}
+            >
+              UTILITY
+            </Typography>
+          </Grid>
+
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={4}
+            sx={{
+              textAlign: {sm: "left", md: "center"},
+              marginY: {sm: 2, md: 0},
+              alignSelf: "center"
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                color: "#FFF",
+              }}
+            >
+               VALUE OF YOUR DUMMY
+            </Typography>
+
+            <Typography
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                color: "#FFF",
+              }}
+            >
+            Be one of the lucky few to mint our super rare NFTs or the legendary metallic Dummy to win exclusive prizes, such as ETH,  gym memeberships, and more!
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <Grid
+          container
+          sx={{
+            marginTop: { xs: 0, md: 3 },
+          }}
+          data-aos="fade-left"
+          data-aos-duration="1500"
+        >
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={4}
+            sx={{
+              textAlign: {sm: "left", md: "center"},
+              alignSelf: "center",
+              marginY: {sm: 2, md: 0},
+              
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                color: "#FFF",
+              }}
+            >
+               PRIVATE ACCESS
+            </Typography>
+
+            <Typography
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                color: "#FFF",
+              }}
+            >
+            Hold your Dummies to gain access to exclusive events, networking oppritunities, updated research, and private discord channels. 
+            </Typography>
+          </Grid>
+
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={4}
+            sx={{
+              textAlign: {sm: "left", md: "center"},
+              marginY: {sm: 2, md: 0},
+              
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                color: "#FFF",
+              }}
+            >
+               COMMUNITY
+            </Typography>
+
+            <Typography
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                color: "#FFF",
+              }}
+            >
+            Our community will be free to enter, but we will have another community for our true beleivers. This will be where you can talk and network with our collab influencers. This will also be where you will get private insights to our next steps.
+            </Typography>
+          </Grid>
+
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={4}
+            sx={{
+              textAlign: {sm: "left", md: "center"},
+              alignSelf: "center",
+              marginY: {sm: 2, md: 0},
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                color: "#FFF",
+              }}
+            >
+               OUR METAVERSE
+            </Typography>
+
+            <Typography
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                color: "#FFF",
+              }}
+            >
+            The Muscle Dummies metaverse will be something truly special. A place where you can earn $MUSL coins to redeem for Merch, Supps, Memberships + More!
+            </Typography>
+          </Grid>
+        </Grid>
+      </Container>
 
       {/* MUSCLE DUMMIES COMMUNITY */}
       <Container
@@ -865,105 +1119,48 @@ const IndexPage = () => {
         </Container>
       </Container>
 
-      {/* Benefits and Utility - HOLD */}
-      {/* <Container
-          id="utility"
-          sx={{ marginY: { xs: 2, md: 5 } }}
+      {/* ROADMAP */}
+      <Container
+        className="bg-4"
+        maxWidth={false}
+        disableGutters
+        sx={{
+          marginY: 0,
+          paddingBottom: 10,
+        }}
+      >
+        <Container
+          id="roadmap"
+          data-aos="fade-up-right" 
+          data-aos-duration="1500"
         >
           <Grid
             container
             sx={{
               display: "flex",
+              justifyContent: "center",
+              placeItems: "center",
             }}
           >
-
-            <Grid 
-              item 
-              xs={12} 
-              sm={4} 
+            <Grid
+              item
+              xs={12}
               sx={{
-                paddingRight: {xs: 0, md: 5}
+                textAlign: "center"
               }}
             >
               <Typography
-                variant="h4"
-                sx={{
-                  color: "#FFF",
-                  fontFamily: "Gagalin",
-                }}
-              >
-                BENEFITS
-              </Typography>
-
-              <Typography
-                variant="h4"
+                className="neon"
+                variant="h3"
                 sx={{
                   color: "primary.main",
+                  fontSize: { xs: "2rem", sm: "3rem" },
                   fontFamily: "Cooper Hewitt",
                 }}
               >
-                AND
+                ROADMAP
               </Typography>
 
-              <Typography
-                variant="h4"
-                sx={{
-                  color: "#FFF",
-                  fontFamily: "Gagalin",
-                }}
-              >
-                UTILITY
-              </Typography>
-            </Grid>
-
-            <Grid 
-              item 
-              xs={12} 
-              sm={4} 
-              sx={{
-                paddingRight: {xs: 0, md: 5}
-              }}
-            >
-              <Typography
-                variant="h5"
-                sx={{
-                  fontFamily: "Cooper Hewitt",
-                }}
-              >
-                OUR METAVERSE
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "Cooper Hewitt",
-                }}
-              >
-                The Muscle Dummies metaverse will be something truly special. A place where you can earn $MUSL coins to redeem for Merch, Supps, Memberships + More!
-              </Typography>
-            </Grid>
-
-            <Grid 
-              item 
-              xs={12} 
-              sm={4} 
-              sx={{
-                paddingRight: {xs: 0, md: 5}
-              }}
-            >
-              <Typography
-                variant="h5"
-                sx={{
-                  fontFamily: "Cooper Hewitt",
-                }}
-              >
-                VALUE OF YOUR DUMMY
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "Cooper Hewitt",
-                }}
-              >
-                Be one of the lucky few to mint our super rare NFTs or the legendary metallic Dummy to win exclusive prizes, such as ETH,  gym memeberships, and more!
-              </Typography>
             </Grid>
 
 
@@ -975,97 +1172,199 @@ const IndexPage = () => {
               display: "flex",
             }}
           >
-
-            <Grid 
-              item 
-              xs={12} 
-              sm={4} 
-              sx={{
-                paddingRight: {xs: 0, md: 5}
-              }}
+            {/* LEFT SIDE */}
+            <Grid
+              item
+              sm={12}
+              md={4}
             >
-              <Typography
-                sx={{
-                  color: "primary.main",
-                  fontFamily: "Cooper Hewitt",
-                }}
-              >
-                IMMEDIATE ACCES TO OUR WORKOUT & MEAL PLAN VAULT
-              </Typography>
+              <Box>
+                  <Typography
+                      className="neonPink"
+                      variant="h4"
+                      sx={{
+                        color: "#FFF",
+                        fontFamily: "Cooper Hewitt",
+                      }}
+                    >
+                      COLLECTION 1 - SELLOUT
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                    Once all of the 3,333 Dummies are sold out and revealed we will do our special giveaways to our lucky winners! All of our other minters will then be able to access our vault of plans to start their next Health and Fitness journey.
+                  </Typography>
+              </Box>
+
+              <Box>
+                <Typography
+                    className="neonPink"
+                    variant="h4"
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                    MUSCLE DUMMY MEETUP
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "#FFF",
+                    fontFamily: "Cooper Hewitt",
+                  }}
+                >
+                  The first Muscle Dummy Meetup location is TBA. We want to see where the majority of our holders are so we can have everyone in attendance. Exclusive merch, info, and networking opportunities will be available to all in attendance. 
+                </Typography>
+              </Box>
+
+              <Box>
+                <Typography
+                    className="neonPink"
+                    variant="h4"
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                    $MUSL, MERCH, SUPPS, MORE
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                    Development of the $MUSL coin that will be redeemable for all things Muscle Dummies. Merch store opens, Muscle Dummies' supplements released, BIG ANNOUNCEMENT SOON.
+                  </Typography>
+              </Box>
+
+              <Box>
+                <Typography
+                    className="neonPink"
+                    variant="h4"
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                    CHAPTER 2 ANNOUNCEMENT
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                  Chapter 2 will begin with two very big announcements that we at Muscle Dummies HQ cannot wait for! We imagine with the great success of the project, Chapter 2 will begin shortly after our sellout! Here, true believers of the BRAND will be rewarded greatly.                   </Typography>
+              </Box>
             </Grid>
 
-            <Grid 
-              item 
-              xs={12} 
-              sm={6} 
+
+            {/* MAP */}
+            <Grid
+              item
+              sm={12}
+              md={4}
               sx={{
-                paddingRight: {xs: 0, md: 5}
+                display: {sm: "none", md: "unset"}
               }}
             >
               <StaticImage
-                  src="../images/canva_components/robot_head.png"
-                  alt="Muscle Shaker"
-                  placeholder="blurred"
-                  layout="constrained"
-                  
-                />
+                src="../images/canva_components/roadmap.png"
+                alt="Muscle Shaker"
+                placeholder="blurred"
+                layout="constrained"
+              />
+
             </Grid>
 
-            <Grid 
-              item 
-              xs={12} 
-              sm={2} 
-              sx={{
-                paddingRight: {xs: 0, md: 5}
-              }}
+            {/* RIGHT SIDE */}
+            <Grid
+              item
+              sm={12}
+              md={4}
             >
-            </Grid>
+              
 
+              <Box>
+                <Typography
+                    className="neonPink"
+                    variant="h4"
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                    COMMUNITY ASSET AQUIREMENT
+                </Typography>
+                <Typography
+                  sx={{
+                    color: "#FFF",
+                    fontFamily: "Cooper Hewitt",
+                  }}
+                >
+                  Our first reinvestment will be to acquire land in the metaverse. This early reinvestment is necessary so we can start working with developers to get our Workout-to-Earn game rolling as quickly as possible!
+                </Typography>
+              </Box>
+
+              <Box>
+                <Typography
+                    className="neonPink"
+                    variant="h4"
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                    MUSCLE DUMMIES APP
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "#FFF",
+                    fontFamily: "Cooper Hewitt",
+                  }}
+                >
+                  Our Muscle Dummies official app will be a total healh and fitness app. Through devices such as the Apple Watch, you'll be able to track your workouts, macros, sleep, hydration, and everything else essential for maximizing your Health and Fitness potential and attaining your goals as quick as possible. You can do all this while earning $MUSL coins to redeem in our store!
+                </Typography>
+              </Box>
+
+              <Box>
+                <Typography
+                    className="neonPink"
+                    variant="h4"
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                    $MUSL, MERCH, SUPPS, MORE
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                    Development of the $MUSL coin that will be redeemable for all things Muscle Dummies. Merch store opens, Muscle Dummies' supplements released, BIG ANNOUNCEMENT SOON.
+                  </Typography>
+              </Box>
+
+            </Grid>
 
           </Grid>
 
-          <Grid
-            container
-            sx={{
-              display: "flex",
-            }}
-          >
+        </Container>
 
-            <Grid 
-              item 
-              xs={12} 
-              sm={4} 
-              sx={{
-                paddingRight: {xs: 0, md: 5}
-              }}
-            >
-            </Grid>
+      </Container>
 
-            <Grid 
-              item 
-              xs={12} 
-              sm={4} 
-              sx={{
-                paddingRight: {xs: 0, md: 5}
-              }}
-            >
-            </Grid>
-
-            <Grid 
-              item 
-              xs={12} 
-              sm={4} 
-              sx={{
-                paddingRight: {xs: 0, md: 5}
-              }}
-            >
-            </Grid>
-
-
-          </Grid>
-
-        </Container> */}
-      {/* Benefits and Utility - HOLD */}
 
 
       {/* FAQ */}
