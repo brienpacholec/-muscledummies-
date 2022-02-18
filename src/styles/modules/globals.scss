@@ -8,9 +8,35 @@ html,body
     // overflow-x: hidden; 
 }
 
+.bg-1 {
+    @media (min-width: 900px) {
+        background-image: url("/images/backgrounds/dummie-bg-4.png"); 
+    }
+    @media (max-width: 899px) {
+        background-image: url("/images/backgrounds/img1.png");
+    }
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-2 {
+    background-image: url("/images/backgrounds/img2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-3 {
+    background-image: url("/images/backgrounds/img1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 .neon {
     color: rgb(77, 255, 0);
     text-shadow: rgb(0 255 255) -1.31px 0px 0px, rgb(255 0 255) 1.31px 0px 0px;
+}
+
+.neonPink {
+    text-shadow: rgb(0 255 255) -1.61917px 0px 0px, rgb(255 0 255) 1.61917px 0px 0px;
 }
 
 .leftBorder{
