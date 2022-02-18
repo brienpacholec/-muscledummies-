@@ -10,7 +10,7 @@ html,body
 
 .bg-1 {
     @media (min-width: 900px) {
-        background-image: url("/images/backgrounds/dummie-bg-4.png"); 
+        background-image: url("/images/backgrounds/robot_reveal.gif"); 
     }
     @media (max-width: 899px) {
         background-image: url("/images/backgrounds/img1.png");
@@ -28,7 +28,6 @@ html,body
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 
 .neon {
     color: rgb(77, 255, 0);

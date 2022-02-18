@@ -20,11 +20,10 @@ const Navbar = () => {
         position: { xs: "static", md: "sticky" },
       }}
     >
-      <Container >
+      <Container>
         <Toolbar disableGutters>
-
           {/* DESKTOP NAV */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }  }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Grid container spacing={0}>
               <Grid
                 item
@@ -37,7 +36,6 @@ const Navbar = () => {
                   alignSelf: "center",
                 }}
               >
-
                 <Grid container spacing={0}>
                   <Grid item md={12}>
                     <Box
@@ -45,29 +43,30 @@ const Navbar = () => {
                         height: 2,
                         backgroundColor: "#FFF",
                         marginX: 10,
-                        marginBottom: 1
+                        marginBottom: 1,
                       }}
                     ></Box>
                   </Grid>
 
-                  <Grid item md={12}
+                  <Grid
+                    item
+                    md={12}
                     sx={{
                       display: "flex",
                       justifyContent: "space-around",
                       textAlign: "center",
                       color: "#FFF",
                       alignSelf: "center",
+                      paddingTop: 1
                     }}
                   >
-                    <AnchorLink 
-                      to="#home" 
-                      title="Home" 
-                      className="anchor-link" 
-                    >
-                      <Typography sx={{ 
-                        fontFamily: "Cooper Hewitt" ,
-                        fontSize: { md: "1.2rem" ,lg: "1.5rem"},
-                      }}>
+                    <AnchorLink to="#home" title="Home" className="anchor-link">
+                      <Typography
+                        sx={{
+                          fontFamily: "Cooper Hewitt",
+                          fontSize: { md: "1.2rem", lg: "1.5rem" },
+                        }}
+                      >
                         HOME
                       </Typography>
                     </AnchorLink>
@@ -77,10 +76,12 @@ const Navbar = () => {
                       title="What is it?"
                       className="anchor-link"
                     >
-                      <Typography sx={{ 
-                        fontFamily: "Cooper Hewitt" ,
-                        fontSize: { md: "1.2rem" ,lg: "1.5rem"}
-                      }}>
+                      <Typography
+                        sx={{
+                          fontFamily: "Cooper Hewitt",
+                          fontSize: { md: "1.2rem", lg: "1.5rem" },
+                        }}
+                      >
                         ABOUT
                       </Typography>
                     </AnchorLink>
@@ -90,10 +91,12 @@ const Navbar = () => {
                       title="Instant Utility"
                       className="anchor-link"
                     >
-                      <Typography sx={{ 
-                        fontFamily: "Cooper Hewitt" ,
-                        fontSize: { md: "1.2rem" ,lg: "1.5rem"}
-                      }}>
+                      <Typography
+                        sx={{
+                          fontFamily: "Cooper Hewitt",
+                          fontSize: { md: "1.2rem", lg: "1.5rem" },
+                        }}
+                      >
                         INSTANT UTILITY
                       </Typography>
                     </AnchorLink>
@@ -106,7 +109,7 @@ const Navbar = () => {
                         height: 2,
                         backgroundColor: "#FFF",
                         marginX: 5,
-                        marginTop: 1
+                        marginTop: 1,
                       }}
                     ></Box>
                   </Grid>
@@ -152,80 +155,85 @@ const Navbar = () => {
                         height: 2,
                         backgroundColor: "#FFF",
                         marginX: 10,
-                        marginBottom: 1
+                        marginBottom: 1,
                       }}
                     ></Box>
                   </Grid>
 
-                  <Grid item md={12}
+                  <Grid
+                    item
+                    md={12}
                     sx={{
                       display: "flex",
                       justifyContent: "space-around",
                       textAlign: "center",
                       color: "#FFF",
                       alignItems: "center",
+                      paddingTop: 1,
                     }}
                   >
-                <AnchorLink
-                  to="#roadmap"
-                  title="Roadmap"
-                  className="anchor-link"
-                >
-                  <Typography sx={{ 
-                    fontFamily: "Cooper Hewitt" ,
-                    fontSize: { md: "1.2rem" ,lg: "1.5rem"}
-                  }}>
-                    ROADMAP
-                  </Typography>
-                </AnchorLink>
+                    <AnchorLink
+                      to="#roadmap"
+                      title="Roadmap"
+                      className="anchor-link"
+                    >
+                      <Typography
+                        sx={{
+                          fontFamily: "Cooper Hewitt",
+                          fontSize: { md: "1.2rem", lg: "1.5rem" },
+                        }}
+                      >
+                        ROADMAP
+                      </Typography>
+                    </AnchorLink>
 
-                <AnchorLink 
-                  to="#team" 
-                  title="The Team" 
-                  className="anchor-link"
-                >
-                  <Typography sx={{ 
-                    fontFamily: "Cooper Hewitt" ,
-                    fontSize: { md: "1.2rem" ,lg: "1.5rem"}
-                  }}>
-                    THE TEAM
-                  </Typography>
-                </AnchorLink>
+                    <AnchorLink
+                      to="#team"
+                      title="The Team"
+                      className="anchor-link"
+                    >
+                      <Typography
+                        sx={{
+                          fontFamily: "Cooper Hewitt",
+                          fontSize: { md: "1.2rem", lg: "1.5rem" },
+                        }}
+                      >
+                        THE TEAM
+                      </Typography>
+                    </AnchorLink>
 
-                <AnchorLink 
-                  to="#faq" 
-                  title="Faqs" 
-                  className="anchor-link"
-                >
-                  <Typography sx={{ 
-                    fontFamily: "Cooper Hewitt" ,
-                    fontSize: { md: "1.2rem" ,lg: "1.5rem"}
-                  }}>
-                    FAQS
-                  </Typography>
-                </AnchorLink>
+                    <AnchorLink to="#faq" title="Faqs" className="anchor-link">
+                      <Typography
+                        sx={{
+                          fontFamily: "Cooper Hewitt",
+                          fontSize: { md: "1.2rem", lg: "1.5rem" },
+                        }}
+                      >
+                        FAQS
+                      </Typography>
+                    </AnchorLink>
 
-                <Button
-                  id="mint-btn"
-                  variant="contained"
-                  sx={{
-                    borderRadius: 10,
-                    color: "text.primary",
-                    flex: "right",
-                    border: 4,
-                    borderColor: "#FFF",
-                  }}
-                  href="https://www.google.com"
-                >
-                  <Typography
-                    sx={{ 
-                      fontFamily: "Cooper Hewitt", 
-                      lineHeight: 1.2 
-                    }}
-                  >
-                    CLICK TO MINT
-                  </Typography>
-                </Button>
+                    <Button
+                      id="mint-btn"
+                      variant="contained"
+                      sx={{
+                        borderRadius: 10,
+                        color: "text.primary",
+                        flex: "right",
+                        border: 4,
+                        borderColor: "#FFF",
+                      }}
+                      href="https://www.google.com"
+                    >
+                      <Typography
+                        sx={{
+                          fontFamily: "Cooper Hewitt",
+                          lineHeight: 1,
+                        }}
+                      >
+                        CLICK TO MINT
+                      </Typography>
+                    </Button>
                   </Grid>
 
                   {/* BOTTOM RIGHT BORDER */}
@@ -235,17 +243,15 @@ const Navbar = () => {
                         height: 2,
                         backgroundColor: "#FFF",
                         marginX: 5,
-                        marginTop: 1
+                        marginTop: 1,
                       }}
                     ></Box>
                   </Grid>
                 </Grid>
-                
               </Grid>
-              
             </Grid>
           </Box>
-          
+
           {/* MOBILE NAV */}
           <Box
             sx={{
@@ -253,7 +259,7 @@ const Navbar = () => {
               display: { xs: "flex", md: "none" },
               justifyContent: "space-between",
               alignItems: "center",
-              paddingX: {xs: 2, sm: 5}
+              paddingX: { xs: 2, sm: 5 },
             }}
           >
             <StaticImage

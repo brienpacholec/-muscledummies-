@@ -46,7 +46,7 @@ const Linkbar = () => {
                   fontSize: { xs: 30, md: 45 },
                   width: "fit-content",
                   marginX: 2,
-                  color: "#FFF"
+                  color: "#FFF",
                 }}
               />
             </IconButton>
@@ -64,7 +64,7 @@ const Linkbar = () => {
                   fontSize: { xs: 30, md: 45 },
                   width: "fit-content",
                   marginX: 2,
-                  color: "#FFF"
+                  color: "#FFF",
                 }}
               />
             </IconButton>
@@ -82,7 +82,7 @@ const Linkbar = () => {
                   fontSize: { xs: 30, md: 45 },
                   width: "fit-content",
                   marginX: 2,
-                  color: "#FFF"
+                  color: "#FFF",
                 }}
               />
             </IconButton>

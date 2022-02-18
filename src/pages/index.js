@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Container from "@mui/material/Container"
 import Linkbar from "../components/linkbar"
@@ -12,7 +12,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter"
 import Button from "@mui/material/Button"
-import DummieAccordion from "../components/dummie_accordion";
+import DummieAccordion from "../components/dummie_accordion"
 
 const IndexPage = () => {
   useEffect(() => {
@@ -22,6 +22,11 @@ const IndexPage = () => {
     AOS.refresh()
   }, [])
 
+  const [activeImage1, setActiveImage1]= useState(false);
+  const [activeImage2, setActiveImage2]= useState(false);
+  const [activeImage3, setActiveImage3]= useState(false);
+  const [activeImage4, setActiveImage4]= useState(false);
+
   return (
     <Layout>
       {/* HEADER & WELCOME */}
@@ -30,11 +35,15 @@ const IndexPage = () => {
         maxWidth={false}
         disableGutters
         sx={{
-          marginY: 0
+          marginTop:{xs: 0, md: -30},
         }}
       >
         {/* HEADER */}
-        <Container>
+        <Container
+          sx={{
+            paddingTop:{xs: 0, md: 30},
+          }}
+        >
           <Grid
             container
             spacing={0}
@@ -117,7 +126,7 @@ const IndexPage = () => {
           data-aos="fade-up-left"
           data-aos-duration="1500"
           sx={{
-            paddingY: 5
+            paddingY: 5,
           }}
         >
           <Grid
@@ -168,9 +177,9 @@ const IndexPage = () => {
                   fontFamily: "Cooper Hewitt",
                 }}
               >
-                Join this exclusive NFT project that offers instant utility valued
-                higher than the cost to mint, one of a kind art, and great
-                long-term benefits!
+                Join this exclusive NFT project that offers instant utility
+                valued higher than the cost to mint, one of a kind art, and
+                great long-term benefits!
               </Typography>
             </Grid>
           </Grid>
@@ -203,145 +212,197 @@ const IndexPage = () => {
             </Grid>
           </Grid>
         </Container>
-
       </Container>
 
       {/* Parallax Dummies */}
-      <Container
-          maxWidth={false}
-          disableGutters
+      <Container maxWidth={false} disableGutters>
+        <Grid
+          container
+          sx={{
+            display: "flex",
+            placeItems: "center",
+          }}
         >
+          {/* IMAGE 1 */}
           <Grid
-            container
+            item
+            xs={6}
+            sm={4}
+            md={3}
             sx={{
               display: "flex",
-              placeItems: "center",
+              textAlign: "center",
+              justifyContent: "center",
+              backgroundColor: "#69bfee",
+              padding: 3,
             }}
           >
-            {/* IMAGE 1 */}
-            <Grid 
-              item 
-              xs={6}
-              sm={4}
-              md={3}
-              sx={{
-                display: "flex", 
-                textAlign: "center", 
-                justifyContent: "center",
-                backgroundColor: "#69bfee",
-                padding: 3
-              }}
-            >
-              <StaticImage
-                src="../images/dummies/sandbag.png"
-                alt="Muscle Dummie Sandbag"
-                placeholder="blurred"
-                layout="constrained"
-                height={300}
-                width-={264}
-              />
-            </Grid>
 
-            {/* IMAGE 2 */}
-            <Grid 
-              item 
-              xs={6}
-              sm={4}
-              md={3}
-              sx={{
-                display: "flex", 
-                textAlign: "center", 
-                justifyContent: "center",
-                backgroundColor: "#55AE96",
-                padding: 3,
-                
-              }}
-            >
-              <StaticImage
-                src="../images/dummies/sandbag.png"
-                alt="Muscle Dummie Robot"
-                placeholder="blurred"
-                layout="constrained"
-                height={300}
-                width-={264}
-              />
-            </Grid>
-
-            {/* IMAGE 3 */}
-            <Grid 
-              item 
-              sm={4}
-              md={3}
-              sx={{
-                display: {xs: "none", sm: "flex"}, 
-                textAlign: "center", 
-                justifyContent: "center",
-                backgroundColor: "#D7C56E",
-                padding: 3
-              }}
-            >
-              <StaticImage
-                src="../images/dummies/sandbag.png"
-                alt="Muscle Dummie Sandbag"
-                placeholder="blurred"
-                layout="constrained"
-                height={300}
-                width-={264}
-              />
-            </Grid>
-
-            {/* IMAGE 4 */}
-            <Grid 
-              item 
-              md={3}
-              sx={{
-                display: {xs: "none", sm: "none", md: "flex"}, 
-                textAlign: "center", 
-                justifyContent: "center",
-                backgroundColor: "#BF2F40",
-                padding: 3
-              }}
-            >
-              <StaticImage
-                src="../images/dummies/sandbag.png"
-                alt="Muscle Dummie Robot"
-                placeholder="blurred"
-                layout="constrained"
-                height={300}
-                width-={264}
-              />
-            </Grid>
-
-            {/* TEXT */}
-            <Grid 
-              item 
-              lg={12}
-              sx={{
-                display: "flex", 
-                position: "absolute",
-                width: "-webkit-fill-available",
-                justifyContent: "center",
-              }}
-            >
-              <Typography
-                variant="h1"
-                sx={{
-                  fontFamily: "Gagalin",
-                  letterSpacing: 5,
-                  fontSize: {xs: "2.5rem", sm: "4rem", md: "6rem"},
-                  color: "#FFF",
-                  textShadow: "0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 4px 5px 3px rgba(0,0,0,0.48)"
-                }}
-              >
-                MUSCLE DUMMIES
-              </Typography>
-            </Grid>
-
+            <div onMouseOver={()=> setActiveImage1("robot")} onMouseLeave={() => setActiveImage1("sandbag")}>
+              {activeImage1 === "robot" ? 
+                <StaticImage
+                  src="../images/dummies/robot.png"
+                  alt="Muscle Dummie Robot"
+                  placeholder="blurred"
+                  layout="constrained"
+                  height={300}
+                  width-={281}
+                />
+                : 
+                <StaticImage
+                    id="hover"
+                    src="../images/dummies/sandbag.png"
+                    alt="Muscle Dummie Sandbag"
+                    placeholder="blurred"
+                    layout="constrained"
+                    height={300}
+                    width-={281}
+                  />
+              }
+            </div>
+            
           </Grid>
-          
-      
-      </Container>
 
+          {/* IMAGE 2 */}
+          <Grid
+            item
+            xs={6}
+            sm={4}
+            md={3}
+            sx={{
+              display: "flex",
+              textAlign: "center",
+              justifyContent: "center",
+              backgroundColor: "#55AE96",
+              padding: 3,
+            }}
+          >
+
+            <div onMouseOver={()=> setActiveImage2("sandbag")} onMouseLeave={() => setActiveImage2("robot")}>
+              {activeImage2 === "sandbag" ? 
+                <StaticImage
+                  src="../images/dummies/sandbag.png"
+                  alt="Muscle Dummie Sandbag"
+                  placeholder="blurred"
+                  layout="constrained"
+                  height={300}
+                  width-={281}
+                />
+                : 
+                <StaticImage
+                    id="hover"
+                    src="../images/dummies/robot.png"
+                    alt="Muscle Dummie Robot"
+                    placeholder="blurred"
+                    layout="constrained"
+                    height={300}
+                    width-={281}
+                  />
+              }
+            </div>
+           
+          </Grid>
+
+          {/* IMAGE 3 */}
+          <Grid
+            item
+            sm={4}
+            md={3}
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              textAlign: "center",
+              justifyContent: "center",
+              backgroundColor: "#D7C56E",
+              padding: 3,
+            }}
+          >
+             <div onMouseOver={()=> setActiveImage3("robot")} onMouseLeave={() => setActiveImage3("sandbag")}>
+              {activeImage3 === "robot" ? 
+                <StaticImage
+                  src="../images/dummies/robot.png"
+                  alt="Muscle Dummie Robot"
+                  placeholder="blurred"
+                  layout="constrained"
+                  height={300}
+                  width-={281}
+                />
+                : 
+                <StaticImage
+                    id="hover"
+                    src="../images/dummies/sandbag.png"
+                    alt="Muscle Dummie Sandbag"
+                    placeholder="blurred"
+                    layout="constrained"
+                    height={300}
+                    width-={281}
+                  />
+              }
+            </div>
+          </Grid>
+
+          {/* IMAGE 4 */}
+          <Grid
+            item
+            md={3}
+            sx={{
+              display: { xs: "none", sm: "none", md: "flex" },
+              textAlign: "center",
+              justifyContent: "center",
+              backgroundColor: "#BF2F40",
+              padding: 3,
+            }}
+          >
+             <div onMouseOver={()=> setActiveImage4("sandbag")} onMouseLeave={() => setActiveImage4("robot")}>
+              {activeImage4 === "sandbag" ? 
+                <StaticImage
+                  src="../images/dummies/sandbag.png"
+                  alt="Muscle Dummie Sandbag"
+                  placeholder="blurred"
+                  layout="constrained"
+                  height={300}
+                  width-={281}
+                />
+                : 
+                <StaticImage
+                    id="hover"
+                    src="../images/dummies/robot.png"
+                    alt="Muscle Dummie Robot"
+                    placeholder="blurred"
+                    layout="constrained"
+                    height={300}
+                    width-={281}
+                  />
+              }
+            </div>
+          </Grid>
+
+          {/* TEXT */}
+          <Grid
+            item
+            lg={12}
+            sx={{
+              display: "flex",
+              position: "absolute",
+              width: "-webkit-fill-available",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="h1"
+              sx={{
+                fontFamily: "Gagalin",
+                letterSpacing: 5,
+                fontSize: { xs: "2.5rem", sm: "4rem", md: "6rem" },
+                color: "#FFF",
+                textShadow:
+                  "0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 4px 5px 3px rgba(0,0,0,0.48)",
+              }}
+            >
+              MUSCLE DUMMIES
+            </Typography>
+          </Grid>
+        </Grid>
+      </Container>
 
       {/* ABOUT & COMMUNITY */}
       <Container
@@ -349,15 +410,11 @@ const IndexPage = () => {
         maxWidth={false}
         disableGutters
         sx={{
-          marginY: 0
+          marginY: 0,
         }}
       >
         {/* About */}
-        <Container
-          id="about"
-          data-aos="fade-up-right"
-          data-aos-duration="1500"
-        >
+        <Container id="about" data-aos="fade-up-right" data-aos-duration="1500">
           <Grid
             container
             sx={{
@@ -448,12 +505,12 @@ const IndexPage = () => {
                     fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
                   }}
                 />{" "}
-                Muscle Dummies are a unique collection of 3,333 one-ofone NFTs on
-                the ETH blockchain
+                Muscle Dummies are a unique collection of 3,333 one-ofone NFTs
+                on the ETH blockchain
               </Typography>
 
               <br />
-              
+
               <Typography
                 variant="h5"
                 sx={{
@@ -468,8 +525,8 @@ const IndexPage = () => {
                   }}
                 />{" "}
                 Muscle Dummies' mission is to build the best Health and Fitness
-                community on the planet. we want to give back to the industry that
-                has given so much to us
+                community on the planet. we want to give back to the industry
+                that has given so much to us
               </Typography>
 
               <hr />
@@ -477,12 +534,8 @@ const IndexPage = () => {
           </Grid>
         </Container>
 
-         {/* Community */}
-        <Container
-          id="community"
-          sx={{ marginY: { xs: 2, md: 5 } }}
-        >
-
+        {/* Community */}
+        <Container id="community" sx={{ marginY: { xs: 2, md: 5 } }}>
           <Grid
             container
             sx={{
@@ -490,27 +543,28 @@ const IndexPage = () => {
               marginTop: { xs: 0, md: 3 },
               paddingX: 5,
               borderLeft: "4mm ridge rgb(77, 255, 0, .6)",
-              borderRight: {xs: "4mm ridge rgb(77, 255, 0, .6)", md: "none"},
+              borderRight: { xs: "4mm ridge rgb(77, 255, 0, .6)", md: "none" },
               placeItems: "center",
             }}
           >
-            <Grid 
-              item 
-              xs={12} 
-              sm={12} 
+            <Grid
+              item
+              xs={12}
+              sm={12}
               md={8}
               sx={{
-                paddingRight: {xs: 0, md: 5}
+                paddingRight: { xs: 0, md: 5 },
               }}
               data-aos="fade-up"
-              data-aos-duration="1500"   
+              data-aos-duration="1500"
             >
               <Typography
                 variant="h5"
                 sx={{
                   color: "#FFF",
-                  fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
+                  fontSize: { xs: 16, sm: "1rem", md: "1.3rem" },
                   fontFamily: "Cooper Hewitt",
+                  lineHeight: 2
                 }}
               >
                 Joining the Muscle Dummies community means joining a family of
@@ -520,15 +574,14 @@ const IndexPage = () => {
                 opportunity to share their experiences, give advice, and help
                 guide others through their process.
               </Typography>
-              
-              <Box 
+
+              <Box
                 sx={{
-                  display:"flex", 
-                  placeItems: "center", 
-                  justifyContent: "space-evenly"
+                  display: "flex",
+                  placeItems: "center",
+                  justifyContent: "space-evenly",
                 }}
               >
-
                 <Link to="https://discord.gg/CCyjkz8S6m">
                   <StaticImage
                     src="../images/canva_components/discord.png"
@@ -540,45 +593,43 @@ const IndexPage = () => {
                   />
                 </Link>
 
-
-                <Button 
+                <Button
                   variant="outlined"
                   href="https://discord.gg/CCyjkz8S6m"
                   sx={{
                     textAlign: "center",
-                    padding: {xs: 0.5, sm: 1}
+                    padding: { xs: 0.5, sm: 1 },
                   }}
                 >
                   <Typography
                     variant="h4"
-                    sx={{ 
+                    sx={{
                       fontFamily: "Gagalin",
-                      fontSize: {xs: "1rem", sm: "2rem", md: "3rem"}
+                      fontSize: { xs: "1rem", sm: "2rem", md: "2rem" },
                     }}
                   >
                     JOIN OUR DISCORD
                   </Typography>
                 </Button>
               </Box>
-              
             </Grid>
 
-            <Grid 
-              item md={4}
+            <Grid
+              item
+              md={4}
               data-aos="fade-up"
               data-aos-duration="1500"
               sx={{
-                textAlign: "center", 
-                display: {xs: "none", md: "flex"}, 
-                justifyContent: "center"
+                textAlign: "center",
+                display: { xs: "none", md: "flex" },
+                justifyContent: "center",
               }}
             >
-
               <Box
                 sx={{
                   border: "5px solid",
-                  borderColor: "primary.main",
-                  padding: 0.5
+                  borderColor: "#FFF",
+                  padding: 0.5,
                 }}
               >
                 <Box
@@ -586,67 +637,51 @@ const IndexPage = () => {
                     backgroundColor: "transparent",
                   }}
                 >
-
-                <Grid
-                  container
-                  sx={{
-                    display: "flex",
-                  }}
-                >
-                  <Grid 
-                    item md={12}
+                  <Grid
+                    container
                     sx={{
-                      paddingTop: 2
+                      display: "flex",
                     }}
                   >
-                    <StaticImage
-                      className="instant_shake"
-                      src="../images/logos/md_nft_shaker.png"
-                      alt="Muscle Shaker"
-                      placeholder="blurred"
-                      layout="constrained"
-                      height={200}
-                      width={132}
-                    />
-
-                  </Grid>
-
-                  <Grid 
-                    item md={12}
-                  >
-                    <Typography
+                    <Grid
+                      item
+                      md={12}
                       sx={{
-                        fontFamily: "Gagalin",
-                        letterSpacing: 5,
-                        color: "#FFF",
-                        fontSize: {md: "2rem"}
+                        paddingTop: 2,
                       }}
                     >
-                      COMMUNITY
-                    </Typography>
+                      <StaticImage
+                        className="instant_shake"
+                        src="../images/logos/md_nft_shaker.png"
+                        alt="Muscle Shaker"
+                        placeholder="blurred"
+                        layout="constrained"
+                        height={200}
+                        width={132}
+                      />
+                    </Grid>
 
+                    <Grid item md={12}>
+                      <Typography
+                        sx={{
+                          fontFamily: "Gagalin",
+                          letterSpacing: 10,
+                          color: "#FFF",
+                          fontSize: { md: "3rem" },
+                        }}
+                      >
+                        COMMUNITY
+                      </Typography>
+                    </Grid>
                   </Grid>
-                      
-                    
-
-                </Grid>
-
                 </Box>
-
               </Box>
-              
-
             </Grid>
-
-
           </Grid>
-
         </Container>
-
       </Container>
 
-     
-      
+      <br/>
 
       {/* MUSCLE DUMMIES COMMUNITY */}
       <Container
@@ -660,11 +695,10 @@ const IndexPage = () => {
       >
         <Container
           id=""
-          sx={{ 
+          sx={{
             marginY: { xs: 2, md: 5 },
           }}
         >
-
           <Grid
             container
             sx={{
@@ -699,23 +733,20 @@ const IndexPage = () => {
               xs={12}
               sx={{
                 textAlign: "center",
-                marginBottom: {xs: 2, md: 4},
+                marginBottom: { xs: 2, md: 4 },
               }}
               data-aos="zoom-in"
               data-aos-duration="3000"
             >
-               <StaticImage
-                  src="../images/canva_components/holders_trainings.png"
-                  alt="Muscle Shaker"
-                  placeholder="blurred"
-                  layout="constrained"
-                  height={91}
-                  width={300}
-                />
-              
+              <StaticImage
+                src="../images/canva_components/holders_trainings.png"
+                alt="Muscle Shaker"
+                placeholder="blurred"
+                layout="constrained"
+                height={91}
+                width={300}
+              />
             </Grid>
-
-            
 
             <Grid
               className="neonPink"
@@ -733,7 +764,7 @@ const IndexPage = () => {
                 sx={{
                   fontFamily: "Cooper Hewitt",
                   color: "#FFF",
-                  fontSize: {xs: "1.5rem", sm: "1.9rem", md: "3rem"}
+                  fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
                 }}
               >
                 Physical Training
@@ -756,7 +787,7 @@ const IndexPage = () => {
                 sx={{
                   fontFamily: "Cooper Hewitt",
                   color: "#FFF",
-                  fontSize: {xs: "1.5rem", sm: "1.9rem", md: "3rem"}
+                  fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
                 }}
               >
                 Mental Training
@@ -778,7 +809,7 @@ const IndexPage = () => {
                 sx={{
                   fontFamily: "Cooper Hewitt",
                   color: "#FFF",
-                  fontSize: {xs: "1.5rem", sm: "1.9rem", md: "3rem"}
+                  fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
                 }}
               >
                 Mindset Training
@@ -791,7 +822,7 @@ const IndexPage = () => {
               xs={6}
               sx={{
                 textAlign: "center",
-                marginTop: 3
+                marginTop: 3,
               }}
               data-aos="fade-right"
               data-aos-duration="1500"
@@ -801,7 +832,7 @@ const IndexPage = () => {
                 sx={{
                   fontFamily: "Cooper Hewitt",
                   color: "#FFF",
-                  fontSize: {xs: "1.5rem", sm: "1.9rem", md: "3rem"}
+                  fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
                 }}
               >
                 Nutritional Training
@@ -814,7 +845,7 @@ const IndexPage = () => {
               xs={6}
               sx={{
                 textAlign: "center",
-                marginTop: 3
+                marginTop: 3,
               }}
               data-aos="fade-left"
               data-aos-duration="1500"
@@ -824,22 +855,18 @@ const IndexPage = () => {
                 sx={{
                   fontFamily: "Cooper Hewitt",
                   color: "#FFF",
-                  fontSize: {xs: "1.5rem", sm: "1.9rem", md: "3rem"}
+                  fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
                 }}
               >
                 Spiritual Training
               </Typography>
             </Grid>
-
           </Grid>
-
-
         </Container>
       </Container>
 
-
       {/* Benefits and Utility - HOLD */}
-        {/* <Container
+      {/* <Container
           id="utility"
           sx={{ marginY: { xs: 2, md: 5 } }}
         >
@@ -1040,10 +1067,11 @@ const IndexPage = () => {
         </Container> */}
       {/* Benefits and Utility - HOLD */}
 
+
       {/* FAQ */}
       <Container
         id="faq"
-        sx={{ 
+        sx={{
           marginY: { xs: 2, md: 5 },
         }}
         data-aos="fade-up-right"
@@ -1056,20 +1084,19 @@ const IndexPage = () => {
             fontFamily: "Gagalin",
             letterSpacing: 10,
             color: "primary.main",
-            textShadow: "0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 4px 5px 3px rgba(0,0,0,0.48)"
+            textShadow:
+              "0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 4px 5px 3px rgba(0,0,0,0.48)",
           }}
         >
           FAQ
         </Typography>
 
-        <hr/>
-        <DummieAccordion/>
-        <hr/>
+        <hr />
+        <DummieAccordion />
+        <hr />
       </Container>
 
-
-      
-
+     
 
       <Linkbar />
     </Layout>
