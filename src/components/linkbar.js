@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { loadCSS } from "fg-loadcss"
 import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"

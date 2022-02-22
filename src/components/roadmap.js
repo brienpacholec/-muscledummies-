@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
@@ -51,11 +51,11 @@ const Roadmap = () => {
       >
         {/* LEFT SIDE */}
         <Grid item lg={4}>
-         <Box
+          <Box
             sx={{
               display: { md: "none", lg: "flex" },
               justifyContent: "center",
-              marginTop: -20
+              marginTop: -10,
             }}
           >
             <StaticImage
@@ -67,10 +67,10 @@ const Roadmap = () => {
               width={307}
             />
           </Box>
-          
+
           <Box
             sx={{
-              marginTop: { md: 0, lg: 16 },
+              marginTop: { md: 0, lg: 4 },
               marginBottom: 4,
             }}
           >
@@ -210,10 +210,12 @@ const Roadmap = () => {
         </Grid>
 
         {/* RIGHT SIDE */}
-        <Grid item lg={4}
-        sx={{
-          paddingLeft: 2
-        }}
+        <Grid
+          item
+          lg={4}
+          sx={{
+            paddingLeft: 2,
+          }}
         >
           <Box
             sx={{

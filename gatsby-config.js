@@ -11,11 +11,23 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-material-ui`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-theme-material-ui`,
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
         offset: -300,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Muscle Dummies`,
+        short_name: `Muscle Dummies`,
+        description: `Welome to Health and Fitness for Dummies!`,
+        lang: `en`,
+        start_url: `/`,
+        icon: "src/images/icon.png",
       },
     },
     {

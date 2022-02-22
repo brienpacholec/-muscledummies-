@@ -1,8 +1,7 @@
-import * as React from "react"
+import React from "react"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-import Box from "@mui/material/Box"
 import { StaticImage } from "gatsby-plugin-image"
 
 const TheTeam = () => {
@@ -22,6 +21,7 @@ const TheTeam = () => {
             display="inline"
             sx={{
               fontFamily: "Cooper Hewitt",
+              fontSize: { xs: "2rem", sm: "2.25rem", md: "3.75rem" },
             }}
           >
             MEET THE{" "}
@@ -32,6 +32,7 @@ const TheTeam = () => {
             sx={{
               fontFamily: "Gagalin",
               color: "#0003FF",
+              fontSize: { xs: "3rem", sm: "4.5rem", md: "6rem" },
             }}
           >
             FOUNDERS
@@ -73,7 +74,14 @@ const TheTeam = () => {
           />
         </Grid>
 
-        <Grid item xs={12} sm={10}>
+        <Grid
+          item
+          xs={12}
+          sm={10}
+          sx={{
+            textAlign: { xs: "center", md: "left" },
+          }}
+        >
           <Typography
             variant="h3"
             sx={{
@@ -130,7 +138,15 @@ const TheTeam = () => {
           />
         </Grid>
 
-        <Grid item xs={12} sm={10}>
+        <Grid
+          item
+          xs={12}
+          sm={10}
+          sx={{
+            textAlign: { xs: "center", sm: "left" },
+            alignSelf: "center"
+          }}
+        >
           <Typography
             variant="h3"
             sx={{
@@ -188,7 +204,15 @@ const TheTeam = () => {
           />
         </Grid>
 
-        <Grid item xs={12} sm={10}>
+        <Grid
+          item
+          xs={12}
+          sm={10}
+          sx={{
+            textAlign: { xs: "center", sm: "left" },
+            alignSelf: "center"
+          }}
+        >
           <Typography
             variant="h3"
             sx={{

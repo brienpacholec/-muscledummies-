@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-import Box from "@mui/material/Box"
 import { StaticImage } from "gatsby-plugin-image"
 
 const DummierBanner = () => {
