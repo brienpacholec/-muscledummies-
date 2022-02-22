@@ -57,7 +57,7 @@ const Navbar = () => {
                       textAlign: "center",
                       color: "#FFF",
                       alignSelf: "center",
-                      paddingTop: 1
+                      paddingTop: 1,
                     }}
                   >
                     <AnchorLink to="#home" title="Home" className="anchor-link">

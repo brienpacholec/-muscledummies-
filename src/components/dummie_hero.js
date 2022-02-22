@@ -6,13 +6,13 @@ import { StaticImage } from "gatsby-plugin-image"
 const DummieHero = () => {
   return (
     <Container sx={{ display: "flex", justifyContent: "center" }}>
-      <Box sx={{  placeItems: "center" }}>
-          <StaticImage
-            src="../images/dummies/dummie_banner.png"
-            alt="Muscle Shaker"
-            placeholder="blurred"
-            layout="constrained"
-          />
+      <Box sx={{ placeItems: "center" }}>
+        <StaticImage
+          src="../images/dummies/dummie_banner.png"
+          alt="Muscle Shaker"
+          placeholder="blurred"
+          layout="constrained"
+        />
       </Box>
     </Container>
   )

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import Container from "@mui/material/Container"
 import Linkbar from "../components/linkbar"
@@ -12,7 +12,12 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter"
 import Button from "@mui/material/Button"
-import DummieAccordion from "../components/dummie_accordion"
+import DummierBanner from "../components/dummie_banner"
+import Utility from "../components/utility"
+import MDCommunity from "../components/md_community"
+import Roadmap from "../components/roadmap"
+import TheTeam from "../components/the_team"
+import Faq from "../components/faq"
 
 const IndexPage = () => {
   useEffect(() => {
@@ -22,11 +27,6 @@ const IndexPage = () => {
     AOS.refresh()
   }, [])
 
-  const [activeImage1, setActiveImage1]= useState(false);
-  const [activeImage2, setActiveImage2]= useState(false);
-  const [activeImage3, setActiveImage3]= useState(false);
-  const [activeImage4, setActiveImage4]= useState(false);
-
   return (
     <Layout>
       {/* HEADER & WELCOME */}
@@ -35,13 +35,13 @@ const IndexPage = () => {
         maxWidth={false}
         disableGutters
         sx={{
-          marginTop:{xs: 0, md: -30},
+          marginTop: { xs: 0, md: -30 },
         }}
       >
         {/* HEADER */}
         <Container
           sx={{
-            paddingTop:{xs: 0, md: 30},
+            paddingTop: { xs: 0, md: 30 },
           }}
         >
           <Grid
@@ -216,192 +216,7 @@ const IndexPage = () => {
 
       {/* Parallax Dummies */}
       <Container maxWidth={false} disableGutters>
-        <Grid
-          container
-          sx={{
-            display: "flex",
-            placeItems: "center",
-          }}
-        >
-          {/* IMAGE 1 */}
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={3}
-            sx={{
-              display: "flex",
-              textAlign: "center",
-              justifyContent: "center",
-              backgroundColor: "#69bfee",
-              padding: 3,
-            }}
-          >
-
-            <div onMouseOver={()=> setActiveImage1("robot")} onMouseLeave={() => setActiveImage1("sandbag")}>
-              {activeImage1 === "robot" ? 
-                <StaticImage
-                  src="../images/dummies/robot.png"
-                  alt="Muscle Dummie Robot"
-                  placeholder="blurred"
-                  layout="constrained"
-                  height={300}
-                  width-={281}
-                />
-                : 
-                <StaticImage
-                    id="hover"
-                    src="../images/dummies/sandbag.png"
-                    alt="Muscle Dummie Sandbag"
-                    placeholder="blurred"
-                    layout="constrained"
-                    height={300}
-                    width-={281}
-                  />
-              }
-            </div>
-            
-          </Grid>
-
-          {/* IMAGE 2 */}
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={3}
-            sx={{
-              display: "flex",
-              textAlign: "center",
-              justifyContent: "center",
-              backgroundColor: "#55AE96",
-              padding: 3,
-            }}
-          >
-
-            <div onMouseOver={()=> setActiveImage2("sandbag")} onMouseLeave={() => setActiveImage2("robot")}>
-              {activeImage2 === "sandbag" ? 
-                <StaticImage
-                  src="../images/dummies/sandbag.png"
-                  alt="Muscle Dummie Sandbag"
-                  placeholder="blurred"
-                  layout="constrained"
-                  height={300}
-                  width-={281}
-                />
-                : 
-                <StaticImage
-                    id="hover"
-                    src="../images/dummies/robot.png"
-                    alt="Muscle Dummie Robot"
-                    placeholder="blurred"
-                    layout="constrained"
-                    height={300}
-                    width-={281}
-                  />
-              }
-            </div>
-           
-          </Grid>
-
-          {/* IMAGE 3 */}
-          <Grid
-            item
-            sm={4}
-            md={3}
-            sx={{
-              display: { xs: "none", sm: "flex" },
-              textAlign: "center",
-              justifyContent: "center",
-              backgroundColor: "#D7C56E",
-              padding: 3,
-            }}
-          >
-             <div onMouseOver={()=> setActiveImage3("robot")} onMouseLeave={() => setActiveImage3("sandbag")}>
-              {activeImage3 === "robot" ? 
-                <StaticImage
-                  src="../images/dummies/robot.png"
-                  alt="Muscle Dummie Robot"
-                  placeholder="blurred"
-                  layout="constrained"
-                  height={300}
-                  width-={281}
-                />
-                : 
-                <StaticImage
-                    id="hover"
-                    src="../images/dummies/sandbag.png"
-                    alt="Muscle Dummie Sandbag"
-                    placeholder="blurred"
-                    layout="constrained"
-                    height={300}
-                    width-={281}
-                  />
-              }
-            </div>
-          </Grid>
-
-          {/* IMAGE 4 */}
-          <Grid
-            item
-            md={3}
-            sx={{
-              display: { xs: "none", sm: "none", md: "flex" },
-              textAlign: "center",
-              justifyContent: "center",
-              backgroundColor: "#BF2F40",
-              padding: 3,
-            }}
-          >
-             <div onMouseOver={()=> setActiveImage4("sandbag")} onMouseLeave={() => setActiveImage4("robot")}>
-              {activeImage4 === "sandbag" ? 
-                <StaticImage
-                  src="../images/dummies/sandbag.png"
-                  alt="Muscle Dummie Sandbag"
-                  placeholder="blurred"
-                  layout="constrained"
-                  height={300}
-                  width-={281}
-                />
-                : 
-                <StaticImage
-                    id="hover"
-                    src="../images/dummies/robot.png"
-                    alt="Muscle Dummie Robot"
-                    placeholder="blurred"
-                    layout="constrained"
-                    height={300}
-                    width-={281}
-                  />
-              }
-            </div>
-          </Grid>
-
-          {/* TEXT */}
-          <Grid
-            item
-            lg={12}
-            sx={{
-              display: "flex",
-              position: "absolute",
-              width: "-webkit-fill-available",
-              justifyContent: "center",
-            }}
-          >
-            <Typography
-              variant="h1"
-              sx={{
-                fontFamily: "Gagalin",
-                letterSpacing: 5,
-                fontSize: { xs: "2.5rem", sm: "4rem", md: "6rem" },
-                color: "#FFF",
-                textShadow:
-                  "0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 4px 5px 3px rgba(0,0,0,0.48)",
-              }}
-            >
-              MUSCLE DUMMIES
-            </Typography>
-          </Grid>
-        </Grid>
+        <DummierBanner />
       </Container>
 
       {/* ABOUT & COMMUNITY */}
@@ -564,7 +379,7 @@ const IndexPage = () => {
                   color: "#FFF",
                   fontSize: { xs: 16, sm: "1rem", md: "1.3rem" },
                   fontFamily: "Cooper Hewitt",
-                  lineHeight: 2
+                  lineHeight: 2,
                 }}
               >
                 Joining the Muscle Dummies community means joining a family of
@@ -681,265 +496,20 @@ const IndexPage = () => {
         </Container>
       </Container>
 
-      <br/>
-      
+      <br />
+
       {/* INSTANT UTILITY */}
       <Container
         id="utility"
         sx={{
           marginY: { xs: 2, md: 5 },
         }}
-
       >
-        <Grid
-          container
-          sx={{
-            display: {sm: "flex", md: "none"},
-            marginTop: { xs: 0, md: 3 },
-            justifyContent: "center",
-          }}
-        >
-          <Grid
-            item
-            xs={12}
-            sx={{
-              textAlign: "center",
-            }}
-            data-aos="fade-right"
-            data-aos-duration="1500"
-          >
-            <Typography
-              variant="h3"
-              sx={{
-                fontFamily: "Gagalin",
-                color: "#FFF",
-                fontSize: { xs: "2rem", sm: "3.5rem" },
-              }}
-            >
-              BENEFITS AND UTILITY
-            </Typography>
-          </Grid>
-        </Grid>
-
-        <Grid
-          container
-          sx={{
-            marginTop: { xs: 0, md: 3 },
-          }}
-          data-aos="fade-right"
-          data-aos-duration="1500"
-        >
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={4}
-            sx={{
-              textAlign: {sm: "left", md: "center"},
-              marginY: {sm: 2, md: 0}
-            }}
-          >
-            <Typography
-              variant="h5"
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                color: "primary.main",
-              }}
-            >
-              IMMEDIATE ACCES TO OUR WORKOUT & MEAL PLAN VAULT
-            </Typography>
-
-            <Typography
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                color: "#FFF",
-              }}
-            >
-            Mint one of our Dummies, verify your wallet, and gain acces to our various workout and meal plans for individuals with a variety of goals - valued at more than the price to mint a Dummy. Only the first 3,333 minters will have immediete access!
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            sx={{
-              textAlign: "center",
-              display: {xs: "none", md: "unset"},
-            }}
-          >
-            <Typography
-              variant="h3"
-              sx={{
-                fontFamily: "Gagalin",
-                color: "#FFF",
-                fontSize: { xs: "2rem", sm: "3.5rem" },
-              }}
-            >
-              BENEFITS
-            </Typography>
-            <Typography
-              variant="h3"
-              sx={{
-                fontFamily: "Gagalin",
-                color: "primary.main",
-                fontSize: { xs: "2rem", sm: "3.5rem" },
-              }}
-            >
-              AND
-            </Typography>
-            <Typography
-              variant="h3"
-              sx={{
-                fontFamily: "Gagalin",
-                color: "#FFF",
-                fontSize: { xs: "2rem", sm: "3.5rem" },
-              }}
-            >
-              UTILITY
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={4}
-            sx={{
-              textAlign: {sm: "left", md: "center"},
-              marginY: {sm: 2, md: 0},
-              alignSelf: "center"
-            }}
-          >
-            <Typography
-              variant="h5"
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                color: "#FFF",
-              }}
-            >
-               VALUE OF YOUR DUMMY
-            </Typography>
-
-            <Typography
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                color: "#FFF",
-              }}
-            >
-            Be one of the lucky few to mint our super rare NFTs or the legendary metallic Dummy to win exclusive prizes, such as ETH,  gym memeberships, and more!
-            </Typography>
-          </Grid>
-        </Grid>
-
-        <Grid
-          container
-          sx={{
-            marginTop: { xs: 0, md: 3 },
-          }}
-          data-aos="fade-left"
-          data-aos-duration="1500"
-        >
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={4}
-            sx={{
-              textAlign: {sm: "left", md: "center"},
-              alignSelf: "center",
-              marginY: {sm: 2, md: 0},
-              
-            }}
-          >
-            <Typography
-              variant="h5"
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                color: "#FFF",
-              }}
-            >
-               PRIVATE ACCESS
-            </Typography>
-
-            <Typography
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                color: "#FFF",
-              }}
-            >
-            Hold your Dummies to gain access to exclusive events, networking oppritunities, updated research, and private discord channels. 
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={4}
-            sx={{
-              textAlign: {sm: "left", md: "center"},
-              marginY: {sm: 2, md: 0},
-              
-            }}
-          >
-            <Typography
-              variant="h5"
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                color: "#FFF",
-              }}
-            >
-               COMMUNITY
-            </Typography>
-
-            <Typography
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                color: "#FFF",
-              }}
-            >
-            Our community will be free to enter, but we will have another community for our true beleivers. This will be where you can talk and network with our collab influencers. This will also be where you will get private insights to our next steps.
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={4}
-            sx={{
-              textAlign: {sm: "left", md: "center"},
-              alignSelf: "center",
-              marginY: {sm: 2, md: 0},
-            }}
-          >
-            <Typography
-              variant="h5"
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                color: "#FFF",
-              }}
-            >
-               OUR METAVERSE
-            </Typography>
-
-            <Typography
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                color: "#FFF",
-              }}
-            >
-            The Muscle Dummies metaverse will be something truly special. A place where you can earn $MUSL coins to redeem for Merch, Supps, Memberships + More!
-            </Typography>
-          </Grid>
-        </Grid>
+        <Utility />
       </Container>
 
       {/* MUSCLE DUMMIES COMMUNITY */}
       <Container
-        className="bg-3"
         maxWidth={false}
         disableGutters
         sx={{
@@ -947,181 +517,12 @@ const IndexPage = () => {
           paddingBottom: 10,
         }}
       >
-        <Container
-          id=""
-          sx={{
-            marginY: { xs: 2, md: 5 },
-          }}
-        >
-          <Grid
-            container
-            sx={{
-              display: "flex",
-              marginTop: { xs: 0, md: 3 },
-              justifyContent: "center",
-            }}
-          >
-            <Grid
-              item
-              xs={12}
-              sx={{
-                textAlign: "center",
-              }}
-              data-aos="zoom-in"
-              data-aos-duration="1500"
-            >
-              <Typography
-                variant="h3"
-                sx={{
-                  fontFamily: "Gagalin",
-                  color: "#FFF",
-                  fontSize: { xs: "2rem", sm: "3.5rem" },
-                }}
-              >
-                MUSCLE DUMMIES COMMUNITY
-              </Typography>
-            </Grid>
-
-            <Grid
-              item
-              xs={12}
-              sx={{
-                textAlign: "center",
-                marginBottom: { xs: 2, md: 4 },
-              }}
-              data-aos="zoom-in"
-              data-aos-duration="3000"
-            >
-              <StaticImage
-                src="../images/canva_components/holders_trainings.png"
-                alt="Muscle Shaker"
-                placeholder="blurred"
-                layout="constrained"
-                height={91}
-                width={300}
-              />
-            </Grid>
-
-            <Grid
-              className="neonPink"
-              item
-              xs={6}
-              sx={{
-                textAlign: "center",
-                marginBottom: 3,
-              }}
-              data-aos="fade-right"
-              data-aos-duration="1500"
-            >
-              <Typography
-                variant="h3"
-                sx={{
-                  fontFamily: "Cooper Hewitt",
-                  color: "#FFF",
-                  fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
-                }}
-              >
-                Physical Training
-              </Typography>
-            </Grid>
-
-            <Grid
-              className="neonPink"
-              item
-              xs={6}
-              sx={{
-                textAlign: "center",
-                marginBottom: 3,
-              }}
-              data-aos="fade-left"
-              data-aos-duration="1500"
-            >
-              <Typography
-                variant="h3"
-                sx={{
-                  fontFamily: "Cooper Hewitt",
-                  color: "#FFF",
-                  fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
-                }}
-              >
-                Mental Training
-              </Typography>
-            </Grid>
-
-            <Grid
-              className="neonPink"
-              item
-              xs={12}
-              sx={{
-                textAlign: "center",
-              }}
-              data-aos="fade-up"
-              data-aos-duration="1500"
-            >
-              <Typography
-                variant="h3"
-                sx={{
-                  fontFamily: "Cooper Hewitt",
-                  color: "#FFF",
-                  fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
-                }}
-              >
-                Mindset Training
-              </Typography>
-            </Grid>
-
-            <Grid
-              className="neonPink"
-              item
-              xs={6}
-              sx={{
-                textAlign: "center",
-                marginTop: 3,
-              }}
-              data-aos="fade-right"
-              data-aos-duration="1500"
-            >
-              <Typography
-                variant="h3"
-                sx={{
-                  fontFamily: "Cooper Hewitt",
-                  color: "#FFF",
-                  fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
-                }}
-              >
-                Nutritional Training
-              </Typography>
-            </Grid>
-
-            <Grid
-              className="neonPink"
-              item
-              xs={6}
-              sx={{
-                textAlign: "center",
-                marginTop: 3,
-              }}
-              data-aos="fade-left"
-              data-aos-duration="1500"
-            >
-              <Typography
-                variant="h3"
-                sx={{
-                  fontFamily: "Cooper Hewitt",
-                  color: "#FFF",
-                  fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
-                }}
-              >
-                Spiritual Training
-              </Typography>
-            </Grid>
-          </Grid>
-        </Container>
+        <MDCommunity />
       </Container>
 
       {/* ROADMAP */}
       <Container
-        className="bg-4"
+        id="roadmap"
         maxWidth={false}
         disableGutters
         sx={{
@@ -1129,243 +530,18 @@ const IndexPage = () => {
           paddingBottom: 10,
         }}
       >
-        <Container
-          id="roadmap"
-          data-aos="fade-up-right" 
-          data-aos-duration="1500"
-        >
-          <Grid
-            container
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              placeItems: "center",
-            }}
-          >
-            <Grid
-              item
-              xs={12}
-              sx={{
-                textAlign: "center"
-              }}
-            >
-              <Typography
-                className="neon"
-                variant="h3"
-                sx={{
-                  color: "primary.main",
-                  fontSize: { xs: "2rem", sm: "3rem" },
-                  fontFamily: "Cooper Hewitt",
-                }}
-              >
-                ROADMAP
-              </Typography>
-
-            </Grid>
-
-
-          </Grid>
-
-          <Grid
-            container
-            sx={{
-              display: "flex",
-            }}
-          >
-            {/* LEFT SIDE */}
-            <Grid
-              item
-              sm={12}
-              md={4}
-            >
-              <Box>
-                  <Typography
-                      className="neonPink"
-                      variant="h4"
-                      sx={{
-                        color: "#FFF",
-                        fontFamily: "Cooper Hewitt",
-                      }}
-                    >
-                      COLLECTION 1 - SELLOUT
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                  >
-                    Once all of the 3,333 Dummies are sold out and revealed we will do our special giveaways to our lucky winners! All of our other minters will then be able to access our vault of plans to start their next Health and Fitness journey.
-                  </Typography>
-              </Box>
-
-              <Box>
-                <Typography
-                    className="neonPink"
-                    variant="h4"
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                  >
-                    MUSCLE DUMMY MEETUP
-                </Typography>
-
-                <Typography
-                  sx={{
-                    color: "#FFF",
-                    fontFamily: "Cooper Hewitt",
-                  }}
-                >
-                  The first Muscle Dummy Meetup location is TBA. We want to see where the majority of our holders are so we can have everyone in attendance. Exclusive merch, info, and networking opportunities will be available to all in attendance. 
-                </Typography>
-              </Box>
-
-              <Box>
-                <Typography
-                    className="neonPink"
-                    variant="h4"
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                  >
-                    $MUSL, MERCH, SUPPS, MORE
-                  </Typography>
-
-                  <Typography
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                  >
-                    Development of the $MUSL coin that will be redeemable for all things Muscle Dummies. Merch store opens, Muscle Dummies' supplements released, BIG ANNOUNCEMENT SOON.
-                  </Typography>
-              </Box>
-
-              <Box>
-                <Typography
-                    className="neonPink"
-                    variant="h4"
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                  >
-                    CHAPTER 2 ANNOUNCEMENT
-                  </Typography>
-
-                  <Typography
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                  >
-                  Chapter 2 will begin with two very big announcements that we at Muscle Dummies HQ cannot wait for! We imagine with the great success of the project, Chapter 2 will begin shortly after our sellout! Here, true believers of the BRAND will be rewarded greatly.                   </Typography>
-              </Box>
-            </Grid>
-
-
-            {/* MAP */}
-            <Grid
-              item
-              sm={12}
-              md={4}
-              sx={{
-                display: {sm: "none", md: "unset"}
-              }}
-            >
-              <StaticImage
-                src="../images/canva_components/roadmap.png"
-                alt="Muscle Shaker"
-                placeholder="blurred"
-                layout="constrained"
-              />
-
-            </Grid>
-
-            {/* RIGHT SIDE */}
-            <Grid
-              item
-              sm={12}
-              md={4}
-            >
-              
-
-              <Box>
-                <Typography
-                    className="neonPink"
-                    variant="h4"
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                  >
-                    COMMUNITY ASSET AQUIREMENT
-                </Typography>
-                <Typography
-                  sx={{
-                    color: "#FFF",
-                    fontFamily: "Cooper Hewitt",
-                  }}
-                >
-                  Our first reinvestment will be to acquire land in the metaverse. This early reinvestment is necessary so we can start working with developers to get our Workout-to-Earn game rolling as quickly as possible!
-                </Typography>
-              </Box>
-
-              <Box>
-                <Typography
-                    className="neonPink"
-                    variant="h4"
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                  >
-                    MUSCLE DUMMIES APP
-                </Typography>
-
-                <Typography
-                  sx={{
-                    color: "#FFF",
-                    fontFamily: "Cooper Hewitt",
-                  }}
-                >
-                  Our Muscle Dummies official app will be a total healh and fitness app. Through devices such as the Apple Watch, you'll be able to track your workouts, macros, sleep, hydration, and everything else essential for maximizing your Health and Fitness potential and attaining your goals as quick as possible. You can do all this while earning $MUSL coins to redeem in our store!
-                </Typography>
-              </Box>
-
-              <Box>
-                <Typography
-                    className="neonPink"
-                    variant="h4"
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                  >
-                    $MUSL, MERCH, SUPPS, MORE
-                  </Typography>
-
-                  <Typography
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                  >
-                    Development of the $MUSL coin that will be redeemable for all things Muscle Dummies. Merch store opens, Muscle Dummies' supplements released, BIG ANNOUNCEMENT SOON.
-                  </Typography>
-              </Box>
-
-            </Grid>
-
-          </Grid>
-
-        </Container>
-
+        <Roadmap />
       </Container>
 
-
+      {/* MEET THE TEAM */}
+      <Container
+        id="team"
+        sx={{
+          marginY: { xs: 2, md: 5 },
+        }}
+      >
+        <TheTeam />
+      </Container>
 
       {/* FAQ */}
       <Container
@@ -1376,26 +552,8 @@ const IndexPage = () => {
         data-aos="fade-up-right"
         data-aos-duration="1500"
       >
-        <Typography
-          variant="h1"
-          sx={{
-            textAlign: "center",
-            fontFamily: "Gagalin",
-            letterSpacing: 10,
-            color: "primary.main",
-            textShadow:
-              "0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 4px 5px 3px rgba(0,0,0,0.48)",
-          }}
-        >
-          FAQ
-        </Typography>
-
-        <hr />
-        <DummieAccordion />
-        <hr />
+        <Faq />
       </Container>
-
-     
 
       <Linkbar />
     </Layout>
