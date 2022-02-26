@@ -1,10 +1,16 @@
 import React from "react"
+import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 
 const Utility = () => {
   return (
-    <>
+    <Container
+      id=""
+      sx={{
+        marginY: { xs: 2, md: 5 },
+      }}
+    >
       <Grid
         container
         sx={{
@@ -255,7 +261,7 @@ const Utility = () => {
           </Typography>
         </Grid>
       </Grid>
-    </>
+    </Container>
   )
 }
 export default Utility

@@ -7,7 +7,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Roadmap = () => {
   return (
-    <Container>
+    <Container id="roadmap" >
       {/* TOP */}
       <Grid
         container
@@ -320,7 +320,6 @@ const Roadmap = () => {
           xs={12}
           sx={{
             textAlign: "center",
-            marginTop: -7,
           }}
         >
           <Typography

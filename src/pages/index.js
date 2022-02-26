@@ -56,38 +56,42 @@ const IndexPage = () => {
         maxWidth={false}
         disableGutters
         sx={{
-          marginY: 0,
+          paddingY: 5,
         }}
       >
         <About />
         <Community />
       </Container>
 
-      {/* INSTANT UTILITY */}
-      <Container
+      {/* INSTANT UTILITY && MUSCLE DUMMIES COMMUNITY */}
+      <Container 
         id="utility"
-        sx={{
-          marginY: { xs: 10, md: 15 },
-        }}
-      >
-        <Utility />
-      </Container>
-
-      {/* MUSCLE DUMMIES COMMUNITY */}
-      <Container
         maxWidth={false}
         disableGutters
         sx={{
-          marginY: { xs: 2, md: 5 },
+          paddingY: 5,
         }}
       >
+        <Utility />
+
         <MDCommunity />
+
       </Container>
 
+
       {/* ROADMAP */}
-      <Container id="roadmap">
+      <Container
+        className="bg-3"
+        maxWidth={false}
+        disableGutters
+        sx={{
+          paddingY: 5,
+        }}
+      >
         <Roadmap />
+
       </Container>
+
 
       {/* MEET THE TEAM */}
       <Container
