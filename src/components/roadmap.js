@@ -7,11 +7,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Roadmap = () => {
   return (
-    <Container
-      data-aos="fade-up-right"
-      data-aos-duration="1500"
-      maxWidth={false}
-    >
+    <Container>
       {/* TOP */}
       <Grid
         container
@@ -63,16 +59,16 @@ const Roadmap = () => {
               alt="Turret"
               placeholder="blurred"
               layout="constrained"
-              height={200}
-              width={307}
+              height={165}
+              width={253}
             />
           </Box>
 
           <Box
             sx={{
-              marginTop: { md: 0, lg: 4 },
-              marginBottom: 4,
+              marginTop: 6,
             }}
+            data-aos="fade-right"
           >
             <Typography
               className="neonPink"
@@ -80,6 +76,7 @@ const Roadmap = () => {
               sx={{
                 color: "#FFF",
                 fontFamily: "Cooper Hewitt",
+                fontSize: "1.6rem",
               }}
             >
               COLLECTION 1 - SELLOUT
@@ -99,9 +96,9 @@ const Roadmap = () => {
 
           <Box
             sx={{
-              marginTop: { md: 0, lg: 10 },
-              marginBottom: 4,
+              marginTop: 3,
             }}
+            data-aos="fade-right"
           >
             <Typography
               className="neonPink"
@@ -109,6 +106,7 @@ const Roadmap = () => {
               sx={{
                 color: "#FFF",
                 fontFamily: "Cooper Hewitt",
+                fontSize: "1.6rem",
               }}
             >
               MUSCLE DUMMY MEETUP
@@ -129,9 +127,9 @@ const Roadmap = () => {
 
           <Box
             sx={{
-              marginTop: { md: 0, lg: 15 },
-              marginBottom: 4,
+              marginTop: 5,
             }}
+            data-aos="fade-right"
           >
             <Typography
               className="neonPink"
@@ -139,6 +137,7 @@ const Roadmap = () => {
               sx={{
                 color: "#FFF",
                 fontFamily: "Cooper Hewitt",
+                fontSize: "1.6rem",
               }}
             >
               $MUSL, MERCH, SUPPS, MORE
@@ -158,9 +157,9 @@ const Roadmap = () => {
 
           <Box
             sx={{
-              marginTop: { md: 0, lg: 10 },
-              marginBottom: 4,
+              marginTop: 6,
             }}
+            data-aos="fade-right"
           >
             <Typography
               className="neonPink"
@@ -168,6 +167,7 @@ const Roadmap = () => {
               sx={{
                 color: "#FFF",
                 fontFamily: "Cooper Hewitt",
+                fontSize: "1.6rem",
               }}
             >
               CHAPTER 2 ANNOUNCEMENT
@@ -221,6 +221,7 @@ const Roadmap = () => {
             sx={{
               display: { md: "none", lg: "flex" },
               justifyContent: "center",
+              marginTop: -10,
             }}
           >
             <StaticImage
@@ -228,16 +229,16 @@ const Roadmap = () => {
               alt="Map"
               placeholder="blurred"
               layout="constrained"
-              height={270}
-              width={270}
+              height={253}
+              width={253}
             />
           </Box>
 
           <Box
             sx={{
-              marginTop: { md: 0, lg: -1 },
-              marginBottom: 4,
+              marginTop: 4,
             }}
+            data-aos="fade-left"
           >
             <Typography
               className="neonPink"
@@ -245,6 +246,7 @@ const Roadmap = () => {
               sx={{
                 color: "#FFF",
                 fontFamily: "Cooper Hewitt",
+                fontSize: "1.6rem",
               }}
             >
               COMMUNITY ASSET AQUIREMENT
@@ -266,7 +268,7 @@ const Roadmap = () => {
             sx={{
               display: { md: "none", lg: "flex" },
               justifyContent: "center",
-              marginTop: 12,
+              marginTop: 6,
             }}
           >
             <StaticImage
@@ -274,16 +276,16 @@ const Roadmap = () => {
               alt="Map"
               placeholder="blurred"
               layout="constrained"
-              height={129}
-              width={400}
+              height={65}
+              width={200}
             />
           </Box>
 
           <Box
             sx={{
-              marginTop: { md: 0, lg: 8 },
-              marginBottom: 4,
+              marginTop: 10,
             }}
+            data-aos="fade-left"
           >
             <Typography
               className="neonPink"
@@ -291,6 +293,7 @@ const Roadmap = () => {
               sx={{
                 color: "#FFF",
                 fontFamily: "Cooper Hewitt",
+                fontSize: "1.6rem",
               }}
             >
               MUSCLE DUMMIES APP
@@ -311,6 +314,26 @@ const Roadmap = () => {
             </Typography>
           </Box>
         </Grid>
+
+        <Grid
+          item
+          xs={12}
+          sx={{
+            textAlign: "center",
+            marginTop: -7,
+          }}
+        >
+          <Typography
+            className="neon"
+            variant="h4"
+            sx={{
+              color: "primary.main",
+              fontFamily: "Cooper Hewitt",
+            }}
+          >
+            CHAPTER 2: TBA
+          </Typography>
+        </Grid>
       </Grid>
 
       {/* DISPLAY MOBILE */}
@@ -324,7 +347,7 @@ const Roadmap = () => {
           item
           xs={12}
           sx={{
-            marginY: 2,
+            marginY: 1,
           }}
         >
           <Typography
@@ -333,6 +356,7 @@ const Roadmap = () => {
             sx={{
               color: "#FFF",
               fontFamily: "Cooper Hewitt",
+              fontSize: { xs: "1.45rem", sm: "1.6rem" },
             }}
           >
             20% - COLLECTION 1 - SELLOUT
@@ -354,7 +378,7 @@ const Roadmap = () => {
           item
           xs={12}
           sx={{
-            marginY: 2,
+            marginY: 1,
           }}
         >
           <Typography
@@ -363,6 +387,7 @@ const Roadmap = () => {
             sx={{
               color: "#FFF",
               fontFamily: "Cooper Hewitt",
+              fontSize: { xs: "1.45rem", sm: "1.6rem" },
             }}
           >
             30% - COMMUNITY ASSET AQUIREMENT
@@ -384,7 +409,7 @@ const Roadmap = () => {
           item
           xs={12}
           sx={{
-            marginY: 2,
+            marginY: 1,
           }}
         >
           <Typography
@@ -393,6 +418,7 @@ const Roadmap = () => {
             sx={{
               color: "#FFF",
               fontFamily: "Cooper Hewitt",
+              fontSize: { xs: "1.45rem", sm: "1.6rem" },
             }}
           >
             40% - MUSCLE DUMMY MEETUP
@@ -414,7 +440,7 @@ const Roadmap = () => {
           item
           xs={12}
           sx={{
-            marginY: 2,
+            marginY: 1,
           }}
         >
           <Typography
@@ -423,6 +449,7 @@ const Roadmap = () => {
             sx={{
               color: "#FFF",
               fontFamily: "Cooper Hewitt",
+              fontSize: { xs: "1.45rem", sm: "1.6rem" },
             }}
           >
             65% - $MUSL, MERCH, SUPPS, MORE
@@ -443,7 +470,7 @@ const Roadmap = () => {
           item
           xs={12}
           sx={{
-            marginY: 2,
+            marginY: 1,
           }}
         >
           <Typography
@@ -452,6 +479,7 @@ const Roadmap = () => {
             sx={{
               color: "#FFF",
               fontFamily: "Cooper Hewitt",
+              fontSize: { xs: "1.45rem", sm: "1.6rem" },
             }}
           >
             80% - MUSCLE DUMMIES APP
@@ -475,7 +503,7 @@ const Roadmap = () => {
           item
           xs={12}
           sx={{
-            marginY: 2,
+            marginY: 1,
           }}
         >
           <Typography
@@ -484,6 +512,7 @@ const Roadmap = () => {
             sx={{
               color: "#FFF",
               fontFamily: "Cooper Hewitt",
+              fontSize: { xs: "1.45rem", sm: "1.6rem" },
             }}
           >
             100% - CHAPTER 2 ANNOUNCEMENT
@@ -498,35 +527,6 @@ const Roadmap = () => {
             Muscle Dummies HQ cannot wait for! We imagine with the great success
             of the project, Chapter 2 will begin shortly after our sellout!
             Here, true believers of the BRAND will be rewarded greatly.
-          </Typography>
-        </Grid>
-      </Grid>
-
-      {/* BOTTOM */}
-      <Grid
-        container
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          placeItems: "center",
-        }}
-      >
-        <Grid
-          item
-          xs={12}
-          sx={{
-            textAlign: "center",
-          }}
-        >
-          <Typography
-            className="neon"
-            variant="h4"
-            sx={{
-              color: "primary.main",
-              fontFamily: "Cooper Hewitt",
-            }}
-          >
-            CHAPTER 2: TBA
           </Typography>
         </Grid>
       </Grid>

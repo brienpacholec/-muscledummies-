@@ -20,7 +20,6 @@ const Utility = () => {
             textAlign: "center",
           }}
           data-aos="fade-right"
-          data-aos-duration="1500"
         >
           <Typography
             variant="h3"
@@ -41,7 +40,6 @@ const Utility = () => {
           marginTop: { xs: 0, md: 3 },
         }}
         data-aos="fade-right"
-        data-aos-duration="1500"
       >
         <Grid
           item
@@ -158,7 +156,6 @@ const Utility = () => {
           marginTop: { xs: 0, md: 3 },
         }}
         data-aos="fade-left"
-        data-aos-duration="1500"
       >
         <Grid
           item

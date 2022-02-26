@@ -27,7 +27,6 @@ const MDCommunity = () => {
             textAlign: "center",
           }}
           data-aos="zoom-in"
-          data-aos-duration="1500"
         >
           <Typography
             variant="h3"
@@ -70,7 +69,6 @@ const MDCommunity = () => {
             marginBottom: 3,
           }}
           data-aos="fade-right"
-          data-aos-duration="1500"
         >
           <Typography
             variant="h3"
@@ -80,7 +78,7 @@ const MDCommunity = () => {
               fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
             }}
           >
-            Physical Training
+            Physical
           </Typography>
         </Grid>
 
@@ -93,7 +91,6 @@ const MDCommunity = () => {
             marginBottom: 3,
           }}
           data-aos="fade-left"
-          data-aos-duration="1500"
         >
           <Typography
             variant="h3"
@@ -103,7 +100,7 @@ const MDCommunity = () => {
               fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
             }}
           >
-            Mental Training
+            Mental
           </Typography>
         </Grid>
 
@@ -115,7 +112,6 @@ const MDCommunity = () => {
             textAlign: "center",
           }}
           data-aos="fade-up"
-          data-aos-duration="1500"
         >
           <Typography
             variant="h3"
@@ -125,7 +121,7 @@ const MDCommunity = () => {
               fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
             }}
           >
-            Mindset Training
+            Mindset
           </Typography>
         </Grid>
 
@@ -138,7 +134,6 @@ const MDCommunity = () => {
             marginTop: 3,
           }}
           data-aos="fade-right"
-          data-aos-duration="1500"
         >
           <Typography
             variant="h3"
@@ -148,7 +143,7 @@ const MDCommunity = () => {
               fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
             }}
           >
-            Nutritional Training
+            Nutritional
           </Typography>
         </Grid>
 
@@ -161,7 +156,6 @@ const MDCommunity = () => {
             marginTop: 3,
           }}
           data-aos="fade-left"
-          data-aos-duration="1500"
         >
           <Typography
             variant="h3"
@@ -171,7 +165,7 @@ const MDCommunity = () => {
               fontSize: { xs: "1.5rem", sm: "1.9rem", md: "3rem" },
             }}
           >
-            Spiritual Training
+            Spiritual
           </Typography>
         </Grid>
       </Grid>

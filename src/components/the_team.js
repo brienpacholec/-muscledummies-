@@ -48,7 +48,6 @@ const TheTeam = () => {
           marginY: 2,
         }}
         data-aos="fade-right"
-        data-aos-duration="1500"
       >
         <Grid
           item
@@ -112,7 +111,6 @@ const TheTeam = () => {
           marginY: 2,
         }}
         data-aos="fade-left"
-        data-aos-duration="1500"
       >
         <Grid
           item
@@ -178,7 +176,6 @@ const TheTeam = () => {
           marginY: 2,
         }}
         data-aos="fade-right"
-        data-aos-duration="1500"
       >
         <Grid
           item

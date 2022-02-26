@@ -44,15 +44,18 @@ export const connectWallet = async () => {
 
 //FUNCTION to mint the NFT
 export const mintNFT = async (walletAddress, amount) => {
+
+  console.log(typeof(amount));
+  console.log(amount);
   if (walletAddress === "") {
     return {
-      success: false,
-      status: "❗Please connect your wallet before minting!",
+      mintStatus: "red", //false
+      mintMessage: "Please reconnect your wallet!"
     }
-  } else if (amount.trim() == "") {
+  } else if (amount <= 0) {
     return {
-      success: false,
-      status: "❗Please tell us how many you'd like to mint!",
+      mintStatus: "red", //false
+      mintMessage: "Please enter a valid amount"
     }
   }
 
@@ -65,7 +68,7 @@ export const mintNFT = async (walletAddress, amount) => {
     to: contractAddress, // Required except during contract publications.
     from: walletAddress, // must match user's active address.
     data: window.contract.methods.mintUser(parseInt(amount)).encodeABI(), //make call to NFT smart contract
-    value: currentCost.toString(),
+    // value: currentCost.toString(),
   }
 
   //sign transaction via Metamask
@@ -75,16 +78,14 @@ export const mintNFT = async (walletAddress, amount) => {
       params: [transactionParameters],
     })
     return {
-      success: true,
-      status:
-        "✅ Check out your transaction on Etherscan: https://ropsten.etherscan.io/tx/" +
-        txHash,
+      mintStatus: "black", //true
+      mintMessage: "Success! Please check your wallet in a few minutes!",
       addedAmount: parseInt(amount),
     }
   } catch (error) {
     return {
-      success: false,
-      status: "😥 Something went wrong: " + error.message,
+      mintStatus: "red", //false
+      mintMessage: error.message,
       addedAmount: 0,
     }
   }

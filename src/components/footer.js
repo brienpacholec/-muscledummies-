@@ -15,7 +15,6 @@ const Footer = () => {
             justifyContent: "center",
           }}
           data-aos="fade-right"
-          data-aos-duration="1500"
         >
           <Grid
             item
@@ -50,7 +49,6 @@ const Footer = () => {
             alignItems: "center",
           }}
           data-aos="zoom-in"
-          data-aos-duration="1500"
         >
           <Grid
             item

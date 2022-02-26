@@ -22,6 +22,8 @@ const IndexPage = () => {
   useEffect(() => {
     AOS.init({
       once: true,
+      duration: 1500,
+      easing: "ease",
     })
     AOS.refresh()
   }, [])
@@ -83,7 +85,7 @@ const IndexPage = () => {
       </Container>
 
       {/* ROADMAP */}
-      <Container id="roadmap" maxWidth={false} disableGutters>
+      <Container id="roadmap">
         <Roadmap />
       </Container>
 
@@ -103,8 +105,6 @@ const IndexPage = () => {
         sx={{
           marginY: { xs: 2, md: 5 },
         }}
-        data-aos="fade-up-right"
-        data-aos-duration="1500"
       >
         <Faq />
       </Container>

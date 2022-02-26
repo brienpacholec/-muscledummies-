@@ -8,7 +8,7 @@ import FitnessCenterIcon from "@mui/icons-material/FitnessCenter"
 
 const About = () => {
   return (
-    <Container id="about" data-aos="fade-up-right" data-aos-duration="1500">
+    <Container id="about" data-aos="fade-up-right">
       <Grid
         container
         sx={{

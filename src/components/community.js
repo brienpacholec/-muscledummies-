@@ -30,7 +30,6 @@ const Community = () => {
             paddingRight: { xs: 0, md: 5 },
           }}
           data-aos="fade-up"
-          data-aos-duration="1500"
         >
           <Typography
             variant="h5"
@@ -92,7 +91,6 @@ const Community = () => {
           item
           md={4}
           data-aos="fade-up"
-          data-aos-duration="1500"
           sx={{
             textAlign: "center",
             display: { xs: "none", md: "flex" },

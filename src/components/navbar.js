@@ -223,30 +223,7 @@ const Navbar = () => {
                         </Typography>
                       </AnchorLink>
 
-                      {/* TODO - update button */}
-
                       <Minter />
-                      {/* <Button
-                        id="mint-btn"
-                        variant="contained"
-                        sx={{
-                          borderRadius: 10,
-                          color: "text.primary",
-                          flex: "right",
-                          border: 4,
-                          borderColor: "#FFF",
-                        }}
-                        href="https://www.google.com"
-                      >
-                        <Typography
-                          sx={{
-                            fontFamily: "Cooper Hewitt",
-                            lineHeight: 1,
-                          }}
-                        >
-                          CLICK TO MINT
-                        </Typography>
-                      </Button> */}
                     </Grid>
 
                     {/* BOTTOM RIGHT BORDER */}

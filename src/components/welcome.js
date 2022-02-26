@@ -9,7 +9,6 @@ const Welcome = () => {
   return (
     <Container
       data-aos="fade-up-left"
-      data-aos-duration="1500"
       sx={{
         paddingY: 5,
       }}
