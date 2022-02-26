@@ -12,7 +12,7 @@ const Footer = () => {
           container
           sx={{
             display: "flex",
-            justifyContent: "center"
+            justifyContent: "center",
           }}
           data-aos="fade-right"
           data-aos-duration="1500"
@@ -22,7 +22,7 @@ const Footer = () => {
             xs={12}
             sm={8}
             sx={{
-              textAlign: "center"
+              textAlign: "center",
             }}
           >
             <Typography
@@ -74,7 +74,7 @@ const Footer = () => {
               sx={{
                 fontFamily: "Gagalin",
                 color: "primary.main",
-                marginTop: -2
+                marginTop: -2,
               }}
             >
               MUSCLE DUMMIES
@@ -85,7 +85,7 @@ const Footer = () => {
                 color: "#FFF",
               }}
             >
-              Be apart of the best Health and Fitness Community in the World! 
+              Be apart of the best Health and Fitness Community in the World!
             </Typography>
           </Grid>
 
@@ -94,17 +94,17 @@ const Footer = () => {
             md={4}
             sx={{
               textAlign: "center",
-              display: {xs: "none", md: "unset"}
+              display: { xs: "none", md: "unset" },
             }}
           >
             <StaticImage
-            src="../images/canva_components/footer_shaker-trimmy.png"
-            alt="The Athlete"
-            placeholder="blurred"
-            layout="constrained"
-            height={150}
-            height={150}
-          />
+              src="../images/canva_components/footer_shaker.png"
+              alt="The Athlete"
+              placeholder="blurred"
+              layout="constrained"
+              height={150}
+              height={150}
+            />
           </Grid>
 
           <Grid
@@ -129,18 +129,15 @@ const Footer = () => {
               sx={{
                 fontFamily: "Gagalin",
                 color: "primary.main",
-                marginTop: -2
+                marginTop: -2,
               }}
             >
               TBA
             </Typography>
-          
           </Grid>
         </Grid>
 
-        
         {/* <Typography>© {new Date().getFullYear()}, Muscle Dummies</Typography> */}
-
       </Container>
     </footer>
   )

@@ -144,7 +144,7 @@ const TheTeam = () => {
           sm={10}
           sx={{
             textAlign: { xs: "center", sm: "left" },
-            alignSelf: "center"
+            alignSelf: "center",
           }}
         >
           <Typography
@@ -210,7 +210,7 @@ const TheTeam = () => {
           sm={10}
           sx={{
             textAlign: { xs: "center", sm: "left" },
-            alignSelf: "center"
+            alignSelf: "center",
           }}
         >
           <Typography

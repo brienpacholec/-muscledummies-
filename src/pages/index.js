@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import Container from "@mui/material/Container"
 
-
 import AOS from "aos"
 import "aos/dist/aos.css"
 
@@ -19,8 +18,6 @@ import Faq from "../components/faq"
 import Footer from "../components/footer"
 import Linkbar from "../components/linkbar"
 
-
-
 const IndexPage = () => {
   useEffect(() => {
     AOS.init({
@@ -30,7 +27,6 @@ const IndexPage = () => {
   }, [])
 
   return (
-
     <Layout>
       {/* TODO - add background images across page */}
       {/* HEADER & WELCOME */}
@@ -43,6 +39,7 @@ const IndexPage = () => {
         }}
       >
         <Header />
+
         <Welcome />
       </Container>
 

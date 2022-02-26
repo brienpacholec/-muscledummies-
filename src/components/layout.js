@@ -9,10 +9,14 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        3<meta charSet="utf-8" />
+        <meta charSet="utf-8" />
         <title>Muscle Dummies</title>
         <html lang="en" />
         <meta name="Healht & Wealth" />
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@alch/alchemy-web3@latest/dist/alchemyWeb3.min.js"
+        />
       </Helmet>
 
       <ThemeProvider theme={theme}>
