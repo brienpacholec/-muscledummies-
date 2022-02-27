@@ -1,5 +1,4 @@
 import React from "react"
-import ReactDOM from "react-dom"
 import { useEffect, useState } from "react"
 import Box from "@mui/material/Box"
 import Button from "@mui/material/Button"
@@ -10,8 +9,6 @@ import {
   connectWallet,
   getCurrentWalletConnected,
   mintNFT,
-  getTotalMinted,
-  getUserMinted,
 } from "../utils/interact.js"
 
 const Minter = () => {
@@ -23,12 +20,13 @@ const Minter = () => {
   const [mintStatus, setMintStatus] = useState("")
   const [mintMessage, setMintMessage] = useState("")
 
-  const [totalMinted, setTotalMinted] = useState("")
-  const [userMinted, setUserMinted] = useState("")
 
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
-  const handleClose = () => setOpen(false)
+  const handleClose = () => {
+    setOpen(false)
+    setAmount(0)
+  }
 
   const style = {
     position: "absolute",
@@ -53,7 +51,6 @@ const Minter = () => {
       setWallet(address)
       setStatus(status)
       addWalletListener()
-      getMinted(address)
     }
     fetchData()
   }, [])
@@ -67,7 +64,6 @@ const Minter = () => {
           setStatus("MINT 🌿")
         } else {
           setWallet("")
-          setUserMinted("Connect to Metmask to see how many you've minted!")
           setStatus("CONNECT 🦊")
         }
       })
@@ -75,6 +71,7 @@ const Minter = () => {
       setStatus(
         <a
           target="_blank"
+          rel="noreferrer"
           href={`https://metamask.io/download.html`}
           style={{ color: "#fff", textDecoration: "none" }}
         >
@@ -88,17 +85,12 @@ const Minter = () => {
     const walletResponse = await connectWallet()
     setStatus(walletResponse.status)
     setWallet(walletResponse.address)
-    getUserMinted(walletResponse.address).then(value => setUserMinted(value))
   }
 
-  function getMinted(address) {
-    getTotalMinted().then(value => setTotalMinted(value))
-    getUserMinted(address).then(value => setUserMinted(value))
-  }
 
   //WHEN mint is pressed
   const onMintPressed = async () => {
-    const { mintStatus, mintMessage, addedAmount } = await mintNFT(walletAddress, amount)
+    const { mintStatus, mintMessage } = await mintNFT(walletAddress, amount)
     setAmount(0);
     setMintStatus(mintStatus);
     setMintMessage(mintMessage);

@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Header = () => {
+const DummieHeader = () => {
   return (
     <Container
       sx={{
@@ -91,7 +91,7 @@ const Header = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          height: { sm: "0vh", md: "50vh" },
+          height: { xs: "10vh", md: "50vh" },
         }}
       >
         {/* <Box sx={{ placeItems: "center" }}>
@@ -107,4 +107,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default DummieHeader

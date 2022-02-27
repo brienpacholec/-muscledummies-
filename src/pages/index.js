@@ -5,7 +5,8 @@ import Container from "@mui/material/Container"
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-import Header from "../components/header"
+import DummieHeader from "../components/dummie_header"
+import Status from "../components/status"
 import Welcome from "../components/welcome"
 import About from "../components/about"
 import Community from "../components/community"
@@ -15,7 +16,7 @@ import MDCommunity from "../components/md_community"
 import Roadmap from "../components/roadmap"
 import TheTeam from "../components/the_team"
 import Faq from "../components/faq"
-import Footer from "../components/footer"
+import DummieFooter from "../components/dummie_footer"
 import Linkbar from "../components/linkbar"
 
 const IndexPage = () => {
@@ -28,9 +29,11 @@ const IndexPage = () => {
     AOS.refresh()
   }, [])
 
+  
+
   return (
     <Layout>
-      {/* TODO - add background images across page */}
+
       {/* HEADER & WELCOME */}
       <Container
         className="bg-1"
@@ -40,7 +43,7 @@ const IndexPage = () => {
           marginTop: { xs: 0, md: -30 },
         }}
       >
-        <Header />
+        <DummieHeader />
 
         <Welcome />
       </Container>
@@ -73,6 +76,8 @@ const IndexPage = () => {
         }}
       >
         <Utility />
+
+        <Status />
 
         <MDCommunity />
 
@@ -115,7 +120,7 @@ const IndexPage = () => {
 
       {/* FOOTER */}
       <Container>
-        <Footer />
+        <DummieFooter />
       </Container>
 
       <Linkbar />

@@ -1,5 +1,4 @@
 import React from "react"
-import ReactDOM from "react-dom"
 
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3")
 
@@ -32,6 +31,7 @@ export const connectWallet = async () => {
       status: (
         <a
           target="_blank"
+          rel="noreferrer"
           href={`https://metamask.io/download.html`}
           style={{ color: "#fff", textDecoration: "none" }}
         >
@@ -45,8 +45,6 @@ export const connectWallet = async () => {
 //FUNCTION to mint the NFT
 export const mintNFT = async (walletAddress, amount) => {
 
-  console.log(typeof(amount));
-  console.log(amount);
   if (walletAddress === "") {
     return {
       mintStatus: "red", //false
@@ -65,15 +63,15 @@ export const mintNFT = async (walletAddress, amount) => {
 
   //set up your Ethereum transaction
   const transactionParameters = {
-    to: contractAddress, // Required except during contract publications.
-    from: walletAddress, // must match user's active address.
-    data: window.contract.methods.mintUser(parseInt(amount)).encodeABI(), //make call to NFT smart contract
-    // value: currentCost.toString(),
+    to: contractAddress,
+    from: walletAddress, 
+    data: window.contract.methods.mintUser(parseInt(amount)).encodeABI(),
+    value: currentCost.toString(16)
   }
 
   //sign transaction via Metamask
   try {
-    const txHash = await window.ethereum.request({
+    await window.ethereum.request({
       method: "eth_sendTransaction",
       params: [transactionParameters],
     })
@@ -121,6 +119,7 @@ export const getCurrentWalletConnected = async () => {
       status: (
         <a
           target="_blank"
+          rel="noreferrer"
           href={`https://metamask.io/download.html`}
           style={{ color: "#fff", textDecoration: "none" }}
         >
@@ -133,8 +132,8 @@ export const getCurrentWalletConnected = async () => {
 
 //GET the total amount that have been minted
 export const getTotalMinted = async () => {
-  window.contract = await new web3.eth.Contract(contractABI, contractAddress) //loadContract();
-  const result = await window.contract.methods.totalSupply().call()
+  window.contract = await new web3.eth.Contract(contractABI, contractAddress)
+  const result = await window.contract.methods.totalSupply().call();
   return result
 }
 
@@ -142,9 +141,19 @@ export const getTotalMinted = async () => {
 export const getUserMinted = async address => {
   if (address !== "") {
     window.contract = await new web3.eth.Contract(contractABI, contractAddress)
-    const result = await window.contract.methods.balanceOf(address).call()
+    const result = await window.contract.methods.balanceOf(address).call();
     return result
   } else {
     return "Connect to Metmask to see how many you've minted!"
+  }
+}
+
+export const getCurrentStatus = async () => {
+  window.contract = await new web3.eth.Contract(contractABI, contractAddress)
+  const status = await window.contract.methods.paused().call();
+  const totalMinted = await window.contract.methods.totalSupply().call();
+  return {
+    status: status,
+    totalMinted: totalMinted
   }
 }

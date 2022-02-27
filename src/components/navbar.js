@@ -4,9 +4,7 @@ import Box from "@mui/material/Box"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
 import Container from "@mui/material/Container"
-import Button from "@mui/material/Button"
 import { StaticImage } from "gatsby-plugin-image"
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import Grid from "@mui/material/Grid"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Minter from "./minter"
@@ -260,31 +258,6 @@ const Navbar = () => {
                 width={75}
                 height={75}
               />
-
-              {/* TODO - update button */}
-              {/* <div>
-                <Button
-                  id="mint-btn"
-                  variant="contained"
-                  sx={{
-                    borderRadius: 10,
-                    paddingX: 2,
-                    marginY: 3,
-                    color: "text",
-                    flex: "right",
-                    border: 3,
-                    borderColor: "#FFF",
-                  }}
-                  href="https://www.google.com"
-                  endIcon={<ShoppingCartIcon />}
-                >
-                  <Typography
-                    sx={{ fontFamily: "Cooper Hewitt", lineHeight: 1.2 }}
-                  >
-                    Buy on OpenSea
-                  </Typography>
-                </Button>
-              </div> */}
             </Box>
           </Toolbar>
         </Container>
