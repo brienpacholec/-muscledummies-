@@ -55,8 +55,9 @@ const Minter = () => {
       setWallet(address)
       setStatus(status)
 
-      const { isPaused } = await getCurrentStatus();
-      setIsPaused(isPaused);
+      //TODO
+      // const { isPaused } = await getCurrentStatus();
+      // setIsPaused(isPaused);
 
       addWalletListener()
     }
@@ -70,9 +71,11 @@ const Minter = () => {
         if (accounts.length > 0) {
           setWallet(accounts[0])
           setStatus("MINT")
+          setIsPaused(true)
         } else {
           setWallet("")
           setStatus("CONNECT 🦊")
+          setIsPaused(false)
         }
       })
     } else {
@@ -83,7 +86,7 @@ const Minter = () => {
           href={`https://metamask.io/download.html`}
           style={{ color: "#fff", textDecoration: "none" }}
         >
-          INSTALL METAMASK 🦊
+          INSTALL 🦊
         </a>
       )
     }
@@ -112,7 +115,8 @@ const Minter = () => {
           id="mint-btn"
           variant="contained"
           onClick={handleOpen}
-          disabled={isPaused}
+          // disabled={isPaused}
+          disabled={true} //TODO
         >
           <Typography
             sx={{

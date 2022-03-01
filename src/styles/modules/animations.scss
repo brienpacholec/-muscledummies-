@@ -58,6 +58,12 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+.spin-reverse {
+    animation-name: spin-reverse;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
 
 .instant_shake {
     animation: shake 1.5s ease-in-out infinite;
@@ -103,5 +109,14 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-reverse{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
     }
 }

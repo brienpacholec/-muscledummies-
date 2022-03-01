@@ -82,7 +82,7 @@ const Welcome = () => {
             justifyContet: "center",
           }}
         >
-          <Link to="https://www.google.com">
+          {/* <Link to="https://www.google.com">
             <StaticImage
               src="../images/canva_components/view_collection.png"
               alt="Muscle Shaker"
@@ -92,7 +92,8 @@ const Welcome = () => {
                 marginTop: 30,
               }}
             />
-          </Link>
+          </Link> */}
+          
         </Grid>
       </Grid>
     </Container>

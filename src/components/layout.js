@@ -5,7 +5,7 @@ import { ThemeProvider } from "@mui/system"
 import Navbar from "./navbar"
 import { Helmet } from "react-helmet"
 
-const Layout = ({ children }) => {
+const Layout = ({ src, children }) => {
   return (
     <>
       <Helmet>
@@ -18,9 +18,10 @@ const Layout = ({ children }) => {
 
       <ThemeProvider theme={theme}>
         <div id="home"></div>
-        <Navbar />
+        {src == "index" && 
+          <Navbar />
+        }
         <main>{children}</main>
-        {/* <Footer /> */}
       </ThemeProvider>
     </>
   )
@@ -28,6 +29,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  src: PropTypes.string.isRequired
 }
 
 export default Layout

@@ -2,8 +2,6 @@ import React from "react"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-import Box from "@mui/material/Box"
-import { StaticImage } from "gatsby-plugin-image"
 
 const DummieHeader = () => {
   return (
@@ -85,23 +83,6 @@ const DummieHeader = () => {
           </Typography>
         </Grid>
       </Grid>
-
-      {/* TODO - remove height and add hero image */}
-      <Container
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        {/* <Box sx={{ placeItems: "center" }}>
-          <StaticImage
-            src="../images/dummies/dummie_banner.png"
-            alt="Muscle Shaker"
-            placeholder="blurred"
-            layout="constrained"
-          />
-        </Box> */}
-      </Container>
     </Container>
   )
 }

@@ -41,7 +41,7 @@ const DummierBanner = () => {
             {activeImage1 === "1" ? (
               <StaticImage
                 src="../images/dummies/1.png"
-                alt="Muscle Dummie Robot"
+                alt="Muscle Dummie 1"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -51,7 +51,7 @@ const DummierBanner = () => {
               <StaticImage
                 id="hover"
                 src="../images/dummies/2.png"
-                alt="Muscle Dummie Sandbag"
+                alt="Muscle Dummie 2"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -83,7 +83,7 @@ const DummierBanner = () => {
             {activeImage2 === "3" ? (
               <StaticImage
                 src="../images/dummies/3.png"
-                alt="Muscle Dummie Sandbag"
+                alt="Muscle Dummie 3"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -93,7 +93,7 @@ const DummierBanner = () => {
               <StaticImage
                 id="hover"
                 src="../images/dummies/4.png"
-                alt="Muscle Dummie Robot"
+                alt="Muscle Dummie 4"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -124,7 +124,7 @@ const DummierBanner = () => {
             {activeImage3 === "5" ? (
               <StaticImage
                 src="../images/dummies/5.png"
-                alt="Muscle Dummie Robot"
+                alt="Muscle Dummie 5"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -134,7 +134,7 @@ const DummierBanner = () => {
               <StaticImage
                 id="hover"
                 src="../images/dummies/6.png"
-                alt="Muscle Dummie Sandbag"
+                alt="Muscle Dummie 6"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -164,7 +164,7 @@ const DummierBanner = () => {
             {activeImage4 === "7" ? (
               <StaticImage
                 src="../images/dummies/7.png"
-                alt="Muscle Dummie Sandbag"
+                alt="Muscle Dummie 7"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -174,7 +174,7 @@ const DummierBanner = () => {
               <StaticImage
                 id="hover"
                 src="../images/dummies/8.png"
-                alt="Muscle Dummie Robot"
+                alt="Muscle Dummie 8"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}

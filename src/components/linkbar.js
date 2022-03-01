@@ -4,8 +4,7 @@ import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
 import Toolbar from "@mui/material/Toolbar"
 import Container from "@mui/material/Container"
-import IconButton from "@mui/material/IconButton"
-import Icon from "@mui/material/Icon"
+import Typography from "@mui/material/Typography"
 
 const Linkbar = () => {
   React.useEffect(() => {
@@ -33,59 +32,14 @@ const Linkbar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
-            <IconButton
-              aria-label="Instagram"
-              aria-controls="Link to Instagram"
-              aria-haspopup="false"
-              color="inherit"
-              href="https://www.instagram.com/muscledummiesnft/"
+            <Typography
+              sx={{
+                fontFamily: "Gagalin",
+                color: "#fff"
+              }}
             >
-              <Icon
-                className=" fab fa-instagram"
-                sx={{
-                  fontSize: { xs: 30, md: 45 },
-                  width: "fit-content",
-                  marginX: 2,
-                  color: "#FFF",
-                }}
-              />
-            </IconButton>
-
-            <IconButton
-              aria-label="Twitter"
-              aria-controls="Link to Twitter"
-              aria-haspopup="false"
-              color="inherit"
-              href="https://twitter.com/muscledummynft"
-            >
-              <Icon
-                className=" fab fa-twitter"
-                sx={{
-                  fontSize: { xs: 30, md: 45 },
-                  width: "fit-content",
-                  marginX: 2,
-                  color: "#FFF",
-                }}
-              />
-            </IconButton>
-
-            <IconButton
-              aria-label="Discord"
-              aria-controls="Link to Discord"
-              aria-haspopup="false"
-              color="inherit"
-              href="https://discord.gg/CCyjkz8S6m"
-            >
-              <Icon
-                className=" fab fa-discord"
-                sx={{
-                  fontSize: { xs: 30, md: 45 },
-                  width: "fit-content",
-                  marginX: 2,
-                  color: "#FFF",
-                }}
-              />
-            </IconButton>
+              © {new Date().getFullYear()}, Muscle Dummies
+            </Typography>
           </Box>
         </Toolbar>
       </Container>

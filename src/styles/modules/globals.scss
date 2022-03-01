@@ -33,6 +33,15 @@ html,body
     clip-path: polygon(0 0, 100% 8%, 100% 100%, 0% 100%);
 }
 
+.bg-404 {
+    background-image: url("/images/backgrounds/robot_reveal.gif");
+    height: 100vh;
+    @media (max-width: 899px) {
+        background-position: center;
+    }
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .neon {
     color: rgb(77, 255, 0);

@@ -25,7 +25,10 @@ const Status = () => {
 
 
     return (
-    <Container>
+    <Container
+        data-aos="zoom-in"
+        data-aos-delay="500"
+    >
         <Grid
             container
             sx={{ 
@@ -53,23 +56,25 @@ const Status = () => {
                     fontFamily: "Gagalin",
                 }}
             >
-                 {!isPaused ? (
+                {/* TODO */}
+                 {/* {!isPaused ? (
                     <>
                     <span style={{color: "white", textShadow: "2px 2px green"}}>MINT NOW!</span>
                     </>
                 ) : (
                     <span style={{color: "white", textShadow: "2px 2px red"}}>MINTING CLOSED!</span>
-                )}
+                )} */}
+                <span style={{color: "white", textShadow: "2px 2px red"}}>MINTING SOON!</span>
             </Typography>
 
-
-            <Box
+            {/* TODO */}
+            {/* <Box
                 sx={{
                     marginY: 1
                 }}
             >
                 <Minter/>
-            </Box>
+            </Box> */}
 
 
             <Typography
@@ -78,7 +83,9 @@ const Status = () => {
                 fontFamily: "Cooper Hewitt",
                 }}
             >
-                <span style={{color: "white", textShadow: "2px 2px black"}}>Minted {totalMinted} Dummie's out of 3,333</span>
+                {/* TODO */}
+                {/* <span style={{color: "white", textShadow: "2px 2px black"}}>Minted {totalMinted} Dummie's out of 3,333</span> */}
+                <span style={{color: "white", textShadow: "2px 2px black"}}>Dummie's yet to be minted: 3,333</span>
             </Typography>
         </Grid>
 

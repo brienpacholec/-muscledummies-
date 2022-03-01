@@ -1,70 +1,120 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Container from "@mui/material/Container"
-import Box from "@mui/material/Box"
-import Paper from "@mui/material/Paper"
 import Grid from "@mui/material/Grid"
-import { styled } from "@mui/material/styles"
 import Typography from "@mui/material/Typography"
-import { StaticImage } from "gatsby-plugin-image"
+import Button from '@mui/material/Button';
+import theme from "../themes/theme"
 
 const message404 = [
   {
-    title: "Sorry, I'm busy repping out 315.",
-    subtitle: "You hit 225 yet?",
-    image: "404_2.png",
+    title: "Sorry, our developers are at the gym.",
+    subtitle: "You get your session in today?",
   },
   {
-    title: "BRB I am at the gym!",
+    title: "WHOOPS, forgot about this page!",
     subtitle: "We'll get to this later...",
-    image: "404_2.png",
   },
   {
-    title: "Go somewhere else on the site,",
+    title: "How'd you get to this page?",
     subtitle: "I'm out getting a pump!",
-    image: "404_2.png",
   },
 ]
 
 const displayMessage = message404[Math.floor(Math.random() * message404.length)]
 
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "",
-  color: theme.palette.text.secondary,
-}))
-
 const NotFoundPage = () => {
   return (
-    <Layout>
-      <Container sx={{ marginTop: 3, marginBottom: 45 }}>
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
-            <Grid
-              item
-              xs={12}
-              md={8}
-              sx={{ textAlign: { xs: "left", md: "center" } }}
+    <Layout src="404">
+      <Container
+        className="bg-1"
+        maxWidth={false}
+        disableGutters
+        sx={{
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+       <Grid
+          container
+          sx={{
+            justifyContent: "center"
+          }}
+        >
+          <Grid
+           item
+            xs={10}
+            sm={8}
+            md={6}
+            sx={{
+              textAlign: "center",
+              backgroundColor: "rgba(150, 150, 150, 0.25)",
+              border: "2px solid #000",
+              borderRadius: 4,
+            }}
+          >
+
+            <Typography
+              variant="h3"
+              sx={{
+                  fontFamily: "Gagalin",
+                  fontSize: {xs: "2rem", sm: "2.5rem", md: "3rem"}
+              }}
             >
-              <Item sx={{ paddingY: 10 }}>
-                <Typography variant="h2">404 Page Not Found</Typography>
-                <Typography variant="h4">{displayMessage.title}</Typography>
-                <Typography variant="h5">{displayMessage.subtitle}</Typography>
-              </Item>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Item sx={{ paddingY: 10 }}>
-                <StaticImage
-                  src="../images/404_2.png"
-                  alt="A dinosaur"
-                  aspectRatio={4 / 5}
-                  transfromOptions={{ fit: "fill", scaleX: -1 }}
-                />
-              </Item>
-            </Grid>
+
+              <span style={{color: "white", textShadow: "2px 2px red"}}>PAGE NOT FOUND</span>
+            </Typography>
+            <Typography
+              variant="h4"
+              sx={{
+                  fontFamily: "Cooper Hewitt",
+                  fontSize: {xs: "1.2rem", sm: "1.8rem", md: "2.2rem"}
+              }}
+            >
+
+              <span style={{color: "white", textShadow: "2px 2px black"}}>{displayMessage.title}</span>
+            </Typography>
+
+            <Typography
+              variant="h5"
+              sx={{
+                  fontFamily: "Cooper Hewitt",
+                  fontSize: {xs: "1rem", sm: "1.3rem", md: "1.7rem"}
+              }}
+            >
+              <span style={{color: "white", textShadow: "2px 2px black"}}>{displayMessage.subtitle}</span>
+            </Typography>
+
+
+            <Button
+              variant="contained"
+              href="/"
+              sx={{
+                margin: 1
+              }}
+            >
+               <Typography
+                  variant="h3"
+                  sx={{
+                      fontFamily: "Gagalin",
+                      fontSize: {xs:"1rem", sm: "1.5rem"}
+                  }}
+                >
+
+                  BACK TO MUSCLE DUMMIES
+            </Typography>
+
+            </Button>
+
           </Grid>
-        </Box>
+
+
+        </Grid>
+
+       
+
+
       </Container>
     </Layout>
   )
