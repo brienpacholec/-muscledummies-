@@ -41,9 +41,13 @@ const IndexPage = () => {
         disableGutters
         sx={{
           marginTop: { xs: 0, md: -30 },
+          paddingTop: {xs: 5, md: 0}
         }}
       >
         <DummieHeader />
+
+        <Status />
+
 
         <Welcome />
       </Container>
@@ -76,8 +80,6 @@ const IndexPage = () => {
         }}
       >
         <Utility />
-
-        <Status />
 
         <MDCommunity />
 

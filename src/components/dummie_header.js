@@ -91,7 +91,6 @@ const DummieHeader = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          height: { xs: "10vh", md: "50vh" },
         }}
       >
         {/* <Box sx={{ placeItems: "center" }}>

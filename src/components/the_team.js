@@ -33,6 +33,7 @@ const TheTeam = () => {
               fontFamily: "Gagalin",
               color: "#0003FF",
               fontSize: { xs: "3rem", sm: "4.5rem", md: "6rem" },
+              textShadow: "2px 2px white"
             }}
           >
             FOUNDERS

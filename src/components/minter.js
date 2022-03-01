@@ -9,6 +9,7 @@ import {
   connectWallet,
   getCurrentWalletConnected,
   mintNFT,
+  getCurrentStatus
 } from "../utils/interact.js"
 
 const Minter = () => {
@@ -20,12 +21,14 @@ const Minter = () => {
   const [mintStatus, setMintStatus] = useState("")
   const [mintMessage, setMintMessage] = useState("")
 
+  const [isPaused, setIsPaused] = useState("");
 
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => {
     setOpen(false)
     setAmount(0)
+    setMintMessage("")
   }
 
   const style = {
@@ -33,7 +36,7 @@ const Minter = () => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 600,
+    width: {xs: 400, sm: 600},
     bgcolor: "background.paper",
     border: "2px solid #000",
     borderRadius: 4,
@@ -47,9 +50,14 @@ const Minter = () => {
   //INITs wallet change listener and mint checker
   useEffect(() => {
     async function fetchData() {
-      const { address, status } = await getCurrentWalletConnected()
+      const { address, status } = await getCurrentWalletConnected();
+
       setWallet(address)
       setStatus(status)
+
+      const { isPaused } = await getCurrentStatus();
+      setIsPaused(isPaused);
+
       addWalletListener()
     }
     fetchData()
@@ -61,7 +69,7 @@ const Minter = () => {
       window.ethereum.on("accountsChanged", accounts => {
         if (accounts.length > 0) {
           setWallet(accounts[0])
-          setStatus("MINT 🌿")
+          setStatus("MINT")
         } else {
           setWallet("")
           setStatus("CONNECT 🦊")
@@ -87,7 +95,6 @@ const Minter = () => {
     setWallet(walletResponse.address)
   }
 
-
   //WHEN mint is pressed
   const onMintPressed = async () => {
     const { mintStatus, mintMessage } = await mintNFT(walletAddress, amount)
@@ -102,26 +109,20 @@ const Minter = () => {
       {walletAddress.length > 0 ? (
         <>
           <Button
-            id="mint-btn"
-            variant="contained"
+          id="mint-btn"
+          variant="contained"
+          onClick={handleOpen}
+          disabled={isPaused}
+        >
+          <Typography
             sx={{
-              borderRadius: 10,
-              color: "text.primary",
-              flex: "right",
-              border: 4,
-              borderColor: "#FFF",
+              fontFamily: "Cooper Hewitt",
+              lineHeight: 1
             }}
-            onClick={handleOpen}
           >
-            <Typography
-              sx={{
-                fontFamily: "Cooper Hewitt",
-                lineHeight: 1,
-              }}
-            >
-              {status}
-            </Typography>
-          </Button>
+            {status}
+          </Typography>
+        </Button>
           <Modal
             open={open}
             onClose={handleClose}
@@ -180,24 +181,18 @@ const Minter = () => {
         <Button
           id="mint-btn"
           variant="contained"
-          sx={{
-            borderRadius: 10,
-            color: "text.primary",
-            flex: "right",
-            border: 4,
-            borderColor: "#FFF",
-          }}
           onClick={connectWalletPressed}
+          // disabled={isPaused}
         >
           <Typography
             sx={{
               fontFamily: "Cooper Hewitt",
-              lineHeight: 1,
             }}
           >
             {status}
           </Typography>
         </Button>
+
       )}
     </>
   )

@@ -18,6 +18,7 @@ const Navbar = () => {
           backgroundColor: "rgba(0,0,0,0.85)",
           paddingY: { xs: 1, md: 4 },
           position: { xs: "static", md: "sticky" },
+          display: {xs: "none", md: "flex"},
         }}
       >
         <Container>
@@ -238,26 +239,6 @@ const Navbar = () => {
                   </Grid>
                 </Grid>
               </Grid>
-            </Box>
-
-            {/* MOBILE NAV */}
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: { xs: "flex", md: "none" },
-                justifyContent: "space-between",
-                alignItems: "center",
-                paddingX: { xs: 2, sm: 5 },
-              }}
-            >
-              <StaticImage
-                src="../images/dummies/sandbag.png"
-                alt="Muscle Shaker"
-                placeholder="blurred"
-                layout="fixed"
-                width={75}
-                height={75}
-              />
             </Box>
           </Toolbar>
         </Container>

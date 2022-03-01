@@ -14,7 +14,7 @@ export const connectWallet = async () => {
         method: "eth_requestAccounts",
       })
       const obj = {
-        status: "MINT 🌿",
+        status: "MINT",
         address: addressArray[0],
       }
       return obj
@@ -99,7 +99,7 @@ export const getCurrentWalletConnected = async () => {
       if (addressArray.length > 0) {
         return {
           address: addressArray[0],
-          status: "MINT 🌿",
+          status: "MINT",
         }
       } else {
         return {
@@ -153,7 +153,7 @@ export const getCurrentStatus = async () => {
   const status = await window.contract.methods.paused().call();
   const totalMinted = await window.contract.methods.totalSupply().call();
   return {
-    status: status,
+    isPaused: status,
     totalMinted: totalMinted
   }
 }

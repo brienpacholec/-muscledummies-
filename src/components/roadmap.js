@@ -7,7 +7,11 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Roadmap = () => {
   return (
-    <Container id="roadmap" >
+    <Container id="roadmap" 
+      sx={{
+        paddingTop: 4
+      }}
+    >
       {/* TOP */}
       <Grid
         container
@@ -219,24 +223,7 @@ const Roadmap = () => {
         >
           <Box
             sx={{
-              display: { md: "none", lg: "flex" },
-              justifyContent: "center",
-              marginTop: -10,
-            }}
-          >
-            <StaticImage
-              src="../images/canva_components/map.png"
-              alt="Map"
-              placeholder="blurred"
-              layout="constrained"
-              height={253}
-              width={253}
-            />
-          </Box>
-
-          <Box
-            sx={{
-              marginTop: 4,
+              marginTop: 22,
             }}
             data-aos="fade-left"
           >
@@ -266,24 +253,7 @@ const Roadmap = () => {
 
           <Box
             sx={{
-              display: { md: "none", lg: "flex" },
-              justifyContent: "center",
-              marginTop: 6,
-            }}
-          >
-            <StaticImage
-              src="../images/canva_components/barbell.png"
-              alt="Map"
-              placeholder="blurred"
-              layout="constrained"
-              height={65}
-              width={200}
-            />
-          </Box>
-
-          <Box
-            sx={{
-              marginTop: 10,
+              marginTop: 20,
             }}
             data-aos="fade-left"
           >
@@ -313,6 +283,24 @@ const Roadmap = () => {
               while earning $MUSL coins to redeem in our store!
             </Typography>
           </Box>
+
+          <Box
+            sx={{
+              display: { md: "none", lg: "flex" },
+              justifyContent: "center",
+              margin: -3
+
+            }}
+          >
+            <StaticImage
+              src="../images/canva_components/dummie_world.png"
+              alt="Map"
+              placeholder="blurred"
+              layout="constrained"
+              height={253}
+              width={253}
+            />
+          </Box>
         </Grid>
 
         <Grid
@@ -320,6 +308,7 @@ const Roadmap = () => {
           xs={12}
           sx={{
             textAlign: "center",
+            marginTop: -12
           }}
         >
           <Typography

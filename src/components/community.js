@@ -67,7 +67,7 @@ const Community = () => {
             </Link>
 
             <Button
-              variant="outlined"
+              variant="contained"
               href="https://discord.gg/CCyjkz8S6m"
               sx={{
                 textAlign: "center",
@@ -78,7 +78,7 @@ const Community = () => {
                 variant="h4"
                 sx={{
                   fontFamily: "Gagalin",
-                  fontSize: { xs: "1rem", sm: "2rem", md: "2rem" },
+                  fontSize: { xs: "1.5rem", sm: "2.5rem", md: "3rem" },
                 }}
               >
                 JOIN OUR DISCORD
