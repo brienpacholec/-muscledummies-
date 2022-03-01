@@ -1,9 +1,10 @@
-import React, { useEffect, lazy, Suspense } from "react"
+import React, { useEffect } from "react"
 import Container from "@mui/material/Container"
 
 import AOS from "aos"
 import "aos/dist/aos.css"
 
+import Layout from "../components/layout"
 import DummieHeader from "../components/dummie_header"
 import Status from "../components/status"
 import Welcome from "../components/welcome"
@@ -19,8 +20,6 @@ import DummieFooter from "../components/dummie_footer"
 import Linkbar from "../components/linkbar"
 
 
-const Layout = lazy(() => import("../components/layout"))
-
 const IndexPage = () => {
   useEffect(() => {
     AOS.init({
@@ -31,12 +30,8 @@ const IndexPage = () => {
     AOS.refresh()
   }, [])
 
-  
-
   return (
-    <Suspense fallback="">
       <Layout src="index">
-
         {/* HEADER & WELCOME */}
         <Container
           className="bg-1"
@@ -44,13 +39,12 @@ const IndexPage = () => {
           disableGutters
           sx={{
             marginTop: { xs: 0, md: -30 },
-            paddingTop: {xs: 5, md: 0}
+            paddingTop: { xs: 5, md: 0 },
           }}
         >
           <DummieHeader />
 
           <Status />
-
 
           <Welcome />
         </Container>
@@ -74,7 +68,7 @@ const IndexPage = () => {
         </Container>
 
         {/* INSTANT UTILITY && MUSCLE DUMMIES COMMUNITY */}
-        <Container 
+        <Container
           id="utility"
           maxWidth={false}
           disableGutters
@@ -85,7 +79,6 @@ const IndexPage = () => {
           <Utility />
 
           <MDCommunity />
-
         </Container>
 
         {/* ROADMAP */}
@@ -98,7 +91,6 @@ const IndexPage = () => {
           }}
         >
           <Roadmap />
-
         </Container>
 
         {/* MEET THE TEAM */}
@@ -128,7 +120,6 @@ const IndexPage = () => {
 
         <Linkbar />
       </Layout>
-    </Suspense>
   )
 }
 

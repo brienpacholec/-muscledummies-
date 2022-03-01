@@ -35,7 +35,7 @@ const Linkbar = () => {
             <Typography
               sx={{
                 fontFamily: "Gagalin",
-                color: "#fff"
+                color: "#fff",
               }}
             >
               © {new Date().getFullYear()}, Muscle Dummies

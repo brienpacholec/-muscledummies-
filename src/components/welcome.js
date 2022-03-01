@@ -2,8 +2,8 @@ import React from "react"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-import { StaticImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
+// import { StaticImage } from "gatsby-plugin-image"
+// import { Link } from "gatsby"
 
 const Welcome = () => {
   return (
@@ -82,6 +82,7 @@ const Welcome = () => {
             justifyContet: "center",
           }}
         >
+          {/* TODO */}
           {/* <Link to="https://www.google.com">
             <StaticImage
               src="../images/canva_components/view_collection.png"
@@ -93,7 +94,6 @@ const Welcome = () => {
               }}
             />
           </Link> */}
-          
         </Grid>
       </Grid>
     </Container>

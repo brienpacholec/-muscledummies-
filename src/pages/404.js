@@ -3,8 +3,7 @@ import Layout from "../components/layout"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-import Button from '@mui/material/Button';
-import theme from "../themes/theme"
+import Button from "@mui/material/Button"
 
 const message404 = [
   {
@@ -36,14 +35,14 @@ const NotFoundPage = () => {
           alignItems: "center",
         }}
       >
-       <Grid
+        <Grid
           container
           sx={{
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
           <Grid
-           item
+            item
             xs={10}
             sm={8}
             md={6}
@@ -54,67 +53,60 @@ const NotFoundPage = () => {
               borderRadius: 4,
             }}
           >
-
             <Typography
               variant="h3"
               sx={{
-                  fontFamily: "Gagalin",
-                  fontSize: {xs: "2rem", sm: "2.5rem", md: "3rem"}
+                fontFamily: "Gagalin",
+                fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
               }}
             >
-
-              <span style={{color: "white", textShadow: "2px 2px red"}}>PAGE NOT FOUND</span>
+              <span style={{ color: "white", textShadow: "2px 2px red" }}>
+                PAGE NOT FOUND
+              </span>
             </Typography>
             <Typography
               variant="h4"
               sx={{
-                  fontFamily: "Cooper Hewitt",
-                  fontSize: {xs: "1.2rem", sm: "1.8rem", md: "2.2rem"}
+                fontFamily: "Cooper Hewitt",
+                fontSize: { xs: "1.2rem", sm: "1.8rem", md: "2.2rem" },
               }}
             >
-
-              <span style={{color: "white", textShadow: "2px 2px black"}}>{displayMessage.title}</span>
+              <span style={{ color: "white", textShadow: "2px 2px black" }}>
+                {displayMessage.title}
+              </span>
             </Typography>
 
             <Typography
               variant="h5"
               sx={{
-                  fontFamily: "Cooper Hewitt",
-                  fontSize: {xs: "1rem", sm: "1.3rem", md: "1.7rem"}
+                fontFamily: "Cooper Hewitt",
+                fontSize: { xs: "1rem", sm: "1.3rem", md: "1.7rem" },
               }}
             >
-              <span style={{color: "white", textShadow: "2px 2px black"}}>{displayMessage.subtitle}</span>
+              <span style={{ color: "white", textShadow: "2px 2px black" }}>
+                {displayMessage.subtitle}
+              </span>
             </Typography>
-
 
             <Button
               variant="contained"
               href="/"
               sx={{
-                margin: 1
+                margin: 1,
               }}
             >
-               <Typography
-                  variant="h3"
-                  sx={{
-                      fontFamily: "Gagalin",
-                      fontSize: {xs:"1rem", sm: "1.5rem"}
-                  }}
-                >
-
-                  BACK TO MUSCLE DUMMIES
-            </Typography>
-
+              <Typography
+                variant="h3"
+                sx={{
+                  fontFamily: "Gagalin",
+                  fontSize: { xs: "1rem", sm: "1.5rem" },
+                }}
+              >
+                BACK TO MUSCLE DUMMIES
+              </Typography>
             </Button>
-
           </Grid>
-
-
         </Grid>
-
-       
-
-
       </Container>
     </Layout>
   )

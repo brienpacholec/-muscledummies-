@@ -13,14 +13,11 @@ const Layout = ({ src, children }) => {
         <title>Muscle Dummies</title>
         <html lang="en" />
         <meta name="Healht & Wealth" />
-        
       </Helmet>
 
       <ThemeProvider theme={theme}>
         <div id="home"></div>
-        {src == "index" && 
-          <Navbar />
-        }
+        {src === "index" && <Navbar />}
         <main>{children}</main>
       </ThemeProvider>
     </>
@@ -29,7 +26,7 @@ const Layout = ({ src, children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  src: PropTypes.string.isRequired
+  src: PropTypes.string.isRequired,
 }
 
 export default Layout

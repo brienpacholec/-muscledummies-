@@ -3,41 +3,33 @@ import { useEffect, useState } from "react"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-import {getCurrentStatus} from "../utils/interact.js"
-import Box from "@mui/material/Box"
-import Minter from "./minter"
-
-
+import { getCurrentStatus } from "../utils/interact.js"
+// import Box from "@mui/material/Box"
+// import Minter from "./minter"
 
 const Status = () => {
+  const [isPaused, setIsPaused] = useState("")
+  const [totalMinted, setTotalMinted] = useState("")
 
-    const [isPaused, setIsPaused] = useState("");
-    const [totalMinted, setTotalMinted] = useState("");
+  useEffect(() => {
+    async function fetchData() {
+      const { isPaused, totalMinted } = await getCurrentStatus()
+      setIsPaused(isPaused)
+      setTotalMinted(totalMinted)
+    }
+    fetchData()
+  }, [])
 
-    useEffect(() => {
-        async function fetchData(){
-          const {isPaused, totalMinted} = await getCurrentStatus();
-          setIsPaused(isPaused);
-          setTotalMinted(totalMinted)
-        }
-        fetchData();
-    },[]);
-
-
-    return (
-    <Container
-        data-aos="zoom-in"
-        data-aos-delay="500"
-    >
-        <Grid
-            container
-            sx={{ 
-                display: "flex", 
-                justifyContent: "center",
-                marginTop: { xs: 0, md: 3 }, 
-            }}
-        >
-
+  return (
+    <Container data-aos="zoom-in" data-aos-delay="500">
+      <Grid
+        container
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: { xs: 0, md: 3 },
+        }}
+      >
         <Grid
           item
           xs={8}
@@ -50,25 +42,27 @@ const Status = () => {
             borderRadius: 4,
           }}
         >
-            <Typography
-                variant="h3"
-                sx={{
-                    fontFamily: "Gagalin",
-                }}
-            >
-                {/* TODO */}
-                 {/* {!isPaused ? (
+          <Typography
+            variant="h3"
+            sx={{
+              fontFamily: "Gagalin",
+            }}
+          >
+            {/* TODO */}
+            {/* {!isPaused ? (
                     <>
                     <span style={{color: "white", textShadow: "2px 2px green"}}>MINT NOW!</span>
                     </>
                 ) : (
                     <span style={{color: "white", textShadow: "2px 2px red"}}>MINTING CLOSED!</span>
                 )} */}
-                <span style={{color: "white", textShadow: "2px 2px red"}}>MINTING SOON!</span>
-            </Typography>
+            <span style={{ color: "white", textShadow: "2px 2px red" }}>
+              MINTING SOON!
+            </span>
+          </Typography>
 
-            {/* TODO */}
-            {/* <Box
+          {/* TODO */}
+          {/* <Box
                 sx={{
                     marginY: 1
                 }}
@@ -76,23 +70,22 @@ const Status = () => {
                 <Minter/>
             </Box> */}
 
-
-            <Typography
-                sx={{
-                color: "white",
-                fontFamily: "Cooper Hewitt",
-                }}
-            >
-                {/* TODO */}
-                {/* <span style={{color: "white", textShadow: "2px 2px black"}}>Minted {totalMinted} Dummie's out of 3,333</span> */}
-                <span style={{color: "white", textShadow: "2px 2px black"}}>Dummie's yet to be minted: 3,333</span>
-            </Typography>
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Cooper Hewitt",
+            }}
+          >
+            {/* TODO */}
+            {/* <span style={{color: "white", textShadow: "2px 2px black"}}>Minted {totalMinted} Dummie's out of 3,333</span> */}
+            <span style={{ color: "white", textShadow: "2px 2px black" }}>
+              Dummies yet to be minted: 3,333
+            </span>
+          </Typography>
         </Grid>
-
       </Grid>
-
     </Container>
-    );
+  )
 }
 
-export default Status;
+export default Status

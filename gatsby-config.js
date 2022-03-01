@@ -34,28 +34,5 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        custom: {
-          families: ["Gagalin", "Cooper Hewitt"],
-          urls: ["/fonts/fonts.css"],
-        },
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `mock`,
-        path: `${__dirname}/src/mock`,
-      },
-    },
   ],
 }

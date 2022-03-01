@@ -18,7 +18,7 @@ const Navbar = () => {
           backgroundColor: "rgba(0,0,0,0.85)",
           paddingY: { xs: 1, md: 4 },
           position: { xs: "static", md: "sticky" },
-          display: {xs: "none", md: "flex"},
+          display: { xs: "none", md: "flex" },
         }}
       >
         <Container>

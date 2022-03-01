@@ -7,9 +7,10 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Roadmap = () => {
   return (
-    <Container id="roadmap" 
+    <Container
+      id="roadmap"
       sx={{
-        paddingTop: 4
+        paddingTop: 4,
       }}
     >
       {/* TOP */}
@@ -288,8 +289,7 @@ const Roadmap = () => {
             sx={{
               display: { md: "none", lg: "flex" },
               justifyContent: "center",
-              margin: -3
-
+              margin: -3,
             }}
           >
             <StaticImage
@@ -308,7 +308,7 @@ const Roadmap = () => {
           xs={12}
           sx={{
             textAlign: "center",
-            marginTop: -12
+            marginTop: -12,
           }}
         >
           <Typography

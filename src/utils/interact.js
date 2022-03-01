@@ -44,16 +44,15 @@ export const connectWallet = async () => {
 
 //FUNCTION to mint the NFT
 export const mintNFT = async (walletAddress, amount) => {
-
   if (walletAddress === "") {
     return {
       mintStatus: "red", //false
-      mintMessage: "Please reconnect your wallet!"
+      mintMessage: "Please reconnect your wallet!",
     }
   } else if (amount <= 0) {
     return {
       mintStatus: "red", //false
-      mintMessage: "Please enter a valid amount"
+      mintMessage: "Please enter a valid amount",
     }
   }
 
@@ -64,9 +63,9 @@ export const mintNFT = async (walletAddress, amount) => {
   //set up your Ethereum transaction
   const transactionParameters = {
     to: contractAddress,
-    from: walletAddress, 
+    from: walletAddress,
     data: window.contract.methods.mintUser(parseInt(amount)).encodeABI(),
-    value: currentCost.toString(16)
+    value: currentCost.toString(16),
   }
 
   //sign transaction via Metamask
@@ -133,7 +132,7 @@ export const getCurrentWalletConnected = async () => {
 //GET the total amount that have been minted
 export const getTotalMinted = async () => {
   window.contract = await new web3.eth.Contract(contractABI, contractAddress)
-  const result = await window.contract.methods.totalSupply().call();
+  const result = await window.contract.methods.totalSupply().call()
   return result
 }
 
@@ -141,7 +140,7 @@ export const getTotalMinted = async () => {
 export const getUserMinted = async address => {
   if (address !== "") {
     window.contract = await new web3.eth.Contract(contractABI, contractAddress)
-    const result = await window.contract.methods.balanceOf(address).call();
+    const result = await window.contract.methods.balanceOf(address).call()
     return result
   } else {
     return "Connect to Metmask to see how many you've minted!"
@@ -150,10 +149,10 @@ export const getUserMinted = async address => {
 
 export const getCurrentStatus = async () => {
   window.contract = await new web3.eth.Contract(contractABI, contractAddress)
-  const status = await window.contract.methods.paused().call();
-  const totalMinted = await window.contract.methods.totalSupply().call();
+  const status = await window.contract.methods.paused().call()
+  const totalMinted = await window.contract.methods.totalSupply().call()
   return {
     isPaused: status,
-    totalMinted: totalMinted
+    totalMinted: totalMinted,
   }
 }

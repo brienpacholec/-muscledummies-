@@ -4,12 +4,12 @@ import Box from "@mui/material/Box"
 import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import Modal from "@mui/material/Modal"
-import Slider from '@mui/material/Slider'
+import Slider from "@mui/material/Slider"
 import {
   connectWallet,
   getCurrentWalletConnected,
   mintNFT,
-  getCurrentStatus
+  getCurrentStatus,
 } from "../utils/interact.js"
 
 const Minter = () => {
@@ -17,11 +17,11 @@ const Minter = () => {
   const [walletAddress, setWallet] = useState("")
   const [status, setStatus] = useState("")
   const [amount, setAmount] = useState("")
-  
+
   const [mintStatus, setMintStatus] = useState("")
   const [mintMessage, setMintMessage] = useState("")
 
-  const [isPaused, setIsPaused] = useState("");
+  const [isPaused, setIsPaused] = useState("")
 
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
@@ -36,21 +36,21 @@ const Minter = () => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: {xs: 400, sm: 600},
+    width: { xs: 400, sm: 600 },
     bgcolor: "background.paper",
     border: "2px solid #000",
     borderRadius: 4,
     boxShadow: 24,
     p: 4,
     color: "black",
-    textAlign: "center"
+    textAlign: "center",
   }
 
   //ON page load - check to see if they have already connected to the site
   //INITs wallet change listener and mint checker
   useEffect(() => {
     async function fetchData() {
-      const { address, status } = await getCurrentWalletConnected();
+      const { address, status } = await getCurrentWalletConnected()
 
       setWallet(address)
       setStatus(status)
@@ -101,9 +101,9 @@ const Minter = () => {
   //WHEN mint is pressed
   const onMintPressed = async () => {
     const { mintStatus, mintMessage } = await mintNFT(walletAddress, amount)
-    setAmount(0);
-    setMintStatus(mintStatus);
-    setMintMessage(mintMessage);
+    setAmount(0)
+    setMintStatus(mintStatus)
+    setMintMessage(mintMessage)
   }
 
   return (
@@ -112,21 +112,21 @@ const Minter = () => {
       {walletAddress.length > 0 ? (
         <>
           <Button
-          id="mint-btn"
-          variant="contained"
-          onClick={handleOpen}
-          // disabled={isPaused}
-          disabled={true} //TODO
-        >
-          <Typography
-            sx={{
-              fontFamily: "Cooper Hewitt",
-              lineHeight: 1
-            }}
+            id="mint-btn"
+            variant="contained"
+            onClick={handleOpen}
+            // disabled={isPaused}
+            disabled={true} //TODO
           >
-            {status}
-          </Typography>
-        </Button>
+            <Typography
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                lineHeight: 1,
+              }}
+            >
+              {status}
+            </Typography>
+          </Button>
           <Modal
             open={open}
             onClose={handleClose}
@@ -137,47 +137,53 @@ const Minter = () => {
               <Typography
                 id="modal-modal-title"
                 variant="h3"
-                sx={{ 
+                sx={{
                   fontFamily: "Gagalin",
                 }}
               >
                 MINT YOUR DUMMIES
               </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2, fontFamily: "Cooper Hewitt",}}>
-                How many would you like to mint? 
+              <Typography
+                id="modal-modal-description"
+                sx={{ mt: 2, fontFamily: "Cooper Hewitt" }}
+              >
+                How many would you like to mint?
               </Typography>
 
-              <Slider 
-                defaultValue={0} 
-                aria-label="Default" 
+              <Slider
+                defaultValue={0}
+                aria-label="Default"
                 valueLabelDisplay="auto"
                 min={0}
                 max={10}
                 sx={{
                   color: "#000",
-                  width: "50%"
+                  width: "50%",
                 }}
-                onChange={ (e, val) => setAmount(val)}
+                onChange={(e, val) => setAmount(val)}
               />
 
-              <br/>
+              <br />
 
               {amount > 0 ? (
                 <>
-                <Button variant="contained" onClick={onMintPressed}>MINT {amount} Muscle Dummies</Button>
+                  <Button variant="contained" onClick={onMintPressed}>
+                    MINT {amount} Muscle Dummies
+                  </Button>
                 </>
-              ): (
-                <Button variant="contained" disabled>MINT {amount} Muscle Dummies</Button>
+              ) : (
+                <Button variant="contained" disabled>
+                  MINT {amount} Muscle Dummies
+                </Button>
               )}
 
-              {mintMessage.length > 0  ? (
-                <Typography sx={{ color: mintStatus, fontFamily: "Gagalin",}}>
+              {mintMessage.length > 0 ? (
+                <Typography sx={{ color: mintStatus, fontFamily: "Gagalin" }}>
                   <p>{mintMessage}</p>
                 </Typography>
               ) : (
                 " "
               )}
-
             </Box>
           </Modal>
         </>
@@ -196,7 +202,6 @@ const Minter = () => {
             {status}
           </Typography>
         </Button>
-
       )}
     </>
   )
