@@ -37,7 +37,7 @@ const DummierBanner = () => {
           <div
             onMouseOver={() => setActiveImage1("1")}
             onMouseLeave={() => setActiveImage1("2")}
-            onFocus={ () => void 0 }
+            onFocus={() => void 0}
           >
             {activeImage1 === "1" ? (
               <StaticImage
@@ -80,7 +80,7 @@ const DummierBanner = () => {
           <div
             onMouseOver={() => setActiveImage2("3")}
             onMouseLeave={() => setActiveImage2("4")}
-            onFocus={ () => void 0 }
+            onFocus={() => void 0}
           >
             {activeImage2 === "3" ? (
               <StaticImage
@@ -122,7 +122,7 @@ const DummierBanner = () => {
           <div
             onMouseOver={() => setActiveImage3("5")}
             onMouseLeave={() => setActiveImage3("6")}
-            onFocus={ () => void 0 }
+            onFocus={() => void 0}
           >
             {activeImage3 === "5" ? (
               <StaticImage
@@ -163,7 +163,7 @@ const DummierBanner = () => {
           <div
             onMouseOver={() => setActiveImage4("7")}
             onMouseLeave={() => setActiveImage4("8")}
-            onFocus={ () => void 0 }
+            onFocus={() => void 0}
           >
             {activeImage4 === "7" ? (
               <StaticImage

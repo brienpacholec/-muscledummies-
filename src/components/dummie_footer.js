@@ -33,7 +33,7 @@ const DummieFooter = () => {
           >
             WE UNDERSTAND SOME OF OUR CUSTOMERS MAY BE NEW TO THIS OR THE WORLD
             OF NFT'S MAY SEEM FOREIGN, BUT WE MADE SURE TO PROVIDE YOU ALL THE
-            INFO YOU NEED IN OUR DISCORD. SOME MAY EVEN BE NEW TO DISCORD.. NO
+            INFO YOU NEED IN OUR DISCORD. SOME MAY EVEN BE NEW TO DISCORD. NO
             WORRIES! DISCORD IS AN INCREDIBLY EASY APP TO NAVIGATE AND WE HAVE A
             TUTORIAL VIDEO ON HOW TO JOIN AND BE ENGAGED BELOW!
           </Typography>
@@ -82,7 +82,7 @@ const DummieFooter = () => {
               color: "#FFF",
             }}
           >
-            Be apart of the best Health and Fitness Community in the World!
+            Be a part of the best Health and Fitness Community in the World!
           </Typography>
 
           <br />
@@ -94,7 +94,10 @@ const DummieFooter = () => {
             }}
           >
             <a href="https://discord.gg/CCyjkz8S6m">
-              <img src="https://img.icons8.com/dusk/40/000000/discord-logo.png" alt="discord"/>
+              <img
+                src="https://img.icons8.com/dusk/40/000000/discord-logo.png"
+                alt="discord"
+              />
             </a>
             {/* TODO */}
             {/* <a href="https://opensea.io/">
@@ -105,10 +108,16 @@ const DummieFooter = () => {
             </svg>
           </a> */}
             <a href="https://www.instagram.com/muscledummiesnft/">
-              <img src="https://img.icons8.com/fluency/40/000000/instagram-new.png"  alt="instagram"/>
+              <img
+                src="https://img.icons8.com/fluency/40/000000/instagram-new.png"
+                alt="instagram"
+              />
             </a>
             <a href="https://twitter.com/muscledummynft/">
-              <img src="https://img.icons8.com/fluency/40/000000/twitter.png" alt="twitter"/>
+              <img
+                src="https://img.icons8.com/fluency/40/000000/twitter.png"
+                alt="twitter"
+              />
             </a>
           </Box>
         </Grid>

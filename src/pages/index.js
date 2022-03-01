@@ -19,7 +19,6 @@ import Faq from "../components/faq"
 import DummieFooter from "../components/dummie_footer"
 import Linkbar from "../components/linkbar"
 
-
 const IndexPage = () => {
   useEffect(() => {
     AOS.init({
@@ -31,95 +30,95 @@ const IndexPage = () => {
   }, [])
 
   return (
-      <Layout src="index">
-        {/* HEADER & WELCOME */}
-        <Container
-          className="bg-1"
-          maxWidth={false}
-          disableGutters
-          sx={{
-            marginTop: { xs: 0, md: -30 },
-            paddingTop: { xs: 5, md: 0 },
-          }}
-        >
-          <DummieHeader />
+    <Layout src="index">
+      {/* HEADER & WELCOME */}
+      <Container
+        className="bg-1"
+        maxWidth={false}
+        disableGutters
+        sx={{
+          marginTop: { xs: 0, md: -30 },
+          paddingTop: { xs: 5, md: 0 },
+        }}
+      >
+        <DummieHeader />
 
-          <Status />
+        <Status />
 
-          <Welcome />
-        </Container>
+        <Welcome />
+      </Container>
 
-        {/* Dummie Banner */}
-        <Container maxWidth={false} disableGutters>
-          <DummierBanner />
-        </Container>
+      {/* Dummie Banner */}
+      <Container maxWidth={false} disableGutters>
+        <DummierBanner />
+      </Container>
 
-        {/* ABOUT & COMMUNITY */}
-        <Container
-          className="bg-2"
-          maxWidth={false}
-          disableGutters
-          sx={{
-            paddingY: 5,
-          }}
-        >
-          <About />
-          <Community />
-        </Container>
+      {/* ABOUT & COMMUNITY */}
+      <Container
+        className="bg-2"
+        maxWidth={false}
+        disableGutters
+        sx={{
+          paddingY: 5,
+        }}
+      >
+        <About />
+        <Community />
+      </Container>
 
-        {/* INSTANT UTILITY && MUSCLE DUMMIES COMMUNITY */}
-        <Container
-          id="utility"
-          maxWidth={false}
-          disableGutters
-          sx={{
-            paddingY: 5,
-          }}
-        >
-          <Utility />
+      {/* INSTANT UTILITY && MUSCLE DUMMIES COMMUNITY */}
+      <Container
+        id="utility"
+        maxWidth={false}
+        disableGutters
+        sx={{
+          paddingY: 5,
+        }}
+      >
+        <Utility />
 
-          <MDCommunity />
-        </Container>
+        <MDCommunity />
+      </Container>
 
-        {/* ROADMAP */}
-        <Container
-          className="bg-3"
-          maxWidth={false}
-          disableGutters
-          sx={{
-            paddingY: 5,
-          }}
-        >
-          <Roadmap />
-        </Container>
+      {/* ROADMAP */}
+      <Container
+        className="bg-3"
+        maxWidth={false}
+        disableGutters
+        sx={{
+          paddingY: 5,
+        }}
+      >
+        <Roadmap />
+      </Container>
 
-        {/* MEET THE TEAM */}
-        <Container
-          id="team"
-          sx={{
-            marginY: { xs: 2, md: 5 },
-          }}
-        >
-          <TheTeam />
-        </Container>
+      {/* MEET THE TEAM */}
+      <Container
+        id="team"
+        sx={{
+          marginY: { xs: 2, md: 5 },
+        }}
+      >
+        <TheTeam />
+      </Container>
 
-        {/* FAQ */}
-        <Container
-          id="faq"
-          sx={{
-            marginY: { xs: 2, md: 5 },
-          }}
-        >
-          <Faq />
-        </Container>
+      {/* FAQ */}
+      <Container
+        id="faq"
+        sx={{
+          marginY: { xs: 2, md: 5 },
+        }}
+      >
+        <Faq />
+      </Container>
 
-        {/* FOOTER */}
-        <Container>
-          <DummieFooter />
-        </Container>
+      {/* FOOTER */}
+      <Container>
+        <DummieFooter />
+      </Container>
 
-        <Linkbar />
-      </Layout>
+      <Linkbar />
+    </Layout>
   )
 }
 

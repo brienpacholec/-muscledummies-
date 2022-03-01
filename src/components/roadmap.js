@@ -276,11 +276,11 @@ const Roadmap = () => {
                 fontFamily: "Cooper Hewitt",
               }}
             >
-              Our Muscle Dummies official app will be a total healh and fitness
+              Our Muscle Dummies official app will be a total health and fitness
               app. Through devices such as the Apple Watch, you'll be able to
               track your workouts, macros, sleep, hydration, and everything else
               essential for maximizing your Health and Fitness potential and
-              attaining your goals as quick as possible. You can do all this
+              attaining your goals as quickly as possible. You can do all this
               while earning $MUSL coins to redeem in our store!
             </Typography>
           </Box>
@@ -478,12 +478,12 @@ const Roadmap = () => {
               fontFamily: "Cooper Hewitt",
             }}
           >
-            Our Muscle Dummies official app will be a total healh and fitness
+            Our Muscle Dummies official app will be a total health and fitness
             app. Through devices such as the Apple Watch, you'll be able to
             track your workouts, macros, sleep, hydration, and everything else
             essential for maximizing your Health and Fitness potential and
-            attaining your goals as quick as possible. You can do all this while
-            earning $MUSL coins to redeem in our store!
+            attaining your goals as quickly as possible. You can do all this
+            while earning $MUSL coins to redeem in our store!
           </Typography>
         </Grid>
 

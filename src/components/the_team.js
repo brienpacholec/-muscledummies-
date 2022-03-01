@@ -227,8 +227,8 @@ const TheTeam = () => {
               color: "#FFF",
             }}
           >
-            Jake is an absolute grinder. Jake is a pilot, drone specialist, and
-            now an extreme racing guru.
+            Jake is an absolute grinder. Jake is a pilot, a drone specialist,
+            and now an extreme racing guru.
           </Typography>
         </Grid>
       </Grid>

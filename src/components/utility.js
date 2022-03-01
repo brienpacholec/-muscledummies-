@@ -64,7 +64,7 @@ const Utility = () => {
               color: "primary.main",
             }}
           >
-            IMMEDIATE ACCES TO OUR WORKOUT & MEAL PLAN VAULT
+            IMMEDIATE ACCESS TO OUR WORKOUT & MEAL PLAN VAULT
           </Typography>
 
           <Typography
@@ -73,10 +73,10 @@ const Utility = () => {
               color: "#FFF",
             }}
           >
-            Mint one of our Dummies, verify your wallet, and gain acces to our
+            Mint one of our Dummies, verify your wallet and gain access to our
             various workout and meal plans for individuals with a variety of
             goals - valued at more than the price to mint a Dummy. Only the
-            first 3,333 minters will have immediete access!
+            first 3,333 minters will have immediate access!
           </Typography>
         </Grid>
 
@@ -149,9 +149,9 @@ const Utility = () => {
               color: "#FFF",
             }}
           >
-            Be one of the lucky few to mint our super rare NFTs or the legendary
+            Be one of the lucky few to mint our super-rare NFTs or the legendary
             metallic Dummy to win exclusive prizes, such as ETH, gym
-            memeberships, and more!
+            memberships, and more!
           </Typography>
         </Grid>
       </Grid>
@@ -191,7 +191,7 @@ const Utility = () => {
             }}
           >
             Hold your Dummies to gain access to exclusive events, networking
-            oppritunities, updated research, and private discord channels.
+            opportunities, updated research, and private discord channels.
           </Typography>
         </Grid>
 
@@ -222,9 +222,9 @@ const Utility = () => {
             }}
           >
             Our community will be free to enter, but we will have another
-            community for our true beleivers. This will be where you can talk
+            community for our true believers. This will be where you can talk
             and network with our collab influencers. This will also be where you
-            will get private insights to our next steps.
+            will get private insights into our next steps.
           </Typography>
         </Grid>
 

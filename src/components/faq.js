@@ -93,8 +93,8 @@ const Faq = () => {
               fontFamily: "Cooper Hewitt",
             }}
           >
-            During our white-list presale each Dummy will cost .11 ETH. During
-            our normal public sale each Dummy will cost .15 ETH. More info on
+            During our white-list presale, each Dummy will cost .11 ETH. During
+            our normal public sale, each Dummy will cost .15 ETH. More info on
             how to get whitelisted in our discord.
           </Typography>
         </AccordionDetails>
@@ -173,7 +173,7 @@ const Faq = () => {
             }}
           >
             You can view your Muscle Dummy by linking your Metamask wallet to
-            Opensea. Reveal will be TBA after sellout.
+            OpenSea. Reveal will be TBA after sellout.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -294,7 +294,7 @@ const Faq = () => {
           >
             Yes! Muscle Dummies are an incredible collection of NFTs that not
             only provide their holders with instant utility, but also provide
-            access to an amazing community full of like-minded individuals, and
+            access to an amazing community full of like-minded individuals and
             untapped fitness opportunities in the real world and METAVERSE!
           </Typography>
         </AccordionDetails>

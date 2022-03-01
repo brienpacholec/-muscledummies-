@@ -62,7 +62,7 @@ const Welcome = () => {
             }}
           >
             Join this exclusive NFT project that offers instant utility valued
-            higher than the cost to mint, one of a kind art, and great long-term
+            higher than the cost to mint, one-of-a-kind art, and great long-term
             benefits!
           </Typography>
         </Grid>
