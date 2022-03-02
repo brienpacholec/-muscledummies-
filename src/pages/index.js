@@ -1,10 +1,8 @@
 import React, { useEffect } from "react"
-import Container from "@mui/material/Container"
-
+import loadable from "@loadable/component"
 import AOS from "aos"
 import "aos/dist/aos.css"
-
-import Layout from "../components/layout"
+import Container from "@mui/material/Container"
 import DummieHeader from "../components/dummie_header"
 import Status from "../components/status"
 import Welcome from "../components/welcome"
@@ -18,6 +16,8 @@ import TheTeam from "../components/the_team"
 import Faq from "../components/faq"
 import DummieFooter from "../components/dummie_footer"
 import Linkbar from "../components/linkbar"
+
+const Layout = loadable(() => import("../components/layout"))
 
 const IndexPage = () => {
   useEffect(() => {
