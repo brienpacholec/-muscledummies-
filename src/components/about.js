@@ -33,7 +33,7 @@ const About = () => {
           >
             <StaticImage
               className="spin"
-              src="../images/canva_components/robot_circle.png"
+              src="../images/canva_components/dummie_circle.png"
               alt="Muscle Dummie"
               placeholder="blurred"
               layout="constrained"

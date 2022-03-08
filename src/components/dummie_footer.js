@@ -138,7 +138,6 @@ const DummieFooter = () => {
             placeholder="blurred"
             layout="constrained"
             height={150}
-            height={150}
           />
         </Grid>
 
@@ -168,6 +167,38 @@ const DummieFooter = () => {
             }}
           >
             SOON
+          </Typography>
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        sx={{
+          display: "flex",
+          marginBottom: 2
+        }}
+      >
+        <Grid
+          item
+          xs={12}
+          sx={{
+            textAlign: "center",
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: "Cooper Hewitt",
+              color: "#FFF",
+            }}
+          >
+            Any questions? Contact us! 
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: "Gagalin",
+            }}
+          >
+            <a href="mailto:info@muscledummies.com" style={{ color: "#fff", textDecoration: "underline" }} >info@muscledummies.com</a>
           </Typography>
         </Grid>
       </Grid>
