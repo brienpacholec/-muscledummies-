@@ -10,7 +10,7 @@ const Welcome = () => {
     <Container
       data-aos="fade-up-left"
       sx={{
-        paddingY: 5,
+        paddingY: { xs: 5, sm: 10 },
       }}
     >
       <Grid
@@ -33,7 +33,6 @@ const Welcome = () => {
             variant="h3"
             sx={{
               color: "primary.main",
-              fontSize: { xs: "2rem", sm: "3rem" },
               fontFamily: "Cooper Hewitt",
             }}
           >
@@ -46,8 +45,8 @@ const Welcome = () => {
         <Grid
           item
           xs={12}
-          sm={8}
-          md={6}
+          sm={10}
+          md={8}
           sx={{
             textAlign: "center",
             justifyContet: "center",
@@ -57,7 +56,7 @@ const Welcome = () => {
             variant="h5"
             sx={{
               color: "#FFF",
-              fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
+              fontSize: { xs: "1.2rem", md: "1.5rem" },
               fontFamily: "Cooper Hewitt",
             }}
           >

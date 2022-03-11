@@ -35,7 +35,13 @@ const DummieFooter = () => {
             OF NFT'S MAY SEEM FOREIGN, BUT WE MADE SURE TO PROVIDE YOU ALL THE
             INFO YOU NEED IN OUR DISCORD. SOME MAY EVEN BE NEW TO DISCORD. NO
             WORRIES! DISCORD IS AN INCREDIBLY EASY APP TO NAVIGATE AND WE HAVE A{" "}
-            <a href="https://youtu.be/4XFSR8M8usc" style={{color: "#86FC4D", textDecoration: "underline"}}>TUTORIAL VIDEO</a> ON HOW TO JOIN AND BE ENGAGED.
+            <a
+              href="https://youtu.be/4XFSR8M8usc"
+              style={{ color: "#86FC4D", textDecoration: "underline" }}
+            >
+              TUTORIAL VIDEO
+            </a>{" "}
+            ON HOW TO JOIN AND BE ENGAGED.
           </Typography>
         </Grid>
       </Grid>
@@ -175,7 +181,7 @@ const DummieFooter = () => {
         container
         sx={{
           display: "flex",
-          marginBottom: 2
+          marginBottom: 2,
         }}
       >
         <Grid
@@ -191,14 +197,19 @@ const DummieFooter = () => {
               color: "#FFF",
             }}
           >
-            Any questions? Contact us! 
+            Any questions? Contact us!
           </Typography>
           <Typography
             sx={{
               fontFamily: "Gagalin",
             }}
           >
-            <a href="mailto:info@muscledummies.com" style={{ color: "#fff", textDecoration: "underline" }} >info@muscledummies.com</a>
+            <a
+              href="mailto:info@muscledummies.com"
+              style={{ color: "#fff", textDecoration: "underline" }}
+            >
+              info@muscledummies.com
+            </a>
           </Typography>
         </Grid>
       </Grid>

@@ -27,7 +27,7 @@ const Status = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginTop: { xs: 0, md: 3 },
+          paddingY: 10,
         }}
       >
         <Grid
@@ -46,6 +46,7 @@ const Status = () => {
             variant="h3"
             sx={{
               fontFamily: "Gagalin",
+              fontSize: { xs: "2rem", md: "3rem" },
             }}
           >
             {/* TODO */}

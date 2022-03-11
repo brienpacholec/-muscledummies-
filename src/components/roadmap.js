@@ -4,6 +4,10 @@ import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import { StaticImage } from "gatsby-plugin-image"
+import Accordion from "@mui/material/Accordion"
+import AccordionSummary from "@mui/material/AccordionSummary"
+import AccordionDetails from "@mui/material/AccordionDetails"
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 
 const Roadmap = () => {
   return (
@@ -84,7 +88,7 @@ const Roadmap = () => {
                 fontSize: "1.6rem",
               }}
             >
-              COLLECTION 1 - SELLOUT
+              COLLECTION SELLOUT
             </Typography>
             <Typography
               sx={{
@@ -331,192 +335,302 @@ const Roadmap = () => {
           display: { xs: "flex", lg: "none" },
         }}
       >
-        <Grid
-          item
-          xs={12}
+        <Accordion
           sx={{
-            marginY: 1,
+            backgroundColor: "transparent",
+            boxShadow: "none",
           }}
         >
-          <Typography
-            className="neonPink"
-            variant="h4"
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon sx={{ color: "#FFF" }} />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
             sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-              fontSize: { xs: "1.45rem", sm: "1.6rem" },
+              "&.MuiAccordionSummary-gutters": {
+                padding: 0,
+              },
             }}
           >
-            20% - COLLECTION 1 - SELLOUT
-          </Typography>
-          <Typography
-            sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-            }}
-          >
-            Once all of the 3,333 Dummies are sold out and revealed we will do
-            our special giveaways to our lucky winners! All of our other minters
-            will then be able to access our vault of plans to start their next
-            Health and Fitness journey.
-          </Typography>
-        </Grid>
+            <Typography
+              className="neonPink"
+              variant="h4"
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+                fontSize: { xs: "1.25rem", sm: "1.6rem" },
+              }}
+            >
+              20%{"  "}-{"  "}COLLECTION SELLOUT
+            </Typography>
+          </AccordionSummary>
 
-        <Grid
-          item
-          xs={12}
-          sx={{
-            marginY: 1,
-          }}
-        >
-          <Typography
-            className="neonPink"
-            variant="h4"
+          <AccordionDetails
             sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-              fontSize: { xs: "1.45rem", sm: "1.6rem" },
+              paddingY: 0,
+              marginY: 0,
             }}
           >
-            30% - COMMUNITY ASSET AQUIREMENT
-          </Typography>
-          <Typography
-            sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-            }}
-          >
-            Our first reinvestment will be to acquire land in the metaverse.
-            This early reinvestment is necessary so we can start working with
-            developers to get our Workout-to-Earn game rolling as quickly as
-            possible!
-          </Typography>
-        </Grid>
+            <Typography
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+              }}
+            >
+              Once all of the 3,333 Dummies are sold out and revealed we will do
+              our special giveaways to our lucky winners! All of our other
+              minters will then be able to access our vault of plans to start
+              their next Health and Fitness journey.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
 
-        <Grid
-          item
-          xs={12}
+        <Accordion
           sx={{
-            marginY: 1,
+            backgroundColor: "transparent",
+            boxShadow: "none",
+            border: "none",
           }}
         >
-          <Typography
-            className="neonPink"
-            variant="h4"
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon sx={{ color: "#FFF" }} />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
             sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-              fontSize: { xs: "1.45rem", sm: "1.6rem" },
+              "&.MuiAccordionSummary-gutters": {
+                padding: 0,
+              },
             }}
           >
-            40% - MUSCLE DUMMY MEETUP
-          </Typography>
-          <Typography
-            sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-            }}
-          >
-            The first Muscle Dummy Meetup location is TBA. We want to see where
-            the majority of our holders are so we can have everyone in
-            attendance. Exclusive merch, info, and networking opportunities will
-            be available to all in attendance.
-          </Typography>
-        </Grid>
+            <Typography
+              className="neonPink"
+              variant="h4"
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+                fontSize: { xs: "1.25rem", sm: "1.6rem" },
+              }}
+            >
+              30%{"  "}-{"  "}COMMUNITY ASSET AQUIREMENT
+            </Typography>
+          </AccordionSummary>
 
-        <Grid
-          item
-          xs={12}
-          sx={{
-            marginY: 1,
-          }}
-        >
-          <Typography
-            className="neonPink"
-            variant="h4"
+          <AccordionDetails
             sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-              fontSize: { xs: "1.45rem", sm: "1.6rem" },
+              paddingY: 0,
+              marginY: 0,
             }}
           >
-            65% - $MUSL, MERCH, SUPPS, MORE
-          </Typography>
-          <Typography
-            sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-            }}
-          >
-            Development of the $MUSL coin that will be redeemable for all things
-            Muscle Dummies. Merch store opens, Muscle Dummies' supplements
-            released, BIG ANNOUNCEMENT SOON.
-          </Typography>
-        </Grid>
+            <Typography
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+              }}
+            >
+              Our first reinvestment will be to acquire land in the metaverse.
+              This early reinvestment is necessary so we can start working with
+              developers to get our Workout-to-Earn game rolling as quickly as
+              possible!
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
 
-        <Grid
-          item
-          xs={12}
+        <Accordion
           sx={{
-            marginY: 1,
+            backgroundColor: "transparent",
+            boxShadow: "none",
           }}
         >
-          <Typography
-            className="neonPink"
-            variant="h4"
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon sx={{ color: "#FFF" }} />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
             sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-              fontSize: { xs: "1.45rem", sm: "1.6rem" },
+              "&.MuiAccordionSummary-gutters": {
+                padding: 0,
+              },
             }}
           >
-            80% - MUSCLE DUMMIES APP
-          </Typography>
-          <Typography
-            sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-            }}
-          >
-            Our Muscle Dummies official app will be a total health and fitness
-            app. Through devices such as the Apple Watch, you'll be able to
-            track your workouts, macros, sleep, hydration, and everything else
-            essential for maximizing your Health and Fitness potential and
-            attaining your goals as quickly as possible. You can do all this
-            while earning $MUSL coins to redeem in our store!
-          </Typography>
-        </Grid>
+            <Typography
+              className="neonPink"
+              variant="h4"
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+                fontSize: { xs: "1.25rem", sm: "1.6rem" },
+              }}
+            >
+              40%{"  "}-{"  "}MUSCLE DUMMY MEETUP
+            </Typography>
+          </AccordionSummary>
 
-        <Grid
-          item
-          xs={12}
+          <AccordionDetails
+            sx={{
+              paddingY: 0,
+              marginY: 0,
+            }}
+          >
+            <Typography
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+              }}
+            >
+              The first Muscle Dummy Meetup location is TBA. We want to see
+              where the majority of our holders are so we can have everyone in
+              attendance. Exclusive merch, info, and networking opportunities
+              will be available to all in attendance.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion
           sx={{
-            marginY: 1,
+            backgroundColor: "transparent",
+            boxShadow: "none",
           }}
         >
-          <Typography
-            className="neonPink"
-            variant="h4"
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon sx={{ color: "#FFF" }} />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
             sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
-              fontSize: { xs: "1.45rem", sm: "1.6rem" },
+              "&.MuiAccordionSummary-gutters": {
+                padding: 0,
+              },
             }}
           >
-            100% - CHAPTER 2 ANNOUNCEMENT
-          </Typography>
-          <Typography
+            <Typography
+              className="neonPink"
+              variant="h4"
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+                fontSize: { xs: "1.25rem", sm: "1.6rem" },
+              }}
+            >
+              65%{"  "}-{"  "}$MUSL, MERCH, SUPPS, MORE
+            </Typography>
+          </AccordionSummary>
+
+          <AccordionDetails
             sx={{
-              color: "#FFF",
-              fontFamily: "Cooper Hewitt",
+              paddingY: 0,
+              marginY: 0,
             }}
           >
-            Chapter 2 will begin with two very big announcements that we at
-            Muscle Dummies HQ cannot wait for! We imagine with the great success
-            of the project, Chapter 2 will begin shortly after our sellout!
-            Here, true believers of the BRAND will be rewarded greatly.
-          </Typography>
-        </Grid>
+            <Typography
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+              }}
+            >
+              Development of the $MUSL coin that will be redeemable for all
+              things Muscle Dummies. Merch store opens, Muscle Dummies'
+              supplements released, BIG ANNOUNCEMENT SOON.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion
+          sx={{
+            backgroundColor: "transparent",
+            boxShadow: "none",
+          }}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon sx={{ color: "#FFF" }} />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+            sx={{
+              "&.MuiAccordionSummary-gutters": {
+                padding: 0,
+              },
+            }}
+          >
+            <Typography
+              className="neonPink"
+              variant="h4"
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+                fontSize: { xs: "1.25rem", sm: "1.6rem" },
+              }}
+            >
+              80%{"  "}-{"  "}MUSCLE DUMMIES APP
+            </Typography>
+          </AccordionSummary>
+
+          <AccordionDetails
+            sx={{
+              paddingY: 0,
+              marginY: 0,
+            }}
+          >
+            <Typography
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+              }}
+            >
+              Our Muscle Dummies official app will be a total health and fitness
+              app. Through devices such as the Apple Watch, you'll be able to
+              track your workouts, macros, sleep, hydration, and everything else
+              essential for maximizing your Health and Fitness potential and
+              attaining your goals as quickly as possible. You can do all this
+              while earning $MUSL coins to redeem in our store!
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion
+          sx={{
+            backgroundColor: "transparent",
+            boxShadow: "none",
+          }}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon sx={{ color: "#FFF" }} />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+            sx={{
+              "&.MuiAccordionSummary-gutters": {
+                padding: 0,
+              },
+            }}
+          >
+            <Typography
+              className="neonPink"
+              variant="h4"
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+                fontSize: { xs: "1.25rem", sm: "1.6rem" },
+              }}
+            >
+              100%{"  "}-{"  "}CHAPTER 2 ANNOUNCEMENT
+            </Typography>
+          </AccordionSummary>
+
+          <AccordionDetails
+            sx={{
+              paddingY: 0,
+              marginY: 0,
+            }}
+          >
+            <Typography
+              sx={{
+                color: "#FFF",
+                fontFamily: "Cooper Hewitt",
+              }}
+            >
+              Chapter 2 will begin with two very big announcements that we at
+              Muscle Dummies HQ cannot wait for! We imagine with the great
+              success of the project, Chapter 2 will begin shortly after our
+              sellout! Here, true believers of the BRAND will be rewarded
+              greatly.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
       </Grid>
     </Container>
   )

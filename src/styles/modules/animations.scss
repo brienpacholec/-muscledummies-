@@ -47,9 +47,7 @@
 }
 
 .shake {
-    &:hover, &:focus {
-        animation: shake 1.5s ease-in-out infinite;
-    }
+    animation: shake 1.5s ease-in-out infinite;
 }
 
 .spin {

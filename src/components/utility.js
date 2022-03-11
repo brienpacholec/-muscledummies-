@@ -8,14 +8,14 @@ const Utility = () => {
     <Container
       id=""
       sx={{
-        marginY: { xs: 2, md: 5 },
+        paddingY: 5,
       }}
     >
+      {/* MOBILE */}
       <Grid
         container
         sx={{
-          display: { sm: "flex", md: "none" },
-          marginTop: { xs: 0, md: 3 },
+          display: { xs: "flex", md: "none" },
           justifyContent: "center",
         }}
       >
@@ -40,13 +40,7 @@ const Utility = () => {
         </Grid>
       </Grid>
 
-      <Grid
-        container
-        sx={{
-          marginTop: { xs: 0, md: 3 },
-        }}
-        data-aos="fade-right"
-      >
+      <Grid container data-aos="fade-right">
         <Grid
           item
           xs={12}
@@ -54,7 +48,6 @@ const Utility = () => {
           md={4}
           sx={{
             textAlign: { sm: "left", md: "center" },
-            marginY: { sm: 2, md: 0 },
           }}
         >
           <Typography
@@ -62,6 +55,7 @@ const Utility = () => {
             sx={{
               fontFamily: "Cooper Hewitt",
               color: "primary.main",
+              marginTop: { xs: 4, md: 0 },
             }}
           >
             IMMEDIATE ACCESS TO OUR WORKOUT & MEAL PLAN VAULT
@@ -80,6 +74,7 @@ const Utility = () => {
           </Typography>
         </Grid>
 
+        {/* DESKTOP */}
         <Grid
           item
           xs={12}
@@ -129,7 +124,6 @@ const Utility = () => {
           md={4}
           sx={{
             textAlign: { sm: "left", md: "center" },
-            marginY: { sm: 2, md: 0 },
             alignSelf: "center",
           }}
         >
@@ -138,6 +132,7 @@ const Utility = () => {
             sx={{
               fontFamily: "Cooper Hewitt",
               color: "#FFF",
+              marginTop: { xs: 4, md: 0 },
             }}
           >
             VALUE OF YOUR DUMMY
@@ -158,10 +153,10 @@ const Utility = () => {
 
       <Grid
         container
-        sx={{
-          marginTop: { xs: 0, md: 3 },
-        }}
         data-aos="fade-left"
+        sx={{
+          marginTop: { xs: 0, md: 5 },
+        }}
       >
         <Grid
           item
@@ -171,7 +166,6 @@ const Utility = () => {
           sx={{
             textAlign: { sm: "left", md: "center" },
             alignSelf: "center",
-            marginY: { sm: 2, md: 0 },
           }}
         >
           <Typography
@@ -179,6 +173,7 @@ const Utility = () => {
             sx={{
               fontFamily: "Cooper Hewitt",
               color: "#FFF",
+              marginTop: { xs: 4, md: 0 },
             }}
           >
             PRIVATE ACCESS
@@ -202,7 +197,6 @@ const Utility = () => {
           md={4}
           sx={{
             textAlign: { sm: "left", md: "center" },
-            marginY: { sm: 2, md: 0 },
           }}
         >
           <Typography
@@ -210,6 +204,7 @@ const Utility = () => {
             sx={{
               fontFamily: "Cooper Hewitt",
               color: "#FFF",
+              marginTop: { xs: 4, md: 0 },
             }}
           >
             COMMUNITY
@@ -236,7 +231,6 @@ const Utility = () => {
           sx={{
             textAlign: { sm: "left", md: "center" },
             alignSelf: "center",
-            marginY: { sm: 2, md: 0 },
           }}
         >
           <Typography
@@ -244,6 +238,7 @@ const Utility = () => {
             sx={{
               fontFamily: "Cooper Hewitt",
               color: "#FFF",
+              marginTop: { xs: 4, md: 0 },
             }}
           >
             OUR METAVERSE

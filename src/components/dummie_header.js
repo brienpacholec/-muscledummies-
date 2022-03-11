@@ -7,15 +7,10 @@ const DummieHeader = () => {
   return (
     <Container
       sx={{
-        paddingTop: { xs: 0, md: 30 },
+        paddingTop: { xs: 10, md: 50 },
       }}
     >
-      <Grid
-        container
-        spacing={0}
-        sx={{ display: "flex", marginTop: { xs: 0, md: 3 } }}
-        data-aos="fade-up"
-      >
+      <Grid container spacing={0} sx={{ display: "flex" }} data-aos="fade-up">
         <Grid
           item
           xs={12}
@@ -28,6 +23,8 @@ const DummieHeader = () => {
             sx={{
               color: "#FFF",
               fontFamily: "Cooper Hewitt",
+              fontSize: { xs: "1.5rem", sm: "2rem" },
+              textShadow: "4px 4px black",
             }}
           >
             READY TO CONQUER THE HEALTH AND FITNESS INDUSTRY
@@ -39,6 +36,7 @@ const DummieHeader = () => {
           xs={12}
           sx={{
             textAlign: "center",
+            marginTop: { xs: 10, md: 0 },
           }}
         >
           <Typography
@@ -47,6 +45,7 @@ const DummieHeader = () => {
             sx={{
               color: "#FFF",
               fontFamily: "Gagalin",
+              textShadow: "4px 4px black",
             }}
           >
             Join{" "}
@@ -69,13 +68,13 @@ const DummieHeader = () => {
           xs={12}
           sx={{
             textAlign: "center",
-            marginY: { xs: 0, md: 2 },
           }}
         >
           <Typography
             sx={{
               color: "#FFF",
               fontFamily: "Cooper Hewitt",
+              textShadow: "4px 4px black",
             }}
           >
             Muscle Dummies is your chance to be a part of the greatest takeover

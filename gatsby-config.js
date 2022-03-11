@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: "Muscle Dummies",
     author: "Brien Pacholec",
-    description: "Let's hit the gym!",
+    description: "Merging Health & Fitness with the Technology industry.",
   },
   plugins: [
     `gatsby-plugin-emotion`,

@@ -2,6 +2,7 @@ import React from "react"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
+import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 const TheTeam = () => {
@@ -46,7 +47,7 @@ const TheTeam = () => {
         container
         sx={{
           display: "flex",
-          marginY: 2,
+          marginY: 5,
         }}
         data-aos="fade-right"
       >
@@ -60,18 +61,20 @@ const TheTeam = () => {
             paddingRight: { xs: 0, md: 5 },
           }}
         >
-          <StaticImage
-            src="../images/dummies/athlete.png"
-            alt="The Athlete"
-            placeholder="blurred"
-            layout="constrained"
-            height={200}
-            width-={200}
-            imgStyle={{
-              borderRadius: "50%",
-              border: "5px solid #86FC4D",
-            }}
-          />
+          <Link to="https://www.instagram.com/isaac_hadac/">
+            <StaticImage
+              src="../images/dummies/athlete.png"
+              alt="The Athlete"
+              placeholder="blurred"
+              layout="constrained"
+              height={200}
+              width-={200}
+              imgStyle={{
+                borderRadius: "50%",
+                border: "5px solid #86FC4D",
+              }}
+            />
+          </Link>
         </Grid>
 
         <Grid
@@ -109,7 +112,7 @@ const TheTeam = () => {
         container
         sx={{
           display: "flex",
-          marginY: 2,
+          marginY: 5,
         }}
         data-aos="fade-left"
       >
@@ -123,18 +126,20 @@ const TheTeam = () => {
             paddingRight: { xs: 0, md: 5 },
           }}
         >
-          <StaticImage
-            src="../images/dummies/doctor.png"
-            alt="The Athlete"
-            placeholder="blurred"
-            layout="constrained"
-            height={200}
-            width-={200}
-            imgStyle={{
-              borderRadius: "50%",
-              border: "5px solid #9420CB",
-            }}
-          />
+          <Link to="https://www.instagram.com/johnnyhadac/">
+            <StaticImage
+              src="../images/dummies/doctor.png"
+              alt="The Doctor"
+              placeholder="blurred"
+              layout="constrained"
+              height={200}
+              width-={200}
+              imgStyle={{
+                borderRadius: "50%",
+                border: "5px solid #9420CB",
+              }}
+            />
+          </Link>
         </Grid>
 
         <Grid
@@ -142,8 +147,7 @@ const TheTeam = () => {
           xs={12}
           sm={10}
           sx={{
-            textAlign: { xs: "center", sm: "left" },
-            alignSelf: "center",
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           <Typography
@@ -174,7 +178,7 @@ const TheTeam = () => {
         container
         sx={{
           display: "flex",
-          marginY: 2,
+          marginY: 5,
         }}
         data-aos="fade-right"
       >
@@ -188,18 +192,20 @@ const TheTeam = () => {
             paddingRight: { xs: 0, md: 5 },
           }}
         >
-          <StaticImage
-            src="../images/dummies/specialist.png"
-            alt="The Athlete"
-            placeholder="blurred"
-            layout="constrained"
-            height={200}
-            width-={200}
-            imgStyle={{
-              borderRadius: "50%",
-              border: "5px solid #FF0018",
-            }}
-          />
+          <Link to="https://www.instagram.com/jakecookmd/">
+            <StaticImage
+              src="../images/dummies/specialist.png"
+              alt="The Specialist"
+              placeholder="blurred"
+              layout="constrained"
+              height={200}
+              width-={200}
+              imgStyle={{
+                borderRadius: "50%",
+                border: "5px solid #FF0018",
+              }}
+            />
+          </Link>
         </Grid>
 
         <Grid
@@ -207,8 +213,7 @@ const TheTeam = () => {
           xs={12}
           sm={10}
           sx={{
-            textAlign: { xs: "center", sm: "left" },
-            alignSelf: "center",
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           <Typography

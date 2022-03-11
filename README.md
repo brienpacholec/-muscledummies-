@@ -2,7 +2,7 @@
 
 The offical website for Muscle Dummies - built utilizing GatsbyJs.
 
-[![Version](https://img.shields.io/badge/Version-Alpha--1.0-blueviolet?)](https://github.com/brienpacholec/-muscledummies-)
+[![Version](https://img.shields.io/badge/Version-1.0-blueviolet?)](https://github.com/brienpacholec/-muscledummies-)
 
 ## Authors
 
@@ -11,7 +11,9 @@ The offical website for Muscle Dummies - built utilizing GatsbyJs.
 ## Acknowledgements
 
 - [GatsbyJS](https://www.gatsbyjs.com/)
-- [NFTPort](https://www.nftport.xyz/)
+- [MaterialUI](https://mui.com/)
+- [EtherJS](https://docs.ethers.io/v5/)
+- [Hardhat](https://hardhat.org/)
 
 ## Deployment
 

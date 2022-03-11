@@ -13,7 +13,6 @@ import About from "../components/about"
 import Community from "../components/community"
 import DummierBanner from "../components/dummie_banner"
 import Utility from "../components/utility"
-import MDCommunity from "../components/md_community"
 import Roadmap from "../components/roadmap"
 import TheTeam from "../components/the_team"
 import Faq from "../components/faq"
@@ -43,10 +42,7 @@ const IndexPage = () => {
         }}
       >
         <DummieHeader />
-
         <Status />
-
-        <Welcome />
       </Container>
 
       {/* Dummie Banner */}
@@ -63,6 +59,7 @@ const IndexPage = () => {
           paddingY: 5,
         }}
       >
+        <Welcome />
         <About />
         <Community />
       </Container>
@@ -78,7 +75,7 @@ const IndexPage = () => {
       >
         <Utility />
 
-        <MDCommunity />
+        {/* <MDCommunity /> */}
       </Container>
 
       {/* ROADMAP */}

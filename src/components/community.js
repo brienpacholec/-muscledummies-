@@ -9,12 +9,16 @@ import Button from "@mui/material/Button"
 
 const Community = () => {
   return (
-    <Container id="community" sx={{ marginY: { xs: 2, md: 5 } }}>
+    <Container
+      id="community"
+      sx={{
+        paddingY: { xs: 5, sm: 10 },
+      }}
+    >
       <Grid
         container
         sx={{
           display: "flex",
-          marginTop: { xs: 0, md: 3 },
           paddingX: 5,
           borderLeft: "4mm ridge rgb(77, 255, 0, .6)",
           borderRight: { xs: "4mm ridge rgb(77, 255, 0, .6)", md: "none" },
@@ -55,16 +59,18 @@ const Community = () => {
               justifyContent: "space-evenly",
             }}
           >
-            <Link to="https://discord.gg/CCyjkz8S6m">
-              <StaticImage
-                src="../images/canva_components/discord.png"
-                alt="Muscle Shaker"
-                placeholder="blurred"
-                layout="constrained"
-                height={88}
-                width={100}
-              />
-            </Link>
+            <Box sx={{ display: { xs: "none", sm: "unset" } }}>
+              <Link to="https://discord.gg/CCyjkz8S6m">
+                <StaticImage
+                  src="../images/canva_components/discord.png"
+                  alt="Muscle Shaker"
+                  placeholder="blurred"
+                  layout="constrained"
+                  height={88}
+                  width={100}
+                />
+              </Link>
+            </Box>
 
             <Button
               variant="contained"
@@ -72,13 +78,14 @@ const Community = () => {
               sx={{
                 textAlign: "center",
                 padding: { xs: 0.5, sm: 1 },
+                marginY: { xs: 3, sm: 0 },
               }}
             >
               <Typography
                 variant="h4"
                 sx={{
                   fontFamily: "Gagalin",
-                  fontSize: { xs: "1.5rem", sm: "2.5rem", md: "3rem" },
+                  fontSize: { xs: "2.7rem", sm: "2.5rem", md: "3rem" },
                 }}
               >
                 JOIN OUR DISCORD

@@ -15,7 +15,10 @@ const Layout = ({ src, children }) => {
         <meta charSet="utf-8" />
         <meta property="og:title" content="Muscle Dummies" />
         <meta property="og:url" content="https://www.muscledummies.com/" />
-        <meta property="og:image" content="https://gateway.pinata.cloud/ipfs/QmWYTnEWVyWvj73VxZwZojbsdZtTRDD9zAeDfQtoBSMvHH" />
+        <meta
+          property="og:image"
+          content="https://gateway.pinata.cloud/ipfs/QmWYTnEWVyWvj73VxZwZojbsdZtTRDD9zAeDfQtoBSMvHH"
+        />
       </Helmet>
 
       <ThemeProvider theme={theme}>

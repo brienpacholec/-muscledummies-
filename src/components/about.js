@@ -8,7 +8,13 @@ import FitnessCenterIcon from "@mui/icons-material/FitnessCenter"
 
 const About = () => {
   return (
-    <Container id="about" data-aos="fade-up-right">
+    <Container
+      id="about"
+      data-aos="fade-up-right"
+      sx={{
+        paddingY: { xs: 5, sm: 10 },
+      }}
+    >
       <Grid
         container
         sx={{
@@ -119,8 +125,7 @@ const About = () => {
               }}
             />{" "}
             Muscle Dummies' mission is to build the best Health and Fitness
-            community on the planet. We want to give back to the industry that
-            has given so much to us.
+            community on the planet.
           </Typography>
 
           <hr />
