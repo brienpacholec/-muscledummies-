@@ -36,7 +36,7 @@ const Welcome = () => {
               fontFamily: "Cooper Hewitt",
             }}
           >
-            WELCOME TO MUSCLE DUMMIES
+            WELCOME
           </Typography>
         </Grid>
       </Grid>
