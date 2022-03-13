@@ -250,8 +250,7 @@ const Utility = () => {
               color: "#FFF",
             }}
           >
-            The Muscle Dummies metaverse will be something truly special. A
-            place where you can earn $MUSL coins to redeem for Merch, Supps,
+            A place where you can earn $MUSL coins to redeem for Merch, Supps,
             Memberships + More!
           </Typography>
         </Grid>
