@@ -16,7 +16,7 @@ import RocketLaunchIcon from "@mui/icons-material/RocketLaunch"
 
 const Roadmap = () => {
   return (
-    <Container>
+    <Container id="roadmap">
       <VerticalTimeline>
         {/* LEFT */}
         <VerticalTimelineElement

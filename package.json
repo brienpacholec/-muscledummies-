@@ -46,6 +46,7 @@
     "os-browserify": "^0.3.0",
     "prop-types": "^15.8.0",
     "react": "^17.0.1",
+    "react-countup": "^6.1.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-vertical-timeline-component": "^3.5.2",

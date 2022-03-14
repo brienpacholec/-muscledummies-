@@ -4,6 +4,7 @@ import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 import { getCurrentStatus } from "../utils/interact.js"
+import CountUp from 'react-countup';
 // import Box from "@mui/material/Box"
 // import Minter from "./minter"
 
@@ -21,7 +22,7 @@ const Status = () => {
   }, [])
 
   return (
-    <Container data-aos="zoom-in" data-aos-delay="500">
+    <Container data-aos="zoom-in" data-aos-delay="100">
       <Grid
         container
         sx={{
@@ -80,7 +81,13 @@ const Status = () => {
             {/* TODO */}
             {/* <span style={{color: "white", textShadow: "2px 2px black"}}>Minted {totalMinted} Dummie's out of 3,333</span> */}
             <span style={{ color: "white", textShadow: "2px 2px black" }}>
-              Dummies yet to be minted: 3,333
+              Dummies yet to be minted:{" "}
+                <CountUp 
+                  id="counter-up"
+                  end={3333} 
+                  duration={2.75}
+                  separator=","
+                />
             </span>
           </Typography>
         </Grid>

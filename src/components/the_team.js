@@ -37,7 +37,7 @@ const TheTeam = () => {
               textShadow: "2px 2px white",
             }}
           >
-            FOUNDERS
+            TEAM
           </Typography>
         </Grid>
       </Grid>
@@ -234,6 +234,70 @@ const TheTeam = () => {
           >
             Jake is an absolute grinder. Jake is a pilot, a drone specialist,
             and now an extreme racing guru.
+          </Typography>
+        </Grid>
+      </Grid>
+
+      {/* BRIEN */}
+      <Grid
+        container
+        sx={{
+          display: "flex",
+          marginY: 5,
+        }}
+        data-aos="fade-left"
+      >
+        <Grid
+          item
+          xs={12}
+          sm={2}
+          sx={{
+            display: "flex",
+            justifyContent: { xs: "center", md: "right" },
+            paddingRight: { xs: 0, md: 5 },
+          }}
+        >
+          <Link to="https://www.instagram.com/brienpacholec/">
+            <StaticImage
+              src="../images/dummies/developer.png"
+              alt="The Developer"
+              placeholder="blurred"
+              layout="constrained"
+              height={200}
+              width-={200}
+              imgStyle={{
+                borderRadius: "50%",
+                border: "5px solid #00dfeb",
+              }}
+            />
+          </Link>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          sm={10}
+          sx={{
+            textAlign: { xs: "center", md: "left" },
+          }}
+        >
+          <Typography
+            variant="h3"
+            sx={{
+              fontFamily: "Gagalin",
+              color: "#00dfeb",
+            }}
+          >
+            THE DEVELOPER
+          </Typography>
+
+          <Typography
+            sx={{
+              fontFamily: "Cooper Hewitt",
+              color: "#FFF",
+            }}
+          >
+            Brien is the Muscle Dummies 'tech-guy'. Brien is a software engineer who has a passion for web development and all things Blockchain.
           </Typography>
         </Grid>
       </Grid>
