@@ -104,57 +104,27 @@ const Community = () => {
             justifyContent: "center",
           }}
         >
-          <Box
+          <Grid
+            container
             sx={{
-              border: "5px solid",
-              borderColor: "#FFF",
-              padding: 0.5,
+              display: "flex",
             }}
           >
-            <Box
-              sx={{
-                backgroundColor: "transparent",
-              }}
+            <Grid
+              item
+              md={12}
             >
-              <Grid
-                container
-                sx={{
-                  display: "flex",
-                }}
-              >
-                <Grid
-                  item
-                  md={12}
-                  sx={{
-                    paddingTop: 2,
-                  }}
-                >
-                  <StaticImage
-                    className="instant_shake"
-                    src="../images/logos/md_nft_shaker.png"
-                    alt="Muscle Shaker"
-                    placeholder="blurred"
-                    layout="constrained"
-                    height={200}
-                    width={132}
-                  />
-                </Grid>
+              <StaticImage
+                src="../images/canva_components/dummie_community.png"
+                alt="Dummie World"
+                placeholder="blurred"
+                layout="constrained"
+                height={500}
+                width={586}
+              />
+            </Grid>
 
-                <Grid item md={12}>
-                  <Typography
-                    sx={{
-                      fontFamily: "Gagalin",
-                      letterSpacing: 10,
-                      color: "#FFF",
-                      fontSize: { md: "3rem" },
-                    }}
-                  >
-                    COMMUNITY
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Box>
-          </Box>
+          </Grid>
         </Grid>
       </Grid>
     </Container>
