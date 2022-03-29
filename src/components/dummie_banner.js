@@ -29,9 +29,6 @@ const DummierBanner = () => {
             display: "flex",
             textAlign: "center",
             justifyContent: "center",
-            backgroundColor: "#69bfee",
-            paddingTop: 0,
-            paddingBottom: 3,
           }}
         >
           <div
@@ -72,9 +69,6 @@ const DummierBanner = () => {
             display: "flex",
             textAlign: "center",
             justifyContent: "center",
-            backgroundColor: "#55AE96",
-            paddingTop: 0,
-            paddingBottom: 3,
           }}
         >
           <div
@@ -114,9 +108,6 @@ const DummierBanner = () => {
             display: { xs: "none", sm: "flex" },
             textAlign: "center",
             justifyContent: "center",
-            backgroundColor: "#D7C56E",
-            paddingTop: 0,
-            paddingBottom: 3,
           }}
         >
           <div
@@ -155,9 +146,6 @@ const DummierBanner = () => {
             display: { xs: "none", sm: "none", md: "flex" },
             textAlign: "center",
             justifyContent: "center",
-            backgroundColor: "#BF2F40",
-            paddingTop: 0,
-            paddingBottom: 3,
           }}
         >
           <div

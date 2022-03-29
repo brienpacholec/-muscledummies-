@@ -172,7 +172,7 @@ const DummieFooter = () => {
               marginTop: -2,
             }}
           >
-            SOON
+            MAY 14th
           </Typography>
         </Grid>
       </Grid>
