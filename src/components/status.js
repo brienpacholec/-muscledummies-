@@ -4,19 +4,31 @@ import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 import { getCurrentStatus } from "../utils/interact.js"
-import CountUp from 'react-countup';
-// import Box from "@mui/material/Box"
-// import Minter from "./minter"
+import CountUp from "react-countup"
+//TODO
+import Box from "@mui/material/Box"
+import Minter from "./minter"
+import Countdown from "react-countdown"
+
 
 const Status = () => {
-  const [isPaused, setIsPaused] = useState("")
-  const [totalMinted, setTotalMinted] = useState("")
+  const [isPaused, setIsPaused] = useState(true)
+  const [maxSupply, setMaxSupply] = useState("")
+  const [totalSupply, setTotalSupply] = useState("")
+  const [mintingDatePassed, setMintingDatePassed] = useState("")
+  const renderer = ({ days, hours, minutes, seconds }) => {
+    return <span>{days} days - {hours} hours - {minutes} minutes - {seconds} seconds</span>;
+  };
+                  
 
   useEffect(() => {
     async function fetchData() {
-      const { isPaused, totalMinted } = await getCurrentStatus()
-      setIsPaused(isPaused)
-      setTotalMinted(totalMinted)
+      const { currentStatus, maxSupply, totalSupply, mintingDatePassed } =
+        await getCurrentStatus()
+      setIsPaused(currentStatus)
+      setMaxSupply(maxSupply)
+      setTotalSupply(totalSupply)
+      setMintingDatePassed(mintingDatePassed)
     }
     fetchData()
   }, [])
@@ -33,7 +45,7 @@ const Status = () => {
       >
         <Grid
           item
-          xs={8}
+          xs={12}
           sm={6}
           md={4}
           sx={{
@@ -43,53 +55,98 @@ const Status = () => {
             borderRadius: 4,
           }}
         >
-          <Typography
-            variant="h3"
-            sx={{
-              fontFamily: "Gagalin",
-              fontSize: { xs: "2rem", md: "3rem" },
-            }}
-          >
-            {/* TODO */}
-            {/* {!isPaused ? (
-                    <>
-                    <span style={{color: "white", textShadow: "2px 2px green"}}>MINT NOW!</span>
-                    </>
-                ) : (
-                    <span style={{color: "white", textShadow: "2px 2px red"}}>MINTING CLOSED!</span>
-                )} */}
-            <span style={{ color: "white", textShadow: "2px 2px red" }}>
-              MINTING SOON!
-            </span>
-          </Typography>
+          {mintingDatePassed ? (
+            <>
+              {isPaused ? (
+                <Typography
+                  variant="h3"
+                  sx={{
+                    fontFamily: "Gagalin",
+                    fontSize: { xs: "2rem", md: "3rem" },
+                    paddingY: 1,
+                  }}
+                >
+                  <span style={{ color: "white", textShadow: "2px 2px red" }}>
+                    MINTING PAUSED
+                  </span>
+                </Typography>
+              ) : (
+                <>
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      fontFamily: "Gagalin",
+                      fontSize: { xs: "2rem", md: "3rem" },
+                    }}
+                  >
+                    <span
+                      style={{ color: "white", textShadow: "2px 2px green" }}
+                    >
+                      MINT NOW!
+                    </span>
+                  </Typography>
 
-          {/* TODO */}
-          {/* <Box
+                  <Box
+                    sx={{
+                      marginY: 1,
+                    }}
+                  >
+                    <Minter />
+                  </Box>
+
+                  <Typography
+                    sx={{
+                      color: "white",
+                      fontFamily: "Cooper Hewitt",
+                    }}
+                  >
+                    <span
+                      style={{ color: "white", textShadow: "2px 2px black" }}
+                    >
+                      Minted{" "}
+                      <CountUp
+                        id="counter-up"
+                        end={totalSupply}
+                        duration={3}
+                        separator=","
+                      />{" "}
+                      out of {maxSupply} Muscle Dummies
+                    </span>
+                  </Typography>
+                </>
+              )}
+            </>
+          ) : (
+            <>
+              <Typography
+                variant="h3"
                 sx={{
-                    marginY: 1
+                  fontFamily: "Gagalin",
+                  fontSize: { xs: "2rem", md: "3rem" },
+                  color: "white", 
+                  textShadow: "2px 2px green" 
                 }}
-            >
-                <Minter/>
-            </Box> */}
+              >
+                Minting in
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Cooper Hewitt",
+                  fontSize: { xs: "1rem"},
+                  color: "white", 
+                  textShadow: "1px 1px green" 
+                }}
+              >
+                <Countdown 
+                    date={new Date("May 14, 2022 19:00:00")}
+                    onComplete={() => setMintingDatePassed(true)}
+                    renderer={renderer}
+                  />
+              </Typography>
 
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Cooper Hewitt",
-            }}
-          >
-            {/* TODO */}
-            {/* <span style={{color: "white", textShadow: "2px 2px black"}}>Minted {totalMinted} Dummie's out of 3,333</span> */}
-            <span style={{ color: "white", textShadow: "2px 2px black" }}>
-              Dummies yet to be minted:{" "}
-                <CountUp 
-                  id="counter-up"
-                  end={3333} 
-                  duration={2.75}
-                  separator=","
-                />
-            </span>
-          </Typography>
+                
+            </>
+          )}
         </Grid>
       </Grid>
     </Container>

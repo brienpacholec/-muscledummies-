@@ -105,8 +105,8 @@ const About = () => {
                 fontSize: { xs: 16, sm: "1rem", md: "1.2rem" },
               }}
             />{" "}
-            Muscle Dummies are a unique collection of 3,333 one-of-one NFTs on
-            the Ethereum blockchain.
+            Muscle Dummies are a unique collection of 333 one-of-one NFTs on the
+            Ethereum blockchain.
           </Typography>
 
           <br />

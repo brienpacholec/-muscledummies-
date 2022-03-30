@@ -56,7 +56,7 @@ const Faq = () => {
               fontFamily: "Cooper Hewitt",
             }}
           >
-            There is a fixed, competitive amount of 3,333 Muscle Dummies
+            There is a fixed, competitive amount of 333 Muscle Dummies
           </Typography>
         </AccordionDetails>
       </Accordion>

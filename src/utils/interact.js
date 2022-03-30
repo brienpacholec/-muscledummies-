@@ -1,7 +1,6 @@
 import React from "react"
 
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3")
-
 const contractABI = require("../artifacts/contract-abi.json")
 const contractAddress = process.env.GATSBY_CONTRACT_ADDRESS
 const web3 = createAlchemyWeb3(process.env.GATSBY_ALCHEMY_KEY)
@@ -13,9 +12,14 @@ export const connectWallet = async () => {
       const addressArray = await window.ethereum.request({
         method: "eth_requestAccounts",
       })
+      
+      window.contract = await new web3.eth.Contract(contractABI, contractAddress)
+      const userMintedTotal = await window.contract.methods.balanceOf(addressArray[0]).call()
+
       const obj = {
         status: "MINT",
         address: addressArray[0],
+        userMintedTotal: Number(userMintedTotal),
       }
       return obj
     } catch (err) {
@@ -23,6 +27,7 @@ export const connectWallet = async () => {
       return {
         address: "",
         status: "CONNECT 🦊",
+        userMintedTotal: 0,
       }
     }
   } else {
@@ -35,14 +40,61 @@ export const connectWallet = async () => {
           href={`https://metamask.io/download.html`}
           style={{ color: "#fff", textDecoration: "none" }}
         >
-          INSTALL METAMASK 🦊
+          GET 🦊
+        </a>
+      ),
+      userMintedTotal: 0,
+    }
+  }
+}
+
+//ON page load - check to see if a wallet has been connected
+export const getCurrentWalletConnected = async () => {
+  if (window.ethereum) {
+    try {
+      const addressArray = await window.ethereum.request({
+        method: "eth_accounts",
+      })
+      if (addressArray.length > 0) {
+        window.contract = await new web3.eth.Contract(contractABI, contractAddress)
+        const userMintedTotal = await window.contract.methods.balanceOf(addressArray[0]).call()
+        return {
+          address: addressArray[0],
+          status: "MINT",
+          userMintedTotal: Number(userMintedTotal),
+        }
+      } else {
+        return {
+          address: "",
+          status: "CONNECT 🦊",
+          userMintedTotal: 0,
+        }
+      }
+    } catch (err) {
+      return {
+        address: "",
+        status: err.message,
+        userMintedTotal: 0,
+      }
+    }
+  } else {
+    return {
+      address: "",
+      status: (
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={`https://metamask.io/download.html`}
+          style={{ color: "#fff", textDecoration: "none" }}
+        >
+          GET 🦊
         </a>
       ),
     }
   }
 }
 
-//FUNCTION to mint the NFT
+//MINT a single NFT
 export const mintNFT = async (walletAddress, amount) => {
   if (walletAddress === "") {
     return {
@@ -64,95 +116,44 @@ export const mintNFT = async (walletAddress, amount) => {
   const transactionParameters = {
     to: contractAddress,
     from: walletAddress,
-    data: window.contract.methods.mintUser(parseInt(amount)).encodeABI(),
+    data: window.contract.methods
+      .mintUser(walletAddress, parseInt(amount))
+      .encodeABI(),
     value: currentCost.toString(16),
   }
 
-  //sign transaction via Metamask
+  //APPROVE transaction via metamask
   try {
     await window.ethereum.request({
       method: "eth_sendTransaction",
       params: [transactionParameters],
     })
     return {
-      mintStatus: "black", //true
-      mintMessage: "Success! Please check your wallet in a few minutes!",
+      mintStatus: "#153c06", //SUCCESS
+      mintMessage: "",
       addedAmount: parseInt(amount),
     }
   } catch (error) {
     return {
-      mintStatus: "red", //false
+      mintStatus: "red", //FAILURE
       mintMessage: error.message,
       addedAmount: 0,
     }
   }
 }
 
-//ON page load - check to see if a wallet has been connected
-export const getCurrentWalletConnected = async () => {
-  if (window.ethereum) {
-    try {
-      const addressArray = await window.ethereum.request({
-        method: "eth_accounts",
-      })
-      if (addressArray.length > 0) {
-        return {
-          address: addressArray[0],
-          status: "MINT",
-        }
-      } else {
-        return {
-          address: "",
-          status: "CONNECT 🦊",
-        }
-      }
-    } catch (err) {
-      return {
-        address: "",
-        status: err.message,
-      }
-    }
-  } else {
-    return {
-      address: "",
-      status: (
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={`https://metamask.io/download.html`}
-          style={{ color: "#fff", textDecoration: "none" }}
-        >
-          INSTALL 🦊
-        </a>
-      ),
-    }
-  }
-}
-
-//GET the total amount that have been minted
-export const getTotalMinted = async () => {
-  window.contract = await new web3.eth.Contract(contractABI, contractAddress)
-  const result = await window.contract.methods.totalSupply().call()
-  return result
-}
-
-//GET the total amount the user has minted
-export const getUserMinted = async address => {
-  if (address !== "") {
-    window.contract = await new web3.eth.Contract(contractABI, contractAddress)
-    const result = await window.contract.methods.balanceOf(address).call()
-    return result
-  } else {
-    return "Connect to Metmask to see how many you've minted!"
-  }
-}
-
+//GET setup information (currentStatus, maxSupply, totalSupply, remainingSupply)
 export const getCurrentStatus = async () => {
   window.contract = await new web3.eth.Contract(contractABI, contractAddress)
-  const status = await window.contract.methods.paused().call()
-  const totalMinted = await window.contract.methods.totalSupply().call()
+  const currentStatus = await window.contract.methods.paused().call()
+  const maxSupply = await window.contract.methods.maxSupply().call()
+  const totalSupply = await window.contract.methods.totalSupply().call()
+  const mintingDatePassed = Date.now() >= new Date("May 14, 2022 19:00:00")
+
   return {
-    isPaused: status,
-    totalMinted: totalMinted,
+    currentStatus: currentStatus,
+    maxSupply: maxSupply,
+    totalSupply: totalSupply,
+    mintingDatePassed: mintingDatePassed,
   }
 }

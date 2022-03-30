@@ -110,10 +110,7 @@ const Community = () => {
               display: "flex",
             }}
           >
-            <Grid
-              item
-              md={12}
-            >
+            <Grid item md={12}>
               <StaticImage
                 src="../images/canva_components/dummie_community.png"
                 alt="Dummie World"
@@ -123,7 +120,6 @@ const Community = () => {
                 width={586}
               />
             </Grid>
-
           </Grid>
         </Grid>
       </Grid>

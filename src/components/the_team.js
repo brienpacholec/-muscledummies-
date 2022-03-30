@@ -297,7 +297,8 @@ const TheTeam = () => {
               color: "#FFF",
             }}
           >
-            Brien is the Muscle Dummies 'tech-guy'. Brien is a software engineer who has a passion for web development and all things Blockchain.
+            Brien is the Muscle Dummies 'tech-guy'. Brien is a software engineer
+            who has a passion for web development and all things Blockchain.
           </Typography>
         </Grid>
       </Grid>

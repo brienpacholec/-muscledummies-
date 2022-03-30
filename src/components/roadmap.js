@@ -40,8 +40,8 @@ const Roadmap = () => {
               fontFamily: "Cooper Hewitt",
             }}
           >
-            Once all of the 3,333 Dummies are sold out and revealed we will do
-            our special giveaways to our lucky winners! All of our other minters
+            Once all of the 333 Dummies are sold out and revealed we will do our
+            special giveaways to our lucky winners! All of our other minters
             will then be able to access our vault of plans to start their next
             Health and Fitness journey.
           </Typography>

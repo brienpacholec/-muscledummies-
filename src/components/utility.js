@@ -70,7 +70,7 @@ const Utility = () => {
             Mint one of our Dummies, verify your wallet and gain access to our
             various workout and meal plans for individuals with a variety of
             goals - valued at more than the price to mint a Dummy. Only the
-            first 3,333 minters will have immediate access!
+            first 333 minters will have immediate access!
           </Typography>
         </Grid>
 
