@@ -25,7 +25,7 @@ const HealthPlans = () => {
 
   const handleChange = event => {
     setWorkoutPlanName(event.target.value)
-    setWorkoutPlanDoc("docs/" + event.target.value + ".pdf")
+    setWorkoutPlanDoc("/docs/" + event.target.value + ".pdf")
     setNumPages(null)
     setPageNumber(1)
   }
