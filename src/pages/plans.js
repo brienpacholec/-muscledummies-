@@ -52,7 +52,8 @@ const PlansPage = () => {
             >
               <Grid
                 item
-                xs={8}
+                xs={12}
+                sm={6}
                 sx={{
                   textAlign: "left",
                 }}
