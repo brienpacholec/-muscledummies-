@@ -16,6 +16,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         os: require.resolve("os-browserify/browser"),
         stream: require.resolve("stream-browserify"),
         util: false,
+        canvas: false,
       },
     },
   })

@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography"
 const Welcome = () => {
   return (
     <Container
-      data-aos="fade-up-left"
+      //data-aos="fade-up-left"
       sx={{
         paddingY: { xs: 5, sm: 10 },
       }}

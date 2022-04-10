@@ -16,6 +16,7 @@ import Utility from "../components/utility"
 import Roadmap from "../components/roadmap"
 import TheTeam from "../components/the_team"
 import Faq from "../components/faq"
+import Tutorial from "../components/tutorial"
 import DummieFooter from "../components/dummie_footer"
 import Linkbar from "../components/linkbar"
 
@@ -37,8 +38,12 @@ const IndexPage = () => {
         maxWidth={false}
         disableGutters
         sx={{
-          marginTop: { xs: 0, md: -30 },
-          paddingTop: { xs: 5, md: 0 },
+          // marginTop: { xs: 0, md: -30 },
+          // paddingTop: { xs: 5, md: 0 },
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          height: "500px",
         }}
       >
         <DummieHeader />
@@ -112,6 +117,7 @@ const IndexPage = () => {
 
       {/* FOOTER */}
       <Container>
+        <Tutorial />
         <DummieFooter />
       </Container>
 

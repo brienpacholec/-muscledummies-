@@ -1,25 +1,31 @@
-import React from "react"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
+
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
-import Typography from "@mui/material/Typography"
-import { getCurrentStatus } from "../utils/interact.js"
-import CountUp from "react-countup"
-//TODO
 import Box from "@mui/material/Box"
-import Minter from "./minter"
-import Countdown from "react-countdown"
+import Typography from "@mui/material/Typography"
 
+import { Link } from "gatsby"
+import Countdown from "react-countdown"
+import CountUp from "react-countup"
+
+import { getCurrentStatus, checkOwnership } from "../utils/interact.js"
+import Minter from "./minter"
 
 const Status = () => {
   const [isPaused, setIsPaused] = useState(true)
   const [maxSupply, setMaxSupply] = useState("")
   const [totalSupply, setTotalSupply] = useState("")
   const [mintingDatePassed, setMintingDatePassed] = useState("")
+  const [dummieOwner, setDummieOwner] = useState(false)
+
   const renderer = ({ days, hours, minutes, seconds }) => {
-    return <span>{days} days - {hours} hours - {minutes} minutes - {seconds} seconds</span>;
-  };
-                  
+    return (
+      <span>
+        {days} days - {hours} hours - {minutes} minutes - {seconds} seconds
+      </span>
+    )
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -29,23 +35,26 @@ const Status = () => {
       setMaxSupply(maxSupply)
       setTotalSupply(totalSupply)
       setMintingDatePassed(mintingDatePassed)
+
+      const owner = await checkOwnership()
+      setDummieOwner(owner)
     }
     fetchData()
   }, [])
 
   return (
-    <Container data-aos="zoom-in" data-aos-delay="100">
+    <Container>
       <Grid
         container
         sx={{
           display: "flex",
           justifyContent: "center",
-          paddingY: 10,
+          paddingY: 2,
         }}
       >
         <Grid
           item
-          xs={12}
+          xs={8}
           sm={6}
           md={4}
           sx={{
@@ -123,8 +132,8 @@ const Status = () => {
                 sx={{
                   fontFamily: "Gagalin",
                   fontSize: { xs: "2rem", md: "3rem" },
-                  color: "white", 
-                  textShadow: "2px 2px green" 
+                  color: "white",
+                  textShadow: "2px 2px green",
                 }}
               >
                 Minting in
@@ -132,19 +141,17 @@ const Status = () => {
               <Typography
                 sx={{
                   fontFamily: "Cooper Hewitt",
-                  fontSize: { xs: "1rem"},
-                  color: "white", 
-                  textShadow: "1px 1px green" 
+                  fontSize: { xs: "1rem" },
+                  color: "white",
+                  textShadow: "1px 1px green",
                 }}
               >
-                <Countdown 
-                    date={new Date("May 14, 2022 19:00:00")}
-                    onComplete={() => setMintingDatePassed(true)}
-                    renderer={renderer}
-                  />
+                <Countdown
+                  date={new Date("May 14, 2022 19:00:00")}
+                  onComplete={() => setMintingDatePassed(true)}
+                  renderer={renderer}
+                />
               </Typography>
-
-                
             </>
           )}
         </Grid>

@@ -1,18 +1,19 @@
 import React from "react"
-import Container from "@mui/material/Container"
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component"
-import "react-vertical-timeline-component/style.min.css"
-import Typography from "@mui/material/Typography"
 
+import Container from "@mui/material/Container"
+import Typography from "@mui/material/Typography"
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter"
 import FortIcon from "@mui/icons-material/Fort"
 import GroupIcon from "@mui/icons-material/Group"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone"
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch"
+
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component"
+import "react-vertical-timeline-component/style.min.css"
 
 const Roadmap = () => {
   return (

@@ -12,9 +12,14 @@ export const connectWallet = async () => {
       const addressArray = await window.ethereum.request({
         method: "eth_requestAccounts",
       })
-      
-      window.contract = await new web3.eth.Contract(contractABI, contractAddress)
-      const userMintedTotal = await window.contract.methods.balanceOf(addressArray[0]).call()
+
+      window.contract = await new web3.eth.Contract(
+        contractABI,
+        contractAddress
+      )
+      const userMintedTotal = await window.contract.methods
+        .balanceOf(addressArray[0])
+        .call()
 
       const obj = {
         status: "MINT",
@@ -56,8 +61,13 @@ export const getCurrentWalletConnected = async () => {
         method: "eth_accounts",
       })
       if (addressArray.length > 0) {
-        window.contract = await new web3.eth.Contract(contractABI, contractAddress)
-        const userMintedTotal = await window.contract.methods.balanceOf(addressArray[0]).call()
+        window.contract = await new web3.eth.Contract(
+          contractABI,
+          contractAddress
+        )
+        const userMintedTotal = await window.contract.methods
+          .balanceOf(addressArray[0])
+          .call()
         return {
           address: addressArray[0],
           status: "MINT",
@@ -156,4 +166,18 @@ export const getCurrentStatus = async () => {
     totalSupply: totalSupply,
     mintingDatePassed: mintingDatePassed,
   }
+}
+
+export const checkOwnership = async () => {
+  const connected = await getCurrentWalletConnected()
+  if (connected.address !== "") {
+    window.contract = await new web3.eth.Contract(contractABI, contractAddress)
+    const balanceOf = Number(
+      await window.contract.methods.balanceOf(connected.address).call()
+    )
+    if (balanceOf > 0) {
+      return true
+    }
+  }
+  return false
 }

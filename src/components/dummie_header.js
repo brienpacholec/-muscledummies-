@@ -1,4 +1,5 @@
 import React from "react"
+
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
@@ -6,16 +7,19 @@ import Typography from "@mui/material/Typography"
 const DummieHeader = () => {
   return (
     <Container
-      sx={{
-        paddingTop: { xs: 10, md: 50 },
-      }}
+      sx={
+        {
+          // paddingTop: 5,
+        }
+      }
     >
-      <Grid container spacing={0} sx={{ display: "flex" }} data-aos="fade-up">
-        <Grid
+      <Grid container spacing={0} sx={{ display: "flex" }}>
+        {/* <Grid
           item
           xs={12}
           sx={{
             textAlign: "center",
+            display: { xs: "none", sm: "unset" },
           }}
         >
           <Typography
@@ -29,7 +33,7 @@ const DummieHeader = () => {
           >
             READY TO CONQUER THE HEALTH AND FITNESS INDUSTRY
           </Typography>
-        </Grid>
+        </Grid> */}
 
         <Grid
           item
@@ -46,6 +50,7 @@ const DummieHeader = () => {
               color: "#FFF",
               fontFamily: "Gagalin",
               textShadow: "4px 4px black",
+              fontSize: { xs: "2.5rem", sm: "3rem" },
             }}
           >
             Join{" "}
@@ -57,6 +62,7 @@ const DummieHeader = () => {
             sx={{
               color: "primary.main",
               fontFamily: "Gagalin",
+              fontSize: { xs: "2.5rem", sm: "3rem" },
             }}
           >
             Muscle Dummies

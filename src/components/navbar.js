@@ -1,19 +1,31 @@
-import React from "react"
-import AppBar from "@mui/material/AppBar"
+import React, { useEffect, useState } from "react"
+
+import Container from "@mui/material/Container"
+import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
+import AppBar from "@mui/material/AppBar"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
-import Container from "@mui/material/Container"
+
 import { StaticImage } from "gatsby-plugin-image"
-import Grid from "@mui/material/Grid"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+
 import Minter from "./minter"
+import { checkOwnership } from "../utils/interact.js"
 
 const Navbar = () => {
+  const [dummieOwner, setDummieOwner] = useState(false)
+
+  useEffect(() => {
+    async function fetchData() {
+      const owner = await checkOwnership()
+      setDummieOwner(owner)
+    }
+    fetchData()
+  }, [])
   return (
     <>
       <AppBar
-        data-aos="fade-down"
         sx={{
           backgroundColor: "rgba(0,0,0,0.85)",
           paddingY: { xs: 1, md: 4 },
@@ -62,7 +74,7 @@ const Navbar = () => {
                       }}
                     >
                       <AnchorLink
-                        to="#home"
+                        to="/#home"
                         title="Home"
                         className="anchor-link"
                       >
@@ -77,7 +89,7 @@ const Navbar = () => {
                       </AnchorLink>
 
                       <AnchorLink
-                        to="#about"
+                        to="/#about"
                         title="What is it?"
                         className="anchor-link"
                       >
@@ -92,7 +104,7 @@ const Navbar = () => {
                       </AnchorLink>
 
                       <AnchorLink
-                        to="#utility"
+                        to="/#utility"
                         title="Instant Utility"
                         className="anchor-link"
                       >
@@ -178,7 +190,7 @@ const Navbar = () => {
                       }}
                     >
                       <AnchorLink
-                        to="#roadmap"
+                        to="/#roadmap"
                         title="Roadmap"
                         className="anchor-link"
                       >
@@ -193,7 +205,7 @@ const Navbar = () => {
                       </AnchorLink>
 
                       <AnchorLink
-                        to="#team"
+                        to="/#team"
                         title="The Team"
                         className="anchor-link"
                       >
@@ -208,7 +220,7 @@ const Navbar = () => {
                       </AnchorLink>
 
                       <AnchorLink
-                        to="#faq"
+                        to="/#faq"
                         title="Faqs"
                         className="anchor-link"
                       >
@@ -222,6 +234,22 @@ const Navbar = () => {
                         </Typography>
                       </AnchorLink>
 
+                      {dummieOwner && (
+                        <AnchorLink
+                          to="/plans"
+                          title="Plans"
+                          className="anchor-link"
+                        >
+                          <Typography
+                            sx={{
+                              fontFamily: "Cooper Hewitt",
+                              fontSize: { md: "1.2rem", lg: "1.5rem" },
+                            }}
+                          >
+                            PLANS
+                          </Typography>
+                        </AnchorLink>
+                      )}
                       <Minter />
                     </Grid>
 

@@ -5,3 +5,20 @@
         color: #86FC4D
     }
 }
+
+
+.react-pdf__Page__canvas {
+    @media (max-width: 600px) {
+        width: 100% !important;
+    }
+    border-radius: 5px;
+    box-shadow: 7px 7px 5px 1px #0b2100;
+}
+.react-pdf__Page__textContent {
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+// .react-pdf__Page__canvas {
+//     width: 100% !important;
+// }

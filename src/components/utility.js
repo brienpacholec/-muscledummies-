@@ -1,4 +1,5 @@
 import React from "react"
+
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
@@ -25,7 +26,7 @@ const Utility = () => {
           sx={{
             textAlign: "center",
           }}
-          data-aos="fade-right"
+          //data-aos="fade-right"
         >
           <Typography
             variant="h3"
@@ -40,7 +41,10 @@ const Utility = () => {
         </Grid>
       </Grid>
 
-      <Grid container data-aos="fade-right">
+      <Grid
+        container
+        //data-aos="fade-right"
+      >
         <Grid
           item
           xs={12}
@@ -153,7 +157,7 @@ const Utility = () => {
 
       <Grid
         container
-        data-aos="fade-left"
+        //data-aos="fade-left"
         sx={{
           marginTop: { xs: 0, md: 5 },
         }}

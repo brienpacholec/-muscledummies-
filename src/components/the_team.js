@@ -1,7 +1,9 @@
 import React from "react"
+
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
+
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -49,7 +51,7 @@ const TheTeam = () => {
           display: "flex",
           marginY: 5,
         }}
-        data-aos="fade-right"
+        //data-aos="fade-right"
       >
         <Grid
           item
@@ -114,7 +116,7 @@ const TheTeam = () => {
           display: "flex",
           marginY: 5,
         }}
-        data-aos="fade-left"
+        //data-aos="fade-left"
       >
         <Grid
           item
@@ -180,7 +182,7 @@ const TheTeam = () => {
           display: "flex",
           marginY: 5,
         }}
-        data-aos="fade-right"
+        //data-aos="fade-right"
       >
         <Grid
           item
@@ -245,7 +247,7 @@ const TheTeam = () => {
           display: "flex",
           marginY: 5,
         }}
-        data-aos="fade-left"
+        //data-aos="fade-left"
       >
         <Grid
           item

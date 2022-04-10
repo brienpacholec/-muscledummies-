@@ -1,11 +1,13 @@
 import React from "react"
+
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
-import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
+import Button from "@mui/material/Button"
+import Typography from "@mui/material/Typography"
+
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
-import Button from "@mui/material/Button"
 
 const Community = () => {
   return (
@@ -33,7 +35,7 @@ const Community = () => {
           sx={{
             paddingRight: { xs: 0, md: 5 },
           }}
-          data-aos="fade-up"
+          //data-aos="fade-up"
         >
           <Typography
             variant="h5"
@@ -97,7 +99,7 @@ const Community = () => {
         <Grid
           item
           md={4}
-          data-aos="fade-up"
+          //data-aos="fade-up"
           sx={{
             textAlign: "center",
             display: { xs: "none", md: "flex" },
@@ -113,7 +115,7 @@ const Community = () => {
             <Grid item md={12}>
               <StaticImage
                 src="../images/canva_components/dummie_community.png"
-                alt="Dummie World"
+                alt="Dummy World"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}

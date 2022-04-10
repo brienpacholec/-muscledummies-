@@ -1,11 +1,25 @@
-import React from "react"
-import PropTypes from "prop-types"
-import theme from "../themes/theme"
-import { ThemeProvider } from "@mui/system"
-import Navbar from "./navbar"
+import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
+import PropTypes from "prop-types"
+
+import Container from "@mui/material/Container"
+import { ThemeProvider } from "@mui/system"
+
+import Navbar from "./navbar"
+import Loading from "./loading"
+
+import theme from "../themes/theme"
 
 const Layout = ({ src, children }) => {
+  const [loading, setLoading] = useState(true)
+  const loadDuration = Math.random() * (3000 - 1000) + 1000
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, loadDuration)
+  }, [])
+
   return (
     <>
       <Helmet>
@@ -20,12 +34,30 @@ const Layout = ({ src, children }) => {
           content="https://gateway.pinata.cloud/ipfs/QmWYTnEWVyWvj73VxZwZojbsdZtTRDD9zAeDfQtoBSMvHH"
         />
       </Helmet>
-
-      <ThemeProvider theme={theme}>
-        <div id="home"></div>
-        {src === "index" && <Navbar />}
-        <main>{children}</main>
-      </ThemeProvider>
+      {loading ? (
+        <Container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            width: "100vw",
+          }}
+        >
+          <Loading rednderText={true} src={src} />
+        </Container>
+      ) : (
+        <ThemeProvider
+          theme={theme}
+          sx={{
+            overFloxX: "hidden",
+          }}
+        >
+          <div id="home"></div>
+          {src !== "404" && <Navbar />}
+          <main>{children}</main>
+        </ThemeProvider>
+      )}
     </>
   )
 }

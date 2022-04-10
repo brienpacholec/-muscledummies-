@@ -1,7 +1,9 @@
 import React from "react"
+
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
+
 import { StaticImage } from "gatsby-plugin-image"
 
 const MDCommunity = () => {
@@ -26,7 +28,7 @@ const MDCommunity = () => {
           sx={{
             textAlign: "center",
           }}
-          data-aos="zoom-in"
+          //data-aos="zoom-in"
         >
           <Typography
             variant="h3"
@@ -47,8 +49,8 @@ const MDCommunity = () => {
             textAlign: "center",
             marginBottom: { xs: 2, md: 4 },
           }}
-          data-aos="zoom-in"
-          data-aos-duration="3000"
+          //data-aos="zoom-in"
+          //data-aos-duration="3000"
         >
           <StaticImage
             src="../images/canva_components/holders_trainings.png"
@@ -68,7 +70,7 @@ const MDCommunity = () => {
             textAlign: "center",
             marginBottom: 3,
           }}
-          data-aos="fade-right"
+          //data-aos="fade-right"
         >
           <Typography
             variant="h3"
@@ -90,7 +92,7 @@ const MDCommunity = () => {
             textAlign: "center",
             marginBottom: 3,
           }}
-          data-aos="fade-left"
+          //data-aos="fade-left"
         >
           <Typography
             variant="h3"
@@ -111,7 +113,7 @@ const MDCommunity = () => {
           sx={{
             textAlign: "center",
           }}
-          data-aos="fade-up"
+          //data-aos="fade-up"
         >
           <Typography
             variant="h3"
@@ -133,7 +135,7 @@ const MDCommunity = () => {
             textAlign: "center",
             marginTop: 3,
           }}
-          data-aos="fade-right"
+          //data-aos="fade-right"
         >
           <Typography
             variant="h3"
@@ -155,7 +157,7 @@ const MDCommunity = () => {
             textAlign: "center",
             marginTop: 3,
           }}
-          data-aos="fade-left"
+          //data-aos="fade-left"
         >
           <Typography
             variant="h3"

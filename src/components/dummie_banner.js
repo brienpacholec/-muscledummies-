@@ -1,7 +1,9 @@
 import React, { useState } from "react"
+
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
+
 import { StaticImage } from "gatsby-plugin-image"
 
 const DummierBanner = () => {
@@ -39,7 +41,7 @@ const DummierBanner = () => {
             {activeImage1 === "1" ? (
               <StaticImage
                 src="../images/dummies/1.png"
-                alt="Muscle Dummie 1"
+                alt="Muscle Dummy 1"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -49,7 +51,7 @@ const DummierBanner = () => {
               <StaticImage
                 id="hover"
                 src="../images/dummies/2.png"
-                alt="Muscle Dummie 2"
+                alt="Muscle Dummy 2"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -79,7 +81,7 @@ const DummierBanner = () => {
             {activeImage2 === "3" ? (
               <StaticImage
                 src="../images/dummies/3.png"
-                alt="Muscle Dummie 3"
+                alt="Muscle Dummy 3"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -89,7 +91,7 @@ const DummierBanner = () => {
               <StaticImage
                 id="hover"
                 src="../images/dummies/4.png"
-                alt="Muscle Dummie 4"
+                alt="Muscle Dummy 4"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -118,7 +120,7 @@ const DummierBanner = () => {
             {activeImage3 === "5" ? (
               <StaticImage
                 src="../images/dummies/5.png"
-                alt="Muscle Dummie 5"
+                alt="Muscle Dummy 5"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -128,7 +130,7 @@ const DummierBanner = () => {
               <StaticImage
                 id="hover"
                 src="../images/dummies/6.png"
-                alt="Muscle Dummie 6"
+                alt="Muscle Dummy 6"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -156,7 +158,7 @@ const DummierBanner = () => {
             {activeImage4 === "7" ? (
               <StaticImage
                 src="../images/dummies/7.png"
-                alt="Muscle Dummie 7"
+                alt="Muscle Dummy 7"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}
@@ -166,7 +168,7 @@ const DummierBanner = () => {
               <StaticImage
                 id="hover"
                 src="../images/dummies/8.png"
-                alt="Muscle Dummie 8"
+                alt="Muscle Dummy 8"
                 placeholder="blurred"
                 layout="constrained"
                 height={500}

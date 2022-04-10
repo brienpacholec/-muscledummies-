@@ -1,16 +1,18 @@
 import React from "react"
+
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
-import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
-import { StaticImage } from "gatsby-plugin-image"
+import Typography from "@mui/material/Typography"
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter"
+
+import { StaticImage } from "gatsby-plugin-image"
 
 const About = () => {
   return (
     <Container
       id="about"
-      data-aos="fade-up-right"
+      //data-aos="fade-up-right"
       sx={{
         paddingY: { xs: 5, sm: 10 },
       }}
@@ -40,7 +42,7 @@ const About = () => {
             <StaticImage
               className="spin"
               src="../images/canva_components/dummie_circle.png"
-              alt="Muscle Dummie"
+              alt="Muscle Dummy"
               placeholder="blurred"
               layout="constrained"
               width={400}
