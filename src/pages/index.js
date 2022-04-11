@@ -38,12 +38,10 @@ const IndexPage = () => {
         maxWidth={false}
         disableGutters
         sx={{
-          // marginTop: { xs: 0, md: -30 },
-          // paddingTop: { xs: 5, md: 0 },
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          height: "500px",
+          height: "100vh",
         }}
       >
         <DummieHeader />
