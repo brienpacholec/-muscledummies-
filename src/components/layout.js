@@ -49,9 +49,6 @@ const Layout = ({ src, children }) => {
       ) : (
         <ThemeProvider
           theme={theme}
-          sx={{
-            overFloxX: "hidden",
-          }}
         >
           <div id="home"></div>
           {src !== "404" && <Navbar />}

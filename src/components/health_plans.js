@@ -7,15 +7,15 @@ import IconButton from "@mui/material/IconButton"
 import FormControl from "@mui/material/FormControl"
 import Select from "@mui/material/Select"
 import MenuItem from "@mui/material/MenuItem"
-import InputLabel from "@mui/material/InputLabel"
-import FormHelperText from "@mui/material/FormHelperText"
 import Typography from "@mui/material/Typography"
 import ChevronRightIcon from "@mui/icons-material/ChevronRight"
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft"
 
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack"
+import { Document, Page, pdfjs } from "react-pdf";
 
 import Loading from "./loading"
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const HealthPlans = () => {
   const [workoutPlanName, setWorkoutPlanName] = useState("")
@@ -238,12 +238,14 @@ const HealthPlans = () => {
                 file={workoutPlanDoc}
                 loading={<Loading rednderText={false} />}
                 onLoadSuccess={onDocumentLoadSuccess}
+                onLoadError={console.error} 
               >
                 <Page
                   pageNumber={pageNumber}
                   loading={<Loading rednderText={false} />}
                   height={700}
                   scale={1.0}
+                  onLoadError={console.error} 
                 />
               </Document>
 
