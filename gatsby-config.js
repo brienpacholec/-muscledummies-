@@ -48,5 +48,15 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
+    {
+      resolve: '@directus/gatsby-source-directus',
+      options: {
+        url: `${process.env.GATSBY_DIRECTUS_PROJECT_URL}`,
+        auth: {
+          email: `${process.env.GATSBY_DIRECTUS_EMAIL}`,
+          password: `${process.env.GATSBY_DIRECTUS_PASSWORD}`,
+        },
+      },
+    },
   ],
 }

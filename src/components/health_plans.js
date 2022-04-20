@@ -17,7 +17,8 @@ import Loading from "./loading"
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const HealthPlans = () => {
+const HealthPlans = ({fitness_plans}) => {
+
   const [workoutPlanName, setWorkoutPlanName] = useState("")
   const [workoutPlanDoc, setWorkoutPlanDoc] = useState("")
   const [numPages, setNumPages] = useState(null)
@@ -25,7 +26,7 @@ const HealthPlans = () => {
 
   const handleChange = event => {
     setWorkoutPlanName(event.target.value)
-    setWorkoutPlanDoc("/docs/" + event.target.value + ".pdf")
+    setWorkoutPlanDoc(process.env.GATSBY_DIRECTUS_PROJECT_URL + "/assets/" + event.target.value + ".pdf")
     setNumPages(null)
     setPageNumber(1)
   }
@@ -136,52 +137,13 @@ const HealthPlans = () => {
               <MenuItem value="">
                 <em>Choose a Workout Plan</em>
               </MenuItem>
-              <MenuItem value={"10 Week Muscle Gain Workout Plan for Dummies"}>
-                10 Week Muscle Gain Workout Plan for Dummies
-              </MenuItem>
-              <MenuItem value={"10 Week Bulk Workout Plan for Dummies"}>
-                10 Week Bulk Workout Plan for Dummies
-              </MenuItem>
-              <MenuItem value={"10 Week Shred Workout Plan for Dummies"}>
-                10 Week Shred Workout Plan for Dummies
-              </MenuItem>
-              <MenuItem
-                value={"10 Week Muscle Gain Workout Plan for Athletic Dummies"}
-              >
-                10 Week Muscle Gain Workout Plan for Athletic Dummies
-              </MenuItem>
-              <MenuItem value={"Advanced Muscle Gain Workout Plan for Dummies"}>
-                Advanced Muscle Gain Workout Plan for Dummies
-              </MenuItem>
-              <MenuItem value={"Advanced Shred Workout Plan for Dummies"}>
-                Advanced Shred Workout Plan for Dummies
-              </MenuItem>
-              <MenuItem value={"Advanced D1 Football Workout Plan for Dummies"}>
-                Advanced D1 Football Workout Plan for Dummies
-              </MenuItem>
-              <MenuItem value={"Beginner 3 Day_Week Workout Plan for Dummies"}>
-                Beginner 3 Day_Week Workout Plan for Dummies
-              </MenuItem>
-              <MenuItem value={"Balance and Strength Workout Plan for Dummies"}>
-                Balance and Strength Workout Plan for Dummies
-              </MenuItem>
-              <MenuItem
-                value={"35 Minute Advanced Football Workout for Dummies"}
-              >
-                35 Minute Advanced Football Workout for Dummies
-              </MenuItem>
-              <MenuItem
-                value={"Speed and Agility Workout Plan for Athletic Dummies"}
-              >
-                Speed and Agility Workout Plan for Athletic Dummies
-              </MenuItem>
-              <MenuItem
-                value={"Fully Customizable Workout Plan for Athletic Dummies"}
-              >
-                Fully Customizable Workout Plan for Athletic Dummies
-              </MenuItem>
+
+              {fitness_plans.map((plan) => 
+                <MenuItem value={plan.document.id} key={plan.id}>
+                  {plan.name}
+                </MenuItem>
+              )}
             </Select>
-            {/* <FormHelperText sx={{color: "#FFF"}}><em>Choose a Workout Plan</em></FormHelperText> */}
           </FormControl>
         </Grid>
       </Grid>
@@ -288,3 +250,4 @@ const HealthPlans = () => {
   )
 }
 export default HealthPlans
+
