@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@alch/alchemy-web3": "^1.2.4",
+    "@directus/gatsby-source-directus": "^9.9.0",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.3.1",

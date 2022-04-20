@@ -5,11 +5,10 @@ import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 
-import { Link } from "gatsby"
 import Countdown from "react-countdown"
 import CountUp from "react-countup"
 
-import { getCurrentStatus, checkOwnership } from "../utils/interact.js"
+import { getCurrentStatus } from "../utils/interact.js"
 import Minter from "./minter"
 
 const Status = () => {
@@ -17,7 +16,9 @@ const Status = () => {
   const [maxSupply, setMaxSupply] = useState("")
   const [totalSupply, setTotalSupply] = useState("")
   const [mintingDatePassed, setMintingDatePassed] = useState("")
-  const [dummieOwner, setDummieOwner] = useState(false)
+  
+  //TODO - maybe? lol
+  // const [dummieOwner, setDummieOwner] = useState(false)
 
   const renderer = ({ days, hours, minutes, seconds }) => {
     return (
@@ -36,8 +37,9 @@ const Status = () => {
       setTotalSupply(totalSupply)
       setMintingDatePassed(mintingDatePassed)
 
-      const owner = await checkOwnership()
-      setDummieOwner(owner)
+      //TODO - maybe? lol
+      // const owner = await checkOwnership()
+      // setDummieOwner(owner)
     }
     fetchData()
   }, [])

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
 
+import { graphql } from "gatsby"
+
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Alert from "@mui/material/Alert"
@@ -12,7 +14,7 @@ import Linkbar from "../components/linkbar"
 
 import { checkOwnership } from "../utils/interact.js"
 
-const PlansPage = () => {
+const PlansPage = ({data}) => {
   const [dummieOwner, setDummieOwner] = useState("")
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const PlansPage = () => {
         }}
       >
         {dummieOwner ? (
-          <HealthPlans />
+          <HealthPlans fitness_plans={data.directus.fitness_plans}/>
         ) : (
           <Container
             sx={{
@@ -112,3 +114,17 @@ const PlansPage = () => {
 }
 
 export default PlansPage
+
+export const query = graphql`
+query DirectusQuery{
+	directus {
+		fitness_plans {
+			document {
+				id
+			}
+      name
+      id
+		}
+	}
+}
+`
