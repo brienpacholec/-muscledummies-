@@ -210,7 +210,6 @@ const HealthPlans = ({fitness_plans}) => {
                   onLoadError={console.error} 
                 />
               </Document>
-
               <IconButton
                 variant="contained"
                 onClick={() => setPageNumber(pageNumber - 1)}
