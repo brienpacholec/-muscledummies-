@@ -94,9 +94,7 @@ const Faq = () => {
               fontFamily: "Cooper Hewitt",
             }}
           >
-            During our white-list presale, each Dummy will cost .11 ETH. During
-            our normal public sale, each Dummy will cost .15 ETH. More info on
-            how to get whitelisted in our discord.
+            During our normal public sale, each Dummy will cost .11 ETH.
           </Typography>
         </AccordionDetails>
       </Accordion>
