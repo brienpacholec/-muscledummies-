@@ -167,7 +167,7 @@ const HealthPlans = ({ fitness_plans }) => {
           >
             <Box
               sx={{
-                textAlign: "-webkit-center",
+                textAlign: ["-webkit-center", "-moz-center"],
               }}
             >
               <IconButton

@@ -14,7 +14,7 @@ import Linkbar from "../components/linkbar"
 
 import { checkOwnership } from "../utils/interact.js"
 
-const PlansPage = ({data}) => {
+const PlansPage = ({ data }) => {
   const [dummieOwner, setDummieOwner] = useState("")
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const PlansPage = ({data}) => {
         }}
       >
         {dummieOwner ? (
-          <HealthPlans fitness_plans={data.directus.fitness_plans}/>
+          <HealthPlans fitness_plans={data.directus.fitness_plans} />
         ) : (
           <Container
             sx={{
@@ -116,15 +116,15 @@ const PlansPage = ({data}) => {
 export default PlansPage
 
 export const query = graphql`
-query DirectusQuery{
-	directus {
-		fitness_plans {
-			document {
-				id
-			}
-      name
-      id
-		}
-	}
-}
+  query DirectusQuery {
+    directus {
+      fitness_plans {
+        document {
+          id
+        }
+        name
+        id
+      }
+    }
+  }
 `
