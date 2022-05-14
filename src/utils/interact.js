@@ -158,7 +158,7 @@ export const getCurrentStatus = async () => {
   const currentStatus = await window.contract.methods.paused().call()
   const maxSupply = await window.contract.methods.maxSupply().call()
   const totalSupply = await window.contract.methods.totalSupply().call()
-  const mintingDatePassed = Date.now() >= new Date("May 14, 2022 17:30:00")
+  const mintingDatePassed = Date.now() >= new Date("May 14, 2022 14:30:00")
 
   return {
     currentStatus: currentStatus,

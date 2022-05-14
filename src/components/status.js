@@ -150,7 +150,7 @@ const Status = () => {
                 }}
               >
                 <Countdown
-                  date={new Date("May 14, 2022 17:30:00")}
+                  date={new Date("May 14, 2022 14:30:00")}
                   onComplete={() => setMintingDatePassed(true)}
                   renderer={renderer}
                 />
