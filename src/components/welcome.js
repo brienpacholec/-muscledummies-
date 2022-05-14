@@ -2,8 +2,8 @@ import React from "react"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-// import { StaticImage } from "gatsby-plugin-image"
-// import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const Welcome = () => {
   return (
@@ -81,8 +81,7 @@ const Welcome = () => {
             justifyContet: "center",
           }}
         >
-          {/* TODO */}
-          {/* <Link to="https://www.google.com">
+          <Link to="https://opensea.io/collection/muscle-dummies">
             <StaticImage
               src="../images/canva_components/view_collection.png"
               alt="Muscle Shaker"
@@ -92,7 +91,7 @@ const Welcome = () => {
                 marginTop: 30,
               }}
             />
-          </Link> */}
+          </Link>
         </Grid>
       </Grid>
     </Container>
