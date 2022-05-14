@@ -16,14 +16,15 @@ const Status = () => {
   const [maxSupply, setMaxSupply] = useState("")
   const [totalSupply, setTotalSupply] = useState("")
   const [mintingDatePassed, setMintingDatePassed] = useState("")
-  
+
   //TODO - maybe? lol
   // const [dummieOwner, setDummieOwner] = useState(false)
 
   const renderer = ({ days, hours, minutes, seconds }) => {
     return (
       <span>
-        {days > 0 && <>{days} days</>} {hours > 0 && <>{hours} hours</>} {minutes > 0 && <>{minutes} minutes</>} {seconds} seconds
+        {days > 0 && <>{days} days</>} {hours > 0 && <>{hours} hours</>}{" "}
+        {minutes > 0 && <>{minutes} minutes</>} {seconds} seconds
       </span>
     )
   }

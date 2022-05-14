@@ -11,14 +11,13 @@ import Typography from "@mui/material/Typography"
 import ChevronRightIcon from "@mui/icons-material/ChevronRight"
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft"
 
-import { Document, Page, pdfjs } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf"
 
 import Loading from "./loading"
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
-const HealthPlans = ({fitness_plans}) => {
-
+const HealthPlans = ({ fitness_plans }) => {
   const [workoutPlanName, setWorkoutPlanName] = useState("")
   const [workoutPlanDoc, setWorkoutPlanDoc] = useState("")
   const [numPages, setNumPages] = useState(null)
@@ -26,7 +25,12 @@ const HealthPlans = ({fitness_plans}) => {
 
   const handleChange = event => {
     setWorkoutPlanName(event.target.value)
-    setWorkoutPlanDoc(process.env.GATSBY_DIRECTUS_PROJECT_URL + "/assets/" + event.target.value + ".pdf")
+    setWorkoutPlanDoc(
+      process.env.GATSBY_DIRECTUS_PROJECT_URL +
+        "/assets/" +
+        event.target.value +
+        ".pdf"
+    )
     setNumPages(null)
     setPageNumber(1)
   }
@@ -128,7 +132,7 @@ const HealthPlans = ({fitness_plans}) => {
               id="demo-simple-select"
               value={workoutPlanName}
               displayEmpty
-              inputProps={{ 'aria-label': 'Select Workout' }}
+              inputProps={{ "aria-label": "Select Workout" }}
               onChange={handleChange}
               sx={{
                 backgroundColor: "#FFF",
@@ -138,11 +142,11 @@ const HealthPlans = ({fitness_plans}) => {
                 <em>Choose a Workout Plan</em>
               </MenuItem>
 
-              {fitness_plans.map((plan) => 
+              {fitness_plans.map(plan => (
                 <MenuItem value={plan.document.id} key={plan.id}>
                   {plan.name}
                 </MenuItem>
-              )}
+              ))}
             </Select>
           </FormControl>
         </Grid>
@@ -166,7 +170,6 @@ const HealthPlans = ({fitness_plans}) => {
                 textAlign: "-webkit-center",
               }}
             >
-
               <IconButton
                 variant="contained"
                 onClick={() => setPageNumber(pageNumber - 1)}
@@ -200,14 +203,14 @@ const HealthPlans = ({fitness_plans}) => {
                 file={workoutPlanDoc}
                 loading={<Loading rednderText={false} />}
                 onLoadSuccess={onDocumentLoadSuccess}
-                onLoadError={console.error} 
+                onLoadError={console.error}
               >
                 <Page
                   pageNumber={pageNumber}
                   loading={<Loading rednderText={false} />}
                   height={700}
                   scale={1.0}
-                  onLoadError={console.error} 
+                  onLoadError={console.error}
                 />
               </Document>
               <IconButton
@@ -249,4 +252,3 @@ const HealthPlans = ({fitness_plans}) => {
   )
 }
 export default HealthPlans
-

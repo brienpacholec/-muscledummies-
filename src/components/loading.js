@@ -4,9 +4,9 @@ import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 const Loading = ({ rednderText, src }) => {
   let displayText = ""
-  if(src === "index") {
+  if (src === "index") {
     displayText = "READY TO CONQUER THE HEALTH AND FITNESS INDUSTRY"
-  } else if(src === "plans") {
+  } else if (src === "plans") {
     displayText = "LOADING YOUR PERSONALIZED HEALTH AND FITNESS PLANS"
   }
   return (
@@ -15,7 +15,11 @@ const Loading = ({ rednderText, src }) => {
         item
         xs={12}
         sx={{
-          textAlign: "-webkit-center",
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column"
         }}
       >
         {rednderText && (

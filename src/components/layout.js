@@ -12,7 +12,7 @@ import theme from "../themes/theme"
 
 const Layout = ({ src, children }) => {
   const [loading, setLoading] = useState(true)
-  const loadDuration = Math.random() * (3000 - 1000) + 1000
+  const loadDuration = Math.random() * (2000 - 1000) + 1000
 
   useEffect(() => {
     setTimeout(() => {
@@ -47,9 +47,7 @@ const Layout = ({ src, children }) => {
           <Loading rednderText={true} src={src} />
         </Container>
       ) : (
-        <ThemeProvider
-          theme={theme}
-        >
+        <ThemeProvider theme={theme}>
           <div id="home"></div>
           {src !== "404" && <Navbar />}
           <main>{children}</main>
