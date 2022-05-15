@@ -13,7 +13,9 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Minter from "./minter"
 import { checkOwnership } from "../utils/interact.js"
 
-const Navbar = () => {
+import PropTypes from "prop-types"
+
+const Navbar = ({ src }) => {
   const [dummieOwner, setDummieOwner] = useState(false)
 
   useEffect(() => {
@@ -29,7 +31,12 @@ const Navbar = () => {
         sx={{
           backgroundColor: "rgba(0,0,0,0.85)",
           paddingY: { xs: 1, md: 4 },
-          position: { xs: "static", md: "sticky" },
+          ...(src !== "plans") && {
+            position: { xs: "static", md: "sticky" }
+          },
+          ...(src === "plans") && {
+            position: { xs: "static", md: "static" }
+          },
           display: { xs: "none", md: "flex" },
         }}
       >
@@ -273,6 +280,10 @@ const Navbar = () => {
       </AppBar>
     </>
   )
+}
+
+Navbar.propTypes = {
+  src: PropTypes.string,
 }
 
 export default Navbar

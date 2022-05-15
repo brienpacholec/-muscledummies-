@@ -208,7 +208,7 @@ const HealthPlans = ({ fitness_plans }) => {
                 <Page
                   pageNumber={pageNumber}
                   loading={<Loading rednderText={false} />}
-                  height={700}
+                  height={550}
                   scale={1.0}
                   onLoadError={console.error}
                 />

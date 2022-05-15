@@ -49,7 +49,7 @@ const Layout = ({ src, children }) => {
       ) : (
         <ThemeProvider theme={theme}>
           <div id="home"></div>
-          {src !== "404" && <Navbar />}
+          {src !== "404" && <Navbar src={src}/>}
           <main>{children}</main>
         </ThemeProvider>
       )}
