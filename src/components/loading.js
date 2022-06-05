@@ -8,6 +8,20 @@ const Loading = ({ rednderText, src }) => {
     displayText = "READY TO CONQUER THE HEALTH AND FITNESS INDUSTRY"
   } else if (src === "plans") {
     displayText = "LOADING YOUR PERSONALIZED HEALTH AND FITNESS PLANS"
+  } else if (src === "shop") {
+    displayText = "WELCOME TO THE MUSCLE DUMMY SHOP"
+  } else if (src === "Athletes") {
+    displayText = "LOADING ATHLETE PLANS"
+  } else if (src === "Body Builders") {
+    displayText = "LOADING BODY BUILDER PLANS"
+  } else if (src === "Womens") {
+    displayText = "LOADING WOMENS PLANS"
+  } else if (src === "Mens") {
+    displayText = "LOADING MENS PLANS"
+  } else if (src === "Football") {
+    displayText = "LOADING FOOTBALL PLANS"
+  } else {
+    displayText = ""
   }
   return (
     <>
@@ -19,7 +33,7 @@ const Loading = ({ rednderText, src }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          flexDirection: "column"
+          flexDirection: "column",
         }}
       >
         {rednderText && (

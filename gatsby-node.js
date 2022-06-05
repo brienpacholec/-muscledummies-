@@ -1,4 +1,5 @@
 const webpack = require("webpack")
+const path = require(`path`)
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -19,5 +20,26 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         canvas: false,
       },
     },
+  })
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    query planTypes {
+      plans: allStripePrice {
+        distinct(field: nickname)
+      }
+    }
+  `)
+  result.data.plans.distinct.forEach(planType => {
+    var slug = `/shop/${planType.replace(" ", "-").toLowerCase()}`
+    createPage({
+      path: `${slug}`,
+      component: path.resolve("./src/templates/shop-plans.js"),
+      context: {
+        nickname: planType,
+      },
+    })
   })
 }

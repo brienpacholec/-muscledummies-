@@ -5,13 +5,15 @@ import PropTypes from "prop-types"
 import Container from "@mui/material/Container"
 import { ThemeProvider } from "@mui/system"
 
-import Navbar from "./navbar"
-import Loading from "./loading"
+import NFTNavbar from "./nft_navbar"
+import Loading from "../components/loading"
+import DummieFooter from "../components/dummie_footer"
+import Linkbar from "../components/linkbar"
 
 import theme from "../themes/theme"
 
-const Layout = ({ src, children }) => {
-  const [loading, setLoading] = useState(true)
+const NFTLayout = ({ src, children }) => {
+  const [loading, setLoading] = useState(null)
   const loadDuration = Math.random() * (2000 - 1000) + 1000
 
   useEffect(() => {
@@ -49,17 +51,22 @@ const Layout = ({ src, children }) => {
       ) : (
         <ThemeProvider theme={theme}>
           <div id="home"></div>
-          {src !== "404" && <Navbar src={src}/>}
+          {src !== "404" && <NFTNavbar src={src} />}
           <main>{children}</main>
+          {/* FOOTER */}
+          <Container maxWidth={false} disableGutters>
+            <DummieFooter />
+            <Linkbar />
+          </Container>
         </ThemeProvider>
       )}
     </>
   )
 }
 
-Layout.propTypes = {
+NFTLayout.propTypes = {
   children: PropTypes.node.isRequired,
   src: PropTypes.string.isRequired,
 }
 
-export default Layout
+export default NFTLayout

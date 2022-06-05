@@ -11,11 +11,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sharp`,
     `gatsby-theme-material-ui`,
+
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
@@ -49,7 +50,23 @@ module.exports = {
       },
     },
     {
-      resolve: '@directus/gatsby-source-directus',
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: [
+          "Balance",
+          "BalanceTransaction",
+          "Product",
+          "ApplicationFee",
+          "Sku",
+          "Subscription",
+          "Price",
+        ],
+        secretKey: `${process.env.GATSBY_STRIPE_SECRET_KEY}`,
+        downloadFiles: true, //true if we need the files
+      },
+    },
+    {
+      resolve: "@directus/gatsby-source-directus",
       options: {
         url: `${process.env.GATSBY_DIRECTUS_PROJECT_URL}`,
         auth: {

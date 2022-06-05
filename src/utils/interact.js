@@ -130,7 +130,7 @@ export const mintNFT = async (walletAddress, amount) => {
       .mintUser(walletAddress, parseInt(amount))
       .encodeABI(),
     value: currentCost.toString(16),
-    gas: '30400',
+    gas: "30400",
   }
 
   //APPROVE transaction via metamask

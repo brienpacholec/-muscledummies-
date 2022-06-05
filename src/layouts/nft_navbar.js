@@ -10,12 +10,12 @@ import Typography from "@mui/material/Typography"
 import { StaticImage } from "gatsby-plugin-image"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import Minter from "./minter"
+import Minter from "../components/minter"
 import { checkOwnership } from "../utils/interact.js"
 
 import PropTypes from "prop-types"
 
-const Navbar = ({ src }) => {
+const NFTNavbar = ({ src }) => {
   const [dummieOwner, setDummieOwner] = useState(false)
 
   useEffect(() => {
@@ -31,12 +31,12 @@ const Navbar = ({ src }) => {
         sx={{
           backgroundColor: "rgba(0,0,0,0.85)",
           paddingY: { xs: 1, md: 4 },
-          ...(src !== "plans") && {
-            position: { xs: "static", md: "sticky" }
-          },
-          ...(src === "plans") && {
-            position: { xs: "static", md: "static" }
-          },
+          ...(src !== "plans" && {
+            position: { xs: "static", md: "sticky" },
+          }),
+          ...(src === "plans" && {
+            position: { xs: "static", md: "static" },
+          }),
           display: { xs: "none", md: "flex" },
         }}
       >
@@ -81,7 +81,7 @@ const Navbar = ({ src }) => {
                       }}
                     >
                       <AnchorLink
-                        to="/#home"
+                        to="/shop"
                         title="Home"
                         className="anchor-link"
                       >
@@ -91,12 +91,12 @@ const Navbar = ({ src }) => {
                             fontSize: { md: "1.2rem", lg: "1.5rem" },
                           }}
                         >
-                          HOME
+                          SHOP
                         </Typography>
                       </AnchorLink>
 
                       <AnchorLink
-                        to="/#about"
+                        to="/nft/#about"
                         title="What is it?"
                         className="anchor-link"
                       >
@@ -111,7 +111,7 @@ const Navbar = ({ src }) => {
                       </AnchorLink>
 
                       <AnchorLink
-                        to="/#utility"
+                        to="/nft/#utility"
                         title="Instant Utility"
                         className="anchor-link"
                       >
@@ -197,7 +197,7 @@ const Navbar = ({ src }) => {
                       }}
                     >
                       <AnchorLink
-                        to="/#roadmap"
+                        to="/nft/#roadmap"
                         title="Roadmap"
                         className="anchor-link"
                       >
@@ -212,7 +212,7 @@ const Navbar = ({ src }) => {
                       </AnchorLink>
 
                       <AnchorLink
-                        to="/#team"
+                        to="/nft/#team"
                         title="The Team"
                         className="anchor-link"
                       >
@@ -227,7 +227,7 @@ const Navbar = ({ src }) => {
                       </AnchorLink>
 
                       <AnchorLink
-                        to="/#faq"
+                        to="/nft/#faq"
                         title="Faqs"
                         className="anchor-link"
                       >
@@ -282,8 +282,8 @@ const Navbar = ({ src }) => {
   )
 }
 
-Navbar.propTypes = {
+NFTNavbar.propTypes = {
   src: PropTypes.string,
 }
 
-export default Navbar
+export default NFTNavbar

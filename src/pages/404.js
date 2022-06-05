@@ -1,5 +1,5 @@
 import * as React from "react"
-import Layout from "../components/layout"
+import DefaultLayout from "../layouts/default_layout"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
@@ -24,7 +24,7 @@ const displayMessage = message404[Math.floor(Math.random() * message404.length)]
 
 const NotFoundPage = () => {
   return (
-    <Layout src="404">
+    <DefaultLayout src="404">
       <Container
         className="bg-1"
         maxWidth={false}
@@ -108,7 +108,7 @@ const NotFoundPage = () => {
           </Grid>
         </Grid>
       </Container>
-    </Layout>
+    </DefaultLayout>
   )
 }
 

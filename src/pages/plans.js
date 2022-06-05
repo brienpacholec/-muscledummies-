@@ -7,10 +7,8 @@ import Grid from "@mui/material/Grid"
 import Alert from "@mui/material/Alert"
 import Typography from "@mui/material/Typography"
 
-import Layout from "../components/layout"
+import NFTLayout from "../layouts/nft_layout"
 import HealthPlans from "../components/health_plans"
-import DummieFooter from "../components/dummie_footer"
-import Linkbar from "../components/linkbar"
 
 import { checkOwnership } from "../utils/interact.js"
 
@@ -26,7 +24,7 @@ const PlansPage = ({ data }) => {
   }, [])
 
   return (
-    <Layout src="plans">
+    <NFTLayout src="plans">
       {/* PLANS */}
       <Container
         className="bg-4"
@@ -102,14 +100,7 @@ const PlansPage = ({ data }) => {
           </Container>
         )}
       </Container>
-
-      {/* FOOTER */}
-      <Container>
-        <DummieFooter />
-      </Container>
-
-      <Linkbar />
-    </Layout>
+    </NFTLayout>
   )
 }
 
