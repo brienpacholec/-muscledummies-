@@ -27,8 +27,8 @@ const PlanCarousel = () => {
           layout="constrained"
           height={500}
           style={{
-            borderRadius: "1rem",
-            border: "white solid 2px",
+            borderRadius: "0.5rem",
+            border: "white solid 1px",
           }}
         />
       </Link>

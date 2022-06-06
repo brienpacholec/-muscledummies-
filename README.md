@@ -2,7 +2,7 @@
 
 The offical website for Muscle Dummies - built utilizing GatsbyJs.
 
-[![Version](https://img.shields.io/badge/Version-1.0-blueviolet?)](https://github.com/brienpacholec/-muscledummies-)
+[![Version](https://img.shields.io/badge/Version-2.0-blueviolet?)](https://github.com/brienpacholec/-muscledummies-)
 
 ## Authors
 

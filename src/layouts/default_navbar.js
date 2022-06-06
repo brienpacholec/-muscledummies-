@@ -26,6 +26,7 @@ import MapIcon from "@mui/icons-material/Map"
 import GroupIcon from "@mui/icons-material/Group"
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer"
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const DummieNav = styled(List)({
   "& .MuiListItemButton-root": {
@@ -298,7 +299,7 @@ export default function DefaultNavbar() {
       sx={{
         position: "sticky",
         top: 0,
-        background: "#12201a",
+        background: "#12201af5",
         zIndex: 99,
       }}
     >
@@ -325,18 +326,16 @@ export default function DefaultNavbar() {
               <MenuIcon />
             </IconButton>
 
-            <StaticImage
-              className="shake"
-              src="../images/logos/md_logo.png"
-              alt="Muscle Shaker"
-              placeholder="blurred"
-              layout="constrained"
-              width={66}
-              sx={{
-                left: "50%",
-              }}
-            />
-            <div></div>
+            <Link to="/">
+              <StaticImage
+                className="shake"
+                src="../images/logos/md_logo.png"
+                alt="Muscle Shaker"
+                placeholder="blurred"
+                layout="constrained"
+                width={45}
+              />
+            </Link>
           </Container>
           <SwipeableDrawer
             anchor={anchor}
