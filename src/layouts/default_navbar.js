@@ -67,11 +67,11 @@ const shopData = [
 
 const nftData = [
   { icon: <ArticleIcon />, label: "Plans", href: "/plans" },
-  { icon: <InfoIcon />, label: "About", href: "/mdnft#about" },
-  { icon: <GppGoodIcon />, label: "Instant Utility", href: "/mdnft#utility" },
-  { icon: <MapIcon />, label: "Roadmap", href: "/mdnft#roadmap" },
-  { icon: <GroupIcon />, label: "The Team", href: "/mdnft#team" },
-  { icon: <QuestionAnswerIcon />, label: "Faqs", href: "/mdnft#faq" },
+  { icon: <InfoIcon />, label: "About", href: "/nft#about" },
+  { icon: <GppGoodIcon />, label: "Instant Utility", href: "/nft#utility" },
+  { icon: <MapIcon />, label: "Roadmap", href: "/nft#roadmap" },
+  { icon: <GroupIcon />, label: "The Team", href: "/nft#team" },
+  { icon: <QuestionAnswerIcon />, label: "Faqs", href: "/nft#faq" },
 ]
 
 export default function DefaultNavbar() {
