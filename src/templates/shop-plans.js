@@ -21,7 +21,6 @@ const getStripe = () => {
 }
 
 const ShopPlans = ({ pageContext, data }) => {
-  console.log(data)
   const workouts = data.workout.edges
   const nutritions = data.nutrition.edges
   const bundles = data.bundle.edges
@@ -29,7 +28,6 @@ const ShopPlans = ({ pageContext, data }) => {
 
   const redirectToCheckout = async productId => {
     const stripe = await getStripe()
-    console.log(stripe)
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
       lineItems: [{ price: productId, quantity: 1 }],
