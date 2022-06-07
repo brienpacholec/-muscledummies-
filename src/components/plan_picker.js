@@ -34,7 +34,7 @@ const PlanPicker = ({ current }) => {
             >
               <Typography
                 sx={{
-                  fontFamily: "Cooper Hewitt",
+                  fontFamily: "Gagalin",
                   fontSize: { xs: "1.2rem", sm: "1.5rem" },
                   paddingTop: { xs: 2, sm: 0 },
                 }}
@@ -60,7 +60,7 @@ const PlanPicker = ({ current }) => {
                   value={planType}
                   key={index}
                   sx={{
-                    fontFamily: "Gagalin",
+                    fontFamily: "Cooper Hewitt",
                     color:
                       planType === current || current === "" ? "white" : "gray",
                   }}

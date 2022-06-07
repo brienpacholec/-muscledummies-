@@ -41,7 +41,7 @@ const IndexPage = () => {
               sx={{
                 color: "primary.main",
                 fontFamily: "Cooper Hewitt",
-                fontSize: {xs: "2.5rem", sm: "3rem", md: "4rem", lg: "5rem"}
+                fontSize: { xs: "2.5rem", sm: "3rem", md: "4rem", lg: "5rem" },
               }}
             >
               WELCOME TO MUSCLE DUMMIES

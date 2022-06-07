@@ -3,15 +3,11 @@ import { graphql } from "gatsby"
 
 import DefaultLayout from "../layouts/default_layout"
 import PlanPicker from "../components/plan_picker"
+import PlanCard from "../components/plan_card"
 
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
-import Card from "@mui/material/Card"
-import CardHeader from "@mui/material/CardHeader"
-import CardMedia from "@mui/material/CardMedia"
-import CardContent from "@mui/material/CardContent"
-import CardActions from "@mui/material/CardActions"
-import Button from "@mui/material/Button"
+
 import { loadStripe } from "@stripe/stripe-js"
 
 import Typography from "@mui/material/Typography"
@@ -25,7 +21,11 @@ const getStripe = () => {
 }
 
 const ShopPlans = ({ pageContext, data }) => {
-  const products = data.allStripePrice.edges
+  console.log(data)
+  const workouts = data.workout.edges
+  const nutritions = data.nutrition.edges
+  const bundles = data.bundle.edges
+  const misc = data.miscellaneous.edges
 
   const redirectToCheckout = async productId => {
     const stripe = await getStripe()
@@ -53,101 +53,160 @@ const ShopPlans = ({ pageContext, data }) => {
         sx={{ paddingY: 5 }}
       >
         <PlanPicker current={pageContext.nickname} />
-        <Grid container>
-          <Grid
-            item
-            xs={12}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              flexFlow: "wrap",
-              marginTop: 5,
-            }}
-          >
-            {products.map((product, index) => (
-              <Card
+        
+
+        {/* WORKOUTS */}
+        {workouts.length > 0 && (
+          <Grid container sx={{ marginY: 3 }}>
+            <Grid
+              item
+              xs={12}
+              sx={{
+                textAlign: "center",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "Gagalin",
+                  fontSize: { xs: "1.2rem", sm: "1.5rem" },
+                  paddingTop: { xs: 2, sm: 0 },
+                }}
+              >
+                WORKOUTS
+              </Typography>
+            </Grid>
+            <Grid container>
+              <Grid
+                item
+                xs={12}
                 sx={{
                   display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  flexBasis: { xs: "55%", sm: "40%", md: "25%", lg: "15%" },
-                  margin: 1,
+                  justifyContent: "center",
+                  flexFlow: "wrap",
                 }}
-                key={index}
               >
-                <CardHeader
-                  title={product.node.product.name}
-                  subheader={"$" + (product.node.unit_amount / 100).toFixed(2)}
-                  titleTypographyProps={{
-                    fontSize: "0.875rem",
-                  }}
-                  subheaderTypographyProps={{
-                    fontSize: "0.75rem",
-                  }}
-                  sx={{
-                    "& .MuiCardHeader-content": {
-                      display: "inline-flex",
-                      justifyContent: "space-between",
-                    },
-                    height: "70px",
-                    alignItems: "flex-start",
-                  }}
-                />
-                {product.node.product.images[0] ? (
-                  <CardMedia
-                    component="img"
-                    height="194"
-                    image={product.node.product.images[0]}
-                    alt="An image of an individual working out"
-                    sx={{
-                      objectFit: "fill",
-                    }}
-                  />
-                ) : (
-                  <CardMedia
-                    component="img"
-                    height="194"
-                    image="https://library.kissclipart.com/20180914/ire/kissclipart-weight-lifting-transparent-clipart-weight-training-63c0acb956da6802.png"
-                    alt="Paella dish"
-                    sx={{
-                      objectFit: "fill",
-                    }}
-                  />
-                )}
-
-                <CardContent
-                  sx={{
-                    textAlign: "left",
-                    marginBottom: "auto",
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontFamily: "Cooper Hewitt",
-                      fontSize: ".8rem",
-                    }}
-                  >
-                    <em>{product.node.product.description}</em>
-                  </Typography>
-                </CardContent>
-                <CardActions
-                  sx={{
-                    justifyContent: "center",
-                    paddingTop: 0,
-                  }}
-                >
-                  <Button
-                    size="small"
-                    variant="contained"
-                    onClick={() => redirectToCheckout(product.node.id)}
-                  >
-                    BUY NOW
-                  </Button>
-                </CardActions>
-              </Card>
-            ))}
+                {workouts.map((product, index) => (
+                  <PlanCard plan={product.node} redirectToCheckout={redirectToCheckout} key={index}/>
+                ))}
+              </Grid>
+            </Grid>
           </Grid>
-        </Grid>
+        )}
+
+        {/* MISCELLANEOUS */}
+        {misc.length > 0 && (
+          <Grid container sx={{ marginY: 3 }}>
+            <Grid
+              item
+              xs={12}
+              sx={{
+                textAlign: "center",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "Gagalin",
+                  fontSize: { xs: "1.2rem", sm: "1.5rem" },
+                  paddingTop: { xs: 2, sm: 0 },
+                }}
+              >
+                EXTRAS
+              </Typography>
+            </Grid>
+            <Grid container>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexFlow: "wrap",
+                }}
+              >
+                {misc.map((product, index) => (
+                  <PlanCard plan={product.node} redirectToCheckout={redirectToCheckout} key={index}/>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+        )}
+
+        {/* NUTRITION */}
+        {nutritions.length > 0 && (
+          <Grid container sx={{ marginY: 3 }}>
+            <Grid
+              item
+              xs={12}
+              sx={{
+                textAlign: "center",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "Gagalin",
+                  fontSize: { xs: "1.2rem", sm: "1.5rem" },
+                  paddingTop: { xs: 2, sm: 0 },
+                }}
+              >
+                NUTRITION
+              </Typography>
+            </Grid>
+            <Grid container>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexFlow: "wrap",
+                }}
+              >
+                {nutritions.map((product, index) => (
+                  <PlanCard plan={product.node} redirectToCheckout={redirectToCheckout} key={index}/>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+        )}
+
+        {/* BUNDLES */}
+        {bundles.length > 0 && (
+          <Grid container sx={{ marginY: 3 }}>
+            <Grid
+              item
+              xs={12}
+              sx={{
+                textAlign: "center",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "Gagalin",
+                  fontSize: { xs: "1.2rem", sm: "1.5rem" },
+                  paddingTop: { xs: 2, sm: 0 },
+                }}
+              >
+                BUNDLES
+              </Typography>
+            </Grid>
+            <Grid container>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexFlow: "wrap",
+                }}
+              >
+                {bundles.map((product, index) => (
+                  <PlanCard plan={product.node} redirectToCheckout={redirectToCheckout} key={index}/>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+        )}
+
       </Container>
     </DefaultLayout>
   )
@@ -157,8 +216,11 @@ export default ShopPlans
 
 export const query = graphql`
   query stripeProductByNickname($nickname: String!) {
-    allStripePrice(
-      filter: { nickname: { eq: $nickname } }
+    workout: allStripePrice(
+      filter: {
+        nickname: { eq: $nickname }
+        product: { metadata: { type: { eq: "Workout" } } }
+      }
       sort: { fields: unit_amount, order: ASC }
     ) {
       edges {
@@ -168,6 +230,78 @@ export const query = graphql`
             name
             description
             images
+            metadata {
+              type
+            }
+          }
+          nickname
+          unit_amount
+        }
+      }
+    }
+    nutrition: allStripePrice(
+      filter: {
+        nickname: { eq: $nickname }
+        product: { metadata: { type: { eq: "Nutrition" } } }
+      }
+      sort: { fields: unit_amount, order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          product {
+            name
+            description
+            images
+            metadata {
+              type
+            }
+          }
+          nickname
+          unit_amount
+        }
+      }
+    }
+    bundle: allStripePrice(
+      filter: {
+        nickname: { eq: $nickname }
+        product: { metadata: { type: { eq: "Bundle" } } }
+      }
+      sort: { fields: unit_amount, order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          product {
+            name
+            description
+            images
+            metadata {
+              type
+            }
+          }
+          nickname
+          unit_amount
+        }
+      }
+    }
+    miscellaneous: allStripePrice(
+      filter: {
+        nickname: { eq: $nickname }
+        product: { metadata: { type: { eq: "Miscellaneous" } } }
+      }
+      sort: { fields: unit_amount, order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          product {
+            name
+            description
+            images
+            metadata {
+              type
+            }
           }
           nickname
           unit_amount

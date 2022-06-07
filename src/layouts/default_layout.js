@@ -32,7 +32,7 @@ const DefaultLayout = ({ src, children }) => {
         <meta property="og:url" content="https://www.muscledummies.com/" />
         <meta
           property="og:image"
-          content="https://gateway.pinata.cloud/ipfs/QmWYTnEWVyWvj73VxZwZojbsdZtTRDD9zAeDfQtoBSMvHH"
+          content="/images/logos/md_logo.png"
         />
       </Helmet>
       {loading ? (
