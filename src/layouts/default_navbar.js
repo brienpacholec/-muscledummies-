@@ -61,7 +61,7 @@ const shopData = [
   {
     icon: <FitnessCenterIcon />,
     label: "Body Builders",
-    href: "/shop/body-builders",
+    href: "/shop/bodybuilders",
   },
 ]
 

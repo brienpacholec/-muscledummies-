@@ -34,9 +34,9 @@ const PlanCarousel = () => {
       </Link>
     </div>,
     <div>
-      <Link to="/shop/body-builders">
+      <Link to="/shop/bodybuilders">
         <StaticImage
-          src="../images/plans/body-builders.png"
+          src="../images/plans/bodybuilders.png"
           alt="Body Builder Plans"
           placeholder="blurred"
           layout="constrained"
