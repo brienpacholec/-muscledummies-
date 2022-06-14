@@ -51,7 +51,6 @@ const ShopPlans = ({ pageContext, data }) => {
         sx={{ paddingY: 5 }}
       >
         <PlanPicker current={pageContext.nickname} />
-        
 
         {/* WORKOUTS */}
         {workouts.length > 0 && (
@@ -84,7 +83,11 @@ const ShopPlans = ({ pageContext, data }) => {
                 }}
               >
                 {workouts.map((product, index) => (
-                  <PlanCard plan={product.node} redirectToCheckout={redirectToCheckout} key={index}/>
+                  <PlanCard
+                    plan={product.node}
+                    redirectToCheckout={redirectToCheckout}
+                    key={index}
+                  />
                 ))}
               </Grid>
             </Grid>
@@ -122,7 +125,11 @@ const ShopPlans = ({ pageContext, data }) => {
                 }}
               >
                 {misc.map((product, index) => (
-                  <PlanCard plan={product.node} redirectToCheckout={redirectToCheckout} key={index}/>
+                  <PlanCard
+                    plan={product.node}
+                    redirectToCheckout={redirectToCheckout}
+                    key={index}
+                  />
                 ))}
               </Grid>
             </Grid>
@@ -160,7 +167,11 @@ const ShopPlans = ({ pageContext, data }) => {
                 }}
               >
                 {nutritions.map((product, index) => (
-                  <PlanCard plan={product.node} redirectToCheckout={redirectToCheckout} key={index}/>
+                  <PlanCard
+                    plan={product.node}
+                    redirectToCheckout={redirectToCheckout}
+                    key={index}
+                  />
                 ))}
               </Grid>
             </Grid>
@@ -198,13 +209,16 @@ const ShopPlans = ({ pageContext, data }) => {
                 }}
               >
                 {bundles.map((product, index) => (
-                  <PlanCard plan={product.node} redirectToCheckout={redirectToCheckout} key={index}/>
+                  <PlanCard
+                    plan={product.node}
+                    redirectToCheckout={redirectToCheckout}
+                    key={index}
+                  />
                 ))}
               </Grid>
             </Grid>
           </Grid>
         )}
-
       </Container>
     </DefaultLayout>
   )
@@ -217,7 +231,7 @@ export const query = graphql`
     workout: allStripePrice(
       filter: {
         nickname: { eq: $nickname }
-        product: { metadata: { type: { eq: "Workout" } } }
+        product: { metadata: { type: { eq: "Workout" } }, active: {eq: true} }
       }
       sort: { fields: unit_amount, order: ASC }
     ) {
@@ -234,13 +248,14 @@ export const query = graphql`
           }
           nickname
           unit_amount
+          type
         }
       }
     }
     nutrition: allStripePrice(
       filter: {
         nickname: { eq: $nickname }
-        product: { metadata: { type: { eq: "Nutrition" } } }
+        product: { metadata: { type: { eq: "Nutrition" } }, active: {eq: true} }
       }
       sort: { fields: unit_amount, order: ASC }
     ) {
@@ -257,13 +272,14 @@ export const query = graphql`
           }
           nickname
           unit_amount
+          type
         }
       }
     }
     bundle: allStripePrice(
       filter: {
         nickname: { eq: $nickname }
-        product: { metadata: { type: { eq: "Bundle" } } }
+        product: { metadata: { type: { eq: "Bundle" } }, active: {eq: true} }
       }
       sort: { fields: unit_amount, order: ASC }
     ) {
@@ -280,13 +296,14 @@ export const query = graphql`
           }
           nickname
           unit_amount
+          type
         }
       }
     }
     miscellaneous: allStripePrice(
       filter: {
         nickname: { eq: $nickname }
-        product: { metadata: { type: { eq: "Miscellaneous" } } }
+        product: { metadata: { type: { eq: "Miscellaneous" } }, active: {eq: true} }
       }
       sort: { fields: unit_amount, order: ASC }
     ) {
@@ -303,6 +320,7 @@ export const query = graphql`
           }
           nickname
           unit_amount
+          type
         }
       }
     }

@@ -53,10 +53,10 @@ const PlanCard = ({ plan, redirectToCheckout }) => {
           sx={{
             fontFamily: "Gagalin",
             fontSize: "1rem",
-            textAlign: "-webkit-center"
+            textAlign: "-webkit-center",
           }}
         >
-          {"$" + (plan.unit_amount / 100).toFixed(2)}
+          {"$" + (plan.unit_amount / 100).toFixed(2)} {plan.type === "recurring" && (<span>per month</span>)}
         </Typography>
         <Typography
           sx={{
