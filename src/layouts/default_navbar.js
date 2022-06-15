@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import SwipeableDrawer from "@mui/material/SwipeableDrawer"
 import Container from "@mui/material/Container"
@@ -7,10 +8,9 @@ import ListItemButton from "@mui/material/ListItemButton"
 import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText"
 import Divider from "@mui/material/Divider"
-
+import Modal from "@mui/material/Modal"
 import { styled, ThemeProvider, createTheme } from "@mui/material/styles"
 import Paper from "@mui/material/Paper"
-
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter"
 import IconButton from "@mui/material/IconButton"
 import MenuIcon from "@mui/icons-material/Menu"
@@ -25,8 +25,11 @@ import GppGoodIcon from "@mui/icons-material/GppGood"
 import MapIcon from "@mui/icons-material/Map"
 import GroupIcon from "@mui/icons-material/Group"
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer"
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline"
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
+import ContactForm from "../components/contact_form"
+import { fontFamily } from "@mui/system"
 
 const DummieNav = styled(List)({
   "& .MuiListItemButton-root": {
@@ -44,6 +47,19 @@ const DummieNav = styled(List)({
     background: "red",
   },
 })
+
+const modalStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: { xs: "90%", sm: 500 },
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  borderRadius: "1rem",
+  p: 3,
+  color: "black",
+}
 
 const shopData = [
   {
@@ -77,6 +93,9 @@ const nftData = [
 export default function DefaultNavbar() {
   const [openNft, setOpenNft] = useState(true)
   const [openShop, setOpenShop] = useState(true)
+  const [displayContactModal, setDisplayContactModal] = useState(false)
+  const handleOpen = () => setDisplayContactModal(true)
+  const handleClose = () => setDisplayContactModal(false)
 
   const [state, setState] = React.useState({
     left: false,
@@ -336,6 +355,16 @@ export default function DefaultNavbar() {
                 width={45}
               />
             </Link>
+            <IconButton
+              onClick={handleOpen}
+              aria-label="delete"
+              sx={{
+                color: "white",
+                left: 0,
+              }}
+            >
+              <HelpOutlineIcon />
+            </IconButton>
           </Container>
           <SwipeableDrawer
             anchor={anchor}
@@ -347,6 +376,37 @@ export default function DefaultNavbar() {
           </SwipeableDrawer>
         </React.Fragment>
       ))}
+
+      <Modal
+        open={displayContactModal}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={modalStyle}>
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            sx={{
+              fontFamily: "Gagalin",
+              textAlign: "-webkit-center",
+            }}
+          >
+            INTERESTED? LET US GUIDE YOU
+          </Typography>
+          <Typography
+            id="modal-modal-description"
+            sx={{
+              fontFamily: "Cooper Hewitt",
+              textAlign: "-webkit-center",
+            }}
+          >
+            Submit an inquiry below so we can point you in the best direction!
+          </Typography>
+          <ContactForm />
+        </Box>
+      </Modal>
     </Container>
   )
 }
