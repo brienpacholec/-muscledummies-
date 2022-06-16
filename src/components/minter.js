@@ -150,7 +150,7 @@ const Minter = () => {
                   <br />
 
                   {/* MAKE SURE USER MINTED is updated accordingly */}
-                  {userMintedTotal === 0 ? (
+                  {userMintedTotal < 5 ? (
                     <Button variant="contained" onClick={onMintPressed}>
                       MINT a Muscle Dummy
                     </Button>
