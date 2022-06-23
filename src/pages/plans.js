@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from "react"
-
 import { graphql } from "gatsby"
-
-import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
-import Alert from "@mui/material/Alert"
-import Typography from "@mui/material/Typography"
-
+import { Container, Grid, Alert, Typography, Divider } from "@mui/material"
 import NFTLayout from "../layouts/nft_layout"
 import HealthPlans from "../components/health_plans"
-
 import { checkOwnership } from "../utils/interact.js"
 
 const PlansPage = ({ data }) => {
@@ -58,7 +51,7 @@ const PlansPage = ({ data }) => {
                   textAlign: "left",
                 }}
               >
-                <Alert severity="error">
+                <Alert severity="error" style={{ fontFamily: "Cooper Hewitt" }}>
                   <Typography
                     sx={{
                       fontFamily: "Cooper Hewitt",
@@ -68,7 +61,7 @@ const PlansPage = ({ data }) => {
                     therfore you do not have access to the Muscle Dummy Health &
                     Fitness plans.
                   </Typography>
-                  <hr />
+                  <Divider sx={{ marginY: 1 }} />
                   Trouble shooting:
                   <ul>
                     <li>

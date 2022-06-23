@@ -14,7 +14,7 @@ const theme = createTheme({
       default: "#031219",
     },
     black_override: {
-      default: "#000000"
+      default: "#000000",
     },
     text: {
       primary: "#000",

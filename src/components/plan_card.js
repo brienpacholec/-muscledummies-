@@ -1,12 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Card from "@mui/material/Card"
-import CardMedia from "@mui/material/CardMedia"
-import CardContent from "@mui/material/CardContent"
-import CardActions from "@mui/material/CardActions"
-import Button from "@mui/material/Button"
-
-import Typography from "@mui/material/Typography"
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Button,
+  Typography,
+} from "@mui/material/Card"
 
 const PlanCard = ({ plan, redirectToCheckout }) => {
   return (
@@ -56,7 +57,8 @@ const PlanCard = ({ plan, redirectToCheckout }) => {
             textAlign: "-webkit-center",
           }}
         >
-          {"$" + (plan.unit_amount / 100).toFixed(2)} {plan.type === "recurring" && (<span>per month</span>)}
+          {"$" + (plan.unit_amount / 100).toFixed(2)}{" "}
+          {plan.type === "recurring" && <span>per month</span>}
         </Typography>
         <Typography
           sx={{

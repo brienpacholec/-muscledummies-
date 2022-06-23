@@ -1,9 +1,10 @@
 import React from "react"
 
-import Container from "@mui/material/Container"
+import { Container } from "@mui/material"
 import DefaultLayout from "../layouts/default_layout"
 import PlanPicker from "../components/plan_picker"
 import PlanCarousel from "../components/plan_carousel"
+import Closed from "../components/closed"
 
 const PlansPage = () => {
   return (
@@ -14,8 +15,9 @@ const PlansPage = () => {
         disableGutters
         sx={{ paddingY: 5 }}
       >
-        <PlanPicker current="" />
-        <PlanCarousel />
+        <Closed />
+        {/* <PlanPicker current="" /> */}
+        {/* <PlanCarousel /> */}
       </Container>
     </DefaultLayout>
   )

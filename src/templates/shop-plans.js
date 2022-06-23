@@ -1,16 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-
+import { Container, Grid, Typography } from "@mui/material/Container"
+import { loadStripe } from "@stripe/stripe-js"
 import DefaultLayout from "../layouts/default_layout"
 import PlanPicker from "../components/plan_picker"
 import PlanCard from "../components/plan_card"
-
-import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
-
-import { loadStripe } from "@stripe/stripe-js"
-
-import Typography from "@mui/material/Typography"
+import Closed from "../components/closed"
 
 let stripePromise
 const getStripe = () => {
@@ -50,10 +45,12 @@ const ShopPlans = ({ pageContext, data }) => {
         disableGutters
         sx={{ paddingY: 5 }}
       >
-        <PlanPicker current={pageContext.nickname} />
+        <Closed />
+
+        {/* <PlanPicker current={pageContext.nickname} /> */}
 
         {/* WORKOUTS */}
-        {workouts.length > 0 && (
+        {/* {workouts.length > 0 && (
           <Grid container sx={{ marginY: 3 }}>
             <Grid
               item
@@ -92,10 +89,10 @@ const ShopPlans = ({ pageContext, data }) => {
               </Grid>
             </Grid>
           </Grid>
-        )}
+        )} */}
 
         {/* MISCELLANEOUS */}
-        {misc.length > 0 && (
+        {/* {misc.length > 0 && (
           <Grid container sx={{ marginY: 3 }}>
             <Grid
               item
@@ -134,10 +131,10 @@ const ShopPlans = ({ pageContext, data }) => {
               </Grid>
             </Grid>
           </Grid>
-        )}
+        )} */}
 
         {/* NUTRITION */}
-        {nutritions.length > 0 && (
+        {/* {nutritions.length > 0 && (
           <Grid container sx={{ marginY: 3 }}>
             <Grid
               item
@@ -176,10 +173,10 @@ const ShopPlans = ({ pageContext, data }) => {
               </Grid>
             </Grid>
           </Grid>
-        )}
+        )} */}
 
         {/* BUNDLES */}
-        {bundles.length > 0 && (
+        {/* {bundles.length > 0 && (
           <Grid container sx={{ marginY: 3 }}>
             <Grid
               item
@@ -218,7 +215,7 @@ const ShopPlans = ({ pageContext, data }) => {
               </Grid>
             </Grid>
           </Grid>
-        )}
+        )} */}
       </Container>
     </DefaultLayout>
   )
@@ -231,7 +228,7 @@ export const query = graphql`
     workout: allStripePrice(
       filter: {
         nickname: { eq: $nickname }
-        product: { metadata: { type: { eq: "Workout" } }, active: {eq: true} }
+        product: { metadata: { type: { eq: "Workout" } }, active: { eq: true } }
       }
       sort: { fields: unit_amount, order: ASC }
     ) {
@@ -255,7 +252,10 @@ export const query = graphql`
     nutrition: allStripePrice(
       filter: {
         nickname: { eq: $nickname }
-        product: { metadata: { type: { eq: "Nutrition" } }, active: {eq: true} }
+        product: {
+          metadata: { type: { eq: "Nutrition" } }
+          active: { eq: true }
+        }
       }
       sort: { fields: unit_amount, order: ASC }
     ) {
@@ -279,7 +279,7 @@ export const query = graphql`
     bundle: allStripePrice(
       filter: {
         nickname: { eq: $nickname }
-        product: { metadata: { type: { eq: "Bundle" } }, active: {eq: true} }
+        product: { metadata: { type: { eq: "Bundle" } }, active: { eq: true } }
       }
       sort: { fields: unit_amount, order: ASC }
     ) {
@@ -303,7 +303,10 @@ export const query = graphql`
     miscellaneous: allStripePrice(
       filter: {
         nickname: { eq: $nickname }
-        product: { metadata: { type: { eq: "Miscellaneous" } }, active: {eq: true} }
+        product: {
+          metadata: { type: { eq: "Miscellaneous" } }
+          active: { eq: true }
+        }
       }
       sort: { fields: unit_amount, order: ASC }
     ) {
