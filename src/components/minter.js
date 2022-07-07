@@ -21,6 +21,7 @@ const Minter = () => {
   const [isPaused, setIsPaused] = useState(true)
   const [mintingDatePassed, setMintingDatePassed] = useState("")
   const [userMintedTotal, setUserMintedTotal] = useState(0)
+  const [maxAmountMintable, setMaxAmountMintable] = useState(0)
   const [open, setOpen] = useState(false)
   const [loaded, setLoaded] = useState(false)
   const handleOpen = () => setOpen(true)
@@ -36,14 +37,14 @@ const Minter = () => {
 
       const { address, status, userMintedTotal } =
         await getCurrentWalletConnected()
-      const { currentStatus, mintingDatePassed } = await getCurrentStatus()
+      const { currentStatus, maxMintAmount, mintingDatePassed } = await getCurrentStatus()
 
       setWallet(address)
       setStatus(status)
       setIsPaused(currentStatus)
       setMintingDatePassed(mintingDatePassed)
       setUserMintedTotal(userMintedTotal)
-
+      setMaxAmountMintable(maxMintAmount)
       setLoaded(true)
     }
     fetchData()
@@ -150,7 +151,7 @@ const Minter = () => {
                   <br />
 
                   {/* MAKE SURE USER MINTED is updated accordingly */}
-                  {userMintedTotal < 5 ? (
+                  {userMintedTotal < maxAmountMintable ? (
                     <Button variant="contained" onClick={onMintPressed}>
                       MINT a Muscle Dummy
                     </Button>
