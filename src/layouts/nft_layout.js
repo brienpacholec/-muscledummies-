@@ -35,6 +35,7 @@ const NFTLayout = ({ src, children }) => {
           property="og:image"
           content="https://gateway.pinata.cloud/ipfs/QmWYTnEWVyWvj73VxZwZojbsdZtTRDD9zAeDfQtoBSMvHH"
         />
+        <meta name="facebook-domain-verification" content="acu03i5tz2k|2r68bt1pn1pq8x0z91" />
       </Helmet>
       {loading ? (
         <Container
