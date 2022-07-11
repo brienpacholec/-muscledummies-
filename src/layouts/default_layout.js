@@ -31,7 +31,8 @@ const DefaultLayout = ({ src, children }) => {
         <meta property="og:title" content="Muscle Dummies" />
         <meta property="og:url" content="https://www.muscledummies.com/" />
         <meta property="og:image" content="/images/logos/md_logo.png" />
-        <meta name="facebook-domain-verification" content="acu03i5tz2k|2r68bt1pn1pq8x0z91" />
+        <meta name="facebook-domain-verification" content="tyc0tozdg9p69jy87mta6acyd7rn3d" />
+
       </Helmet>
       {loading ? (
         <Container
