@@ -34,21 +34,6 @@ const PlanCarousel = () => {
       </Link>
     </div>,
     <div>
-      <Link to="/shop/bodybuilders">
-        <StaticImage
-          src="../images/plans/bodybuilders.png"
-          alt="Body Builder Plans"
-          placeholder="blurred"
-          layout="constrained"
-          height={500}
-          style={{
-            borderRadius: "1rem",
-            border: "white solid 2px",
-          }}
-        />
-      </Link>
-    </div>,
-    <div>
       <Link to="/shop/football">
         <StaticImage
           src="../images/plans/football.png"

@@ -74,11 +74,6 @@ const shopData = [
   },
   { icon: <ManSharpIcon />, label: "Mens", href: "/shop/mens" },
   { icon: <WomanSharpIcon />, label: "Womens", href: "/shop/womens" },
-  {
-    icon: <FitnessCenterIcon />,
-    label: "Body Builders",
-    href: "/shop/bodybuilders",
-  },
 ]
 
 const nftData = [

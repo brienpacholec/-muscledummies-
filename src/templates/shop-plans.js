@@ -1,56 +1,44 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Container, Grid, Typography } from "@mui/material/Container"
-import { loadStripe } from "@stripe/stripe-js"
+import { Container, Grid, Typography } from "@mui/material"
 import DefaultLayout from "../layouts/default_layout"
 import PlanPicker from "../components/plan_picker"
 import PlanCard from "../components/plan_card"
-import Closed from "../components/closed"
-
-let stripePromise
-const getStripe = () => {
-  if (!stripePromise) {
-    stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
-  }
-  return stripePromise
-}
 
 const ShopPlans = ({ pageContext, data }) => {
-  const workouts = data.workout.edges
-  const nutritions = data.nutrition.edges
-  const bundles = data.bundle.edges
-  const misc = data.miscellaneous.edges
-
-  const redirectToCheckout = async productId => {
-    const stripe = await getStripe()
-    const { error } = await stripe.redirectToCheckout({
-      mode: "payment",
-      lineItems: [{ price: productId, quantity: 1 }],
-      successUrl: `${process.env.GATSBY_SITE_URL}/success`,
-      cancelUrl: `${process.env.GATSBY_SITE_URL}/shop/${pageContext.nickname
-        .replace(" ", "-")
-        .toLowerCase()}`,
-    })
-
-    if (error) {
-      console.warn("Error:", error)
+  const workouts = []
+  const nutritions = []
+  const bundles = []
+  const extras = []
+  const subscriptions = []
+  data.allShopifyProduct.edges.forEach(plan => {
+    if(plan.node.tags.includes("Workout")){
+      workouts.push(plan.node)
+    } else if(plan.node.tags.includes("Nutrition")){
+      nutritions.push(plan.node)
+    } else if(plan.node.tags.includes("Bundle")){
+      bundles.push(plan.node)
+    } else if(plan.node.tags.includes("Extras")){
+      extras.push(plan.node)
     }
-  }
-
+    
+    // CHECK to see if it also includes a subscription
+    if(plan.node.tags.includes("Subscription")){
+      subscriptions.push(plan.node)
+    }
+  })
   return (
-    <DefaultLayout src={pageContext.nickname}>
+    <DefaultLayout src={pageContext.name}>
       <Container
         className="bg-3"
         maxWidth={false}
         disableGutters
         sx={{ paddingY: 5 }}
       >
-        <Closed />
-
-        {/* <PlanPicker current={pageContext.nickname} /> */}
+        <PlanPicker current={pageContext.name} />
 
         {/* WORKOUTS */}
-        {/* {workouts.length > 0 && (
+        {workouts.length > 0 && (
           <Grid container sx={{ marginY: 3 }}>
             <Grid
               item
@@ -81,18 +69,18 @@ const ShopPlans = ({ pageContext, data }) => {
               >
                 {workouts.map((product, index) => (
                   <PlanCard
-                    plan={product.node}
-                    redirectToCheckout={redirectToCheckout}
+                    plan={product}
+                    type={"workouts"}
                     key={index}
                   />
                 ))}
               </Grid>
             </Grid>
           </Grid>
-        )} */}
+        )}
 
         {/* MISCELLANEOUS */}
-        {/* {misc.length > 0 && (
+        {extras.length > 0 && (
           <Grid container sx={{ marginY: 3 }}>
             <Grid
               item
@@ -121,20 +109,20 @@ const ShopPlans = ({ pageContext, data }) => {
                   flexFlow: "wrap",
                 }}
               >
-                {misc.map((product, index) => (
+                {extras.map((product, index) => (
                   <PlanCard
-                    plan={product.node}
-                    redirectToCheckout={redirectToCheckout}
+                    plan={product}
+                    type={"extras"}
                     key={index}
                   />
                 ))}
               </Grid>
             </Grid>
           </Grid>
-        )} */}
+        )}
 
         {/* NUTRITION */}
-        {/* {nutritions.length > 0 && (
+        {nutritions.length > 0 && (
           <Grid container sx={{ marginY: 3 }}>
             <Grid
               item
@@ -165,18 +153,18 @@ const ShopPlans = ({ pageContext, data }) => {
               >
                 {nutritions.map((product, index) => (
                   <PlanCard
-                    plan={product.node}
-                    redirectToCheckout={redirectToCheckout}
+                    plan={product}
+                    type={"nutritions"}
                     key={index}
                   />
                 ))}
               </Grid>
             </Grid>
           </Grid>
-        )} */}
+        )}
 
         {/* BUNDLES */}
-        {/* {bundles.length > 0 && (
+        {bundles.length > 0 && (
           <Grid container sx={{ marginY: 3 }}>
             <Grid
               item
@@ -207,15 +195,57 @@ const ShopPlans = ({ pageContext, data }) => {
               >
                 {bundles.map((product, index) => (
                   <PlanCard
-                    plan={product.node}
-                    redirectToCheckout={redirectToCheckout}
+                    plan={product}
+                    type={"bundles"}
                     key={index}
                   />
                 ))}
               </Grid>
             </Grid>
           </Grid>
-        )} */}
+        )}
+
+        {/* Subscriptions */}
+        {subscriptions.length > 0 && (
+          <Grid container sx={{ marginY: 3 }}>
+            <Grid
+              item
+              xs={12}
+              sx={{
+                textAlign: "center",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "Gagalin",
+                  fontSize: { xs: "1.2rem", sm: "1.5rem" },
+                  paddingTop: { xs: 2, sm: 0 },
+                }}
+              >
+                SUBSCRIPTIONS
+              </Typography>
+            </Grid>
+            <Grid container>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexFlow: "wrap",
+                }}
+              >
+                {subscriptions.map((product, index) => (
+                  <PlanCard
+                    plan={product}
+                    type={"subscriptions"}
+                    key={index}
+                  />
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+        )}
       </Container>
     </DefaultLayout>
   )
@@ -224,106 +254,30 @@ const ShopPlans = ({ pageContext, data }) => {
 export default ShopPlans
 
 export const query = graphql`
-  query stripeProductByNickname($nickname: String!) {
-    workout: allStripePrice(
-      filter: {
-        nickname: { eq: $nickname }
-        product: { metadata: { type: { eq: "Workout" } }, active: { eq: true } }
-      }
-      sort: { fields: unit_amount, order: ASC }
+  query ShopifyProductsByTag($tag: [String]) {
+    allShopifyProduct(
+        filter: {tags: {in: $tag}}
+        sort: {fields: priceRange___maxVariantPrice___amount, order: ASC}
     ) {
       edges {
         node {
-          id
-          product {
-            name
-            description
-            images
-            metadata {
-              type
+          title
+          priceRange {
+            maxVariantPrice {
+              amount
             }
           }
-          nickname
-          unit_amount
-          type
-        }
-      }
-    }
-    nutrition: allStripePrice(
-      filter: {
-        nickname: { eq: $nickname }
-        product: {
-          metadata: { type: { eq: "Nutrition" } }
-          active: { eq: true }
-        }
-      }
-      sort: { fields: unit_amount, order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          product {
-            name
-            description
-            images
-            metadata {
-              type
+          description
+          tags
+          media {
+            preview {
+              image {
+                src
+              }
             }
           }
-          nickname
-          unit_amount
-          type
-        }
-      }
-    }
-    bundle: allStripePrice(
-      filter: {
-        nickname: { eq: $nickname }
-        product: { metadata: { type: { eq: "Bundle" } }, active: { eq: true } }
-      }
-      sort: { fields: unit_amount, order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          product {
-            name
-            description
-            images
-            metadata {
-              type
-            }
-          }
-          nickname
-          unit_amount
-          type
-        }
-      }
-    }
-    miscellaneous: allStripePrice(
-      filter: {
-        nickname: { eq: $nickname }
-        product: {
-          metadata: { type: { eq: "Miscellaneous" } }
-          active: { eq: true }
-        }
-      }
-      sort: { fields: unit_amount, order: ASC }
-    ) {
-      edges {
-        node {
-          id
-          product {
-            name
-            description
-            images
-            metadata {
-              type
-            }
-          }
-          nickname
-          unit_amount
-          type
+          onlineStorePreviewUrl
+          sellingPlanGroupCount
         }
       }
     }

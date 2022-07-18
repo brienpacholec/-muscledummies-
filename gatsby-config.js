@@ -50,6 +50,13 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-shopify",
+      options: {
+        password: process.env.GATSBY_SHOPIFY_PASSWORD,
+        storeUrl: process.env.GATSBY_SHOPIFY_URL,
+      },
+    },
+    {
       resolve: `gatsby-source-stripe`,
       options: {
         objects: [

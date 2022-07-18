@@ -7,9 +7,17 @@ import {
   CardActions,
   Button,
   Typography,
-} from "@mui/material/Card"
+} from "@mui/material"
 
-const PlanCard = ({ plan, redirectToCheckout }) => {
+const PlanCard = ({ plan, type }) => {
+
+  var checkoutUrl = plan.onlineStorePreviewUrl;
+  if(plan.sellingPlanGroupCount !== 0 ){
+    checkoutUrl += "?recurpay_preview=true&snippet_status=false"
+  }
+
+  console.log(plan.tags);
+
   return (
     <Card
       sx={{
@@ -20,11 +28,11 @@ const PlanCard = ({ plan, redirectToCheckout }) => {
         margin: 1,
       }}
     >
-      {plan.product.images[0] ? (
+      {plan.media.length > 0 ? (
         <CardMedia
           component="img"
           height="194"
-          image={plan.product.images[0]}
+          src={plan.media[0].preview.image.src}
           alt="An image of an individual working out"
           sx={{
             objectFit: "fill",
@@ -57,8 +65,13 @@ const PlanCard = ({ plan, redirectToCheckout }) => {
             textAlign: "-webkit-center",
           }}
         >
-          {"$" + (plan.unit_amount / 100).toFixed(2)}{" "}
-          {plan.type === "recurring" && <span>per month</span>}
+          
+          {type !== "subscriptions"&& (
+            <>
+              {"$" + (plan.priceRange.maxVariantPrice.amount / 100).toFixed(2)}{" "}
+            </>
+          )}
+          
         </Typography>
         <Typography
           sx={{
@@ -66,7 +79,7 @@ const PlanCard = ({ plan, redirectToCheckout }) => {
             fontSize: ".8rem",
           }}
         >
-          <em>{plan.product.description}</em>
+          <span>{plan.description.substring(0,350)}{plan.description.length > 350 && (<>... Click below to learn more!</>)}</span>
         </Typography>
       </CardContent>
       <CardActions
@@ -78,9 +91,18 @@ const PlanCard = ({ plan, redirectToCheckout }) => {
         <Button
           size="small"
           variant="contained"
-          onClick={() => redirectToCheckout(plan.id)}
+          href={checkoutUrl}
         >
-          BUY NOW
+          
+          {type !== "subscriptions" ? (
+            <>
+              BUY NOW
+            </>
+          ) : (
+            <>
+              SUBSCRIBE
+            </>
+          )}
         </Button>
       </CardActions>
     </Card>
@@ -89,7 +111,7 @@ const PlanCard = ({ plan, redirectToCheckout }) => {
 
 PlanCard.propTypes = {
   plan: PropTypes.object.isRequired,
-  redirectToCheckout: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
 }
 
 export default PlanCard
