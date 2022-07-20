@@ -28,7 +28,9 @@ const PlansPage = ({ data }) => {
         }}
       >
         {dummieOwner ? (
-          <HealthPlans fitness_plans={data.directus.fitness_plans} />
+          <>
+          <HealthPlans fitness_plans={data.directus} />
+          </>
         ) : (
           <Container
             sx={{
@@ -103,6 +105,13 @@ export const query = graphql`
   query DirectusQuery {
     directus {
       fitness_plans {
+        document {
+          id
+        }
+        name
+        id
+      }
+      health_plans {
         document {
           id
         }
