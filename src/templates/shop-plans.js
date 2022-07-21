@@ -267,7 +267,7 @@ export const query = graphql`
               amount
             }
           }
-          description
+          descriptionHtml
           tags
           media {
             preview {

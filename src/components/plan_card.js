@@ -79,7 +79,7 @@ const PlanCard = ({ plan, type }) => {
             fontSize: ".8rem",
           }}
         >
-          <span>{plan.description.substring(0,350)}{plan.description.length > 350 && (<>... Click below to learn more!</>)}</span>
+          <div dangerouslySetInnerHTML={ {__html: plan.descriptionHtml}}></div>
         </Typography>
       </CardContent>
       <CardActions
