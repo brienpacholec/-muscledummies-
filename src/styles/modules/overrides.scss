@@ -39,26 +39,19 @@
 .fa-tiktok {
     color: #000 !important;
     filter: drop-shadow(2px 0px 0px #FD3E3E) drop-shadow(-2px -2px 0px #4DE8F4) !important;
-    width: 1.8rem;
-    height: 1.8rem;
-    font-size: 1.8rem;
 }
 
 .fa-linkedin {
     color: #0e76a8 !important;
-    width: 1.8rem;
-    height: 1.8rem;
-    font-size: 1.8rem;
     // background: white;
 }
 
 .fa-instagram {
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 10px;
   color: #fff;
-  font-size: 1.8rem;
   background: #d6249f;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
   box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+  border-radius: 10px;
+  padding: 0 1px 0px 1px;
+  margin: 0px;
 }

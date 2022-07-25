@@ -21,7 +21,7 @@ const IndexPage = () => {
           flexDirection: "column",
           justifyContent: "center",
           height: "100vh",
-          paddingBottom: 20,
+          paddingBottom: 10,
         }}
       >
         <ElevatorPitch />
