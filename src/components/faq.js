@@ -94,7 +94,7 @@ const Faq = () => {
               fontFamily: "Cooper Hewitt",
             }}
           >
-            During our normal public sale, each Dummy will cost .11 ETH.
+            During our normal public sale, each Dummy will cost .07 ETH.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -133,7 +133,7 @@ const Faq = () => {
           >
             Metamask will be the only accepted wallet to mint Muscle Dummies. Be
             sure you have enough ETH in your Metamask to cover the mint price as
-            well as the gas fees. We recommend having .2 ETH in your wallet to
+            well as the gas fees. We recommend having 0.9 ETH in your wallet to
             ensure your spot.
           </Typography>
         </AccordionDetails>
@@ -172,7 +172,7 @@ const Faq = () => {
             }}
           >
             You can view your Muscle Dummy by linking your Metamask wallet to
-            OpenSea. Reveal will be TBA after sellout.
+            OpenSea.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -213,7 +213,7 @@ const Faq = () => {
             instant utility. The immediate, all-inclusive access to different
             workouts and meal plans that are worth more than the NFTs themselves
             make us unique. We also have ambitious plans post-mint so make sure
-            to check out our roadmap.
+            to check out our vision.
           </Typography>
         </AccordionDetails>
       </Accordion>

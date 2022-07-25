@@ -1,11 +1,15 @@
 import React from "react"
 
-import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
-import Box from "@mui/material/Box"
-import Typography from "@mui/material/Typography"
+import { Container, Grid, Box, Typography, IconButton } from "@mui/material"
 
 import { StaticImage } from "gatsby-plugin-image"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faDiscord,
+  faInstagram,
+  faTiktok,
+} from "@fortawesome/free-brands-svg-icons"
 
 const DummieFooter = () => {
   return (
@@ -63,12 +67,14 @@ const DummieFooter = () => {
               justifyContent: "space-around",
             }}
           >
-            <a href="https://discord.gg/CCyjkz8S6m">
-              <img
-                src="https://img.icons8.com/dusk/40/000000/discord-logo.png"
-                alt="discord"
-              />
-            </a>
+            <IconButton
+              aria-label="Discord"
+              sx={{ color: "white" }}
+              href="https://discord.gg/CCyjkz8S6m"
+            >
+              <FontAwesomeIcon icon={faDiscord} />
+            </IconButton>
+
             <a href="https://opensea.io/collection/muscle-dummies">
               <svg
                 width="40"
@@ -91,18 +97,22 @@ const DummieFooter = () => {
                 />
               </svg>
             </a>
-            <a href="https://www.instagram.com/muscledummiesnft/">
-              <img
-                src="https://img.icons8.com/fluency/40/000000/instagram-new.png"
-                alt="instagram"
-              />
-            </a>
-            <a href="https://twitter.com/muscledummynft/">
-              <img
-                src="https://img.icons8.com/fluency/40/000000/twitter.png"
-                alt="twitter"
-              />
-            </a>
+
+            <IconButton
+              aria-label="Instagram"
+              sx={{ color: "white" }}
+              href="https://www.instagram.com/muscledummies/"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </IconButton>
+
+            <IconButton
+              aria-label="Tiktok"
+              sx={{ color: "white" }}
+              href="https://www.tiktok.com/@muscle_dummies"
+            >
+              <FontAwesomeIcon icon={faTiktok} />
+            </IconButton>
           </Box>
         </Grid>
 

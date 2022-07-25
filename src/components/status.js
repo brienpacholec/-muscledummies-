@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react"
 
-import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
-import Box from "@mui/material/Box"
-import Typography from "@mui/material/Typography"
+import { Container, Grid, Box, Typography, Button } from "@mui/material"
 
 import Countdown from "react-countdown"
 import CountUp from "react-countup"
 
-import { getCurrentStatus } from "../utils/interact.js"
+import { getCurrentStatus, checkOwnership } from "../utils/interact.js"
 import Minter from "./minter"
 
 const Status = () => {
@@ -16,9 +13,7 @@ const Status = () => {
   const [maxSupply, setMaxSupply] = useState("")
   const [totalSupply, setTotalSupply] = useState("")
   const [mintingDatePassed, setMintingDatePassed] = useState("")
-
-  //TODO - maybe? lol
-  // const [dummieOwner, setDummieOwner] = useState(false)
+  const [dummieOwner, setDummieOwner] = useState(false)
 
   const renderer = ({ days, hours, minutes, seconds }) => {
     return (
@@ -38,9 +33,8 @@ const Status = () => {
       setTotalSupply(totalSupply)
       setMintingDatePassed(mintingDatePassed)
 
-      //TODO - maybe? lol
-      // const owner = await checkOwnership()
-      // setDummieOwner(owner)
+      const owner = await checkOwnership()
+      setDummieOwner(owner)
     }
     fetchData()
   }, [])
@@ -100,10 +94,28 @@ const Status = () => {
 
                   <Box
                     sx={{
+                      display: { xs: "none", sm: "block" },
                       marginY: 1,
                     }}
                   >
                     <Minter />
+                  </Box>
+
+                  <Box
+                    sx={{
+                      display: { xs: "block", sm: "none" },
+                      marginBottom: 1,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "white",
+                        fontFamily: "Cooper Hewitt",
+                        fontSize: "10px",
+                      }}
+                    >
+                      Minting is only supported on desktop.
+                    </Typography>
                   </Box>
 
                   <Typography
@@ -125,6 +137,19 @@ const Status = () => {
                       out of {maxSupply} Muscle Dummies
                     </span>
                   </Typography>
+
+                  {dummieOwner && (
+                    <>
+                      <Button
+                        size="small"
+                        variant="contained"
+                        href="/plans"
+                        sx={{ marginY: 2, fontFamily: "Cooper Hewitt" }}
+                      >
+                        VIEW YOUR HEALTH & FITNESS PLANS
+                      </Button>
+                    </>
+                  )}
                 </>
               )}
             </>

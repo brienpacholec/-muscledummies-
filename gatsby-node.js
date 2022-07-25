@@ -28,21 +28,21 @@ exports.createPages = async ({ graphql, actions }) => {
   const currentCollections = [
     {
       name: "Athletes",
-      tag: "Athlete"
+      tag: "Athlete",
     },
     {
       name: "Football",
-      tag: "Football"
+      tag: "Football",
     },
     {
       name: "Mens",
-      tag: "Men"
+      tag: "Men",
     },
     {
       name: "Womens",
-      tag: "Women"
+      tag: "Women",
     },
-  ];
+  ]
   currentCollections.forEach(collection => {
     var slug = `/shop/${collection.name.replace(" ", "-").toLowerCase()}`
     createPage({

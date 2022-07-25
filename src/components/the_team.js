@@ -1,15 +1,22 @@
 import React from "react"
-
-import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
-import Typography from "@mui/material/Typography"
-
+import { Container, Grid, Typography, IconButton } from "@mui/material"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faInstagram,
+  faTiktok,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons"
 
 const TheTeam = () => {
   return (
-    <Container>
+    <Container
+      sx={{
+        background: "rgba(0,0,0,0.5)",
+        backdropFilter: "blur(10px)",
+      }}
+    >
       <Grid container>
         <Grid
           item
@@ -49,7 +56,7 @@ const TheTeam = () => {
         container
         sx={{
           display: "flex",
-          marginY: 5,
+          paddingY: 2,
         }}
         //data-aos="fade-right"
       >
@@ -63,9 +70,9 @@ const TheTeam = () => {
             paddingRight: { xs: 0, md: 5 },
           }}
         >
-          <Link to="https://www.instagram.com/isaac_hadac/">
+          <Link>
             <StaticImage
-              src="../images/dummies/athlete.png"
+              src="../images/team/owner.jpeg"
               alt="The Athlete"
               placeholder="blurred"
               layout="constrained"
@@ -73,7 +80,7 @@ const TheTeam = () => {
               width-={200}
               imgStyle={{
                 borderRadius: "50%",
-                border: "5px solid #86FC4D",
+                border: "3px solid #86FC4D",
               }}
             />
           </Link>
@@ -103,9 +110,33 @@ const TheTeam = () => {
               color: "#FFF",
             }}
           >
-            Isaac founded Muscle Dummies. Isaac is a Division 1 American
-            Football player, artist, and hustling entrepreneur.
+            Our founder, performance expert, and artist, Isaac is a current
+            collegiate football player producing high performing, disciplined,
+            and future premier athletes. From recruiting, to scholarships, Isaac
+            teaches all things massive action and effectiveness in training to
+            develop and accelerate athletic capability.
           </Typography>
+          <IconButton
+            aria-label="faLinkedin"
+            sx={{ color: "white" }}
+            href="https://www.linkedin.com/in/isaac-hadac-a71063234/"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </IconButton>
+          <IconButton
+            aria-label="Tiktok"
+            sx={{ color: "white" }}
+            href="https://www.tiktok.com/@coach_isaac"
+          >
+            <FontAwesomeIcon icon={faTiktok} />
+          </IconButton>
+          <IconButton
+            aria-label="Instagram"
+            sx={{ color: "white" }}
+            href="https://www.instagram.com/isaac_hadac/?hl=en"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </IconButton>
         </Grid>
       </Grid>
 
@@ -114,7 +145,7 @@ const TheTeam = () => {
         container
         sx={{
           display: "flex",
-          marginY: 5,
+          paddingY: 2,
         }}
         //data-aos="fade-left"
       >
@@ -128,9 +159,9 @@ const TheTeam = () => {
             paddingRight: { xs: 0, md: 5 },
           }}
         >
-          <Link to="https://www.instagram.com/johnnyhadac/">
+          <Link>
             <StaticImage
-              src="../images/dummies/doctor.png"
+              src="../images/team/doctor.jpeg"
               alt="The Doctor"
               placeholder="blurred"
               layout="constrained"
@@ -138,7 +169,7 @@ const TheTeam = () => {
               width-={200}
               imgStyle={{
                 borderRadius: "50%",
-                border: "5px solid #9420CB",
+                border: "3px solid #9420CB",
               }}
             />
           </Link>
@@ -168,10 +199,34 @@ const TheTeam = () => {
               color: "#FFF",
             }}
           >
-            Johnny is a Student Doctor studying to become a Doctor of
-            Osteopathic Medicine. Johnny has helped multiple clients lose
-            weight, overcome their medical problems, and put serious muscle on.
+            Johnny is our Student Doctor, Culinary Medicine Specialist, and
+            health curator. Johnny specializes in holistic medicine, weight
+            management, and mental health to optimize human performance. Johnny
+            has helped thousands of clients through a comprehensive approach to
+            healing, medicine, and well-being.
           </Typography>
+
+          <IconButton
+            aria-label="Linkedin"
+            sx={{ color: "white" }}
+            href="https://www.linkedin.com/in/johnny-hadac-6a38aa126/"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </IconButton>
+          <IconButton
+            aria-label="Tiktok"
+            sx={{ color: "white" }}
+            href="https://www.tiktok.com/@johnnydhadac?lang=en"
+          >
+            <FontAwesomeIcon icon={faTiktok} />
+          </IconButton>
+          <IconButton
+            aria-label="Instagram"
+            sx={{ color: "white" }}
+            href="https://www.instagram.com/johnnydhadac/"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </IconButton>
         </Grid>
       </Grid>
 
@@ -180,7 +235,7 @@ const TheTeam = () => {
         container
         sx={{
           display: "flex",
-          marginY: 5,
+          paddingY: 2,
         }}
         //data-aos="fade-right"
       >
@@ -194,9 +249,9 @@ const TheTeam = () => {
             paddingRight: { xs: 0, md: 5 },
           }}
         >
-          <Link to="https://www.instagram.com/jakecookmd/">
+          <Link>
             <StaticImage
-              src="../images/dummies/specialist.png"
+              src="../images/team/specialist.jpeg"
               alt="The Specialist"
               placeholder="blurred"
               layout="constrained"
@@ -204,7 +259,7 @@ const TheTeam = () => {
               width-={200}
               imgStyle={{
                 borderRadius: "50%",
-                border: "5px solid #FF0018",
+                border: "3px solid #FF0018",
               }}
             />
           </Link>
@@ -234,9 +289,34 @@ const TheTeam = () => {
               color: "#FFF",
             }}
           >
-            Jake is an absolute grinder. Jake is a pilot, a drone specialist,
-            and now an extreme racing guru.
+            Jake is our research executive and racing specialist. From Iron
+            Man’s to marathons, Jake is trained in endurance, mental toughness,
+            and functionality. Between running 40 miles a week, intense weight
+            training, and enhancing the group on all things health related, Jake
+            is deeply educated in recovery and time management.
           </Typography>
+
+          <IconButton
+            aria-label="Linkedin"
+            sx={{ color: "white" }}
+            href="https://www.linkedin.com/in/jacob-cook-0a14581b7/"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </IconButton>
+          <IconButton
+            aria-label="Tiktok"
+            sx={{ color: "white" }}
+            href="https://www.tiktok.com/@jakecookmd?lang=en"
+          >
+            <FontAwesomeIcon icon={faTiktok} />
+          </IconButton>
+          <IconButton
+            aria-label="Instagram"
+            sx={{ color: "white" }}
+            href="https://www.instagram.com/jakecookmd/"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </IconButton>
         </Grid>
       </Grid>
 
@@ -245,9 +325,8 @@ const TheTeam = () => {
         container
         sx={{
           display: "flex",
-          marginY: 5,
+          paddingY: 2,
         }}
-        //data-aos="fade-left"
       >
         <Grid
           item
@@ -259,9 +338,9 @@ const TheTeam = () => {
             paddingRight: { xs: 0, md: 5 },
           }}
         >
-          <Link to="https://www.instagram.com/brienpacholec/">
+          <Link>
             <StaticImage
-              src="../images/dummies/developer.png"
+              src="../images/team/developer.jpeg"
               alt="The Developer"
               placeholder="blurred"
               layout="constrained"
@@ -269,7 +348,7 @@ const TheTeam = () => {
               width-={200}
               imgStyle={{
                 borderRadius: "50%",
-                border: "5px solid #00dfeb",
+                border: "3px solid #00dfeb",
               }}
             />
           </Link>
@@ -299,9 +378,27 @@ const TheTeam = () => {
               color: "#FFF",
             }}
           >
-            Brien is the Muscle Dummies 'tech-guy'. Brien is a software engineer
-            who has a passion for web development and all things Blockchain.
+            Brien is our Web3 developer, software technologist, and
+            environmentalist. Self taught, Brien manages Web3 integration and
+            all things blockchain. Catch Brien conquering novel US national
+            parks weekly by training for supreme cardiovascular fitness while
+            defending the beauty of the planet.
           </Typography>
+
+          <IconButton
+            aria-label="Linkedin"
+            sx={{ color: "white" }}
+            href="https://www.linkedin.com/in/brien-pacholec-a59b6ab4/"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </IconButton>
+          <IconButton
+            aria-label="Instagram"
+            sx={{ color: "white" }}
+            href="https://www.instagram.com/brienpacholec/"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </IconButton>
         </Grid>
       </Grid>
     </Container>

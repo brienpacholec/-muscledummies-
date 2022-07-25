@@ -37,7 +37,8 @@ const Minter = () => {
 
       const { address, status, userMintedTotal } =
         await getCurrentWalletConnected()
-      const { currentStatus, maxMintAmount, mintingDatePassed } = await getCurrentStatus()
+      const { currentStatus, maxMintAmount, mintingDatePassed } =
+        await getCurrentStatus()
 
       setWallet(address)
       setStatus(status)

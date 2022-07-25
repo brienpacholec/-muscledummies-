@@ -10,13 +10,12 @@ import {
 } from "@mui/material"
 
 const PlanCard = ({ plan, type }) => {
-
-  var checkoutUrl = plan.onlineStorePreviewUrl;
-  if(plan.sellingPlanGroupCount !== 0 ){
+  var checkoutUrl = plan.onlineStorePreviewUrl
+  if (plan.sellingPlanGroupCount !== 0) {
     checkoutUrl += "?recurpay_preview=true&snippet_status=false"
   }
 
-  console.log(plan.tags);
+  console.log(plan.tags)
 
   return (
     <Card
@@ -65,13 +64,11 @@ const PlanCard = ({ plan, type }) => {
             textAlign: "-webkit-center",
           }}
         >
-          
-          {type !== "subscriptions"&& (
+          {type !== "subscriptions" && (
             <>
               {"$" + (plan.priceRange.maxVariantPrice.amount / 100).toFixed(2)}{" "}
             </>
           )}
-          
         </Typography>
         <Typography
           sx={{
@@ -79,7 +76,7 @@ const PlanCard = ({ plan, type }) => {
             fontSize: ".8rem",
           }}
         >
-          <div dangerouslySetInnerHTML={ {__html: plan.descriptionHtml}}></div>
+          <div dangerouslySetInnerHTML={{ __html: plan.descriptionHtml }}></div>
         </Typography>
       </CardContent>
       <CardActions
@@ -88,21 +85,8 @@ const PlanCard = ({ plan, type }) => {
           paddingTop: 0,
         }}
       >
-        <Button
-          size="small"
-          variant="contained"
-          href={checkoutUrl}
-        >
-          
-          {type !== "subscriptions" ? (
-            <>
-              BUY NOW
-            </>
-          ) : (
-            <>
-              SUBSCRIBE
-            </>
-          )}
+        <Button size="small" variant="contained" href={checkoutUrl}>
+          {type !== "subscriptions" ? <>BUY NOW</> : <>SUBSCRIBE</>}
         </Button>
       </CardActions>
     </Card>

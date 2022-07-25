@@ -8,7 +8,6 @@ import { Link } from "gatsby"
 const Welcome = () => {
   return (
     <Container
-      //data-aos="fade-up-left"
       sx={{
         paddingY: { xs: 5, sm: 10 },
       }}

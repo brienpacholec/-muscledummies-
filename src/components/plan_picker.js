@@ -9,76 +9,78 @@ const PlanPicker = ({ current }) => {
   const currentCollections = [
     {
       name: "Athletes",
-      tag: "Athlete"
+      tag: "Athlete",
     },
     {
       name: "Football",
-      tag: "Football"
+      tag: "Football",
     },
     {
       name: "Mens",
-      tag: "Men"
+      tag: "Men",
     },
     {
       name: "Womens",
-      tag: "Women"
+      tag: "Women",
     },
-  ];
+  ]
   return (
-      <Container>
+    <Container>
+      <Grid
+        container
+        sx={{
+          backgroundColor: "rgba(150, 150, 150, 0.25)",
+          border: "2px solid #000",
+        }}
+      >
         <Grid
-          container
+          item
+          xs={12}
           sx={{
-            backgroundColor: "rgba(150, 150, 150, 0.25)",
-            border: "2px solid #000",
+            textAlign: "center",
           }}
         >
-          <Grid
-            item
-            xs={12}
+          <Typography
             sx={{
-              textAlign: "center",
+              fontFamily: "Gagalin",
+              fontSize: { xs: "1.2rem", sm: "1.5rem" },
+              paddingTop: { xs: 2, sm: 0 },
             }}
           >
-            <Typography
+            SHOP OUR PROFESSIONAL PLANS
+          </Typography>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
+          {currentCollections.map((collection, index) => (
+            <MenuItem
+              component="a"
+              href={`/shop/${collection.name.replace(" ", "-").toLowerCase()}`}
+              value={collection.name}
+              key={index}
               sx={{
-                fontFamily: "Gagalin",
-                fontSize: { xs: "1.2rem", sm: "1.5rem" },
-                paddingTop: { xs: 2, sm: 0 },
+                fontFamily: "Cooper Hewitt",
+                color:
+                  collection.name === current || current === ""
+                    ? "white"
+                    : "gray",
               }}
             >
-              SHOP OUR PROFESSIONAL PLANS
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: { xs: "column", sm: "row" },
-            }}
-          >
-            {currentCollections.map((collection, index) => (
-              <MenuItem
-                component="a"
-                href={`/shop/${collection.name.replace(" ", "-").toLowerCase()}`}
-                value={collection.name}
-                key={index}
-                sx={{
-                  fontFamily: "Cooper Hewitt",
-                  color:
-                    collection.name === current || current === "" ? "white" : "gray",
-                }}
-              >
-                {collection.name}
-              </MenuItem>
-            ))}
-          </Grid>
+              {collection.name}
+            </MenuItem>
+          ))}
         </Grid>
-      </Container>
+      </Grid>
+    </Container>
   )
 }
 

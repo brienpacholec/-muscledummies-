@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import { Container, Grid, Alert, Typography, Divider } from "@mui/material"
-import NFTLayout from "../layouts/nft_layout"
+import DefaultLayout from "../layouts/default_layout"
 import HealthPlans from "../components/health_plans"
 import { checkOwnership } from "../utils/interact.js"
 
@@ -17,7 +17,7 @@ const PlansPage = ({ data }) => {
   }, [])
 
   return (
-    <NFTLayout src="plans">
+    <DefaultLayout src="plans">
       {/* PLANS */}
       <Container
         className="bg-4"
@@ -29,7 +29,7 @@ const PlansPage = ({ data }) => {
       >
         {dummieOwner ? (
           <>
-          <HealthPlans fitness_plans={data.directus} />
+            <HealthPlans fitness_plans={data.directus} />
           </>
         ) : (
           <Container
@@ -95,7 +95,7 @@ const PlansPage = ({ data }) => {
           </Container>
         )}
       </Container>
-    </NFTLayout>
+    </DefaultLayout>
   )
 }
 

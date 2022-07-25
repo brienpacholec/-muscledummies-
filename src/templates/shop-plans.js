@@ -12,18 +12,18 @@ const ShopPlans = ({ pageContext, data }) => {
   const extras = []
   const subscriptions = []
   data.allShopifyProduct.edges.forEach(plan => {
-    if(plan.node.tags.includes("Workout")){
+    if (plan.node.tags.includes("Workout")) {
       workouts.push(plan.node)
-    } else if(plan.node.tags.includes("Nutrition")){
+    } else if (plan.node.tags.includes("Nutrition")) {
       nutritions.push(plan.node)
-    } else if(plan.node.tags.includes("Bundle")){
+    } else if (plan.node.tags.includes("Bundle")) {
       bundles.push(plan.node)
-    } else if(plan.node.tags.includes("Extras")){
+    } else if (plan.node.tags.includes("Extras")) {
       extras.push(plan.node)
     }
-    
+
     // CHECK to see if it also includes a subscription
-    if(plan.node.tags.includes("Subscription")){
+    if (plan.node.tags.includes("Subscription")) {
       subscriptions.push(plan.node)
     }
   })
@@ -68,11 +68,7 @@ const ShopPlans = ({ pageContext, data }) => {
                 }}
               >
                 {workouts.map((product, index) => (
-                  <PlanCard
-                    plan={product}
-                    type={"workouts"}
-                    key={index}
-                  />
+                  <PlanCard plan={product} type={"workouts"} key={index} />
                 ))}
               </Grid>
             </Grid>
@@ -110,11 +106,7 @@ const ShopPlans = ({ pageContext, data }) => {
                 }}
               >
                 {extras.map((product, index) => (
-                  <PlanCard
-                    plan={product}
-                    type={"extras"}
-                    key={index}
-                  />
+                  <PlanCard plan={product} type={"extras"} key={index} />
                 ))}
               </Grid>
             </Grid>
@@ -152,11 +144,7 @@ const ShopPlans = ({ pageContext, data }) => {
                 }}
               >
                 {nutritions.map((product, index) => (
-                  <PlanCard
-                    plan={product}
-                    type={"nutritions"}
-                    key={index}
-                  />
+                  <PlanCard plan={product} type={"nutritions"} key={index} />
                 ))}
               </Grid>
             </Grid>
@@ -194,11 +182,7 @@ const ShopPlans = ({ pageContext, data }) => {
                 }}
               >
                 {bundles.map((product, index) => (
-                  <PlanCard
-                    plan={product}
-                    type={"bundles"}
-                    key={index}
-                  />
+                  <PlanCard plan={product} type={"bundles"} key={index} />
                 ))}
               </Grid>
             </Grid>
@@ -236,11 +220,7 @@ const ShopPlans = ({ pageContext, data }) => {
                 }}
               >
                 {subscriptions.map((product, index) => (
-                  <PlanCard
-                    plan={product}
-                    type={"subscriptions"}
-                    key={index}
-                  />
+                  <PlanCard plan={product} type={"subscriptions"} key={index} />
                 ))}
               </Grid>
             </Grid>
@@ -256,8 +236,8 @@ export default ShopPlans
 export const query = graphql`
   query ShopifyProductsByTag($tag: [String]) {
     allShopifyProduct(
-        filter: {tags: {in: $tag}}
-        sort: {fields: priceRange___maxVariantPrice___amount, order: ASC}
+      filter: { tags: { in: $tag } }
+      sort: { fields: priceRange___maxVariantPrice___amount, order: ASC }
     ) {
       edges {
         node {

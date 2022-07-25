@@ -2,7 +2,7 @@ import React from "react"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-import DocumentLoader from './document_loader'
+import DocumentLoader from "./document_loader"
 
 const HealthPlans = ({ fitness_plans }) => {
   return (
@@ -89,7 +89,7 @@ const HealthPlans = ({ fitness_plans }) => {
           </Typography>
         </Grid>
       </Grid>
-      <DocumentLoader plans={fitness_plans.fitness_plans}/>
+      <DocumentLoader plans={fitness_plans.fitness_plans} />
 
       {/* NUTRITION PLANS */}
       <Grid
@@ -115,10 +115,7 @@ const HealthPlans = ({ fitness_plans }) => {
           </Typography>
         </Grid>
       </Grid>
-      <DocumentLoader plans={fitness_plans.health_plans}/>
-      
-
-     
+      <DocumentLoader plans={fitness_plans.health_plans} />
     </Container>
   )
 }

@@ -20,8 +20,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
-        offset: -250,
-        duration: 500,
+        offset: -100,
       },
     },
     {

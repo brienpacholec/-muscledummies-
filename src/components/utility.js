@@ -157,9 +157,10 @@ const Utility = () => {
 
       <Grid
         container
-        //data-aos="fade-left"
         sx={{
           marginTop: { xs: 0, md: 5 },
+          display: "flex",
+          justifyContent: "space-around",
         }}
       >
         <Grid
@@ -224,38 +225,6 @@ const Utility = () => {
             community for our true believers. This will be where you can talk
             and network with our collab influencers. This will also be where you
             will get private insights into our next steps.
-          </Typography>
-        </Grid>
-
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={4}
-          sx={{
-            textAlign: { sm: "left", md: "center" },
-            alignSelf: "center",
-          }}
-        >
-          <Typography
-            variant="h5"
-            sx={{
-              fontFamily: "Cooper Hewitt",
-              color: "#FFF",
-              marginTop: { xs: 4, md: 0 },
-            }}
-          >
-            OUR METAVERSE
-          </Typography>
-
-          <Typography
-            sx={{
-              fontFamily: "Cooper Hewitt",
-              color: "#FFF",
-            }}
-          >
-            A place where you can earn $MUSL coins to redeem for Merch, Supps,
-            Memberships + More!
           </Typography>
         </Grid>
       </Grid>

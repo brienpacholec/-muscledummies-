@@ -1,20 +1,28 @@
 import React, { useState } from "react"
-import Typography from "@mui/material/Typography"
-import Box from "@mui/material/Box"
-import SwipeableDrawer from "@mui/material/SwipeableDrawer"
-import Container from "@mui/material/Container"
-import List from "@mui/material/List"
-import ListItemButton from "@mui/material/ListItemButton"
-import ListItemIcon from "@mui/material/ListItemIcon"
-import ListItemText from "@mui/material/ListItemText"
-import Divider from "@mui/material/Divider"
-import Modal from "@mui/material/Modal"
+
+import {
+  Container,
+  Grid,
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+  SwipeableDrawer,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Divider,
+  Modal,
+  Paper,
+  Button,
+} from "@mui/material"
+
 import { styled, ThemeProvider, createTheme } from "@mui/material/styles"
-import Paper from "@mui/material/Paper"
-import FitnessCenterIcon from "@mui/icons-material/FitnessCenter"
+
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye"
 import IconButton from "@mui/material/IconButton"
 import MenuIcon from "@mui/icons-material/Menu"
-import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown"
 import SportsKabaddiSharpIcon from "@mui/icons-material/SportsKabaddiSharp"
 import SportsFootballSharpIcon from "@mui/icons-material/SportsFootballSharp"
 import ManSharpIcon from "@mui/icons-material/ManSharp"
@@ -26,10 +34,12 @@ import MapIcon from "@mui/icons-material/Map"
 import GroupIcon from "@mui/icons-material/Group"
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer"
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline"
+
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
+
 import ContactForm from "../components/contact_form"
-import { fontFamily } from "@mui/system"
 
 const DummieNav = styled(List)({
   "& .MuiListItemButton-root": {
@@ -61,6 +71,15 @@ const modalStyle = {
   color: "black",
 }
 
+const siteData = [
+  {
+    icon: <RemoveRedEyeIcon />,
+    label: "Vision",
+    href: "/$vision",
+  },
+  { icon: <GroupIcon />, label: "The Team", href: "/#team" },
+]
+
 const shopData = [
   {
     icon: <SportsKabaddiSharpIcon />,
@@ -81,13 +100,10 @@ const nftData = [
   { icon: <InfoIcon />, label: "About", href: "/nft#about" },
   { icon: <GppGoodIcon />, label: "Instant Utility", href: "/nft#utility" },
   { icon: <MapIcon />, label: "Roadmap", href: "/nft#roadmap" },
-  { icon: <GroupIcon />, label: "The Team", href: "/nft#team" },
   { icon: <QuestionAnswerIcon />, label: "Faqs", href: "/nft#faq" },
 ]
 
 export default function DefaultNavbar() {
-  const [openNft, setOpenNft] = useState(true)
-  const [openShop, setOpenShop] = useState(true)
   const [displayContactModal, setDisplayContactModal] = useState(false)
   const handleOpen = () => setDisplayContactModal(true)
   const handleClose = () => setDisplayContactModal(false)
@@ -148,156 +164,187 @@ export default function DefaultNavbar() {
                 />
               </ListItemButton>
 
-              <Box
+              <ListItemButton
+                alignItems="flex-start"
                 sx={{
-                  bgcolor: openShop ? "rgba(71, 98, 130, 0.2)" : null,
-                  pb: openShop ? 2 : 0,
+                  display: "flex",
+                  alignItems: "center",
                 }}
               >
-                <ListItemButton
-                  alignItems="flex-start"
-                  onClick={() => setOpenShop(!openShop)}
-                  sx={{
-                    px: 3,
-                    pt: 2.5,
-                    pb: openShop ? 0 : 2.5,
-                    "&:hover, &:focus": {
-                      "& svg": { opacity: openShop ? 1 : 0 },
-                    },
+                <StaticImage
+                  src="../images/logos/md_logo.png"
+                  alt="MD LOGO"
+                  placeholder="blurred"
+                  layout="constrained"
+                  height={25}
+                />
+                <ListItemText
+                  primary="PROJECT"
+                  primaryTypographyProps={{
+                    fontSize: 20,
+                    fontWeight: "medium",
+                    fontFamily: "Gagalin",
+                    marginLeft: 1,
                   }}
-                >
-                  <ListItemText
-                    primary="Muscle Dummies Shop"
-                    primaryTypographyProps={{
-                      fontSize: 15,
-                      fontWeight: "medium",
-                      lineHeight: "20px",
-                      mb: "2px",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                    secondary="Checkout out all of the health plans Muscle Dummies has to offer."
-                    secondaryTypographyProps={{
-                      noWrap: true,
-                      fontSize: 12,
-                      lineHeight: "16px",
-                      color: openShop
-                        ? "rgba(0,0,0,0)"
-                        : "rgba(255,255,255,0.5)",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                    sx={{ my: 0 }}
-                  />
-                  <KeyboardArrowDown
+                />
+              </ListItemButton>
+              <Box>
+                {siteData.map(item => (
+                  <ListItemButton
+                    key={item.label}
                     sx={{
-                      mr: -1,
-                      opacity: 0,
-                      transform: openShop ? "rotate(-180deg)" : "rotate(0)",
-                      transition: "0.2s",
+                      py: 0,
+                      marginLeft: 2.5,
+                      minHeight: 32,
+                      color: "rgba(255,255,255,.8)",
+                    }}
+                    component="a"
+                    href={item.href}
+                  >
+                    <ListItemIcon sx={{ color: "inherit" }}>
+                      {item.icon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={item.label}
+                      primaryTypographyProps={{
+                        fontSize: 14,
+                        fontWeight: "medium",
+                        fontFamily: "Gagalin",
+                      }}
+                    />
+                  </ListItemButton>
+                ))}
+
+                <ListItemButton
+                  sx={{
+                    py: 0,
+                    marginLeft: 2.5,
+                    minHeight: 32,
+                    color: "rgba(255,255,255,.8)",
+                  }}
+                  component="a"
+                  onClick={handleOpen}
+                >
+                  <ListItemIcon sx={{ color: "inherit" }}>
+                    <HelpOutlineIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={"Inquire"}
+                    primaryTypographyProps={{
+                      fontSize: 14,
+                      fontWeight: "medium",
+                      fontFamily: "Gagalin",
                     }}
                   />
                 </ListItemButton>
-                {openShop &&
-                  shopData.map(item => (
-                    <ListItemButton
-                      key={item.label}
-                      sx={{
-                        py: 0,
-                        minHeight: 32,
-                        color: "rgba(255,255,255,.8)",
-                      }}
-                      component="a"
-                      href={item.href}
-                    >
-                      <ListItemIcon sx={{ color: "inherit" }}>
-                        {item.icon}
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={item.label}
-                        primaryTypographyProps={{
-                          fontSize: 14,
-                          fontWeight: "medium",
-                          fontFamily: "Gagalin",
-                        }}
-                      />
-                    </ListItemButton>
-                  ))}
               </Box>
 
               <Divider />
 
-              <Box
-                sx={{
-                  bgcolor: openNft ? "rgba(71, 98, 130, 0.2)" : null,
-                  pb: openNft ? 2 : 0,
-                }}
-              >
+              <Box>
                 <ListItemButton
                   alignItems="flex-start"
-                  onClick={() => setOpenNft(!openNft)}
                   sx={{
-                    px: 3,
-                    pt: 2.5,
-                    pb: openNft ? 0 : 2.5,
-                    "&:hover, &:focus": {
-                      "& svg": { opacity: openNft ? 1 : 0 },
-                    },
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
-                  <ListItemText
-                    primary="Muscle Dummies NFT"
-                    primaryTypographyProps={{
-                      fontSize: 15,
-                      fontWeight: "medium",
-                      lineHeight: "20px",
-                      mb: "2px",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                    secondary="A unique NFT Collection offering instant utility."
-                    secondaryTypographyProps={{
-                      noWrap: true,
-                      fontSize: 12,
-                      lineHeight: "16px",
-                      color: openNft
-                        ? "rgba(0,0,0,0)"
-                        : "rgba(255,255,255,0.5)",
-                      fontFamily: "Cooper Hewitt",
-                    }}
-                    sx={{ my: 0 }}
+                  <StaticImage
+                    src="../images/logos/md_logo.png"
+                    alt="MD LOGO"
+                    placeholder="blurred"
+                    layout="constrained"
+                    height={25}
                   />
-                  <KeyboardArrowDown
-                    sx={{
-                      mr: -1,
-                      opacity: 0,
-                      transform: openNft ? "rotate(-180deg)" : "rotate(0)",
-                      transition: "0.2s",
+                  <ListItemText
+                    primary="SHOP"
+                    primaryTypographyProps={{
+                      fontSize: 20,
+                      fontWeight: "medium",
+                      fontFamily: "Gagalin",
+                      marginLeft: 1,
                     }}
                   />
                 </ListItemButton>
-                {openNft &&
-                  nftData.map(item => (
-                    <ListItemButton
-                      key={item.label}
-                      sx={{
-                        py: 0,
-                        minHeight: 32,
-                        color: "rgba(255,255,255,.8)",
+                {shopData.map(item => (
+                  <ListItemButton
+                    key={item.label}
+                    sx={{
+                      py: 0,
+                      marginLeft: 2.5,
+                      minHeight: 32,
+                      color: "rgba(255,255,255,.8)",
+                    }}
+                    component="a"
+                    href={item.href}
+                  >
+                    <ListItemIcon sx={{ color: "inherit" }}>
+                      {item.icon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={item.label}
+                      primaryTypographyProps={{
+                        fontSize: 14,
+                        fontWeight: "medium",
+                        fontFamily: "Gagalin",
                       }}
-                      component="a"
-                      href={item.href}
-                    >
-                      <ListItemIcon sx={{ color: "inherit" }}>
-                        {item.icon}
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={item.label}
-                        primaryTypographyProps={{
-                          fontSize: 14,
-                          fontWeight: "medium",
-                          fontFamily: "Gagalin",
-                        }}
-                      />
-                    </ListItemButton>
-                  ))}
+                    />
+                  </ListItemButton>
+                ))}
+              </Box>
+
+              <Divider />
+
+              <Box>
+                <ListItemButton
+                  alignItems="flex-start"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <StaticImage
+                    src="../images/logos/md_logo.png"
+                    alt="MD LOGO"
+                    placeholder="blurred"
+                    layout="constrained"
+                    height={25}
+                  />
+                  <ListItemText
+                    primary="NFT"
+                    primaryTypographyProps={{
+                      fontSize: 20,
+                      fontWeight: "medium",
+                      fontFamily: "Gagalin",
+                      marginLeft: 1,
+                    }}
+                  />
+                </ListItemButton>
+                {nftData.map(item => (
+                  <ListItemButton
+                    key={item.label}
+                    sx={{
+                      py: 0,
+                      marginLeft: 2.5,
+                      minHeight: 32,
+                      color: "rgba(255,255,255,.8)",
+                    }}
+                    component="a"
+                    href={item.href}
+                  >
+                    <ListItemIcon sx={{ color: "inherit" }}>
+                      {item.icon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={item.label}
+                      primaryTypographyProps={{
+                        fontSize: 14,
+                        fontWeight: "medium",
+                        fontFamily: "Gagalin",
+                      }}
+                    />
+                  </ListItemButton>
+                ))}
               </Box>
             </DummieNav>
           </Paper>
@@ -313,95 +360,341 @@ export default function DefaultNavbar() {
       sx={{
         position: "sticky",
         top: 0,
-        background: "#12201af5",
         zIndex: 99,
       }}
     >
-      {["left"].map(anchor => (
-        <React.Fragment key={anchor}>
-          <Container
-            maxWidth={false}
-            disableGutters
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              padding: 2,
-            }}
-          >
-            <IconButton
-              onClick={toggleDrawer(anchor, true)}
-              aria-label="delete"
-              sx={{
-                color: "white",
-                left: 0,
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-
-            <Link to="/">
-              <StaticImage
-                className="shake"
-                src="../images/logos/md_logo.png"
-                alt="Muscle Shaker"
-                placeholder="blurred"
-                layout="constrained"
-                width={45}
-              />
-            </Link>
-            <IconButton
-              onClick={handleOpen}
-              aria-label="delete"
-              sx={{
-                color: "white",
-                left: 0,
-              }}
-            >
-              <HelpOutlineIcon />
-            </IconButton>
-          </Container>
-          <SwipeableDrawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
-          >
-            {list(anchor)}
-          </SwipeableDrawer>
-        </React.Fragment>
-      ))}
-
-      <Modal
-        open={displayContactModal}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+          backgroundColor: "rgba(0,0,0,0.85)",
+        }}
       >
-        <Box sx={modalStyle}>
-          <Typography
-            id="modal-modal-title"
-            variant="h6"
-            component="h2"
-            sx={{
-              fontFamily: "Gagalin",
-              textAlign: "-webkit-center",
-            }}
-          >
-            INTERESTED? LET US GUIDE YOU
-          </Typography>
-          <Typography
-            id="modal-modal-description"
-            sx={{
-              fontFamily: "Cooper Hewitt",
-              textAlign: "-webkit-center",
-            }}
-          >
-            Submit an inquiry below so we can point you in the best direction!
-          </Typography>
-          <ContactForm />
-        </Box>
-      </Modal>
+        {["left"].map(anchor => (
+          <React.Fragment key={anchor}>
+            <Container
+              maxWidth={false}
+              disableGutters
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                padding: 2,
+              }}
+            >
+              <IconButton
+                onClick={toggleDrawer(anchor, true)}
+                aria-label="delete"
+                sx={{
+                  color: "white",
+                  left: 0,
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+
+              <Link to="/">
+                <StaticImage
+                  className="shake"
+                  src="../images/logos/md_logo.png"
+                  alt="Muscle Shaker"
+                  placeholder="blurred"
+                  layout="constrained"
+                  width={45}
+                />
+              </Link>
+              <IconButton
+                onClick={handleOpen}
+                aria-label="delete"
+                sx={{
+                  color: "white",
+                  left: 0,
+                }}
+              >
+                <HelpOutlineIcon />
+              </IconButton>
+            </Container>
+            <SwipeableDrawer
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+              onOpen={toggleDrawer(anchor, true)}
+            >
+              {list(anchor)}
+            </SwipeableDrawer>
+          </React.Fragment>
+        ))}
+
+        <Modal
+          open={displayContactModal}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={modalStyle}>
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              sx={{
+                fontFamily: "Gagalin",
+                textAlign: "-webkit-center",
+              }}
+            >
+              INTERESTED? LET US GUIDE YOU
+            </Typography>
+            <Typography
+              id="modal-modal-description"
+              sx={{
+                fontFamily: "Cooper Hewitt",
+                textAlign: "-webkit-center",
+              }}
+            >
+              Submit an inquiry below so we can point you in the best direction!
+            </Typography>
+            <ContactForm />
+          </Box>
+        </Modal>
+      </Box>
+
+      <Box
+        sx={{
+          display: { xs: "none", md: "flex" },
+        }}
+      >
+        <AppBar
+          sx={{
+            backgroundColor: "rgba(0,0,0,0.75)",
+            paddingY: { xs: 1, md: 4 },
+            position: { xs: "static", md: "sticky" },
+            display: { xs: "none", md: "flex" },
+          }}
+        >
+          <Container>
+            <Toolbar disableGutters>
+              {/* DESKTOP NAV */}
+              <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={0}>
+                  <Grid
+                    item
+                    md={5.5}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-evenly",
+                      textAlign: "center",
+                      color: "#FFF",
+                      alignSelf: "center",
+                    }}
+                  >
+                    <Grid container spacing={0}>
+                      <Grid item md={12}>
+                        <Box
+                          sx={{
+                            height: 2,
+                            backgroundColor: "#FFF",
+                            marginX: 10,
+                            marginBottom: 1,
+                          }}
+                        ></Box>
+                      </Grid>
+
+                      <Grid
+                        item
+                        md={12}
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-around",
+                          textAlign: "center",
+                          color: "#FFF",
+                          alignSelf: "center",
+                          paddingTop: 1,
+                        }}
+                      >
+                        <AnchorLink
+                          to="/#team"
+                          title="Meet the team"
+                          className="anchor-link"
+                        >
+                          <Typography
+                            sx={{
+                              fontFamily: "Cooper Hewitt",
+                              fontSize: { md: "1.2rem", lg: "1.5rem" },
+                            }}
+                          >
+                            TEAM
+                          </Typography>
+                        </AnchorLink>
+
+                        <AnchorLink
+                          to="/#vision"
+                          title="Vision"
+                          className="anchor-link"
+                        >
+                          <Typography
+                            sx={{
+                              fontFamily: "Cooper Hewitt",
+                              fontSize: { md: "1.2rem", lg: "1.5rem" },
+                            }}
+                          >
+                            VISION
+                          </Typography>
+                        </AnchorLink>
+
+                        <Button
+                          variant="text"
+                          title="inquire"
+                          className="anchor-link"
+                          onClick={handleOpen}
+                          sx={{
+                            padding: 0,
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              fontFamily: "Cooper Hewitt",
+                              fontSize: { md: "1.2rem", lg: "1.5rem" },
+                            }}
+                          >
+                            INQUIRE
+                          </Typography>
+                        </Button>
+                      </Grid>
+
+                      {/* BOTTOM LEFT BORDER */}
+                      <Grid item md={12}>
+                        <Box
+                          sx={{
+                            height: 2,
+                            backgroundColor: "#FFF",
+                            marginX: 5,
+                            marginTop: 1,
+                          }}
+                        ></Box>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+                  <Grid
+                    item
+                    md={1}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Link to="/">
+                      <StaticImage
+                        className="shake"
+                        src="../images/icon.png"
+                        alt="Muscle Shaker"
+                        placeholder="blurred"
+                        layout="constrained"
+                        height={70}
+                      />
+                    </Link>
+                  </Grid>
+
+                  <Grid
+                    item
+                    md={5.5}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-evenly",
+                      textAlign: "center",
+                      color: "#FFF",
+                      alignSelf: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Grid container spacing={0}>
+                      {/* TOP RIGHT border */}
+                      <Grid item md={12}>
+                        <Box
+                          sx={{
+                            height: 2,
+                            backgroundColor: "#FFF",
+                            marginX: 10,
+                            marginBottom: 1,
+                          }}
+                        ></Box>
+                      </Grid>
+
+                      <Grid
+                        item
+                        md={12}
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-evenly",
+                          textAlign: "center",
+                          color: "#FFF",
+                          alignItems: "center",
+                          paddingTop: 1,
+                        }}
+                      >
+                        <AnchorLink
+                          to="/shop"
+                          title="Shop"
+                          className="anchor-link"
+                        >
+                          <Typography
+                            sx={{
+                              fontFamily: "Cooper Hewitt",
+                              fontSize: { md: "1.2rem", lg: "1.5rem" },
+                            }}
+                          >
+                            SHOP
+                          </Typography>
+                        </AnchorLink>
+
+                        <AnchorLink
+                          to="/nft"
+                          title="NFT"
+                          className="anchor-link"
+                        >
+                          <Typography
+                            sx={{
+                              fontFamily: "Cooper Hewitt",
+                              fontSize: { md: "1.2rem", lg: "1.5rem" },
+                            }}
+                          >
+                            NFT
+                          </Typography>
+                        </AnchorLink>
+
+                        {/* <AnchorLink
+                          to="/coaching"
+                          title="Faqs"
+                          className="anchor-link"
+                        >
+                          <Typography
+                            sx={{
+                              fontFamily: "Cooper Hewitt",
+                              fontSize: { md: "1.2rem", lg: "1.5rem" },
+                            }}
+                          >
+                            COACHING
+                          </Typography>
+                        </AnchorLink> */}
+                      </Grid>
+
+                      {/* BOTTOM RIGHT BORDER */}
+                      <Grid item md={12}>
+                        <Box
+                          sx={{
+                            height: 2,
+                            backgroundColor: "#FFF",
+                            marginX: 5,
+                            marginTop: 1,
+                          }}
+                        ></Box>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Box>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </Box>
     </Container>
   )
 }

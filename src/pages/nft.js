@@ -5,7 +5,7 @@ import Container from "@mui/material/Container"
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-import NFTLayout from "../layouts/nft_layout"
+import DefaultLayout from "../layouts/default_layout"
 import DummieHeader from "../components/dummie_header"
 import Status from "../components/status"
 import Welcome from "../components/welcome"
@@ -14,9 +14,9 @@ import Community from "../components/community"
 import DummierBanner from "../components/dummie_banner"
 import Utility from "../components/utility"
 import Roadmap from "../components/roadmap"
-import TheTeam from "../components/the_team"
 import Faq from "../components/faq"
 import Tutorial from "../components/tutorial"
+import NotableDummies from "../components/notable_dummies"
 
 const NFTPage = () => {
   useEffect(() => {
@@ -29,7 +29,7 @@ const NFTPage = () => {
   }, [])
 
   return (
-    <NFTLayout src="index">
+    <DefaultLayout src="index">
       {/* HEADER & WELCOME */}
       <Container
         className="bg-1"
@@ -91,16 +91,6 @@ const NFTPage = () => {
         <Roadmap />
       </Container>
 
-      {/* MEET THE TEAM */}
-      <Container
-        id="team"
-        sx={{
-          marginY: { xs: 2, md: 5 },
-        }}
-      >
-        <TheTeam />
-      </Container>
-
       {/* FAQ */}
       <Container
         id="faq"
@@ -114,8 +104,9 @@ const NFTPage = () => {
       {/* FOOTER */}
       <Container>
         <Tutorial />
+        <NotableDummies />
       </Container>
-    </NFTLayout>
+    </DefaultLayout>
   )
 }
 

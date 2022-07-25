@@ -45,7 +45,6 @@ const DocumentLoader = ({ plans }) => {
         paddingY: { xs: 5 },
       }}
     >
-
       {/* PLANS */}
       <Grid container sx={{ display: "flex", justifyContent: "center" }}>
         <Grid item xs={12} sm={8} md={6}>
