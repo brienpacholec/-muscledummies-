@@ -101,7 +101,7 @@ const DummieFooter = () => {
             <IconButton
               aria-label="Instagram"
               sx={{ color: "white" }}
-              href="https://www.instagram.com/muscledummies/"
+              href="https://www.instagram.com/muscle_dummies/"
             >
               <FontAwesomeIcon icon={faInstagram} />
             </IconButton>

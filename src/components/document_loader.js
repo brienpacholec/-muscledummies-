@@ -106,6 +106,10 @@ const DocumentLoader = ({ plans }) => {
               >
                 <ChevronLeftIcon />
               </IconButton>
+
+              <span>
+                Page {pageNumber} of {numPages}
+              </span>
               <IconButton
                 variant="contained"
                 onClick={() => setPageNumber(pageNumber + 1)}
@@ -135,37 +139,6 @@ const DocumentLoader = ({ plans }) => {
                   onLoadError={console.error}
                 />
               </Document>
-              <IconButton
-                variant="contained"
-                onClick={() => setPageNumber(pageNumber - 1)}
-                disabled={pageNumber === 1}
-                sx={{
-                  "&:disabled": {
-                    color: "#757474",
-                  },
-                  color: "white",
-                  backgroundColor: "transparent",
-                }}
-              >
-                <ChevronLeftIcon />
-              </IconButton>
-              <IconButton
-                variant="contained"
-                onClick={() => setPageNumber(pageNumber + 1)}
-                disabled={pageNumber >= numPages}
-                sx={{
-                  "&:disabled": {
-                    color: "#757474",
-                  },
-                  color: "white",
-                  backgroundColor: "transparent",
-                }}
-              >
-                <ChevronRightIcon />
-              </IconButton>
-              <p style={{ marginTop: -10 }}>
-                Page {pageNumber} of {numPages}
-              </p>
             </Box>
           </Grid>
         </Grid>

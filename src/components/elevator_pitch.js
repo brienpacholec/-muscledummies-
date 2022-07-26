@@ -92,7 +92,7 @@ const ElevatorPitch = () => {
           <IconButton
             aria-label="Instagram"
             sx={{ color: "white", fontSize: { sm: "25px", md: "50px" } }}
-            href="https://www.instagram.com/muscledummies/"
+            href="https://www.instagram.com/muscle_dummies/"
           >
             <FontAwesomeIcon icon={faInstagram} />
           </IconButton>

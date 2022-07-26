@@ -23,18 +23,18 @@ const PlanCard = ({ plan, type }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        flexBasis: { xs: "55%", sm: "40%", md: "25%", lg: "15%" },
+        flexBasis: { xs: "80%", sm: "50%", md: "25%" },
         margin: 1,
       }}
     >
       {plan.media.length > 0 ? (
         <CardMedia
           component="img"
-          height="194"
           src={plan.media[0].preview.image.src}
           alt="An image of an individual working out"
           sx={{
             objectFit: "fill",
+            maxHeight: "300px",
           }}
         />
       ) : (

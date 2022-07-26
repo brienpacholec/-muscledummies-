@@ -73,8 +73,8 @@ const HealthPlans = ({ fitness_plans }) => {
         <Grid
           item
           xs={12}
+          md={6}
           sx={{
-            textAlign: "center",
             justifyContet: "center",
           }}
         >
@@ -83,39 +83,34 @@ const HealthPlans = ({ fitness_plans }) => {
             sx={{
               color: "#FFF",
               fontFamily: "Gagalin",
+              textAlign: "center",
             }}
           >
             WORKOUT PLANS
           </Typography>
+
+          <DocumentLoader plans={fitness_plans.fitness_plans} />
+        </Grid>
+        <Grid item xs={12} md={6} sx={{}}>
+          <Typography
+            variant="h4"
+            sx={{
+              color: "#FFF",
+              fontFamily: "Gagalin",
+              textAlign: "center",
+            }}
+          >
+            NUTRITION PLANS
+          </Typography>
+          <DocumentLoader plans={fitness_plans.health_plans} />
         </Grid>
       </Grid>
-      <DocumentLoader plans={fitness_plans.fitness_plans} />
 
       {/* NUTRITION PLANS */}
       <Grid
         container
         sx={{ display: "flex", justifyContent: "center", marginTop: 5 }}
-      >
-        <Grid
-          item
-          xs={12}
-          sx={{
-            textAlign: "center",
-            justifyContet: "center",
-          }}
-        >
-          <Typography
-            variant="h4"
-            sx={{
-              color: "#FFF",
-              fontFamily: "Gagalin",
-            }}
-          >
-            NUTRITION PLANS
-          </Typography>
-        </Grid>
-      </Grid>
-      <DocumentLoader plans={fitness_plans.health_plans} />
+      ></Grid>
     </Container>
   )
 }
