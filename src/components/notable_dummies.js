@@ -20,7 +20,7 @@ const NotableDummies = () => {
         }}
       >
         <StaticImage
-          src="../images/canva_components/footer.png"
+          src="../images/canva_components/notable.png"
           alt="The Athlete"
           placeholder="blurred"
           layout="constrained"
