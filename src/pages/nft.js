@@ -9,6 +9,7 @@ import DefaultLayout from "../layouts/default_layout"
 import DummieHeader from "../components/dummie_header"
 import Status from "../components/status"
 import Welcome from "../components/welcome"
+import MostRecentDummies from "../components/most_recent_dummies"
 import About from "../components/about"
 import Community from "../components/community"
 import DummierBanner from "../components/dummie_banner"
@@ -61,6 +62,7 @@ const NFTPage = () => {
         }}
       >
         <Welcome />
+        <MostRecentDummies />
         <About />
         <Community />
       </Container>

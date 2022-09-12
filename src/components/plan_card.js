@@ -15,8 +15,6 @@ const PlanCard = ({ plan, type }) => {
     checkoutUrl += "?recurpay_preview=true&snippet_status=false"
   }
 
-  console.log(plan.tags)
-
   return (
     <Card
       sx={{
