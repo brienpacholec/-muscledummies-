@@ -15,8 +15,6 @@ const PlanCard = ({ plan, type }) => {
     checkoutUrl += "?recurpay_preview=true&snippet_status=false"
   }
 
-  console.log(plan.tags)
-
   return (
     <Card
       sx={{
@@ -34,7 +32,7 @@ const PlanCard = ({ plan, type }) => {
           alt="An image of an individual working out"
           sx={{
             objectFit: "fill",
-            maxHeight: "300px",
+            maxHeight: "400px",
           }}
         />
       ) : (
