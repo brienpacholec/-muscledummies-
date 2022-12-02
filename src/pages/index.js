@@ -55,8 +55,8 @@ const IndexPage = () => {
             }}
           >
 
-            <FeaturedPlan imgPath={'images/featured/mens-total-package-cover.jpeg'} url={"https://isaachadac2234.clickfunnels.com/sales-page1659791156504"} ignore-description={true} sx={{ marginX: 5 }} />
-            <FeaturedPlan imgPath={'images/featured/womens-total-package-cover.jpeg'} url={"https://isaachadac2234.clickfunnels.com/sales-page1665450012712"} ignore-description={true} sx={{ marginX: 5 }} />
+            <FeaturedPlan imgPath={'/images/featured/mens-total-package-cover.jpeg'} url={"https://isaachadac2234.clickfunnels.com/sales-page1659791156504"} ignore-description={true} sx={{ marginX: 5 }} />
+            <FeaturedPlan imgPath={'/images/featured/womens-total-package-cover.jpeg'} url={"https://isaachadac2234.clickfunnels.com/sales-page1665450012712"} ignore-description={true} sx={{ marginX: 5 }} />
             {/* <FeaturedPlan plan={data.allShopifyProduct.edges[0].node} type="homepage" ignore-description={true} sx={{ marginX: 5 }} />
             <FeaturedPlan plan={data.allShopifyProduct.edges[1].node} type="homepage" ignore-description={true} sx={{ marginX: 5 }} /> */}
           </Grid>

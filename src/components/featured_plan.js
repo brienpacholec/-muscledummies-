@@ -14,8 +14,8 @@ const FeaturedPlan = ({ imgPath, url }) => {
                     <div style={{ position: "relative" }}>
                         <CardMedia
                             component="img"
-                            src={`../${imgPath}`}
-                            alt="An image of an individual working out"
+                            src={`${imgPath}`}
+                            alt="Featured Plan"
                             sx={{
                                 width: {xs: 200, sm:300, md:400},
                                 height: {xs: 300, sm:400, md: 500},
