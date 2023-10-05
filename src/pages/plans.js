@@ -29,7 +29,40 @@ const PlansPage = ({ data }) => {
       >
         {dummieOwner ? (
           <>
-            <HealthPlans fitness_plans={data.directus} />
+            <Container
+              sx={{
+                paddingY: { xs: 5 },
+                height: "50vh",
+              }}
+            >
+              <Grid
+                container
+                sx={{
+                  display: "flex",
+                  marginTop: { xs: 0, md: 3 },
+                  justifyContent: "center",
+                }}
+              >
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  sx={{
+                    textAlign: "left",
+                  }}
+                >
+                  <Alert severity="error" style={{ fontFamily: "Cooper Hewitt" }}>
+                    <Typography
+                      sx={{
+                        fontFamily: "Cooper Hewitt",
+                      }}
+                    >
+                      Our plans are currently unavailable. Please email <a href="mailto:info@muscledummies.com">info@muscledummies.com</a> for further assistance.
+                    </Typography>
+                  </Alert>
+                </Grid>
+              </Grid>
+            </Container>
           </>
         ) : (
           <Container
@@ -101,23 +134,23 @@ const PlansPage = ({ data }) => {
 
 export default PlansPage
 
-export const query = graphql`
-  query DirectusQuery {
-    directus {
-      fitness_plans {
-        document {
-          id
-        }
-        name
-        id
-      }
-      health_plans {
-        document {
-          id
-        }
-        name
-        id
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query DirectusQuery {
+//     directus {
+//       fitness_plans {
+//         document {
+//           id
+//         }
+//         name
+//         id
+//       }
+//       health_plans {
+//         document {
+//           id
+//         }
+//         name
+//         id
+//       }
+//     }
+//   }
+// `

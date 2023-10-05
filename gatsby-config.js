@@ -1,7 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-
 module.exports = {
   siteMetadata: {
     title: "Muscle Dummies",
@@ -9,6 +8,7 @@ module.exports = {
     description: "Merging Health & Fitness with the Technology industry.",
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-image`,
     `gatsby-plugin-material-ui`,
@@ -16,7 +16,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     `gatsby-theme-material-ui`,
-
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
@@ -71,15 +70,15 @@ module.exports = {
         downloadFiles: true, //true if we need the files
       },
     },
-    {
-      resolve: "@directus/gatsby-source-directus",
-      options: {
-        url: `${process.env.GATSBY_DIRECTUS_PROJECT_URL}`,
-        auth: {
-          email: `${process.env.GATSBY_DIRECTUS_EMAIL}`,
-          password: `${process.env.GATSBY_DIRECTUS_PASSWORD}`,
-        },
-      },
-    },
+    // {
+    //   resolve: "@directus/gatsby-source-directus",
+    //   options: {
+    //     url: `${process.env.GATSBY_DIRECTUS_PROJECT_URL}`,
+    //     auth: {
+    //       email: `${process.env.GATSBY_DIRECTUS_EMAIL}`,
+    //       password: `${process.env.GATSBY_DIRECTUS_PASSWORD}`,
+    //     },
+    //   },
+    // },
   ],
 }
